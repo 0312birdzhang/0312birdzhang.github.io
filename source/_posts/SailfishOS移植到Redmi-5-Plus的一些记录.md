@@ -1,7 +1,7 @@
 ---
 title: SailfishOS移植到Redmi 5 Plus的一些记录
 date: 2018-03-30 14:28:28
-tags: sailfish,redmi,vince,hadk
+tags: sailfish,redmi,vince,hadk,redmi5plus
 ---
 
 # 移植旗鱼系统到红米5p的过程记录
@@ -12,6 +12,7 @@ tags: sailfish,redmi,vince,hadk
 * 有梯子
 * 一台内存起码8G的电脑，Ubuntu 系统，硬盘起码40GB大小，或者更高。
 * [SailfishOS-HardwareAdaptationDevelopmentKit-2.0.1](https://sailfishos.org/wp-content/uploads/2017/09/SailfishOS-HardwareAdaptationDevelopmentKit-2.0.1.pdf) HADK文档
+* https://wiki.merproject.org/wiki/Adaptations/faq-hadk
 * 最关键的，一颗善于折腾的心和善于搜索的你
 
 
@@ -56,9 +57,9 @@ cat <<'EOF' >> $ANDROID_ROOT/.repo/local_manifests/vince.xml
   <project path="device/xiaomi/vince" name="Sailfish-On-Vince/device_xiaomi_vince" revision="cm-14.1" />
   <project path="vendor/xiaomi/vince" name="Sailfish-On-Vince/vendor_xiaomi_vince" revision="cm-14.1" />
   <project path="kernel/xiaomi/vince" name="Sailfish-On-Vince/kernel_xiaomi_msm8953" revision="cm-14.1" />
-  <project path="hybris/droid-hal-version-vince" name="0312birdzhang/droid-hal-version-vince" revision="master" />
-  <project path="hybris/droid-config-vince" name="0312birdzhang/droid-config-vince" revision="master" />
-  <project path="rpm" name="0312birdzhang/droid-hal-vince" revision="master" />
+  <project path="hybris/droid-hal-version-vince" name="Sailfish-On-Vince/droid-hal-version-vince" revision="master" />
+  <project path="hybris/droid-config-vince" name="Sailfish-On-Vince/droid-config-vince" revision="master" />
+  <project path="rpm" name="Sailfish-On-Vince/droid-hal-vince" revision="master" />
 </manifest>
 EOF
 ```
@@ -76,6 +77,7 @@ EOF
 > 参见官方教程： https://sailfishos.org/wiki/Platform_SDK_Installation
 
 安装Platform SDK
+
 ```
 export PLATFORM_SDK_ROOT=/srv/mer
 curl -k -O http://releases.sailfishos.org/sdk/installers/latest/Jolla-latest-SailfishOS_Platform_SDK_Chroot-i486.tar.bz2 ;
@@ -89,23 +91,43 @@ sfossdk
 ```
 
 另开一个终端，输入`sfossdk`，进入mer下
+
 > 安装targets，官方教程：https://sailfishos.org/wiki/Platform_SDK_Target_Installation
 
 其实就是执行下面的命令，要下载这三个包，过程有些慢
+
 ```
 sdk-assistant create xiaomi-vince-latest http://releases.sailfishos.org/sdk/latest/Jolla-latest-Sailfish_SDK_Tooling-i486.tar.bz2
 sdk-assistant create xiaomi-vince-armv7hl http://releases.sailfishos.org/sdk/latest/Jolla-latest-Sailfish_SDK_Target-armv7hl.tar.bz2
 sdk-assistant create xiaomi-vince-i486 http://releases.sailfishos.org/sdk/latest/Jolla-latest-Sailfish_SDK_Target-i486.tar.bz2
 ```
 
+更新到最新（Update to latest）
+```
+ sudo ssu re 2.2.0.29
+ sudo zypper ref
+ sudo zypper dup
+```
+
 安装打包的工具
-```sudo zypper in android-tools createrepo zip```
+
+```
+sudo zypper in android-tools createrepo zip
+```
 
 
 ## 修改fixup-mountpoints
 
 文件在`hybris/hybris-boot/fixup-mountpoints`，添加你的设备的，这里是vince。
 adb到手机上，输入`ls -l /dev/block/platform/*/by-name/`, 获取分区信息
+
+## Camera支持
+
+```
+cd $ANDROID_ROOT/external/droidmedia
+echo 'DROIDMEDIA_32 := true' >> env.mk #针对64位的系统
+echo 'FORCE_HAL:=1' >> env.mk
+```
 
 ## 编译hybris-hal
 
@@ -114,7 +136,7 @@ cd $ANDROID_ROOT
 source build/envsetup.sh
 export USE_CCACHE=1
 breakfast $DEVICE
-make -j4 hybris-hal
+make -j8 hybris-hal
 ```
 期间可能会报错，谷歌搜一下
 
@@ -124,39 +146,83 @@ make -j4 hybris-hal
 cd $ANDROID_ROOT
 hybris/mer-kernel-check/mer_verify_kernel_config ./out/target/product/$DEVICE/obj/KERNEL_OBJ/.config
 ```
-出现WARNING或者ERROR，将提示的加入到你的defconfig中，我的在`kernel/xiaomi/vince/arch/arm64/configs/lineageos_vince_defconfig`中
+出现WARNING或者ERROR，将提示的加入到你的defconfig中，我的在`kernel/xiaomi/vince/arch/arm64/configs/vince_defconfig`中
 然后执行`make hybris-root`后重新验证。没有出现`ERROR`后可以执行`make hybris-recovery`
 
 
 ## 打包dhd（HADK 第7章）
 
-再开一个终端，输入`sfossdk`，进入mer打包环境下
+再开一个终端(我们这里称终端2)，输入`sfossdk`，进入mer打包环境下
 
 ```
 cd $ANDROID_ROOT
 rpm/dhd/helpers/build_packages.sh
 ```
 
+## 打包droidmedia与audioflingerglue
+
+> 如果你的机器是32位的话那么下面的命令去掉`_32`,下面的也一样
+
+在终端1中
+```
+make -j4 libcameraservice_32
+make -j4 libdroidmedia_32 minimediaservice minisfservice libminisf_32
+```
+在终端2中
+
+```
+DROIDMEDIA_VERSION=$(git --git-dir external/droidmedia/.git describe --tags | sed -r "s/\-/\+/g")
+rpm/dhd/helpers/pack_source_droidmedia-localbuild.sh $DROIDMEDIA_VERSION
+mkdir -p hybris/mw/droidmedia-localbuild/rpm
+cp rpm/dhd/helpers/droidmedia-localbuild.spec \
+hybris/mw/droidmedia-localbuild/rpm/droidmedia.spec
+sed -ie "s/0.0.0/$DROIDMEDIA_VERSION/" \
+hybris/mw/droidmedia-localbuild/rpm/droidmedia.spec
+mv hybris/mw/droidmedia-$DROIDMEDIA_VERSION.tgz hybris/mw/droidmedia-localbuild
+rpm/dhd/helpers/build_packages.sh --build=hybris/mw/droidmedia-localbuild
+```
+
+在终端1中
+
+```
+make -j4  libaudioflingerglue_32 miniafservice 
+```
+
+在终端2中
+```
+rpm/dhd/helpers/pack_source_audioflingerglue-localbuild.sh
+mkdir -p hybris/mw/audioflingerglue-localbuild/rpm
+cp rpm/dhd/helpers/audioflingerglue-localbuild.spec \
+hybris/mw/audioflingerglue-localbuild/rpm/audioflingerglue.spec
+mv hybris/mw/audioflingerglue-0.0.1.tgz hybris/mw/audioflingerglue-localbuild
+rpm/dhd/helpers/build_packages.sh --build=hybris/mw/audioflingerglue-localbuild
+```
+
+然后重新打包dhd
+```
+rpm/dhd/helpers/build_packages.sh --droid-hal
+```
+
+
+## 上传到obs打包
+
+将droid-local-repo/vince下 droid-hal-vince/*.rpm 跟audioflingerglue*.rpm 、 droidmedia*.rpm 上传到obs的droid-hal-vince下
+
+例如这些包：https://build.merproject.org/package/show/nemo:devel:hw:xiaomi:vince/droid-hal-vince
+
+obs打包还需要dhc,dhv等等几个包，此处不详细说明了，可以到 https://github.com/mer-hybris 看其他机型的
+
+
+## Jolla-@RELEASE@-$DEVICE-@ARCH@.ks
+
+obs打包完之后，将droid-config-vince-kickstart-configuration-0.2.4*.armv7hl.rpm 下载下来，解压获得Jolla-@RELEASE@-$DEVICE-@ARCH@.ks
+放到$ANDROID_ROOT下面
 
 ## 镜像制作
 
 ```
 cd $ANDROID_ROOT
-HA_REPO="repo --name=adaptation-community-common-$DEVICE-@RELEASE@"
-HA_DEV="repo --name=adaptation-community-$DEVICE-@RELEASE@"
-KS="Jolla-@RELEASE@-$DEVICE-@ARCH@.ks"
-sed \
-"/$HA_REPO/i$HA_DEV --baseurl=file:\/\/$ANDROID_ROOT\/droid-local-repo\/$DEVICE" \
-$ANDROID_ROOT/hybris/droid-configs/installroot/usr/share/kickstarts/$KS \
-> $KS
-```
-如果提示在`$ANDROID_ROOT/hybris/droid-configs/installroot/usr/share/kickstarts/$KS`下找不到文件，那么去`hybris/droid-configs`下执行下面的命令，然后重新生成ks文件
-```
-mb2 -t xiaomi-vince-armv7hl rpm
-```
-
-```
-RELEASE=2.1.4.13
+RELEASE=2.1.4.14
 EXTRA_NAME=-alpha1
 hybris/droid-configs/droid-configs-device/helpers/process_patterns.sh
 sudo mic create fs --arch=$PORT_ARCH \
@@ -170,12 +236,4 @@ $ANDROID_ROOT/Jolla-@RELEASE@-$DEVICE-@ARCH@.ks
 
 ## 刷机
 
-```
-Follow Instructions Carefully otherwise you will get error :
-Wipe cache, dalvic cache,system,data
-Format data (to remove encryption support)
-Reboot into recovery again
-Flash Bootloader(Once)-Flash ROM-Flash Gapps
-Done-Reboot Now
-Enjoy the clean rom
-```
+参考 https://wiki.merproject.org/wiki/Adaptations/libhybris/Install_SailfishOS_for_Vince
