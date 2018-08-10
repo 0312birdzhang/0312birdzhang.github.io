@@ -97,9 +97,9 @@ sfossdk
 其实就是执行下面的命令，要下载这三个包，过程有些慢
 
 ```
-sdk-assistant create xiaomi-vince-latest http://releases.sailfishos.org/sdk/latest/Jolla-latest-Sailfish_SDK_Tooling-i486.tar.bz2
-sdk-assistant create xiaomi-vince-armv7hl http://releases.sailfishos.org/sdk/latest/Jolla-latest-Sailfish_SDK_Target-armv7hl.tar.bz2
-sdk-assistant create xiaomi-vince-i486 http://releases.sailfishos.org/sdk/latest/Jolla-latest-Sailfish_SDK_Target-i486.tar.bz2
+sdk-assistant create tooling xiaomi-vince-latest http://releases.sailfishos.org/sdk/latest/Jolla-latest-Sailfish_SDK_Tooling-i486.tar.bz2
+sdk-assistant create target xiaomi-vince-armv7hl http://releases.sailfishos.org/sdk/latest/Jolla-latest-Sailfish_SDK_Target-armv7hl.tar.bz2
+sdk-assistant create target xiaomi-vince-i486 http://releases.sailfishos.org/sdk/latest/Jolla-latest-Sailfish_SDK_Target-i486.tar.bz2
 ```
 
 更新到最新（Update to latest）
@@ -156,7 +156,7 @@ hybris/mer-kernel-check/mer_verify_kernel_config ./out/target/product/$DEVICE/ob
 
 ```
 cd $ANDROID_ROOT
-rpm/dhd/helpers/build_packages.sh
+rpm/dhd/helpers/build_packages.sh -d
 ```
 
 ## 打包droidmedia与audioflingerglue
@@ -204,7 +204,7 @@ rpm/dhd/helpers/build_packages.sh --droid-hal
 ```
 
 
-## 上传到obs打包
+## 上传到obs打包 (可以先在自己的home下面创建一个子项目)
 
 将droid-local-repo/vince下 droid-hal-vince/*.rpm 跟audioflingerglue*.rpm 、 droidmedia*.rpm 上传到obs的droid-hal-vince下
 

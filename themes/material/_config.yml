@@ -26,7 +26,7 @@ scheme: Paradox
 
 # UI & UX: slogan, color, effect
 uiux:
-    slogan: "Welcome"
+    slogan: "一直笨死的大鸟"
     theme_color: "#0097A7"
     theme_sub_color: "#00838F"
     hyperlink_color: "#00838F"
@@ -129,6 +129,8 @@ sidebar:
         icon: chrome_reader_mode
         divider: false
     pages:
+        友情链接: 
+            link: "/links/"
         #About:
             #link: "/about"
             #icon: person
