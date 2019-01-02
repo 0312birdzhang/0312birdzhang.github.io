@@ -1,7 +1,7 @@
 ---
 title: 使用openresty搭一个类似ip.cn的接口
 date: 2018-06-05 10:25:52
-tags: openresty,ip
+tags: [openresty,ip]
 ---
 
 

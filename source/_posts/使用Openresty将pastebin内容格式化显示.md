@@ -1,7 +1,7 @@
 ---
 title: 使用Openresty将pastebin内容格式化显示
 date: 2018-06-25 15:09:18
-tags: lua,openresty,nginx,pastebin
+tags: [lua,openresty,nginx,pastebin]
 ---
 
 

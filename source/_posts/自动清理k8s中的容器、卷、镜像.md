@@ -1,7 +1,7 @@
 ---
 title: 自动清理k8s中的容器、卷、镜像
 date: 2017-12-08 17:57:35
-tags: kubernetes,k8s,docker
+tags: [kubernetes,k8s,docker]
 ---
 
 > 镜像源码 https://github.com/meltwater/docker-cleanup

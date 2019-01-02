@@ -1,7 +1,7 @@
 ---
 title: Java改写HttpServletRequest请求参数
 date: 2018-05-15 09:49:53
-tags: java,httpservletrequest,改写,参数
+tags: [Java,httpservletrequest,改写,参数]
 ---
 
 为什么会有这个需求呢？ 因为被 [cas](https://www.apereo.org/projects/cas) 的`AuthenticationFilter`坑了

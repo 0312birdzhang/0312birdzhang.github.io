@@ -1,7 +1,7 @@
 ---
 title: No subject alternative DNS name matching xxx.com found
 date: 2018-06-26 13:56:40
-tags: cas,java,https,crt
+tags: [cas,Java,https,crt]
 ---
 
 [TOC]

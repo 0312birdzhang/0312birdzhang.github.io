@@ -1,7 +1,7 @@
 ---
 title: opensips安装使用整理
 date: 2018-01-29 16:36:17
-tags: opensips,voip,sip
+tags: [opensips,voip,sip]
 ---
 
 > 部分内容来自 https://github.com/Ci-Jie/OpenSIPS ，其他的很多教程都是坑！！！

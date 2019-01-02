@@ -1,7 +1,7 @@
 ---
 title: 使用DaemonSet+Taint/Tolerations+NodeSelector部署Nginx ingress controller
 date: 2017-12-08 17:49:25
-tags: kubernetes,k8s,docker
+tags: [kubernetes,k8s,docker]
 ---
 
 > 使用DaemonSet+NodeSelector+Tolerations的方式定义Nginx Ingress Controller，给专门节点打上Label+Taint，使得这些专门节点只运行Nginx Ingress Controller，而不会调度和运行其他业务容器，只用来做代理节点。

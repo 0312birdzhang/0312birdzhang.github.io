@@ -131,10 +131,14 @@ sidebar:
     pages:
         友情链接: 
             link: "/links/"
-        #About:
-            #link: "/about"
-            #icon: person
-            #divider: false
+            icon: link
+        关于我:
+            link: "/about"
+            icon: person
+            divider: false
+        标签:
+            link: "/tags"
+            icon: bookmark
     article_num:
         use: false
         divider: false

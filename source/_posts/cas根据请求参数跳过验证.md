@@ -1,7 +1,7 @@
 ---
 title: cas根据请求参数跳过验证
 date: 2018-05-15 10:01:41
-tags: cas,跳过,参数
+tags: [cas,跳过,参数]
 ---
 
 接上一篇 https://birdzhang.xyz/2018/05/15/Java%E6%94%B9%E5%86%99HttpServletRequest%E8%AF%B7%E6%B1%82%E5%8F%82%E6%95%B0/ ，这里说一下cas的坑（这里的cas是3.5版本）

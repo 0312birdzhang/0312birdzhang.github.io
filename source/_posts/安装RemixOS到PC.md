@@ -1,7 +1,7 @@
 ---
 title: 安装RemixOS到PC
 date: 2017-05-26 16:01:48
-tags: android,x86,remix
+tags: [android,x86,remix]
 ---
 
 # ！一定要用UEFI方式启动，前提是64位的
