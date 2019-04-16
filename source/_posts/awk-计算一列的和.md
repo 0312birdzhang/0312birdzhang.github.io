@@ -1,7 +1,7 @@
 ---
 title: awk 计算一列的和
 date: 2017-05-31 11:46:07
-tags: unix
+tags: [unix]
 ---
 
 `awk '{sum += $10};END {print sum}'`
