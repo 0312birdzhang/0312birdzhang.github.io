@@ -10,16 +10,21 @@ tags: [kubernetes,k8s,docker]
 
 支持的变量
 
-  * **CLEAN_PERIOD=1800** - Interval in seconds to sleep after completing a cleaning run. Defaults to 1800 seconds = 30 minutes.
-  * **DELAY_TIME=1800** - Seconds to wait before removing exited containers and unused images. Defaults to 1800 seconds = 30 minutes.
-  * **KEEP_IMAGES** - List of images to avoid cleaning, e.g. "ubuntu:trusty, ubuntu:latest". Defaults to clean all unused images.
-  * **KEEP_CONTAINERS** - List of images for exited or dead containers to avoid cleaning, e.g. "ubuntu:trusty, ubuntu:latest".
-  * **KEEP_CONTAINERS_NAMED** - List of names for exited or dead containers to avoid cleaning, e.g. "my-container1, persistent-data".
-  * **LOOP** - Add the ability to do non-looped cleanups, run it once and exit. Options are true, false. Defaults to true to run it forever in loops.
-  * **DEBUG** - Set to 1 to enable more debugging output on pattern matches
-  * **DOCKER_API_VERSION** - The docker API version to use. This defaults to 1.20, but you can override it here in case the docker version on your host differs from the one that is installed in this container. You can find  - this on your host system by running `docker version --format '{{.Client.APIVersion}}'`.
 
-对于即使已经不运行了也不想清理的镜像，使用KEEP_IMAGES变量处理，此处我们添写： `vmware/harbor-*:*,*calico:*,*registry:*,*kubernetes-dashboard-amd64:*,*nginx-ingress-controller:*,*cvallance/mongo-k8s-sidecar:*`
+* **CLEAN_PERIOD=1800** - Interval in seconds to sleep after completing a cleaning run. Defaults to 1800 seconds = 30 minutes.
+* **DELAY_TIME=1800** - Seconds to wait before removing exited containers and unused images. Defaults to 1800 seconds = 30 minutes.
+* **KEEP_IMAGES** - List of images to avoid cleaning, e.g. "ubuntu:trusty, ubuntu:latest". Defaults to clean all unused images.
+* **KEEP_CONTAINERS** - List of images for exited or dead containers to avoid cleaning, e.g. "ubuntu:trusty, ubuntu:latest".
+* **KEEP_CONTAINERS_NAMED** - List of names for exited or dead containers to avoid cleaning, e.g. "my-container1, persistent-data".
+* **LOOP** - Add the ability to do non-looped cleanups, run it once and exit. Options are true, false. Defaults to true to run it forever in loops.
+* **DEBUG** - Set to 1 to enable more debugging output on pattern matches
+* **DOCKER_API_VERSION** - The docker API version to use. This defaults to 1.20, but you can override it here in case the docker version on your host differs from the one that is installed in this container. You can find  - this on your host system by running `docker version --format {% raw %}'{{.Client.APIVersion}}'{% endraw %}`.
+
+
+
+对于即使已经不运行了也不想清理的镜像，使用KEEP_IMAGES变量处理，此处我们添写： 
+
+`vmware/harbor-*:*,*calico:*,*registry:*,*kubernetes-dashboard-amd64:*,*nginx-ingress-controller:*,*cvallance/mongo-k8s-sidecar:*`
 
 docker-cleanup-daemonset.yaml 配置如下：
 ```

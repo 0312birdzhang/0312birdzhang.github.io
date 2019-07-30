@@ -15,7 +15,7 @@ tags: [sailfish,redmi,vince,hadk,redmi5plus]
 * 一台红米5p手机，解锁过并且刷了lineageos
 * 有梯子
 * 一台内存起码8G的电脑(4G也可以)，Ubuntu 系统，硬盘起码40GB大小，或者更高。
-* [SailfishOS-HardwareAdaptationDevelopmentKit-2.0.1](https://sailfishos.org/wp-content/uploads/2017/09/SailfishOS-HardwareAdaptationDevelopmentKit-2.0.1.pdf) HADK文档
+* [SailfishOS-HardwareAdaptationDevelopmentKit](https://sailfishos.org/develop/hadk/) 1 READ部分pdf文档
 * https://wiki.merproject.org/wiki/Adaptations/faq-hadk
 * 最关键的，一颗善于折腾的心和善于搜索的你
 
@@ -72,7 +72,7 @@ EOF
 
 `repo sync --fetch-submodules`
 
-如果你要求快，可以用 `repo sync --fetch-submodules -c --no-tags --no-bundles`，这样只会拉取当前要用的代码，但是不方便后面的修改提交
+如果你要求快，可以用 `repo sync --fetch-submodules -c --no-tags --no-clone-bundle`，这样只会拉取当前要用的代码，但是不方便后面的修改提交
 
 出错就多同步几次
 
