@@ -55,7 +55,7 @@
     <link href="http://birdzhang.xyz/2019/06/13/SailfishOS%E7%A7%BB%E6%A4%8D%E5%88%B0Redmi-5-Plus%E7%9A%84%E4%B8%80%E4%BA%9B%E8%AE%B0%E5%BD%95-2/"/>
     <id>http://birdzhang.xyz/2019/06/13/SailfishOS移植到Redmi-5-Plus的一些记录-2/</id>
     <published>2019-06-13T02:06:52.000Z</published>
-    <updated>2019-07-30T07:27:36.809Z</updated>
+    <updated>2019-09-24T08:20:12.280Z</updated>
     
     <content type="html"><![CDATA[<p>接上 <a href="http://birdzhang.xyz/2018/03/30/SailfishOS%E7%A7%BB%E6%A4%8D%E5%88%B0Redmi-5-Plus%E7%9A%84%E4%B8%80%E4%BA%9B%E8%AE%B0%E5%BD%95/">http://birdzhang.xyz/2018/03/30/SailfishOS%E7%A7%BB%E6%A4%8D%E5%88%B0Redmi-5-Plus%E7%9A%84%E4%B8%80%E4%BA%9B%E8%AE%B0%E5%BD%95/</a></p>
 <p>本文章主要针对 hybris 15.1的移植</p>
@@ -89,7 +89,9 @@
 <p>这样会生成<code>system.mount</code>和<code>vendor.mount</code>，启动systemd的时候会挂载上</p>
 <p>对于有些设备可能提示<code>kgsl kgsl-3d0: |_load_firmware| request_firmware(a530_pm4.fw) failed: -2</code>，需要做一个软链到 <code>/lib/firmware</code></p>
 <p><a href="https://github.com/mer-hybris/droid-config-sony-nile/blob/91c15efb576c29a9d41cc4cd1d40c62ddcce9824/sparse/lib/firmware" target="_blank" rel="noopener">https://github.com/mer-hybris/droid-config-sony-nile/blob/91c15efb576c29a9d41cc4cd1d40c62ddcce9824/sparse/lib/firmware</a></p>
-<h2 id="调试"><a href="#调试" class="headerlink" title="调试"></a>调试</h2><p>暂无很详细的，主要是看dmesg，journalctl等看看把出错的都修了。</p>
+<h2 id="调试"><a href="#调试" class="headerlink" title="调试"></a>调试</h2><p><del>暂无很详细的，主要是看dmesg，journalctl等看看把出错的都修了。</del></p>
+<h3 id="通话声音"><a href="#通话声音" class="headerlink" title="通话声音"></a>通话声音</h3><p>如果可以打通电话但是没有声音，则需要 <code>pulseaudio-modules-droid-hidl</code> 1.0版本（截止2019-09-24），然后配合新的ril配置文件 <a href="https://github.com/mer-hybris/droid-config-sony-nile/tree/master/sparse/etc/ofono" target="_blank" rel="noopener">https://github.com/mer-hybris/droid-config-sony-nile/tree/master/sparse/etc/ofono</a></p>
+<h3 id="界面crash"><a href="#界面crash" class="headerlink" title="界面crash"></a>界面crash</h3><p>看dmesg/logcat/journactl里面是不是有binder的信息，打补丁吧，至于打哪些只能靠猜（大雾</p>
 ]]></content>
     
     <summary type="html">
@@ -634,7 +636,7 @@ pipelines:
     <link href="http://birdzhang.xyz/2018/03/30/SailfishOS%E7%A7%BB%E6%A4%8D%E5%88%B0Redmi-5-Plus%E7%9A%84%E4%B8%80%E4%BA%9B%E8%AE%B0%E5%BD%95/"/>
     <id>http://birdzhang.xyz/2018/03/30/SailfishOS移植到Redmi-5-Plus的一些记录/</id>
     <published>2018-03-30T06:28:28.000Z</published>
-    <updated>2019-07-30T07:39:01.134Z</updated>
+    <updated>2019-09-12T04:00:16.116Z</updated>
     
     <content type="html"><![CDATA[<h1 id="移植旗鱼系统到红米5p的过程记录"><a href="#移植旗鱼系统到红米5p的过程记录" class="headerlink" title="移植旗鱼系统到红米5p的过程记录"></a>移植旗鱼系统到红米5p的过程记录</h1><h2 id="可以去ホロ-🐺的博客看看更详细的"><a href="#可以去ホロ-🐺的博客看看更详细的" class="headerlink" title="!!!可以去ホロ 🐺的博客看看更详细的!!!"></a>!!!可以去ホロ 🐺的博客看看更详细的!!!</h2><p>  <a href="https://blog.yoitsu.moe/category/sailfish.html" target="_blank" rel="noopener">https://blog.yoitsu.moe/category/sailfish.html</a></p>
 <h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><ul>
@@ -682,11 +684,11 @@ pipelines:
 <h2 id="打包droidmedia与audioflingerglue"><a href="#打包droidmedia与audioflingerglue" class="headerlink" title="打包droidmedia与audioflingerglue"></a>打包droidmedia与audioflingerglue</h2><blockquote>
 <p>如果你的机器是32位的话那么下面的命令去掉<code>_32</code>,下面的也一样</p>
 </blockquote>
-<p>在终端1中<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">make -j4 libcameraservice_32</span><br><span class="line">make -j4 libdroidmedia_32 minimediaservice minisfservice libminisf_32</span><br></pre></td></tr></table></figure></p>
+<p>在终端1中<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">make -j$(nproc --all) $(external/droidmedia/detect_build_targets.sh $PORT_ARCH $(gettargetarch))</span><br></pre></td></tr></table></figure></p>
 <p>在终端2中</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">DROIDMEDIA_VERSION=$(git --git-dir external/droidmedia/.git describe --tags | sed \</span><br><span class="line">-r &quot;s/\-/\+/g&quot;)</span><br><span class="line">rpm/dhd/helpers/pack_source_droidmedia-localbuild.sh $DROIDMEDIA_VERSION</span><br><span class="line">mkdir -p hybris/mw/droidmedia-localbuild/rpm</span><br><span class="line">cp rpm/dhd/helpers/droidmedia-localbuild.spec \</span><br><span class="line">hybris/mw/droidmedia-localbuild/rpm/droidmedia.spec</span><br><span class="line">sed -ie &quot;s/0.0.0/$DROIDMEDIA_VERSION/&quot; \</span><br><span class="line">hybris/mw/droidmedia-localbuild/rpm/droidmedia.spec</span><br><span class="line">mv hybris/mw/droidmedia-$DROIDMEDIA_VERSION.tgz hybris/mw/droidmedia-localbuild</span><br><span class="line">rpm/dhd/helpers/build_packages.sh --build=hybris/mw/droidmedia-localbuild</span><br></pre></td></tr></table></figure>
 <p>在终端1中</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">make -j4  libaudioflingerglue_32 miniafservice</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">make -j$(nproc --all) $(external/audioflingerglue/detect_build_targets.sh $PORT_ARCH $(gettargetarch))</span><br></pre></td></tr></table></figure>
 <p>在终端2中<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">AUDIOFLINGERGLUE_VERSION=$(git --git-dir external/audioflingerglue/.git describe --tags | sed \</span><br><span class="line">-r &quot;s/\-/\+/g&quot;)</span><br><span class="line">rpm/dhd/helpers/pack_source_audioflingerglue-localbuild.sh $AUDIOFLINGERGLUE_VERSION</span><br><span class="line">mkdir -p hybris/mw/audioflingerglue-localbuild/rpm</span><br><span class="line">cp rpm/dhd/helpers/audioflingerglue-localbuild.spec \</span><br><span class="line">hybris/mw/audioflingerglue-localbuild/rpm/audioflingerglue.spec</span><br><span class="line">sed -ie &quot;s/0.0.0/$AUDIOFLINGERGLUE_VERSION/&quot; \</span><br><span class="line">hybris/mw/audioflingerglue-localbuild/rpm/audioflingerglue.spec</span><br><span class="line">mv hybris/mw/audioflingerglue-$AUDIOFLINGERGLUE_VERSION.tgz hybris/mw/audioflingerglue-localbuild</span><br><span class="line">rpm/dhd/helpers/build_packages.sh --build=hybris/mw/audioflingerglue-localbuild</span><br></pre></td></tr></table></figure></p>
 <p>然后重新打包dhd<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rpm/dhd/helpers/build_packages.sh --droid-hal</span><br></pre></td></tr></table></figure></p>
 <h2 id="打包其他中间件包-mw"><a href="#打包其他中间件包-mw" class="headerlink" title="打包其他中间件包(mw)"></a>打包其他中间件包(mw)</h2><p>注意到 <a href="https://public.etherpad-mozilla.org/p/faq-hadk" target="_blank" rel="noopener">https://public.etherpad-mozilla.org/p/faq-hadk</a> 搜索当前版本需要对应的mw版本号，不一定用最新的</p>
