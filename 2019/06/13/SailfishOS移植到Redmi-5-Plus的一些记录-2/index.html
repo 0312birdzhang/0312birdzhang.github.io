@@ -393,7 +393,7 @@
         <p>接上 <a href="http://birdzhang.xyz/2018/03/30/SailfishOS%E7%A7%BB%E6%A4%8D%E5%88%B0Redmi-5-Plus%E7%9A%84%E4%B8%80%E4%BA%9B%E8%AE%B0%E5%BD%95/">http://birdzhang.xyz/2018/03/30/SailfishOS%E7%A7%BB%E6%A4%8D%E5%88%B0Redmi-5-Plus%E7%9A%84%E4%B8%80%E4%BA%9B%E8%AE%B0%E5%BD%95/</a></p>
 <p>本文章主要针对 hybris 15.1的移植</p>
 <h2 id="挑选设备源码"><a href="#挑选设备源码" class="headerlink" title="挑选设备源码"></a>挑选设备源码</h2><p>mer-hybris的android hybris-15.1是基于lineageos的，所以我们在没有官方/非官方lineageos用的时候,也要找基于lineage的第三方rom，如国内的Mokee，国外的OmniROM等，只需要稍微改一点devicetree就可以用了</p>
-<h2 id="适配hybris-15-1的一些更改"><a href="#适配hybris-15-1的一些更改" class="headerlink" title="适配hybris-15.1的一些更改"></a>适配hybris-15.1的一些更改</h2><h3 id="一、Failed-to-initialize-property-area"><a href="#一、Failed-to-initialize-property-area" class="headerlink" title="一、Failed to initialize property area"></a>一、Failed to initialize property area</h3><p>目前的解决方法是注释掉这个 </p>
+<h2 id="适配hybris-15-1的一些更改"><a href="#适配hybris-15-1的一些更改" class="headerlink" title="适配hybris-15.1的一些更改"></a>适配hybris-15.1的一些更改</h2><h3 id="一、Failed-to-initialize-property-area"><a href="#一、Failed-to-initialize-property-area" class="headerlink" title="一、Failed to initialize property area"></a>一、Failed to initialize property area</h3><p>目前的解决方法是注释掉这个, 还有可能是没有关闭selinux或者没有初始化sailfish所需要的android init rc文件有关</p>
 <p><code>system/core/init/property_service.cpp</code>, 将72行的<code>exit(1);</code>注释掉</p>
 <h3 id="二、kernel-device部分"><a href="#二、kernel-device部分" class="headerlink" title="二、kernel,device部分"></a>二、kernel,device部分</h3><ol>
 <li><p>内核部分主要需要注意的是你的设备是否是有 <code>/vendor</code>分区的，project treble的都会有一个单独的<code>/vendor</code>分区，这个需要注意。</p>
