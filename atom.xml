@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://birdzhang.xyz/"/>
-  <updated>2019-07-30T07:27:36.809Z</updated>
+  <updated>2019-10-12T02:05:48.038Z</updated>
   <id>http://birdzhang.xyz/</id>
   
   <author>
@@ -14,6 +14,52 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Windows使用frp进行远程连接</title>
+    <link href="http://birdzhang.xyz/2019/10/12/Windows%E4%BD%BF%E7%94%A8frp%E8%BF%9B%E8%A1%8C%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5/"/>
+    <id>http://birdzhang.xyz/2019/10/12/Windows使用frp进行远程连接/</id>
+    <published>2019-10-12T01:58:53.000Z</published>
+    <updated>2019-10-12T02:05:48.038Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote>
+<p>frp 是一个可用于内网穿透的高性能的反向代理应用，支持 tcp, udp, http, https 协议。</p>
+</blockquote>
+<p>Github介绍： <a href="https://github.com/fatedier/frp/blob/master/README_zh.md" target="_blank" rel="noopener">https://github.com/fatedier/frp/blob/master/README_zh.md</a></p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>从这里<a href="https://github.com/fatedier/frp/releases" target="_blank" rel="noopener">https://github.com/fatedier/frp/releases</a> 下载最新的二进制安装包，服务端跟客户端都在一个压缩包里。</p>
+<h3 id="服务端"><a href="#服务端" class="headerlink" title="服务端"></a>服务端</h3><p>服务端跟客户端都需要一个配置文件，对于服务端配置文件如下</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">frps.ini (完整配置文件 https://github.com/fatedier/frp/blob/master/conf/frps_full.ini)</span><br><span class="line">[common]</span><br><span class="line">bind_port = 7000</span><br><span class="line">vhost_http_port = 8888</span><br><span class="line">token = your_token</span><br></pre></td></tr></table></figure>
+<p>然后启动只需要一条命令<br><code>/usr/bin/frps -c /etc/frps/frps.ini</code></p>
+<p>最好做一下守护，如使用systemd托管<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">$ cat /etc/systemd/system/frps.service</span><br><span class="line">[Unit]</span><br><span class="line">Description=frpc daemon</span><br><span class="line">After=syslog.target network.target</span><br><span class="line">Wants=network.target</span><br><span class="line">[Service]</span><br><span class="line">Type=simple</span><br><span class="line">ExecStart=/usr/bin/frps -c /etc/frps/frps.ini</span><br><span class="line">Restart=always</span><br><span class="line">RestartSec=1min</span><br><span class="line">ExecStop=/usr/bin/killall frps</span><br><span class="line">[Install]</span><br><span class="line">WantedBy=multi-user.target</span><br></pre></td></tr></table></figure></p>
+<h3 id="客户端"><a href="#客户端" class="headerlink" title="客户端"></a>客户端</h3><p>客户端同服务端也需要一份配置(frpc.ini)，如这里我们做windows的远程桌面映射<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">[common]</span><br><span class="line">server_addr = 47.98.28.15</span><br><span class="line">server_port = 7000</span><br><span class="line">token = your_token</span><br><span class="line">[rdp]</span><br><span class="line">type = tcp</span><br><span class="line">local_port = 3389</span><br><span class="line">remote_port = 3389</span><br></pre></td></tr></table></figure></p>
+<p>上面的server_addr填写服务端的ip，token同服务端的token。</p>
+<p>同样一条命令启动<br><code>./frpc.exe -c frpc.ini</code></p>
+<h4 id="做成自启动服务"><a href="#做成自启动服务" class="headerlink" title="做成自启动服务"></a>做成自启动服务</h4><p>下载一个<a href="https://nssm.cc" target="_blank" rel="noopener">nssm.exe</a>放到frp的目录下，然后执行下面的命令(注意下对32、64版本)<br><code>nssm.exe install frpc</code></p>
+<p>接下来会弹出一个框，在path处选择启动frpc的frpc.bat</p>
+<p>点击Install service即可</p>
+<p>启动 nssm.exe start frpc</p>
+<h2 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h2><p>首先确保你的windows可以被远程连接。</p>
+<p>在外网机器输入 47.98.28.15，然后输入你的用户名密码即可连接。</p>
+<p>注意开通服务器跟客户端的3389端口，以及服务端的7000，8888端口。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;frp 是一个可用于内网穿透的高性能的反向代理应用，支持 tcp, udp, http, https 协议。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Github介绍： &lt;a href=&quot;https://github.com/fatedier/f
+    
+    </summary>
+    
+    
+      <category term="windows" scheme="http://birdzhang.xyz/tags/windows/"/>
+    
+      <category term="frp" scheme="http://birdzhang.xyz/tags/frp/"/>
+    
+      <category term="rdp" scheme="http://birdzhang.xyz/tags/rdp/"/>
+    
+  </entry>
   
   <entry>
     <title>X-pack破解</title>
@@ -248,9 +294,9 @@ pipelines:
     </summary>
     
     
-      <category term="socks5" scheme="http://birdzhang.xyz/tags/socks5/"/>
-    
       <category term="frp" scheme="http://birdzhang.xyz/tags/frp/"/>
+    
+      <category term="socks5" scheme="http://birdzhang.xyz/tags/socks5/"/>
     
   </entry>
   
@@ -848,7 +894,7 @@ pipelines:
     <link href="http://birdzhang.xyz/2017/12/29/%E4%BD%BF%E7%94%A8%E6%B5%8F%E8%A7%88%E5%99%A8%E6%8C%96%E7%9F%BF/"/>
     <id>http://birdzhang.xyz/2017/12/29/使用浏览器挖矿/</id>
     <published>2017-12-29T06:32:00.000Z</published>
-    <updated>2019-07-30T07:27:36.813Z</updated>
+    <updated>2019-10-12T01:59:39.443Z</updated>
     
     <content type="html"><![CDATA[<iframe src="https://authedmine.com/media/miner.html?key=Tjj5gaLGfnQ2157RNOMjhdT1ck0mluS5" width="auto" height="280" frameborder="0"></iframe>
 
@@ -865,6 +911,8 @@ pipelines:
     
     
       <category term="js" scheme="http://birdzhang.xyz/tags/js/"/>
+    
+      <category term="coinhive" scheme="http://birdzhang.xyz/tags/coinhive/"/>
     
   </entry>
   
@@ -898,240 +946,6 @@ pipelines:
     
       &lt;blockquote&gt;
 &lt;p&gt;镜像源码 &lt;a href=&quot;https://github.com/meltwater/docker-cleanup&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://github.com/meltwater/docke
-    
-    </summary>
-    
-    
-      <category term="docker" scheme="http://birdzhang.xyz/tags/docker/"/>
-    
-      <category term="kubernetes" scheme="http://birdzhang.xyz/tags/kubernetes/"/>
-    
-      <category term="k8s" scheme="http://birdzhang.xyz/tags/k8s/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>使用DaemonSet+Taint/Tolerations+NodeSelector部署Nginx ingress controller</title>
-    <link href="http://birdzhang.xyz/2017/12/08/%E4%BD%BF%E7%94%A8DaemonSet-Taint-Tolerations-NodeSelector%E9%83%A8%E7%BD%B2Nginx-ingress-controller/"/>
-    <id>http://birdzhang.xyz/2017/12/08/使用DaemonSet-Taint-Tolerations-NodeSelector部署Nginx-ingress-controller/</id>
-    <published>2017-12-08T09:49:25.000Z</published>
-    <updated>2019-07-30T07:27:36.812Z</updated>
-    
-    <content type="html"><![CDATA[<blockquote>
-<p>使用DaemonSet+NodeSelector+Tolerations的方式定义Nginx Ingress Controller，给专门节点打上Label+Taint，使得这些专门节点只运行Nginx Ingress Controller，而不会调度和运行其他业务容器，只用来做代理节点。</p>
-</blockquote>
-<ul>
-<li><p>在Kuberntes Cluster中准备N个节点，我们称之为代理节点。在这N个节点上只部署Nginx Ingress Controller（简称NIC）实例，不会跑其他业务容器。</p>
-</li>
-<li><p>给代理节点打上NoExecute Taint，防止业务容器调度或运行在这些节点。</p>
-<p>  <code>kubectl taint nodes 10.8.8.234 LB=NIC:NoExecute</code></p>
-</li>
-<li><p>给代理节点打上Label，让NIC只部署在打了对应Lable的节点上。<br>  <code>kubectl label nodes 10.8.8.234 LB=NIC</code></p>
-</li>
-<li><p>修改calico-node配置，让calico可以在NoExecute节点上运行</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">    spec:</span><br><span class="line">    ...</span><br><span class="line">    spec:</span><br><span class="line">      tolerations:</span><br><span class="line">      - key: &quot;LB&quot;</span><br><span class="line">        operator: &quot;Exists&quot;</span><br><span class="line">        effect: &quot;NoExecute&quot;</span><br><span class="line">    ```    </span><br><span class="line"></span><br><span class="line">- 定义DaemonSet Yaml文件，注意加上Tolerations和Node Selector。(注意先创建serviceAccount、role等)</span><br></pre></td></tr></table></figure>
-<p>  apiVersion: extensions/v1beta1<br>  kind: DaemonSet<br>  metadata:<br>  annotations:</p>
-<pre><code>deployment.kubernetes.io/revision: &quot;4&quot;
-</code></pre><p>  labels:</p>
-<pre><code>k8s-app: nginx-ingress-controller
-</code></pre><p>  name: nginx-ingress-controller<br>  namespace: kube-system<br>  spec:<br>  selector:</p>
-<pre><code>matchLabels:
-k8s-app: nginx-ingress-controller
-</code></pre><p>  template:</p>
-<pre><code>metadata:
-annotations:
-    prometheus.io/port: &quot;10254&quot;
-    prometheus.io/scrape: &quot;true&quot;
-creationTimestamp: null
-labels:
-    k8s-app: nginx-ingress-controller
-spec:
-# 加上对应的Node Selector
-nodeSelector:
-    LB: NIC
-# 加上对应的Tolerations
-tolerations:
-- key: &quot;LB&quot;
-    operator: &quot;Equal&quot;
-    value: &quot;NIC&quot;
-    effect: &quot;NoExecute&quot;
-containers:
-- args:
-    - /nginx-ingress-controller
-    - --default-backend-service=$(POD_NAMESPACE)/default-http-backend
-    - --tcp-services-configmap=$(POD_NAMESPACE)/nginx-tcp-ingress-configmap
-    - --configmap=$(POD_NAMESPACE)/nginx-configuration
-    env:
-    - name: POD_NAME
-    valueFrom:
-        fieldRef:
-        apiVersion: v1
-        fieldPath: metadata.name
-    - name: POD_NAMESPACE
-    valueFrom:
-        fieldRef:
-        apiVersion: v1
-        fieldPath: metadata.namespace
-    image: dceph02.rmz.flamingo-inc.com:8888/mynginx/nginx-ingress-controller:0.9.0-beta.11
-    imagePullPolicy: IfNotPresent
-    livenessProbe:
-    failureThreshold: 3
-    httpGet:
-        path: /healthz
-        port: 10254
-        scheme: HTTP
-    initialDelaySeconds: 10
-    periodSeconds: 10
-    successThreshold: 1
-    timeoutSeconds: 1
-    name: nginx-ingress-controller
-    ports:
-    - containerPort: 80
-    hostPort: 80
-    protocol: TCP
-    - containerPort: 443
-    hostPort: 443
-    protocol: TCP
-    readinessProbe:
-    failureThreshold: 3
-    httpGet:
-        path: /healthz
-        port: 10254
-        scheme: HTTP
-    periodSeconds: 10
-    successThreshold: 1
-    timeoutSeconds: 1
-    resources: {}
-hostNetwork: true
-serviceAccount: ingress
-serviceAccountName: ingress
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">    </span><br><span class="line">- 创建default backend服务</span><br></pre></td></tr></table></figure>
-</code></pre><p>  apiVersion: extensions/v1beta1<br>  kind: Deployment<br>  metadata:<br>  name: default-http-backend<br>  labels:</p>
-<pre><code>k8s-app: default-http-backend
-</code></pre><p>  namespace: kube-system<br>  spec:<br>  replicas: 1<br>  template:</p>
-<pre><code>metadata:
-labels:
-    k8s-app: default-http-backend
-spec:
-terminationGracePeriodSeconds: 60
-containers:
-- name: default-http-backend
-    # Any image is permissable as long as:
-    # 1. It serves a 404 page at /
-    # 2. It serves 200 on a /healthz endpoint
-    image: gcr.io/google_containers/defaultbackend:1.0
-    livenessProbe:
-    httpGet:
-        path: /healthz
-        port: 8080
-        scheme: HTTP
-    initialDelaySeconds: 30
-    timeoutSeconds: 5
-    ports:
-    - containerPort: 8080
-    resources:
-    limits:
-        cpu: 10m
-        memory: 20Mi
-    requests:
-        cpu: 10m
-        memory: 20Mi
-</code></pre><hr>
-<p>  apiVersion: v1<br>  kind: Service<br>  metadata:<br>  name: default-http-backend<br>  namespace: kube-system<br>  labels:</p>
-<pre><code>k8s-app: default-http-backend
-</code></pre><p>  spec:<br>  ports:</p>
-<ul>
-<li><p>port: 80<br>  targetPort: 8080<br>selector:<br>  k8s-app: default-http-backend</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">根据default-backend.yaml创建对应的Deployment和Service。 `kubectl create -f default-backend.yaml`</span><br><span class="line"></span><br><span class="line">- 根据DaemonSet Yaml创建NIC DaemonSet，启动NIC。</span><br><span class="line"></span><br><span class="line">    `kubectl create -f nginx-ingress-daemonset.yaml`</span><br><span class="line"></span><br><span class="line">至此，NIC已经运行在代理节点上了，下面为测试内容。</span><br><span class="line"></span><br><span class="line">- (选择性)确认NIC启动成功后，创建测试用的服务。</span><br></pre></td></tr></table></figure>
-<p>kubectl run echoheaders –image=gcr.io/google_containers/echoserver:1.8 –replicas=1 –port=8080<br>kubectl expose deployment echoheaders –port=80 –target-port=8080 –name=echoheaders-x<br>kubectl expose deployment echoheaders –port=80 –target-port=8080 –name=echoheaders-y</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">创建测试用的Ingress Object</span><br></pre></td></tr></table></figure>
-<p>apiVersion: extensions/v1beta1<br>kind: Ingress<br>metadata:<br>name: echomap<br>namespace: default<br>spec:<br>rules:</p>
-</li>
-<li>host: foo.bar.com<br>  http:<br>  paths:<ul>
-<li>backend:<br>  serviceName: echoheaders-x<br>  servicePort: 80<br>  path: /foo</li>
-</ul>
-</li>
-<li><p>host: bar.baz.com<br>  http:<br>  paths:</p>
-<ul>
-<li>backend:<br>  serviceName: echoheaders-y<br>  servicePort: 80<br>  path: /bar</li>
-<li>backend:<br>  serviceName: echoheaders-x<br>  servicePort: 80<br>  path: /foo<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- (选择性)查看ingress的代理地址</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>[root@host ~]# kubectl describe ing echomap<br>Name:                   echomap<br>Namespace:              default<br>Address:                10.8.8.234<br>Default backend:        default-http-backend:80 (172.254.109.193:8080)<br>Rules:<br>Host          Path    Backends</p>
-</li>
-</ul>
-<hr>
-<p>  foo.bar.com</p>
-<pre><code>/foo    echoheaders-x:80 (&lt;none&gt;)
-</code></pre><p>  bar.baz.com</p>
-<pre><code>/bar    echoheaders-y:80 (&lt;none&gt;)
-/foo    echoheaders-x:80 (&lt;none&gt;)
-</code></pre><p>  Annotations:<br>  Events:<br>  FirstSeen     LastSeen        Count   From                    SubObjectPath   Type            Reason  Message</p>
-<hr>
-<p>  35m           35m             1       ingress-controller                      Normal          CREATE  Ingress default/echomap<br>  35m           35m             1       ingress-controller                      Normal          UPDATE  Ingress default/echomap</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- 测试</span><br></pre></td></tr></table></figure>
-<p>  [root@host ~]# curl 10.8.8.234/foo -H ‘Host: foo.bar.com’</p>
-<p>  Hostname: echoheaders-1076692255-p1ndv<br>  Pod Information:</p>
-<pre><code>-no pod information available-
-</code></pre><p>  Server values:</p>
-<pre><code>server_version=nginx: 1.13.3 - lua: 10008
-</code></pre><p>  Request Information:</p>
-<pre><code>client_address=172.254.246.192
-method=GET
-real path=/foo
-query=
-request_version=1.1
-request_uri=http://foo.bar.com:8080/foo
-</code></pre><p>  Request Headers:</p>
-<pre><code>accept=*/*
-connection=close
-host=foo.bar.com
-user-agent=curl/7.29.0
-x-forwarded-for=10.8.8.234
-x-forwarded-host=foo.bar.com
-x-forwarded-port=80
-x-forwarded-proto=http
-x-original-uri=/foo
-x-real-ip=10.8.8.234
-x-scheme=http
-</code></pre><p>  Request Body:</p>
-<pre><code>-no body in request-
-</code></pre><p>  [root@dceph04 ~]# curl 10.8.8.234/foo -H ‘Host: bar.baz.com’</p>
-<p>  Hostname: echoheaders-1076692255-p1ndv<br>  Pod Information:</p>
-<pre><code>-no pod information available-
-</code></pre><p>  Server values:</p>
-<pre><code>server_version=nginx: 1.13.3 - lua: 10008
-</code></pre><p>  Request Information:</p>
-<pre><code>client_address=172.254.246.192
-method=GET
-real path=/foo
-query=
-request_version=1.1
-request_uri=http://bar.baz.com:8080/foo
-</code></pre><p>  Request Headers:</p>
-<pre><code>accept=*/*
-connection=close
-host=bar.baz.com
-user-agent=curl/7.29.0
-x-forwarded-for=10.8.8.234
-x-forwarded-host=bar.baz.com
-x-forwarded-port=80
-x-forwarded-proto=http
-x-original-uri=/foo
-x-real-ip=10.8.8.234
-x-scheme=http
-</code></pre><p>  Request Body:</p>
-<pre><code>-no body in request-
-</code></pre><p>  <code>`</code></p>
-</li>
-</ul>
-<h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><pre><code>https://my.oschina.net/jxcdwangtao/blog/1523812                
-</code></pre>]]></content>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;使用DaemonSet+NodeSelector+Tolerations的方式定义Nginx Ingress Controller，给专门节点打上Label+Taint，使得这些专门节点只运行Nginx Ingress Controller，而不会
     
     </summary>
     
