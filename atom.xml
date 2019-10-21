@@ -101,7 +101,7 @@
     <link href="http://birdzhang.xyz/2019/06/13/SailfishOS%E7%A7%BB%E6%A4%8D%E5%88%B0Redmi-5-Plus%E7%9A%84%E4%B8%80%E4%BA%9B%E8%AE%B0%E5%BD%95-2/"/>
     <id>http://birdzhang.xyz/2019/06/13/SailfishOS移植到Redmi-5-Plus的一些记录-2/</id>
     <published>2019-06-13T02:06:52.000Z</published>
-    <updated>2019-10-09T03:04:00.244Z</updated>
+    <updated>2019-10-21T08:29:05.161Z</updated>
     
     <content type="html"><![CDATA[<p>接上 <a href="http://birdzhang.xyz/2018/03/30/SailfishOS%E7%A7%BB%E6%A4%8D%E5%88%B0Redmi-5-Plus%E7%9A%84%E4%B8%80%E4%BA%9B%E8%AE%B0%E5%BD%95/">http://birdzhang.xyz/2018/03/30/SailfishOS%E7%A7%BB%E6%A4%8D%E5%88%B0Redmi-5-Plus%E7%9A%84%E4%B8%80%E4%BA%9B%E8%AE%B0%E5%BD%95/</a></p>
 <p>本文章主要针对 hybris 15.1的移植</p>
@@ -119,7 +119,7 @@
 </li>
 </ol>
 <ol start="2">
-<li><p>注释掉启用full treble的部分</p>
+<li><p>device tree部分注释掉启用full treble的部分</p>
 <p> 如我的设备需要把下面这些注释掉，否则selinux的政策文件会安装到<code>/vendor</code>下面，不会在根目录下产生，sfos需要在根下面有。</p>
 <blockquote>
 <p>扩展阅读： <a href="https://source.android.com/security/selinux?hl=zh_cn" target="_blank" rel="noopener">https://source.android.com/security/selinux?hl=zh_cn</a></p>
@@ -127,7 +127,7 @@
  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># Treble</span><br><span class="line">#BOARD_PROPERTY_OVERRIDES_SPLIT_ENABLED := true</span><br><span class="line">#PRODUCT_FULL_TREBLE_OVERRIDE := true</span><br><span class="line">#PRODUCT_COMPATIBILITY_MATRIX_LEVEL_OVERRIDE := 27</span><br><span class="line">#BOARD_VNDK_VERSION := current</span><br><span class="line">#BOARD_VNDK_RUNTIME_DISABLE := true</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
-<h3 id="三、dhd，dhc部分"><a href="#三、dhd，dhc部分" class="headerlink" title="三、dhd，dhc部分"></a>三、dhd，dhc部分</h3><p><a href="https://public.etherpad-mozilla.org/p/faq-hadk" target="_blank" rel="noopener">https://public.etherpad-mozilla.org/p/faq-hadk</a> 搜索 <code>15.1</code>也会找到一些需要注意的地方</p>
+<h3 id="三、dhd，dhc部分"><a href="#三、dhd，dhc部分" class="headerlink" title="三、dhd，dhc部分"></a>三、dhd，dhc部分</h3><p><a href="https://wiki.merproject.org/wiki/Adaptations/faq-hadk" target="_blank" rel="noopener">https://wiki.merproject.org/wiki/Adaptations/faq-hadk</a> 搜索 <code>15.1</code>也会找到一些需要注意的地方</p>
 <p>修改dhd的spec文件，添加</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># On Android 8 the system partition is (intended to be) mounted on /.</span><br><span class="line">%define makefstab_skip_entries / /vendor /dev/stune /dev/cpuset /sys/fs/pstore /dev/cpuctl</span><br></pre></td></tr></table></figure>
 <p><em>也不一定全部要加上，我的设备/system，/vendor就不自动挂载，需要改成这样, 可以先不加然后telnet上去看看这里目录下有没有文件吧</em></p>
@@ -682,7 +682,7 @@ pipelines:
     <link href="http://birdzhang.xyz/2018/03/30/SailfishOS%E7%A7%BB%E6%A4%8D%E5%88%B0Redmi-5-Plus%E7%9A%84%E4%B8%80%E4%BA%9B%E8%AE%B0%E5%BD%95/"/>
     <id>http://birdzhang.xyz/2018/03/30/SailfishOS移植到Redmi-5-Plus的一些记录/</id>
     <published>2018-03-30T06:28:28.000Z</published>
-    <updated>2019-10-09T03:02:33.590Z</updated>
+    <updated>2019-10-21T08:29:26.900Z</updated>
     
     <content type="html"><![CDATA[<h1 id="移植旗鱼系统到红米5p的过程记录"><a href="#移植旗鱼系统到红米5p的过程记录" class="headerlink" title="移植旗鱼系统到红米5p的过程记录"></a>移植旗鱼系统到红米5p的过程记录</h1><h2 id="可以去ホロ-🐺的博客看看更详细的"><a href="#可以去ホロ-🐺的博客看看更详细的" class="headerlink" title="!!!可以去ホロ 🐺的博客看看更详细的!!!"></a>!!!可以去ホロ 🐺的博客看看更详细的!!!</h2><p>  <a href="https://blog.yoitsu.moe/category/sailfish.html" target="_blank" rel="noopener">https://blog.yoitsu.moe/category/sailfish.html</a></p>
 <h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><ul>
@@ -894,9 +894,9 @@ pipelines:
     <link href="http://birdzhang.xyz/2017/12/29/%E4%BD%BF%E7%94%A8%E6%B5%8F%E8%A7%88%E5%99%A8%E6%8C%96%E7%9F%BF/"/>
     <id>http://birdzhang.xyz/2017/12/29/使用浏览器挖矿/</id>
     <published>2017-12-29T06:32:00.000Z</published>
-    <updated>2019-10-12T01:59:39.443Z</updated>
+    <updated>2019-10-21T08:30:21.874Z</updated>
     
-    <content type="html"><![CDATA[<iframe src="https://authedmine.com/media/miner.html?key=Tjj5gaLGfnQ2157RNOMjhdT1ck0mluS5" width="auto" height="280" frameborder="0"></iframe>
+    <content type="html"><![CDATA[<h3 id="已GG"><a href="#已GG" class="headerlink" title="已GG"></a>已GG</h3><iframe src="https://authedmine.com/media/miner.html?key=Tjj5gaLGfnQ2157RNOMjhdT1ck0mluS5" width="auto" height="280" frameborder="0"></iframe>
 
 <p>如上所示，如果你浏览器的广告拦截插件正常的话。</p>
 <p>具体使用见：<a href="https://coinhive.com/documentation" target="_blank" rel="noopener">https://coinhive.com/documentation</a> ，有四种模式，静默加载的基本上被adblock掉了，建议用simple ui</p>
@@ -905,7 +905,7 @@ pipelines:
     
     <summary type="html">
     
-      &lt;iframe src=&quot;https://authedmine.com/media/miner.html?key=Tjj5gaLGfnQ2157RNOMjhdT1ck0mluS5&quot; width=&quot;auto&quot; height=&quot;280&quot; frameborder=&quot;0&quot;&gt;&lt;/ifram
+      &lt;h3 id=&quot;已GG&quot;&gt;&lt;a href=&quot;#已GG&quot; class=&quot;headerlink&quot; title=&quot;已GG&quot;&gt;&lt;/a&gt;已GG&lt;/h3&gt;&lt;iframe src=&quot;https://authedmine.com/media/miner.html?key=Tjj5gaLGfnQ2
     
     </summary>
     

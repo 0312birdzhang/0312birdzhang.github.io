@@ -406,7 +406,7 @@
 </li>
 </ol>
 <ol start="2">
-<li><p>注释掉启用full treble的部分</p>
+<li><p>device tree部分注释掉启用full treble的部分</p>
 <p> 如我的设备需要把下面这些注释掉，否则selinux的政策文件会安装到<code>/vendor</code>下面，不会在根目录下产生，sfos需要在根下面有。</p>
 <blockquote>
 <p>扩展阅读： <a href="https://source.android.com/security/selinux?hl=zh_cn" target="_blank" rel="noopener">https://source.android.com/security/selinux?hl=zh_cn</a></p>
@@ -414,7 +414,7 @@
  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># Treble</span><br><span class="line">#BOARD_PROPERTY_OVERRIDES_SPLIT_ENABLED := true</span><br><span class="line">#PRODUCT_FULL_TREBLE_OVERRIDE := true</span><br><span class="line">#PRODUCT_COMPATIBILITY_MATRIX_LEVEL_OVERRIDE := 27</span><br><span class="line">#BOARD_VNDK_VERSION := current</span><br><span class="line">#BOARD_VNDK_RUNTIME_DISABLE := true</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
-<h3 id="三、dhd，dhc部分"><a href="#三、dhd，dhc部分" class="headerlink" title="三、dhd，dhc部分"></a>三、dhd，dhc部分</h3><p><a href="https://public.etherpad-mozilla.org/p/faq-hadk" target="_blank" rel="noopener">https://public.etherpad-mozilla.org/p/faq-hadk</a> 搜索 <code>15.1</code>也会找到一些需要注意的地方</p>
+<h3 id="三、dhd，dhc部分"><a href="#三、dhd，dhc部分" class="headerlink" title="三、dhd，dhc部分"></a>三、dhd，dhc部分</h3><p><a href="https://wiki.merproject.org/wiki/Adaptations/faq-hadk" target="_blank" rel="noopener">https://wiki.merproject.org/wiki/Adaptations/faq-hadk</a> 搜索 <code>15.1</code>也会找到一些需要注意的地方</p>
 <p>修改dhd的spec文件，添加</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># On Android 8 the system partition is (intended to be) mounted on /.</span><br><span class="line">%define makefstab_skip_entries / /vendor /dev/stune /dev/cpuset /sys/fs/pstore /dev/cpuctl</span><br></pre></td></tr></table></figure>
 <p><em>也不一定全部要加上，我的设备/system，/vendor就不自动挂载，需要改成这样, 可以先不加然后telnet上去看看这里目录下有没有文件吧</em></p>
