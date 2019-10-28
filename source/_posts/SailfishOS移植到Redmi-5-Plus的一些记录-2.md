@@ -17,7 +17,7 @@ mer-hybris的android hybris-15.1是基于lineageos的，所以我们在没有官
 
 ### 一、Failed to initialize property area
 
-目前的解决方法是注释掉这个 
+目前的解决方法是注释掉这个, 还有可能是没有关闭selinux或者没有初始化sailfish所需要的android init rc文件有关
 
 `system/core/init/property_service.cpp`, 将72行的`exit(1);`注释掉
 
@@ -63,7 +63,7 @@ mer-hybris的android hybris-15.1是基于lineageos的，所以我们在没有官
     有的设备`/dev/block/bootdevice/by-name/system`挂载到`/`下面(对应下面的dhd部分的makefstab_skip_entries)，而我的设备`/vendor`是来自`/cust`（也是迷 @_@
 
 
-2. 注释掉启用full treble的部分
+2. device tree部分注释掉启用full treble的部分
 
     如我的设备需要把下面这些注释掉，否则selinux的政策文件会安装到`/vendor`下面，不会在根目录下产生，sfos需要在根下面有。
 
@@ -80,7 +80,7 @@ mer-hybris的android hybris-15.1是基于lineageos的，所以我们在没有官
 
 ### 三、dhd，dhc部分
 
-https://public.etherpad-mozilla.org/p/faq-hadk 搜索 `15.1`也会找到一些需要注意的地方
+https://wiki.merproject.org/wiki/Adaptations/faq-hadk 搜索 `15.1`也会找到一些需要注意的地方
 
 修改dhd的spec文件，添加
 
@@ -105,4 +105,12 @@ https://github.com/mer-hybris/droid-config-sony-nile/blob/91c15efb576c29a9d41cc4
 
 ## 调试
 
-暂无很详细的，主要是看dmesg，journalctl等看看把出错的都修了。
+~~暂无很详细的，主要是看dmesg，journalctl等看看把出错的都修了。~~
+
+### 通话声音
+
+如果可以打通电话但是没有声音，则需要 `pulseaudio-modules-droid-hidl` 1.0版本（截止2019-09-24），然后配合新的ril配置文件 https://github.com/mer-hybris/droid-config-sony-nile/tree/master/sparse/etc/ofono
+
+### 界面crash
+
+看dmesg/logcat/journactl里面是不是有binder的信息，打补丁吧，至于打哪些只能靠猜（大雾

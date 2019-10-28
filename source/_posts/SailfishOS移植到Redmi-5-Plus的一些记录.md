@@ -16,7 +16,7 @@ tags: [sailfish,redmi,vince,hadk,redmi5plus]
 * 有梯子
 * 一台内存起码8G的电脑(4G也可以)，Ubuntu 系统，硬盘起码40GB大小，或者更高。
 * [SailfishOS-HardwareAdaptationDevelopmentKit](https://sailfishos.org/develop/hadk/) 1 READ部分pdf文档
-* https://wiki.merproject.org/wiki/Adaptations/faq-hadk
+* ~~https://wiki.merproject.org/wiki/Adaptations/faq-hadk~~ https://github.com/mer-hybris/hadk-faq （2019-10-28更新）
 * 最关键的，一颗善于折腾的心和善于搜索的你
 
 
@@ -172,8 +172,7 @@ rpm/dhd/helpers/build_packages.sh -d
 
 在终端1中
 ```
-make -j4 libcameraservice_32
-make -j4 libdroidmedia_32 minimediaservice minisfservice libminisf_32
+make -j$(nproc --all) $(external/droidmedia/detect_build_targets.sh $PORT_ARCH $(gettargetarch))
 ```
 在终端2中
 
@@ -194,7 +193,7 @@ rpm/dhd/helpers/build_packages.sh --build=hybris/mw/droidmedia-localbuild
 在终端1中
 
 ```
-make -j4  libaudioflingerglue_32 miniafservice 
+make -j$(nproc --all) $(external/audioflingerglue/detect_build_targets.sh $PORT_ARCH $(gettargetarch))
 ```
 
 在终端2中
@@ -219,7 +218,7 @@ rpm/dhd/helpers/build_packages.sh --droid-hal
 
 ## 打包其他中间件包(mw)
 
-注意到 https://public.etherpad-mozilla.org/p/faq-hadk 搜索当前版本需要对应的mw版本号，不一定用最新的
+注意到 https://wiki.merproject.org/wiki/Adaptations/faq-hadk 搜索当前版本需要对应的mw版本号，不一定用最新的
 
 执行 `rpm/dhd/helpers/build_packages.sh --mw` ,然后选择 `all` 即可
 
