@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://birdzhang.xyz/"/>
-  <updated>2019-10-12T02:05:48.038Z</updated>
+  <updated>2020-01-15T02:40:37.917Z</updated>
   <id>http://birdzhang.xyz/</id>
   
   <author>
@@ -14,6 +14,46 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>SailfishOS移植到Redmi_K20的一些记录</title>
+    <link href="http://birdzhang.xyz/2019/12/30/SailfishOS%E7%A7%BB%E6%A4%8D%E5%88%B0Redmi-K20%E7%9A%84%E4%B8%80%E4%BA%9B%E8%AE%B0%E5%BD%95/"/>
+    <id>http://birdzhang.xyz/2019/12/30/SailfishOS移植到Redmi-K20的一些记录/</id>
+    <published>2019-12-30T03:33:17.000Z</published>
+    <updated>2020-01-15T02:40:37.917Z</updated>
+    
+    <content type="html"><![CDATA[<p>K20出厂即是Android Pie系统，与其他升级上去的不一样，需要做一些处理</p>
+<p>禁用boot校验 avb，然后才可以刷<br><code>fastboot --disable-verity --disable-verification flash vbmeta vbmeta.img</code></p>
+<p>注释掉<code>skip_initramfs</code></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;K20出厂即是Android Pie系统，与其他升级上去的不一样，需要做一些处理&lt;/p&gt;
+&lt;p&gt;禁用boot校验 avb，然后才可以刷&lt;br&gt;&lt;code&gt;fastboot --disable-verity --disable-verification flash vbmet
+    
+    </summary>
+    
+    
+      <category term="sailfish" scheme="http://birdzhang.xyz/tags/sailfish/"/>
+    
+      <category term="redmi" scheme="http://birdzhang.xyz/tags/redmi/"/>
+    
+      <category term="hadk" scheme="http://birdzhang.xyz/tags/hadk/"/>
+    
+      <category term="davinci" scheme="http://birdzhang.xyz/tags/davinci/"/>
+    
+      <category term="k20" scheme="http://birdzhang.xyz/tags/k20/"/>
+    
+      <category term="lineage-16.0" scheme="http://birdzhang.xyz/tags/lineage-16-0/"/>
+    
+      <category term="hybris-16.0" scheme="http://birdzhang.xyz/tags/hybris-16-0/"/>
+    
+      <category term="xiaomi" scheme="http://birdzhang.xyz/tags/xiaomi/"/>
+    
+      <category term="9t" scheme="http://birdzhang.xyz/tags/9t/"/>
+    
+  </entry>
   
   <entry>
     <title>Windows使用frp进行远程连接</title>
@@ -913,48 +953,6 @@ pipelines:
       <category term="js" scheme="http://birdzhang.xyz/tags/js/"/>
     
       <category term="coinhive" scheme="http://birdzhang.xyz/tags/coinhive/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>自动清理k8s中的容器、卷、镜像</title>
-    <link href="http://birdzhang.xyz/2017/12/08/%E8%87%AA%E5%8A%A8%E6%B8%85%E7%90%86k8s%E4%B8%AD%E7%9A%84%E5%AE%B9%E5%99%A8_%E5%8D%B7_%E9%95%9C%E5%83%8F/"/>
-    <id>http://birdzhang.xyz/2017/12/08/自动清理k8s中的容器_卷_镜像/</id>
-    <published>2017-12-08T09:57:35.000Z</published>
-    <updated>2019-07-30T08:05:54.302Z</updated>
-    
-    <content type="html"><![CDATA[<blockquote>
-<p>镜像源码 <a href="https://github.com/meltwater/docker-cleanup" target="_blank" rel="noopener">https://github.com/meltwater/docker-cleanup</a></p>
-</blockquote>
-<h4 id="注意：这个镜像会将所有已经退出的容器、未使用的镜像和data-only的容器，除非你将他们加到保存的变量中。注意正确配置docker-api的版本，以免删除所有的镜像。小心挂载-var-lib-docker，因为如果挂载后没有使用的话，也会被当作未使用的卷删掉。"><a href="#注意：这个镜像会将所有已经退出的容器、未使用的镜像和data-only的容器，除非你将他们加到保存的变量中。注意正确配置docker-api的版本，以免删除所有的镜像。小心挂载-var-lib-docker，因为如果挂载后没有使用的话，也会被当作未使用的卷删掉。" class="headerlink" title="注意：这个镜像会将所有已经退出的容器、未使用的镜像和data-only的容器，除非你将他们加到保存的变量中。注意正确配置docker api的版本，以免删除所有的镜像。小心挂载 /var/lib/docker，因为如果挂载后没有使用的话，也会被当作未使用的卷删掉。"></a>注意：这个镜像会将所有已经退出的容器、未使用的镜像和data-only的容器，除非你将他们加到保存的变量中。注意正确配置docker api的版本，以免删除所有的镜像。小心挂载 /var/lib/docker，因为如果挂载后没有使用的话，也会被当作未使用的卷删掉。</h4><p>支持的变量</p>
-<ul>
-<li><strong>CLEAN_PERIOD=1800</strong> - Interval in seconds to sleep after completing a cleaning run. Defaults to 1800 seconds = 30 minutes.</li>
-<li><strong>DELAY_TIME=1800</strong> - Seconds to wait before removing exited containers and unused images. Defaults to 1800 seconds = 30 minutes.</li>
-<li><strong>KEEP_IMAGES</strong> - List of images to avoid cleaning, e.g. “ubuntu:trusty, ubuntu:latest”. Defaults to clean all unused images.</li>
-<li><strong>KEEP_CONTAINERS</strong> - List of images for exited or dead containers to avoid cleaning, e.g. “ubuntu:trusty, ubuntu:latest”.</li>
-<li><strong>KEEP_CONTAINERS_NAMED</strong> - List of names for exited or dead containers to avoid cleaning, e.g. “my-container1, persistent-data”.</li>
-<li><strong>LOOP</strong> - Add the ability to do non-looped cleanups, run it once and exit. Options are true, false. Defaults to true to run it forever in loops.</li>
-<li><strong>DEBUG</strong> - Set to 1 to enable more debugging output on pattern matches</li>
-<li><strong>DOCKER_API_VERSION</strong> - The docker API version to use. This defaults to 1.20, but you can override it here in case the docker version on your host differs from the one that is installed in this container. You can find  - this on your host system by running <code>docker version --format '{{.Client.APIVersion}}'</code>.</li>
-</ul>
-<p>对于即使已经不运行了也不想清理的镜像，使用KEEP_IMAGES变量处理，此处我们添写： </p>
-<p><code>vmware/harbor-*:*,*calico:*,*registry:*,*kubernetes-dashboard-amd64:*,*nginx-ingress-controller:*,*cvallance/mongo-k8s-sidecar:*</code></p>
-<p>docker-cleanup-daemonset.yaml 配置如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line">apiVersion: extensions/v1beta1</span><br><span class="line">kind: DaemonSet</span><br><span class="line">metadata:</span><br><span class="line">  labels:</span><br><span class="line">    name: clean-up</span><br><span class="line">  name: clean-up</span><br><span class="line">  namespace: kube-system</span><br><span class="line">spec:</span><br><span class="line">  updateStrategy:</span><br><span class="line">    type: &quot;RollingUpdate&quot;</span><br><span class="line">    rollingUpdate:</span><br><span class="line">      maxUnavailable: 1</span><br><span class="line">  template:</span><br><span class="line">    metadata:</span><br><span class="line">      labels:</span><br><span class="line">        app: clean-up</span><br><span class="line">    spec:</span><br><span class="line">      tolerations:</span><br><span class="line">        - key: &quot;LB&quot;</span><br><span class="line">          operator: &quot;Exists&quot;</span><br><span class="line">          effect: &quot;NoExecute&quot;</span><br><span class="line">      volumes:</span><br><span class="line">        - name: docker-sock</span><br><span class="line">          hostPath:</span><br><span class="line">            path: /var/run/docker.sock</span><br><span class="line">        - name: docker-directory</span><br><span class="line">          hostPath:</span><br><span class="line">            path: /data/kubernetes/docker</span><br><span class="line">      containers:</span><br><span class="line">        - image: meltwater/docker-cleanup:latest</span><br><span class="line">          name: clean-up</span><br><span class="line">          env:</span><br><span class="line">            - name: CLEAN_PERIOD</span><br><span class="line">              value: &quot;1800&quot;</span><br><span class="line">            - name: DELAY_TIME</span><br><span class="line">              value: &quot;60&quot;</span><br><span class="line">            - name: DOCKER_API_VERSION</span><br><span class="line">              value: &quot;1.29&quot;</span><br><span class="line">            - name: KEEP_IMAGES</span><br><span class="line">              value: &quot;vmware/harbor-*:*,*calico:*,*registry:*,*kubernetes-dashboard-amd64:*,*nginx-ingress-controller:*,*cvallance/mongo-k8s-sidecar:*&quot;</span><br><span class="line">          volumeMounts:</span><br><span class="line">            - mountPath: /var/run/docker.sock</span><br><span class="line">              name: docker-sock</span><br><span class="line">              readOnly: false</span><br><span class="line">            - mountPath: /var/lib/docker</span><br><span class="line">              name: docker-directory</span><br><span class="line">              readOnly: false</span><br></pre></td></tr></table></figure></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;镜像源码 &lt;a href=&quot;https://github.com/meltwater/docker-cleanup&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://github.com/meltwater/docke
-    
-    </summary>
-    
-    
-      <category term="docker" scheme="http://birdzhang.xyz/tags/docker/"/>
-    
-      <category term="kubernetes" scheme="http://birdzhang.xyz/tags/kubernetes/"/>
-    
-      <category term="k8s" scheme="http://birdzhang.xyz/tags/k8s/"/>
     
   </entry>
   
