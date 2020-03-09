@@ -44,14 +44,14 @@
   </url>
   
   <url>
-    <loc>http://birdzhang.xyz/links/index.html</loc>
+    <loc>http://birdzhang.xyz/tags/index.html</loc>
     
     <lastmod>2019-07-30T07:27:36.827Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://birdzhang.xyz/tags/index.html</loc>
+    <loc>http://birdzhang.xyz/links/index.html</loc>
     
     <lastmod>2019-07-30T07:27:36.827Z</lastmod>
     
@@ -61,20 +61,6 @@
     <loc>http://birdzhang.xyz/google680ee4af6a857859.html</loc>
     
     <lastmod>2019-07-30T07:27:36.824Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://birdzhang.xyz/about/index.html</loc>
-    
-    <lastmod>2019-07-30T07:27:36.814Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://birdzhang.xyz/2017/05/24/%E7%94%A8Python%E6%8A%93%E5%8F%96%E7%8E%8B%E5%9E%A0%E7%9A%84%E5%8D%9A%E5%AE%A2/</loc>
-    
-    <lastmod>2019-07-30T07:27:36.814Z</lastmod>
     
   </url>
   
@@ -93,16 +79,16 @@
   </url>
   
   <url>
-    <loc>http://birdzhang.xyz/2017/05/22/%E6%9C%80%E9%9D%A0%E8%B0%B1%E7%9A%84Tomcat%E6%97%A5%E5%BF%97%E5%88%87%E5%89%B2%E6%95%99%E7%A8%8B/</loc>
+    <loc>http://birdzhang.xyz/2017/05/24/%E7%94%A8Python%E6%8A%93%E5%8F%96%E7%8E%8B%E5%9E%A0%E7%9A%84%E5%8D%9A%E5%AE%A2/</loc>
     
-    <lastmod>2019-07-30T07:27:36.813Z</lastmod>
+    <lastmod>2019-07-30T07:27:36.814Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://birdzhang.xyz/2018/06/05/%E4%BD%BF%E7%94%A8openresty%E6%90%AD%E4%B8%80%E4%B8%AA%E7%B1%BB%E4%BC%BCip-cn%E7%9A%84%E6%8E%A5%E5%8F%A3/</loc>
+    <loc>http://birdzhang.xyz/about/index.html</loc>
     
-    <lastmod>2019-07-30T07:27:36.813Z</lastmod>
+    <lastmod>2019-07-30T07:27:36.814Z</lastmod>
     
   </url>
   
@@ -121,9 +107,16 @@
   </url>
   
   <url>
-    <loc>http://birdzhang.xyz/2018/12/06/%E4%BD%BF%E7%94%A8Gitlab-Bitbucket%E7%AD%89CI%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%B4%E6%97%B6%E4%BB%A3%E7%90%86/</loc>
+    <loc>http://birdzhang.xyz/2017/05/22/%E6%9C%80%E9%9D%A0%E8%B0%B1%E7%9A%84Tomcat%E6%97%A5%E5%BF%97%E5%88%87%E5%89%B2%E6%95%99%E7%A8%8B/</loc>
     
-    <lastmod>2019-07-30T07:27:36.812Z</lastmod>
+    <lastmod>2019-07-30T07:27:36.813Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://birdzhang.xyz/2018/06/05/%E4%BD%BF%E7%94%A8openresty%E6%90%AD%E4%B8%80%E4%B8%AA%E7%B1%BB%E4%BC%BCip-cn%E7%9A%84%E6%8E%A5%E5%8F%A3/</loc>
+    
+    <lastmod>2019-07-30T07:27:36.813Z</lastmod>
     
   </url>
   
@@ -142,14 +135,14 @@
   </url>
   
   <url>
-    <loc>http://birdzhang.xyz/2017/05/19/irc-%E5%8A%A0%E5%9B%9E%E9%A2%91%E9%81%93op/</loc>
+    <loc>http://birdzhang.xyz/2018/12/06/%E4%BD%BF%E7%94%A8Gitlab-Bitbucket%E7%AD%89CI%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%B4%E6%97%B6%E4%BB%A3%E7%90%86/</loc>
     
-    <lastmod>2019-07-30T07:27:36.811Z</lastmod>
+    <lastmod>2019-07-30T07:27:36.812Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://birdzhang.xyz/2017/05/19/python%E5%A4%87%E4%BB%BD%E6%96%87%E4%BB%B6%E5%88%B0%E8%B0%B7%E6%AD%8CDrive/</loc>
+    <loc>http://birdzhang.xyz/2017/05/19/irc-%E5%8A%A0%E5%9B%9E%E9%A2%91%E9%81%93op/</loc>
     
     <lastmod>2019-07-30T07:27:36.811Z</lastmod>
     
@@ -170,7 +163,14 @@
   </url>
   
   <url>
-    <loc>http://birdzhang.xyz/2018/05/15/cas%E6%A0%B9%E6%8D%AE%E8%AF%B7%E6%B1%82%E5%8F%82%E6%95%B0%E8%B7%B3%E8%BF%87%E9%AA%8C%E8%AF%81/</loc>
+    <loc>http://birdzhang.xyz/2017/05/19/python%E5%A4%87%E4%BB%BD%E6%96%87%E4%BB%B6%E5%88%B0%E8%B0%B7%E6%AD%8CDrive/</loc>
+    
+    <lastmod>2019-07-30T07:27:36.811Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://birdzhang.xyz/2017/05/31/awk-%E8%AE%A1%E7%AE%97%E4%B8%80%E5%88%97%E7%9A%84%E5%92%8C/</loc>
     
     <lastmod>2019-07-30T07:27:36.810Z</lastmod>
     
@@ -184,16 +184,9 @@
   </url>
   
   <url>
-    <loc>http://birdzhang.xyz/2017/05/31/awk-%E8%AE%A1%E7%AE%97%E4%B8%80%E5%88%97%E7%9A%84%E5%92%8C/</loc>
+    <loc>http://birdzhang.xyz/2018/05/15/cas%E6%A0%B9%E6%8D%AE%E8%AF%B7%E6%B1%82%E5%8F%82%E6%95%B0%E8%B7%B3%E8%BF%87%E9%AA%8C%E8%AF%81/</loc>
     
     <lastmod>2019-07-30T07:27:36.810Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://birdzhang.xyz/2018/01/30/Tomcat%E4%BF%A1%E4%BB%BBhttps%E7%BD%91%E7%AB%99/</loc>
-    
-    <lastmod>2019-07-30T07:27:36.809Z</lastmod>
     
   </url>
   
@@ -205,9 +198,9 @@
   </url>
   
   <url>
-    <loc>http://birdzhang.xyz/2017/05/27/Python%E4%B8%80%E4%BA%9B%E6%A8%A1%E5%9D%97%E5%AE%89%E8%A3%85%E6%96%B9%E6%B3%95%E8%AE%B0%E5%BD%95/</loc>
+    <loc>http://birdzhang.xyz/2018/01/30/Tomcat%E4%BF%A1%E4%BB%BBhttps%E7%BD%91%E7%AB%99/</loc>
     
-    <lastmod>2019-07-30T07:27:36.808Z</lastmod>
+    <lastmod>2019-07-30T07:27:36.809Z</lastmod>
     
   </url>
   
@@ -219,7 +212,14 @@
   </url>
   
   <url>
-    <loc>http://birdzhang.xyz/2017/08/21/Java%E4%B8%8EPython%E5%AE%89%E5%85%A8%E8%BD%AC%E7%A0%81%E9%93%BE%E6%8E%A5/</loc>
+    <loc>http://birdzhang.xyz/2017/05/27/Python%E4%B8%80%E4%BA%9B%E6%A8%A1%E5%9D%97%E5%AE%89%E8%A3%85%E6%96%B9%E6%B3%95%E8%AE%B0%E5%BD%95/</loc>
+    
+    <lastmod>2019-07-30T07:27:36.808Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://birdzhang.xyz/2018/05/15/Java%E6%94%B9%E5%86%99HttpServletRequest%E8%AF%B7%E6%B1%82%E5%8F%82%E6%95%B0/</loc>
     
     <lastmod>2019-07-30T07:27:36.807Z</lastmod>
     
@@ -233,7 +233,7 @@
   </url>
   
   <url>
-    <loc>http://birdzhang.xyz/2018/05/15/Java%E6%94%B9%E5%86%99HttpServletRequest%E8%AF%B7%E6%B1%82%E5%8F%82%E6%95%B0/</loc>
+    <loc>http://birdzhang.xyz/2017/08/21/Java%E4%B8%8EPython%E5%AE%89%E5%85%A8%E8%BD%AC%E7%A0%81%E9%93%BE%E6%8E%A5/</loc>
     
     <lastmod>2019-07-30T07:27:36.807Z</lastmod>
     

@@ -42,9 +42,9 @@
     
       <category term="redmi" scheme="http://birdzhang.xyz/tags/redmi/"/>
     
-      <category term="davinci" scheme="http://birdzhang.xyz/tags/davinci/"/>
-    
       <category term="hadk" scheme="http://birdzhang.xyz/tags/hadk/"/>
+    
+      <category term="davinci" scheme="http://birdzhang.xyz/tags/davinci/"/>
     
       <category term="k20" scheme="http://birdzhang.xyz/tags/k20/"/>
     
@@ -194,9 +194,9 @@
     
       <category term="redmi" scheme="http://birdzhang.xyz/tags/redmi/"/>
     
-      <category term="hadk" scheme="http://birdzhang.xyz/tags/hadk/"/>
-    
       <category term="vince" scheme="http://birdzhang.xyz/tags/vince/"/>
+    
+      <category term="hadk" scheme="http://birdzhang.xyz/tags/hadk/"/>
     
       <category term="redmi5plus" scheme="http://birdzhang.xyz/tags/redmi5plus/"/>
     
@@ -816,9 +816,9 @@ pipelines:
     
       <category term="redmi" scheme="http://birdzhang.xyz/tags/redmi/"/>
     
-      <category term="hadk" scheme="http://birdzhang.xyz/tags/hadk/"/>
-    
       <category term="vince" scheme="http://birdzhang.xyz/tags/vince/"/>
+    
+      <category term="hadk" scheme="http://birdzhang.xyz/tags/hadk/"/>
     
       <category term="redmi5plus" scheme="http://birdzhang.xyz/tags/redmi5plus/"/>
     
