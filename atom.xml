@@ -211,14 +211,17 @@
     <link href="http://birdzhang.xyz/2019/05/27/%E4%BD%BF%E7%94%A8docker%E7%BC%96%E8%AF%91%E6%89%93%E5%8C%85sailfishos/"/>
     <id>http://birdzhang.xyz/2019/05/27/使用docker编译打包sailfishos/</id>
     <published>2019-05-27T06:18:52.000Z</published>
-    <updated>2019-07-30T07:27:36.813Z</updated>
+    <updated>2020-04-02T02:07:55.056Z</updated>
     
     <content type="html"><![CDATA[<blockquote>
 <p>开坑</p>
 </blockquote>
 <ol>
-<li><p>ubuntu HA_BUILD</p>
-</li>
+<li>ubuntu HA_BUILD</li>
+</ol>
+<p>用官方的ubuntu镜像即可，16.04或18.04都可以，不要用最新的20.04。一般来说启动之后的镜像除了手动指定的目录是持久化的，其他的会重启后失效，所以最好自己做一个镜像，把安卓编译环境安装上。</p>
+<p>启动时映射本地目录，当作ANDROID_ROOT目录。</p>
+<ol start="2">
 <li><p>mer MER_BUILD</p>
 </li>
 <li><p>OBS</p>
@@ -234,13 +237,9 @@
 &lt;p&gt;开坑&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;ol&gt;
-&lt;li&gt;&lt;p&gt;ubuntu HA_BUILD&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;mer MER_BUILD&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;OBS&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;gitlab
+&lt;li&gt;ubuntu HA_BUILD&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;用官方的ubuntu镜像即可，16.04或18.04都可以，不要用最新的20.04。一般来说启动之后的镜像除了手动指定的目录是持
     
     </summary>
     
