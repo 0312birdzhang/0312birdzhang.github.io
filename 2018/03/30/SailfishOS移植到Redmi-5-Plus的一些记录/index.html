@@ -1,975 +1,109 @@
-<!DOCTYPE html>
-<html lang="zh">
-    <head><meta name="generator" content="Hexo 3.9.0">
-    <!-- 
-        © Material Theme
-        https://github.com/viosey/hexo-theme-material
-        Version: 1.3.0 -->
-
-    <!-- Title -->
-    
-    <title>
-        
-            SailfishOS移植到Redmi 5 Plus的一些记录 | 
-        
-        BirdZhang&#39;s Blog
-    </title>
-
-    <!-- Favicons -->
-    <link rel="icon shortcut" type="image/ico" href="/img/favicon.png">
-    <link rel="icon" sizes="192x192" href="/img/favicon.png">
-    <link rel="apple-touch-icon" href="/img/favicon.png">
-
-    <!-- Meta & Info -->
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#0097A7">
-    <meta name="author" content="BirdZhang">
-    <meta name="description" content="BirdZhang&#39;s GitHub pages powered by Hexo.io and hexo-theme-material.">
-    <meta name="keywords" content="null,sailfish,redmi,vince,hadk,redmi5plus">
-
-    <!--iOS -->
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <meta name="apple-mobile-web-app-title" content="Title">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="HandheldFriendly" content="True">
-    <meta name="MobileOptimized" content="480">
-
-    <!-- Add to homescreen for Chrome on Android -->
-    <meta name="mobile-web-app-capable" content="yes">
-
-    <!-- Add to homescreen for Safari on iOS -->
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="apple-mobile-web-app-title" content="BirdZhang&#39;s Blog">
-
-    <!-- The Open Graph protocol -->
-    <meta property="og:url" content="http://birdzhang.xyz">
-    <meta property="og:type" content="blog">
-    <meta property="og:title" content="SailfishOS移植到Redmi 5 Plus的一些记录 | BirdZhang&#39;s Blog">
-    <meta property="og:description" content="BirdZhang&#39;s GitHub pages powered by Hexo.io and hexo-theme-material.">
-    <meta property="og:article:tag" content="sailfish"> <meta property="og:article:tag" content="redmi"> <meta property="og:article:tag" content="vince"> <meta property="og:article:tag" content="hadk"> <meta property="og:article:tag" content="redmi5plus"> 
-
-    <!--[if lte IE 9]>
-        <link rel="stylesheet" href="/css/ie-blocker.css">
-
-        
-            <script src="/js/ie-blocker.zhCN.js"></script>
-        
-    <![endif]-->
-
-    <!-- Import CSS -->
-    <link rel="stylesheet" href="/css/material.min.css">
-    <link rel="stylesheet" href="/css/style.min.css">
-    <!-- Config CSS -->
-
-
-<!-- Other Styles -->
-<style>
-  body, html {
-    font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
-  }
-
-  a {
-    color: #00838F;
-  }
-
-  .mdl-card__media,
-  #search-label,
-  #search-form-label:after,
-  #scheme-Paradox .hot_tags-count,
-  #scheme-Paradox .sidebar_archives-count,
-  #scheme-Paradox .sidebar-colored .sidebar-header,
-  #scheme-Paradox .sidebar-colored .sidebar-badge{
-    background-color: #0097A7 !important;
-  }
-
-  /* Sidebar User Drop Down Menu Text Color */
-  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
-  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
-    color: #0097A7 !important;
-  }
-
-  #post_entry-right-info,
-  .sidebar-colored .sidebar-nav li:hover > a,
-  .sidebar-colored .sidebar-nav li:hover > a i,
-  .sidebar-colored .sidebar-nav li > a:hover,
-  .sidebar-colored .sidebar-nav li > a:hover i,
-  .sidebar-colored .sidebar-nav li > a:focus i,
-  .sidebar-colored .sidebar-nav > .open > a,
-  .sidebar-colored .sidebar-nav > .open > a:hover,
-  .sidebar-colored .sidebar-nav > .open > a:focus,
-  #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
-    color: #0097A7 !important;
-  }
-
-  .toTop {
-    background: #757575 !important;
-  }
-
-  .material-layout .material-post>.material-nav,
-  .material-layout .material-index>.material-nav,
-  .material-nav a {
-    color: #757575;
-  }
-
-  #scheme-Paradox .MD-burger-layer {
-    background-color: #757575;
-  }
-
-  #scheme-Paradox #post-toc-trigger-btn {
-    color: #757575;
-  }
-
-  .post-toc a:hover {
-    color: #00838F;
-    text-decoration: underline;
-  }
-</style>
-
-
-<!-- Theme Background Related-->
-
-    <style>
-      body{
-        background-color: #F5F5F5;
-      }
-
-      /* blog_info bottom background */
-      #scheme-Paradox .material-layout .something-else .mdl-card__supporting-text{
-        background-color: #fff;
-      }
-    </style>
-
-
-
-
-<!-- Fade Effect -->
-
-    <style>
-      .fade {
-        transition: all 800ms linear;
-        -webkit-transform: translate3d(0,0,0);
-        -moz-transform: translate3d(0,0,0);
-        -ms-transform: translate3d(0,0,0);
-        -o-transform: translate3d(0,0,0);
-        transform: translate3d(0,0,0);
-        opacity: 1;
-      }
-
-      .fade.out{
-        opacity: 0;
-      }
-    </style>
-
-
-
-    <script src="/js/jquery.min.js"></script>
-    <script src="/js/queue.js"></script>
-
-    <!-- UC Browser Compatible -->
-    <script>
-        var agent = navigator.userAgent.toLowerCase();
-        if(agent.indexOf('ucbrowser')>0) {
-            document.write("<link rel=\"stylesheet\" href=\"/css/uc.css\">");
-            alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
-        }
-    </script>
-
-    <script data-ad-client="ca-pub-8361678566464255" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-    
-
-    
-
-    <!-- Bing Background -->
-    
-
-    <!-- Custom Head -->
-    
-</head>
-
-
-    
-        <body id="scheme-Paradox" class="lazy">
-            <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
-                
-
-                <!-- Main Container -->
-                <main class="material-layout__content" id="main">
-
-                    <!-- Top Anchor -->
-                    <div id="top"></div>
-
-                    
-                        <!-- Hamburger Button -->
-                        <button class="MD-burger-icon sidebar-toggle">
-                            <span class="MD-burger-layer"></span>
-                        </button>
-                    
-
-                    <!-- Post TOC -->
-
-    
-    <!-- Back Button -->
-    <!--
-    <div class="material-back" id="backhome-div" tabindex="0">
-        <a class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"
-           href="#" onclick="window.history.back();return false;"
-           target="_self"
-           role="button"
-           data-upgraded=",MaterialButton,MaterialRipple">
-            <i class="material-icons" role="presentation">arrow_back</i>
-            <span class="mdl-button__ripple-container">
-                <span class="mdl-ripple"></span>
-            </span>
-        </a>
-    </div>
-    -->
-
-    <!-- Left aligned menu below button -->
-    <button id="post-toc-trigger-btn"
-        class="mdl-button mdl-js-button mdl-button--icon">
-        <i class="material-icons">format_list_numbered</i>
-    </button>
-
-    <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#移植旗鱼系统到红米5p的过程记录"><span class="post-toc-number">1.</span> <span class="post-toc-text">移植旗鱼系统到红米5p的过程记录</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#可以去ホロ-🐺的博客看看更详细的"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">!!!可以去ホロ 🐺的博客看看更详细的!!!</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#准备工作"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">准备工作</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#搭建环境"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">搭建环境</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Android编译环境-HADK-第4章"><span class="post-toc-number">1.3.1.</span> <span class="post-toc-text">Android编译环境(HADK 第4章)</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#1-安装git等"><span class="post-toc-number">1.3.1.1.</span> <span class="post-toc-text">1. 安装git等</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-同步CM的代码"><span class="post-toc-number">1.3.1.2.</span> <span class="post-toc-text">2. 同步CM的代码</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#配置git的用户名跟邮箱，填自己的就行，随便填也行"><span class="post-toc-number">1.3.1.2.1.</span> <span class="post-toc-text">配置git的用户名跟邮箱，填自己的就行，随便填也行</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#创建检出代码的目录，所在的盘空间要足够"><span class="post-toc-number">1.3.1.2.2.</span> <span class="post-toc-text">创建检出代码的目录，所在的盘空间要足够</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#配置你的设备的仓库，这里是vince"><span class="post-toc-number">1.3.1.2.3.</span> <span class="post-toc-text">配置你的设备的仓库，这里是vince</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#同步代码"><span class="post-toc-number">1.3.1.2.4.</span> <span class="post-toc-text">同步代码</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Mer编译环境"><span class="post-toc-number">1.3.2.</span> <span class="post-toc-text">Mer编译环境</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#修改fixup-mountpoints"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">修改fixup-mountpoints</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Camera支持"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">Camera支持</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#编译hybris-hal"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">编译hybris-hal</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#验证Kernel"><span class="post-toc-number">1.7.</span> <span class="post-toc-text">验证Kernel</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#打包dhd（HADK-第7章）"><span class="post-toc-number">1.8.</span> <span class="post-toc-text">打包dhd（HADK 第7章）</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#打包droidmedia与audioflingerglue"><span class="post-toc-number">1.9.</span> <span class="post-toc-text">打包droidmedia与audioflingerglue</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#打包其他中间件包-mw"><span class="post-toc-number">1.10.</span> <span class="post-toc-text">打包其他中间件包(mw)</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#【进阶】上传到obs打包"><span class="post-toc-number">1.10.1.</span> <span class="post-toc-text">【进阶】上传到obs打包</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#打包dhv"><span class="post-toc-number">1.11.</span> <span class="post-toc-text">打包dhv</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Jolla-RELEASE-DEVICE-ARCH-ks"><span class="post-toc-number">1.12.</span> <span class="post-toc-text">Jolla-@RELEASE@-$DEVICE-@ARCH@.ks</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#镜像制作"><span class="post-toc-number">1.13.</span> <span class="post-toc-text">镜像制作</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#刷机"><span class="post-toc-number">1.14.</span> <span class="post-toc-text">刷机</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#调试"><span class="post-toc-number">1.15.</span> <span class="post-toc-text">调试</span></a></li></ol></li></ol>
-
-        <!--
-        <li class="mdl-menu__item">
-            Some Action
-        </li>
-        -->
-    </ul>
-
-
-
-
-<!-- Layouts -->
-
-    <!-- Post Module -->
-    <div class="material-post_container">
-
-        <div class="material-post mdl-grid">
-            <div class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
-
-                <!-- Post Header(Thumbnail & Title) -->
-                
-    <!-- Paradox Post Header -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-            <script>
-    var randomNum = Math.floor(Math.random() * 19 + 1);
-
-    $('.post_thumbnail-random').css('background-image', 'url(' + '/img/random/material-' + randomNum + '.png' + ')');
-</script>
-
-        
-    
-            <p class="article-headline-p">
-                SailfishOS移植到Redmi 5 Plus的一些记录
-            </p>
-        </div>
-
-
-
-
-
-                
-                    <!-- Paradox Post Info -->
-                    <div class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
-
-    <!-- Author Avatar -->
-    <div id="author-avatar">
-        <img src="/img/avatar.png" width="44px" height="44px" alt="Author Avatar"/>
-    </div>
-    <!-- Author Name & Date -->
-    <div>
-        <strong>BirdZhang</strong>
-        <span>3月 30, 2018</span>
-    </div>
-
-    <div class="section-spacer"></div>
-
-    <!-- Favorite -->
-    <!--
-        <button id="article-functions-like-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon btn-like">
-            <i class="material-icons" role="presentation">favorite</i>
-            <span class="visuallyhidden">favorites</span>
-        </button>
-    -->
-
-    <!-- Qrcode -->
-    
-
-    <!-- Tags (bookmark) -->
-    
-    <button id="article-functions-viewtags-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
-        <i class="material-icons" role="presentation">bookmark</i>
-        <span class="visuallyhidden">bookmark</span>
-    </button>
-    <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
-        <li class="mdl-menu__item">
-        <a class="post_tag-link" href="/tags/hadk/">hadk</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/redmi/">redmi</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/redmi5plus/">redmi5plus</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/sailfish/">sailfish</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/vince/">vince</a>
-    </ul>
-    
-
-    <!-- Share -->
-    <button id="article-fuctions-share-button" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
-    <i class="material-icons" role="presentation">share</i>
-    <span class="visuallyhidden">share</span>
-</button>
-<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-fuctions-share-button">
-    
-    <!-- Leancloud Views -->
-        <a class="post_share-link" href="#">
-            <li class="mdl-menu__item">
-                <span id="/2018/03/30/SailfishOS移植到Redmi-5-Plus的一些记录/" class="leancloud-views_num" data-flag-title="SailfishOS移植到Redmi 5 Plus的一些记录">
-     &nbsp;浏览量
-</span>
-
-            </li>
-        </a>
-    
-
-    
-
-    <!-- Share Weibo -->
-    
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=SailfishOS移植到Redmi 5 Plus的一些记录&url=http://birdzhang.xyz//2018/03/30/SailfishOS移植到Redmi-5-Plus的一些记录/index.html&pic=&searchPic=false&style=simple" target="_blank">
-            <li class="mdl-menu__item">
-                分享到微博
-            </li>
-        </a>
-    
-
-    <!-- Share Twitter -->
-    
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=SailfishOS移植到Redmi 5 Plus的一些记录&url=http://birdzhang.xyz//2018/03/30/SailfishOS移植到Redmi-5-Plus的一些记录/index.html&via=BirdZhang" target="_blank">
-            <li class="mdl-menu__item">
-                分享到 Twitter
-            </li>
-        </a>
-    
-
-    <!-- Share Facebook -->
-    
-        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://birdzhang.xyz//2018/03/30/SailfishOS移植到Redmi-5-Plus的一些记录/index.html" target="_blank">
-            <li class="mdl-menu__item">
-                分享到 Facebook
-            </li>
-        </a>
-    
-
-    <!-- Share Google+ -->
-    
-        <a class="post_share-link" href="https://plus.google.com/share?url=http://birdzhang.xyz//2018/03/30/SailfishOS移植到Redmi-5-Plus的一些记录/index.html" target="_blank">
-            <li class="mdl-menu__item">
-                分享到 Google+
-            </li>
-        </a>
-    
-
-    <!-- Share LinkedIn -->
-    
-
-    <!-- Share QQ -->
-    
-
-    <!-- Share Telegram -->
-    
-</ul>
-
-</div>
-
-                
-
-                <!-- Post Content -->
-                <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
-    
-        <h1 id="移植旗鱼系统到红米5p的过程记录"><a href="#移植旗鱼系统到红米5p的过程记录" class="headerlink" title="移植旗鱼系统到红米5p的过程记录"></a>移植旗鱼系统到红米5p的过程记录</h1><h2 id="可以去ホロ-🐺的博客看看更详细的"><a href="#可以去ホロ-🐺的博客看看更详细的" class="headerlink" title="!!!可以去ホロ 🐺的博客看看更详细的!!!"></a>!!!可以去ホロ 🐺的博客看看更详细的!!!</h2><p>  <a href="https://blog.yoitsu.moe/category/sailfish.html" target="_blank" rel="noopener">https://blog.yoitsu.moe/category/sailfish.html</a></p>
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><meta name="generator" content="Hexo 4.2.0"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>SailfishOS移植到Redmi 5 Plus的一些记录 - BirdZhang&#039;s Blog</title><meta description="移植旗鱼系统到红米5p的过程记录!!!可以去ホロ 🐺的博客看看更详细的!!!  https:&amp;#x2F;&amp;#x2F;blog.yoitsu.moe&amp;#x2F;category&amp;#x2F;sailfish.html 准备工作 一台红米5p手机，解锁过并且刷了lineageos 有梯子 一台内存起码8G的电脑(4G也可以)，Ubuntu 系统，硬盘起码40GB大小，或者更高。 SailfishOS-HardwareAdaptationDe"><meta property="og:type" content="blog"><meta property="og:title" content="SailfishOS移植到Redmi 5 Plus的一些记录"><meta property="og:url" content="http://birdzhang.xyz/2018/03/30/SailfishOS%E7%A7%BB%E6%A4%8D%E5%88%B0Redmi-5-Plus%E7%9A%84%E4%B8%80%E4%BA%9B%E8%AE%B0%E5%BD%95/"><meta property="og:site_name" content="BirdZhang&#039;s Blog"><meta property="og:description" content="移植旗鱼系统到红米5p的过程记录!!!可以去ホロ 🐺的博客看看更详细的!!!  https:&amp;#x2F;&amp;#x2F;blog.yoitsu.moe&amp;#x2F;category&amp;#x2F;sailfish.html 准备工作 一台红米5p手机，解锁过并且刷了lineageos 有梯子 一台内存起码8G的电脑(4G也可以)，Ubuntu 系统，硬盘起码40GB大小，或者更高。 SailfishOS-HardwareAdaptationDe"><meta property="og:locale" content="zh_CN"><meta property="og:image" content="http://birdzhang.xyz/img/og_image.png"><meta property="article:published_time" content="2018-03-30T06:28:28.000Z"><meta property="article:modified_time" content="2019-10-28T09:56:28.165Z"><meta property="article:author" content="BirdZhang"><meta property="article:tag" content="sailfish"><meta property="article:tag" content="redmi"><meta property="article:tag" content="vince"><meta property="article:tag" content="hadk"><meta property="article:tag" content="redmi5plus"><meta property="twitter:card" content="summary"><meta property="twitter:image" content="/img/og_image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"http://birdzhang.xyz/2018/03/30/SailfishOS%E7%A7%BB%E6%A4%8D%E5%88%B0Redmi-5-Plus%E7%9A%84%E4%B8%80%E4%BA%9B%E8%AE%B0%E5%BD%95/"},"headline":"BirdZhang's Blog","image":["http://birdzhang.xyz/img/og_image.png"],"datePublished":"2018-03-30T06:28:28.000Z","dateModified":"2019-10-28T09:56:28.165Z","author":{"@type":"Person","name":"BirdZhang"},"description":"移植旗鱼系统到红米5p的过程记录!!!可以去ホロ 🐺的博客看看更详细的!!!  https:&#x2F;&#x2F;blog.yoitsu.moe&#x2F;category&#x2F;sailfish.html 准备工作 一台红米5p手机，解锁过并且刷了lineageos 有梯子 一台内存起码8G的电脑(4G也可以)，Ubuntu 系统，硬盘起码40GB大小，或者更高。 SailfishOS-HardwareAdaptationDe"}</script><link rel="canonical" href="http://birdzhang.xyz/2018/03/30/SailfishOS%E7%A7%BB%E6%A4%8D%E5%88%B0Redmi-5-Plus%E7%9A%84%E4%B8%80%E4%BA%9B%E8%AE%B0%E5%BD%95/"><link rel="alternative" href="/atom.xml" title="BirdZhang&#039;s Blog" type="application/atom+xml"><link rel="icon" href="/img/favicon.png"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css"><!--!--><script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script></head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/avatar.png" alt="BirdZhang&#039;s Blog" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">Home</a><a class="navbar-item" href="/archives">Archives</a><a class="navbar-item" href="/categories">Categories</a><a class="navbar-item" href="/tags">Tags</a><a class="navbar-item" href="/about">About</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-8-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta size-small is-uppercase level is-mobile"><div class="level-left"><time class="level-item" dateTime="2018-03-30T06:28:28.000Z" title="2018-03-30T06:28:28.000Z">2018-03-30</time><span class="level-item">11 分钟 读完 (大约 1656 个字)</span></div></div><h1 class="title is-3 is-size-4-mobile">SailfishOS移植到Redmi 5 Plus的一些记录</h1><div class="content"><h1 id="移植旗鱼系统到红米5p的过程记录"><a href="#移植旗鱼系统到红米5p的过程记录" class="headerlink" title="移植旗鱼系统到红米5p的过程记录"></a>移植旗鱼系统到红米5p的过程记录</h1><h2 id="可以去ホロ-🐺的博客看看更详细的"><a href="#可以去ホロ-🐺的博客看看更详细的" class="headerlink" title="!!!可以去ホロ 🐺的博客看看更详细的!!!"></a>!!!可以去ホロ 🐺的博客看看更详细的!!!</h2><p>  <a href="https://blog.yoitsu.moe/category/sailfish.html">https://blog.yoitsu.moe/category/sailfish.html</a></p>
 <h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><ul>
 <li>一台红米5p手机，解锁过并且刷了lineageos</li>
 <li>有梯子</li>
 <li>一台内存起码8G的电脑(4G也可以)，Ubuntu 系统，硬盘起码40GB大小，或者更高。</li>
-<li><a href="https://sailfishos.org/develop/hadk/" target="_blank" rel="noopener">SailfishOS-HardwareAdaptationDevelopmentKit</a> 1 READ部分pdf文档</li>
-<li><del><a href="https://wiki.merproject.org/wiki/Adaptations/faq-hadk" target="_blank" rel="noopener">https://wiki.merproject.org/wiki/Adaptations/faq-hadk</a></del> <a href="https://github.com/mer-hybris/hadk-faq" target="_blank" rel="noopener">https://github.com/mer-hybris/hadk-faq</a> （2019-10-28更新）</li>
+<li><a href="https://sailfishos.org/develop/hadk/">SailfishOS-HardwareAdaptationDevelopmentKit</a> 1 READ部分pdf文档</li>
+<li><del><a href="https://wiki.merproject.org/wiki/Adaptations/faq-hadk">https://wiki.merproject.org/wiki/Adaptations/faq-hadk</a></del> <a href="https://github.com/mer-hybris/hadk-faq">https://github.com/mer-hybris/hadk-faq</a> （2019-10-28更新）</li>
 <li>最关键的，一颗善于折腾的心和善于搜索的你</li>
 </ul>
 <h2 id="搭建环境"><a href="#搭建环境" class="headerlink" title="搭建环境"></a>搭建环境</h2><h3 id="Android编译环境-HADK-第4章"><a href="#Android编译环境-HADK-第4章" class="headerlink" title="Android编译环境(HADK 第4章)"></a>Android编译环境(HADK 第4章)</h3><blockquote>
-<p>需要先配置一下hadk的环境变量，一共三个文件，可以参考这里： <a href="https://github.com/CancroSailors/sailfish-build-environment" target="_blank" rel="noopener">https://github.com/CancroSailors/sailfish-build-environment</a></p>
+<p>需要先配置一下hadk的环境变量，一共三个文件，可以参考这里： <a href="https://github.com/CancroSailors/sailfish-build-environment">https://github.com/CancroSailors/sailfish-build-environment</a></p>
 </blockquote>
 <p>然后<code>source ~/.hadk.env</code>一下</p>
 <h4 id="1-安装git等"><a href="#1-安装git等" class="headerlink" title="1. 安装git等"></a>1. 安装git等</h4><p><code>sudo apt-get install git</code></p>
 <h4 id="2-同步CM的代码"><a href="#2-同步CM的代码" class="headerlink" title="2. 同步CM的代码"></a>2. 同步CM的代码</h4><h5 id="配置git的用户名跟邮箱，填自己的就行，随便填也行"><a href="#配置git的用户名跟邮箱，填自己的就行，随便填也行" class="headerlink" title="配置git的用户名跟邮箱，填自己的就行，随便填也行"></a>配置git的用户名跟邮箱，填自己的就行，随便填也行</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name &quot;Your Name&quot;</span><br><span class="line">git config --global user.email &quot;you@example.com&quot;</span><br></pre></td></tr></table></figure>
-<h5 id="创建检出代码的目录，所在的盘空间要足够"><a href="#创建检出代码的目录，所在的盘空间要足够" class="headerlink" title="创建检出代码的目录，所在的盘空间要足够"></a>创建检出代码的目录，所在的盘空间要足够</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo mkdir -p $ANDROID_ROOT</span><br><span class="line">sudo chown -R $USER $ANDROID_ROOT</span><br><span class="line">cd $ANDROID_ROOT</span><br><span class="line">repo init -u git://github.com/mer-hybris/android.git -b hybris-14.1</span><br></pre></td></tr></table></figure>
-<h5 id="配置你的设备的仓库，这里是vince"><a href="#配置你的设备的仓库，这里是vince" class="headerlink" title="配置你的设备的仓库，这里是vince"></a>配置你的设备的仓库，这里是vince</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">mkdir $ANDROID_ROOT/.repo/local_manifests</span><br><span class="line">cat &lt;&lt;&apos;EOF&apos; &gt;&gt; $ANDROID_ROOT/.repo/local_manifests/vince.xml</span><br><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</span><br><span class="line">&lt;manifest&gt;</span><br><span class="line">  &lt;project path=&quot;device/xiaomi/vince&quot; name=&quot;Sailfish-On-Vince/device_xiaomi_vince&quot; revision=&quot;cm-14.1&quot; /&gt;</span><br><span class="line">  &lt;project path=&quot;vendor/xiaomi/vince&quot; name=&quot;Sailfish-On-Vince/vendor_xiaomi_vince&quot; revision=&quot;cm-14.1&quot; /&gt;</span><br><span class="line">  &lt;project path=&quot;kernel/xiaomi/vince&quot; name=&quot;Sailfish-On-Vince/kernel_xiaomi_msm8953&quot; revision=&quot;cm-14.1&quot; /&gt;</span><br><span class="line">  &lt;project path=&quot;hybris/droid-hal-version-vince&quot; name=&quot;Sailfish-On-Vince/droid-hal-version-vince&quot; revision=&quot;master&quot; /&gt;</span><br><span class="line">  &lt;project path=&quot;hybris/droid-config-vince&quot; name=&quot;Sailfish-On-Vince/droid-config-vince&quot; revision=&quot;master&quot; /&gt;</span><br><span class="line">  &lt;project path=&quot;rpm&quot; name=&quot;Sailfish-On-Vince/droid-hal-vince&quot; revision=&quot;master&quot; /&gt;</span><br><span class="line">&lt;/manifest&gt;</span><br><span class="line">EOF</span><br></pre></td></tr></table></figure>
+<h5 id="创建检出代码的目录，所在的盘空间要足够"><a href="#创建检出代码的目录，所在的盘空间要足够" class="headerlink" title="创建检出代码的目录，所在的盘空间要足够"></a>创建检出代码的目录，所在的盘空间要足够</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo mkdir -p $ANDROID_ROOT</span><br><span class="line">sudo chown -R $USER $ANDROID_ROOT</span><br><span class="line">cd $ANDROID_ROOT</span><br><span class="line">repo init -u git:&#x2F;&#x2F;github.com&#x2F;mer-hybris&#x2F;android.git -b hybris-14.1</span><br></pre></td></tr></table></figure>
+<h5 id="配置你的设备的仓库，这里是vince"><a href="#配置你的设备的仓库，这里是vince" class="headerlink" title="配置你的设备的仓库，这里是vince"></a>配置你的设备的仓库，这里是vince</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">mkdir $ANDROID_ROOT&#x2F;.repo&#x2F;local_manifests</span><br><span class="line">cat &lt;&lt;&#39;EOF&#39; &gt;&gt; $ANDROID_ROOT&#x2F;.repo&#x2F;local_manifests&#x2F;vince.xml</span><br><span class="line">&lt;?xml version&#x3D;&quot;1.0&quot; encoding&#x3D;&quot;UTF-8&quot;?&gt;</span><br><span class="line">&lt;manifest&gt;</span><br><span class="line">  &lt;project path&#x3D;&quot;device&#x2F;xiaomi&#x2F;vince&quot; name&#x3D;&quot;Sailfish-On-Vince&#x2F;device_xiaomi_vince&quot; revision&#x3D;&quot;cm-14.1&quot; &#x2F;&gt;</span><br><span class="line">  &lt;project path&#x3D;&quot;vendor&#x2F;xiaomi&#x2F;vince&quot; name&#x3D;&quot;Sailfish-On-Vince&#x2F;vendor_xiaomi_vince&quot; revision&#x3D;&quot;cm-14.1&quot; &#x2F;&gt;</span><br><span class="line">  &lt;project path&#x3D;&quot;kernel&#x2F;xiaomi&#x2F;vince&quot; name&#x3D;&quot;Sailfish-On-Vince&#x2F;kernel_xiaomi_msm8953&quot; revision&#x3D;&quot;cm-14.1&quot; &#x2F;&gt;</span><br><span class="line">  &lt;project path&#x3D;&quot;hybris&#x2F;droid-hal-version-vince&quot; name&#x3D;&quot;Sailfish-On-Vince&#x2F;droid-hal-version-vince&quot; revision&#x3D;&quot;master&quot; &#x2F;&gt;</span><br><span class="line">  &lt;project path&#x3D;&quot;hybris&#x2F;droid-config-vince&quot; name&#x3D;&quot;Sailfish-On-Vince&#x2F;droid-config-vince&quot; revision&#x3D;&quot;master&quot; &#x2F;&gt;</span><br><span class="line">  &lt;project path&#x3D;&quot;rpm&quot; name&#x3D;&quot;Sailfish-On-Vince&#x2F;droid-hal-vince&quot; revision&#x3D;&quot;master&quot; &#x2F;&gt;</span><br><span class="line">&lt;&#x2F;manifest&gt;</span><br><span class="line">EOF</span><br></pre></td></tr></table></figure>
 <h5 id="同步代码"><a href="#同步代码" class="headerlink" title="同步代码"></a>同步代码</h5><p><code>repo sync --fetch-submodules</code></p>
 <p>如果你要求快，可以用 <code>repo sync --fetch-submodules -c --no-tags --no-clone-bundle</code>，这样只会拉取当前要用的代码，但是不方便后面的修改提交</p>
 <p>出错就多同步几次</p>
 <h3 id="Mer编译环境"><a href="#Mer编译环境" class="headerlink" title="Mer编译环境"></a>Mer编译环境</h3><blockquote>
-<p>参见官方教程： <a href="https://sailfishos.org/wiki/Platform_SDK_Installation" target="_blank" rel="noopener">https://sailfishos.org/wiki/Platform_SDK_Installation</a></p>
+<p>参见官方教程： <a href="https://sailfishos.org/wiki/Platform_SDK_Installation">https://sailfishos.org/wiki/Platform_SDK_Installation</a></p>
 </blockquote>
 <p>安装Platform SDK</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">export PLATFORM_SDK_ROOT=/srv/mer</span><br><span class="line">curl -k -O http://releases.sailfishos.org/sdk/installers/latest/Jolla-latest-SailfishOS_Platform_SDK_Chroot-i486.tar.bz2 ;</span><br><span class="line">sudo mkdir -p $PLATFORM_SDK_ROOT/sdks/sfossdk ;</span><br><span class="line">sudo tar --numeric-owner -p -xjf Jolla-latest-SailfishOS_Platform_SDK_Chroot-i486.tar.bz2 -C $PLATFORM_SDK_ROOT/sdks/sfossdk  ;</span><br><span class="line">echo &quot;export PLATFORM_SDK_ROOT=$PLATFORM_SDK_ROOT&quot; &gt;&gt; ~/.bashrc</span><br><span class="line">echo &apos;alias sfossdk=$PLATFORM_SDK_ROOT/sdks/sfossdk/mer-sdk-chroot&apos; &gt;&gt; ~/.bashrc ; exec bash ;</span><br><span class="line">echo &apos;PS1=&quot;PlatformSDK $PS1&quot;&apos; &gt; ~/.mersdk.profile ;</span><br><span class="line">echo &apos;[ -d /etc/bash_completion.d ] &amp;&amp; for i in /etc/bash_completion.d/*;do . $i;done&apos;  &gt;&gt; ~/.mersdk.profile ;</span><br><span class="line">sfossdk</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">export PLATFORM_SDK_ROOT&#x3D;&#x2F;srv&#x2F;mer</span><br><span class="line">curl -k -O http:&#x2F;&#x2F;releases.sailfishos.org&#x2F;sdk&#x2F;installers&#x2F;latest&#x2F;Jolla-latest-SailfishOS_Platform_SDK_Chroot-i486.tar.bz2 ;</span><br><span class="line">sudo mkdir -p $PLATFORM_SDK_ROOT&#x2F;sdks&#x2F;sfossdk ;</span><br><span class="line">sudo tar --numeric-owner -p -xjf Jolla-latest-SailfishOS_Platform_SDK_Chroot-i486.tar.bz2 -C $PLATFORM_SDK_ROOT&#x2F;sdks&#x2F;sfossdk  ;</span><br><span class="line">echo &quot;export PLATFORM_SDK_ROOT&#x3D;$PLATFORM_SDK_ROOT&quot; &gt;&gt; ~&#x2F;.bashrc</span><br><span class="line">echo &#39;alias sfossdk&#x3D;$PLATFORM_SDK_ROOT&#x2F;sdks&#x2F;sfossdk&#x2F;mer-sdk-chroot&#39; &gt;&gt; ~&#x2F;.bashrc ; exec bash ;</span><br><span class="line">echo &#39;PS1&#x3D;&quot;PlatformSDK $PS1&quot;&#39; &gt; ~&#x2F;.mersdk.profile ;</span><br><span class="line">echo &#39;[ -d &#x2F;etc&#x2F;bash_completion.d ] &amp;&amp; for i in &#x2F;etc&#x2F;bash_completion.d&#x2F;*;do . $i;done&#39;  &gt;&gt; ~&#x2F;.mersdk.profile ;</span><br><span class="line">sfossdk</span><br></pre></td></tr></table></figure>
 <p>另开一个终端，输入<code>sfossdk</code>，进入mer下</p>
 <blockquote>
-<p>安装targets，官方教程：<a href="https://sailfishos.org/wiki/Platform_SDK_Target_Installation" target="_blank" rel="noopener">https://sailfishos.org/wiki/Platform_SDK_Target_Installation</a></p>
+<p>安装targets，官方教程：<a href="https://sailfishos.org/wiki/Platform_SDK_Target_Installation">https://sailfishos.org/wiki/Platform_SDK_Target_Installation</a></p>
 </blockquote>
 <p>其实就是执行下面的命令，要下载这两个包，过程有些慢</p>
 <p>（2019-06-13更新，修复链接地址为最新的） </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sdk-assistant create xiaomi-vince-latest http://releases.sailfishos.org/sdk/targets/Sailfish_OS-latest-Sailfish_SDK_Tooling-i486.tar.7z</span><br><span class="line">sdk-assistant create xiaomi-vince-armv7hl http://releases.sailfishos.org/sdk/targets/Sailfish_OS-latest-Sailfish_SDK_Target-armv7hl.tar.7z</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sdk-assistant create xiaomi-vince-latest http:&#x2F;&#x2F;releases.sailfishos.org&#x2F;sdk&#x2F;targets&#x2F;Sailfish_OS-latest-Sailfish_SDK_Tooling-i486.tar.7z</span><br><span class="line">sdk-assistant create xiaomi-vince-armv7hl http:&#x2F;&#x2F;releases.sailfishos.org&#x2F;sdk&#x2F;targets&#x2F;Sailfish_OS-latest-Sailfish_SDK_Target-armv7hl.tar.7z</span><br></pre></td></tr></table></figure>
 <p>更新到最新（Update to latest）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo ssu re x.y.z.ab</span><br><span class="line">sudo zypper ref</span><br><span class="line">sudo zypper dup</span><br></pre></td></tr></table></figure></p>
 <p>安装打包的工具</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo zypper in android-tools createrepo_c</span><br></pre></td></tr></table></figure>
 <h2 id="修改fixup-mountpoints"><a href="#修改fixup-mountpoints" class="headerlink" title="修改fixup-mountpoints"></a>修改fixup-mountpoints</h2><p>文件在<code>hybris/hybris-boot/fixup-mountpoints</code>，添加你的设备的，这里是vince。<br>adb到手机上，输入<code>ls -l /dev/block/platform/*/by-name/</code>, 获取分区信息，或者其他路径的，HADK里面有写</p>
-<h2 id="Camera支持"><a href="#Camera支持" class="headerlink" title="Camera支持"></a>Camera支持</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cd $ANDROID_ROOT/external/droidmedia</span><br><span class="line">echo &apos;DROIDMEDIA_32 := true&apos; &gt;&gt; env.mk #针对64位的系统</span><br><span class="line">echo &apos;FORCE_HAL:=1&apos; &gt;&gt; env.mk #使用HAL1，根据自己机型设置</span><br></pre></td></tr></table></figure>
-<h2 id="编译hybris-hal"><a href="#编译hybris-hal" class="headerlink" title="编译hybris-hal"></a>编译hybris-hal</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">cd $ANDROID_ROOT</span><br><span class="line">source build/envsetup.sh</span><br><span class="line">export USE_CCACHE=1</span><br><span class="line">breakfast $DEVICE</span><br><span class="line">make -j8 hybris-hal</span><br></pre></td></tr></table></figure>
+<h2 id="Camera支持"><a href="#Camera支持" class="headerlink" title="Camera支持"></a>Camera支持</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cd $ANDROID_ROOT&#x2F;external&#x2F;droidmedia</span><br><span class="line">echo &#39;DROIDMEDIA_32 :&#x3D; true&#39; &gt;&gt; env.mk #针对64位的系统</span><br><span class="line">echo &#39;FORCE_HAL:&#x3D;1&#39; &gt;&gt; env.mk #使用HAL1，根据自己机型设置</span><br></pre></td></tr></table></figure>
+<h2 id="编译hybris-hal"><a href="#编译hybris-hal" class="headerlink" title="编译hybris-hal"></a>编译hybris-hal</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">cd $ANDROID_ROOT</span><br><span class="line">source build&#x2F;envsetup.sh</span><br><span class="line">export USE_CCACHE&#x3D;1</span><br><span class="line">breakfast $DEVICE</span><br><span class="line">make -j8 hybris-hal</span><br></pre></td></tr></table></figure>
 <p>期间可能会报错，谷歌搜一下</p>
-<h2 id="验证Kernel"><a href="#验证Kernel" class="headerlink" title="验证Kernel"></a>验证Kernel</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd $ANDROID_ROOT</span><br><span class="line">hybris/mer-kernel-check/mer_verify_kernel_config ./out/target/product/$DEVICE/obj/KERNEL_OBJ/.config</span><br></pre></td></tr></table></figure>
+<h2 id="验证Kernel"><a href="#验证Kernel" class="headerlink" title="验证Kernel"></a>验证Kernel</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd $ANDROID_ROOT</span><br><span class="line">hybris&#x2F;mer-kernel-check&#x2F;mer_verify_kernel_config .&#x2F;out&#x2F;target&#x2F;product&#x2F;$DEVICE&#x2F;obj&#x2F;KERNEL_OBJ&#x2F;.config</span><br></pre></td></tr></table></figure>
 <p>出现WARNING或者ERROR，将提示的加入到你的defconfig中，我的在<code>kernel/xiaomi/vince/arch/arm64/configs/vince_defconfig</code>中<br>然后执行<code>make hybris-root</code>后重新验证。没有出现<code>ERROR</code>后可以执行<code>make hybris-recovery</code></p>
 <h2 id="打包dhd（HADK-第7章）"><a href="#打包dhd（HADK-第7章）" class="headerlink" title="打包dhd（HADK 第7章）"></a>打包dhd（HADK 第7章）</h2><p>再开一个终端(我们这里称终端2)，输入<code>sfossdk</code>，进入mer打包环境下</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd $ANDROID_ROOT</span><br><span class="line">rpm/dhd/helpers/build_packages.sh -d</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd $ANDROID_ROOT</span><br><span class="line">rpm&#x2F;dhd&#x2F;helpers&#x2F;build_packages.sh -d</span><br></pre></td></tr></table></figure>
 <h2 id="打包droidmedia与audioflingerglue"><a href="#打包droidmedia与audioflingerglue" class="headerlink" title="打包droidmedia与audioflingerglue"></a>打包droidmedia与audioflingerglue</h2><blockquote>
 <p>如果你的机器是32位的话那么下面的命令去掉<code>_32</code>,下面的也一样</p>
 </blockquote>
-<p>在终端1中<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">make -j$(nproc --all) $(external/droidmedia/detect_build_targets.sh $PORT_ARCH $(gettargetarch))</span><br></pre></td></tr></table></figure></p>
-<p>在终端2中</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">DROIDMEDIA_VERSION=$(git --git-dir external/droidmedia/.git describe --tags | sed \</span><br><span class="line">-r &quot;s/\-/\+/g&quot;)</span><br><span class="line">rpm/dhd/helpers/pack_source_droidmedia-localbuild.sh $DROIDMEDIA_VERSION</span><br><span class="line">mkdir -p hybris/mw/droidmedia-localbuild/rpm</span><br><span class="line">cp rpm/dhd/helpers/droidmedia-localbuild.spec \</span><br><span class="line">hybris/mw/droidmedia-localbuild/rpm/droidmedia.spec</span><br><span class="line">sed -ie &quot;s/0.0.0/$DROIDMEDIA_VERSION/&quot; \</span><br><span class="line">hybris/mw/droidmedia-localbuild/rpm/droidmedia.spec</span><br><span class="line">mv hybris/mw/droidmedia-$DROIDMEDIA_VERSION.tgz hybris/mw/droidmedia-localbuild</span><br><span class="line">rpm/dhd/helpers/build_packages.sh --build=hybris/mw/droidmedia-localbuild</span><br></pre></td></tr></table></figure>
+<p>在终端1中<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">make -j$(nproc --all) $(external&#x2F;droidmedia&#x2F;detect_build_targets.sh $PORT_ARCH $(gettargetarch))</span><br></pre></td></tr></table></figure><br>在终端2中</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">DROIDMEDIA_VERSION&#x3D;$(git --git-dir external&#x2F;droidmedia&#x2F;.git describe --tags | sed \</span><br><span class="line">-r &quot;s&#x2F;\-&#x2F;\+&#x2F;g&quot;)</span><br><span class="line">rpm&#x2F;dhd&#x2F;helpers&#x2F;pack_source_droidmedia-localbuild.sh $DROIDMEDIA_VERSION</span><br><span class="line">mkdir -p hybris&#x2F;mw&#x2F;droidmedia-localbuild&#x2F;rpm</span><br><span class="line">cp rpm&#x2F;dhd&#x2F;helpers&#x2F;droidmedia-localbuild.spec \</span><br><span class="line">hybris&#x2F;mw&#x2F;droidmedia-localbuild&#x2F;rpm&#x2F;droidmedia.spec</span><br><span class="line">sed -ie &quot;s&#x2F;0.0.0&#x2F;$DROIDMEDIA_VERSION&#x2F;&quot; \</span><br><span class="line">hybris&#x2F;mw&#x2F;droidmedia-localbuild&#x2F;rpm&#x2F;droidmedia.spec</span><br><span class="line">mv hybris&#x2F;mw&#x2F;droidmedia-$DROIDMEDIA_VERSION.tgz hybris&#x2F;mw&#x2F;droidmedia-localbuild</span><br><span class="line">rpm&#x2F;dhd&#x2F;helpers&#x2F;build_packages.sh --build&#x3D;hybris&#x2F;mw&#x2F;droidmedia-localbuild</span><br></pre></td></tr></table></figure>
 <p>在终端1中</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">make -j$(nproc --all) $(external/audioflingerglue/detect_build_targets.sh $PORT_ARCH $(gettargetarch))</span><br></pre></td></tr></table></figure>
-<p>在终端2中<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">AUDIOFLINGERGLUE_VERSION=$(git --git-dir external/audioflingerglue/.git describe --tags | sed \</span><br><span class="line">-r &quot;s/\-/\+/g&quot;)</span><br><span class="line">rpm/dhd/helpers/pack_source_audioflingerglue-localbuild.sh $AUDIOFLINGERGLUE_VERSION</span><br><span class="line">mkdir -p hybris/mw/audioflingerglue-localbuild/rpm</span><br><span class="line">cp rpm/dhd/helpers/audioflingerglue-localbuild.spec \</span><br><span class="line">hybris/mw/audioflingerglue-localbuild/rpm/audioflingerglue.spec</span><br><span class="line">sed -ie &quot;s/0.0.0/$AUDIOFLINGERGLUE_VERSION/&quot; \</span><br><span class="line">hybris/mw/audioflingerglue-localbuild/rpm/audioflingerglue.spec</span><br><span class="line">mv hybris/mw/audioflingerglue-$AUDIOFLINGERGLUE_VERSION.tgz hybris/mw/audioflingerglue-localbuild</span><br><span class="line">rpm/dhd/helpers/build_packages.sh --build=hybris/mw/audioflingerglue-localbuild</span><br></pre></td></tr></table></figure></p>
-<p>然后重新打包dhd<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rpm/dhd/helpers/build_packages.sh --droid-hal</span><br></pre></td></tr></table></figure></p>
-<h2 id="打包其他中间件包-mw"><a href="#打包其他中间件包-mw" class="headerlink" title="打包其他中间件包(mw)"></a>打包其他中间件包(mw)</h2><p>注意到 <a href="https://wiki.merproject.org/wiki/Adaptations/faq-hadk" target="_blank" rel="noopener">https://wiki.merproject.org/wiki/Adaptations/faq-hadk</a> 搜索当前版本需要对应的mw版本号，不一定用最新的</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">make -j$(nproc --all) $(external&#x2F;audioflingerglue&#x2F;detect_build_targets.sh $PORT_ARCH $(gettargetarch))</span><br></pre></td></tr></table></figure>
+<p>在终端2中<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">AUDIOFLINGERGLUE_VERSION&#x3D;$(git --git-dir external&#x2F;audioflingerglue&#x2F;.git describe --tags | sed \</span><br><span class="line">-r &quot;s&#x2F;\-&#x2F;\+&#x2F;g&quot;)</span><br><span class="line">rpm&#x2F;dhd&#x2F;helpers&#x2F;pack_source_audioflingerglue-localbuild.sh $AUDIOFLINGERGLUE_VERSION</span><br><span class="line">mkdir -p hybris&#x2F;mw&#x2F;audioflingerglue-localbuild&#x2F;rpm</span><br><span class="line">cp rpm&#x2F;dhd&#x2F;helpers&#x2F;audioflingerglue-localbuild.spec \</span><br><span class="line">hybris&#x2F;mw&#x2F;audioflingerglue-localbuild&#x2F;rpm&#x2F;audioflingerglue.spec</span><br><span class="line">sed -ie &quot;s&#x2F;0.0.0&#x2F;$AUDIOFLINGERGLUE_VERSION&#x2F;&quot; \</span><br><span class="line">hybris&#x2F;mw&#x2F;audioflingerglue-localbuild&#x2F;rpm&#x2F;audioflingerglue.spec</span><br><span class="line">mv hybris&#x2F;mw&#x2F;audioflingerglue-$AUDIOFLINGERGLUE_VERSION.tgz hybris&#x2F;mw&#x2F;audioflingerglue-localbuild</span><br><span class="line">rpm&#x2F;dhd&#x2F;helpers&#x2F;build_packages.sh --build&#x3D;hybris&#x2F;mw&#x2F;audioflingerglue-localbuild</span><br></pre></td></tr></table></figure></p>
+<p>然后重新打包dhd<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rpm&#x2F;dhd&#x2F;helpers&#x2F;build_packages.sh --droid-hal</span><br></pre></td></tr></table></figure></p>
+<h2 id="打包其他中间件包-mw"><a href="#打包其他中间件包-mw" class="headerlink" title="打包其他中间件包(mw)"></a>打包其他中间件包(mw)</h2><p>注意到 <a href="https://wiki.merproject.org/wiki/Adaptations/faq-hadk">https://wiki.merproject.org/wiki/Adaptations/faq-hadk</a> 搜索当前版本需要对应的mw版本号，不一定用最新的</p>
 <p>执行 <code>rpm/dhd/helpers/build_packages.sh --mw</code> ,然后选择 <code>all</code> 即可</p>
 <h3 id="【进阶】上传到obs打包"><a href="#【进阶】上传到obs打包" class="headerlink" title="【进阶】上传到obs打包"></a>【进阶】上传到obs打包</h3><p>将droid-local-repo/vince下 droid-hal-vince/<em>.rpm 跟audioflingerglue</em>.rpm 、 droidmedia*.rpm 上传到obs的droid-hal-vince下</p>
-<p>例如这些包：<a href="https://build.merproject.org/package/show/nemo:devel:hw:xiaomi:vince/droid-hal-vince" target="_blank" rel="noopener">https://build.merproject.org/package/show/nemo:devel:hw:xiaomi:vince/droid-hal-vince</a></p>
-<p>obs打包还需要dhc,dhv等等几个包，此处不详细说明了，可以到 <a href="https://github.com/mer-hybris" target="_blank" rel="noopener">https://github.com/mer-hybris</a> 看其他机型的</p>
+<p>例如这些包：<a href="https://build.merproject.org/package/show/nemo:devel:hw:xiaomi:vince/droid-hal-vince">https://build.merproject.org/package/show/nemo:devel:hw:xiaomi:vince/droid-hal-vince</a></p>
+<p>obs打包还需要dhc,dhv等等几个包，此处不详细说明了，可以到 <a href="https://github.com/mer-hybris">https://github.com/mer-hybris</a> 看其他机型的</p>
 <h2 id="打包dhv"><a href="#打包dhv" class="headerlink" title="打包dhv"></a>打包dhv</h2><p>也就是 droid-hal-$DEVICE-version</p>
 <p><code>rpm/dhd/helpers/build_packages.sh -v</code></p>
 <p>如果提示 droid-configs 之类的找不到，需要手动安装</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sb2 -t $VENDOR-$DEVICE-$PORT_ARCH -R -msdk-install zypper -n install droid-config-$DEVICE</span><br></pre></td></tr></table></figure>
 <h2 id="Jolla-RELEASE-DEVICE-ARCH-ks"><a href="#Jolla-RELEASE-DEVICE-ARCH-ks" class="headerlink" title="Jolla-@RELEASE@-$DEVICE-@ARCH@.ks"></a>Jolla-@RELEASE@-$DEVICE-@ARCH@.ks</h2><p><del>~obs打包完之后，将droid-config-vince-kickstart-configuration-0.2.4*.armv7hl.rpm 下载下来，解压获得Jolla-@RELEASE@-$DEVICE-@ARCH@.ks放到$ANDROID_ROOT下面</del>~</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">cd $ANDROID_ROOT</span><br><span class="line">HA_REPO=&quot;repo --name=adaptation-community-common-$DEVICE-@RELEASE@&quot;</span><br><span class="line">HA_DEV=&quot;repo --name=adaptation-community-$DEVICE-@RELEASE@&quot;</span><br><span class="line">KS=&quot;Jolla-@RELEASE@-$DEVICE-@ARCH@.ks&quot;</span><br><span class="line">sed \</span><br><span class="line">&quot;/$HA_REPO/i$HA_DEV --baseurl=file:\/\/$ANDROID_ROOT\/droid-local-repo\/$DEVICE&quot; \</span><br><span class="line">$ANDROID_ROOT/hybris/droid-configs/installroot/usr/share/kickstarts/$KS \</span><br><span class="line">&gt; $KS</span><br></pre></td></tr></table></figure>
-<h2 id="镜像制作"><a href="#镜像制作" class="headerlink" title="镜像制作"></a>镜像制作</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">cd $ANDROID_ROOT</span><br><span class="line">RELEASE=2.1.4.14</span><br><span class="line">EXTRA_NAME=-alpha1</span><br><span class="line">hybris/droid-configs/droid-configs-device/helpers/process_patterns.sh</span><br><span class="line">sudo mic create fs --arch=$PORT_ARCH \</span><br><span class="line">--tokenmap=ARCH:$PORT_ARCH,RELEASE:$RELEASE,EXTRA_NAME:$EXTRA_NAME \</span><br><span class="line">--record-pkgs=name,url \</span><br><span class="line">--outdir=sfe-$DEVICE-$RELEASE$EXTRA_NAME \</span><br><span class="line">--pack-to=sfe-$DEVICE-$RELEASE$EXTRA_NAME.tar.bz2 \</span><br><span class="line">$ANDROID_ROOT/Jolla-@RELEASE@-$DEVICE-@ARCH@.ks</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">cd $ANDROID_ROOT</span><br><span class="line">HA_REPO&#x3D;&quot;repo --name&#x3D;adaptation-community-common-$DEVICE-@RELEASE@&quot;</span><br><span class="line">HA_DEV&#x3D;&quot;repo --name&#x3D;adaptation-community-$DEVICE-@RELEASE@&quot;</span><br><span class="line">KS&#x3D;&quot;Jolla-@RELEASE@-$DEVICE-@ARCH@.ks&quot;</span><br><span class="line">sed \</span><br><span class="line">&quot;&#x2F;$HA_REPO&#x2F;i$HA_DEV --baseurl&#x3D;file:\&#x2F;\&#x2F;$ANDROID_ROOT\&#x2F;droid-local-repo\&#x2F;$DEVICE&quot; \</span><br><span class="line">$ANDROID_ROOT&#x2F;hybris&#x2F;droid-configs&#x2F;installroot&#x2F;usr&#x2F;share&#x2F;kickstarts&#x2F;$KS \</span><br><span class="line">&gt; $KS</span><br></pre></td></tr></table></figure>
+<h2 id="镜像制作"><a href="#镜像制作" class="headerlink" title="镜像制作"></a>镜像制作</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">cd $ANDROID_ROOT</span><br><span class="line">RELEASE&#x3D;2.1.4.14</span><br><span class="line">EXTRA_NAME&#x3D;-alpha1</span><br><span class="line">hybris&#x2F;droid-configs&#x2F;droid-configs-device&#x2F;helpers&#x2F;process_patterns.sh</span><br><span class="line">sudo mic create fs --arch&#x3D;$PORT_ARCH \</span><br><span class="line">--tokenmap&#x3D;ARCH:$PORT_ARCH,RELEASE:$RELEASE,EXTRA_NAME:$EXTRA_NAME \</span><br><span class="line">--record-pkgs&#x3D;name,url \</span><br><span class="line">--outdir&#x3D;sfe-$DEVICE-$RELEASE$EXTRA_NAME \</span><br><span class="line">--pack-to&#x3D;sfe-$DEVICE-$RELEASE$EXTRA_NAME.tar.bz2 \</span><br><span class="line">$ANDROID_ROOT&#x2F;Jolla-@RELEASE@-$DEVICE-@ARCH@.ks</span><br></pre></td></tr></table></figure>
 <p>在当前目录下会有一个 <code>sfe-$DEVICE-$RELEASE$EXTRA_NAME</code>目录，下面的 <code>sailfishos-$DEVICE-$RELEASE$EXTRA_NAME.zip</code>就是要使用的刷机包</p>
 <h2 id="刷机"><a href="#刷机" class="headerlink" title="刷机"></a>刷机</h2><p>刷入 lineageos-14.1的包，刷入上面的<code>sailfishos-$DEVICE-$RELEASE$EXTRA_NAME.zip</code>的包，重启</p>
-<p>可以参考 <a href="https://wiki.merproject.org/wiki/Adaptations/libhybris/Install_SailfishOS_for_Vince" target="_blank" rel="noopener">https://wiki.merproject.org/wiki/Adaptations/libhybris/Install_SailfishOS_for_Vince</a></p>
-<h2 id="调试"><a href="#调试" class="headerlink" title="调试"></a>调试</h2><p>欢迎加入 IRC #jolla-cn #sailfishos-porters (只限英文交流) 或 <a href="https://t.me/joinchat/GTqoL1HLIYXWNf-JeijTAg" target="_blank" rel="noopener">https://t.me/joinchat/GTqoL1HLIYXWNf-JeijTAg</a> 讨论</p>
+<p>可以参考 <a href="https://wiki.merproject.org/wiki/Adaptations/libhybris/Install_SailfishOS_for_Vince">https://wiki.merproject.org/wiki/Adaptations/libhybris/Install_SailfishOS_for_Vince</a></p>
+<h2 id="调试"><a href="#调试" class="headerlink" title="调试"></a>调试</h2><p>欢迎加入 IRC #jolla-cn #sailfishos-porters (只限英文交流) 或 <a href="https://t.me/joinchat/GTqoL1HLIYXWNf-JeijTAg">https://t.me/joinchat/GTqoL1HLIYXWNf-JeijTAg</a> 讨论</p>
 <p>相关文档 </p>
 <ul>
-<li><a href="https://sailfishos.org/hadk" target="_blank" rel="noopener">https://sailfishos.org/hadk</a> </li>
-<li><a href="http://bit.ly/faq-hadk" target="_blank" rel="noopener">http://bit.ly/faq-hadk</a> </li>
-<li><a href="http://bit.ly/port-channel-log" target="_blank" rel="noopener">http://bit.ly/port-channel-log</a> </li>
-<li><a href="http://bit.ly/always-grep-irc-logs" target="_blank" rel="noopener">http://bit.ly/always-grep-irc-logs</a></li>
+<li><a href="https://sailfishos.org/hadk">https://sailfishos.org/hadk</a> </li>
+<li><a href="http://bit.ly/faq-hadk">http://bit.ly/faq-hadk</a> </li>
+<li><a href="http://bit.ly/port-channel-log">http://bit.ly/port-channel-log</a> </li>
+<li><a href="http://bit.ly/always-grep-irc-logs">http://bit.ly/always-grep-irc-logs</a></li>
 </ul>
-
-    
-
-    
-</div>
-
-
-                
-
-                <!-- Post Comments -->
-                
-                    
-
-
-    <!-- 使用 DISQUS -->
-    <div id="disqus-comment">
-        <div id="disqus_thread"></div>
-<script>
-    queue.offer(function() {
-            var disqus_config = function () {
-                this.page.url = 'http://birdzhang.xyz/2018/03/30/SailfishOS移植到Redmi-5-Plus的一些记录/index.html';  // Replace PAGE_URL with your page's canonical URL variable
-                this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
-            };
-
-            (function() { // DON'T EDIT BELOW THIS LINE
-                var d = document;
-                var s = d.createElement('script');
-                s.src = '//0312birdzhang-github-io.disqus.com/embed.js';
-                s.setAttribute('data-timestamp', + new Date());
-                (d.head || d.body).appendChild(s);
-            })();
-        });
-</script>
-
-    </div>
-    <style>
-        #disqus-comment{
-            background-color: #eee;
-            padding: 2pc;
-        }
-    </style>
-
-
-
-                
-            </div>
-
-            <!-- Post Prev & Next Nav -->
-            <nav class="material-nav mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
-    <!-- Prev Nav -->
-    
-        <a href="/2018/05/15/Java改写HttpServletRequest请求参数/" id="post_nav-newer" class="prev-content">
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                <i class="material-icons">arrow_back</i>
-            </button>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            新篇
-        </a>
-    
-
-    <!-- Section Spacer -->
-    <div class="section-spacer"></div>
-
-    <!-- Next Nav -->
-    
-        <a href="/2018/01/30/Tomcat信任https网站/" id="post_nav-older" class="next-content">
-            旧篇
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
-                <i class="material-icons">arrow_forward</i>
-            </button>
-        </a>
-    
-</nav>
-
-        </div>
-    </div>
-
-
-
-                    
-                        <!-- Overlay For Active Sidebar -->
-<div class="sidebar-overlay"></div>
-
-<!-- Material sidebar -->
-<aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
-    <div id="sidebar-main">
-        <!-- Sidebar Header -->
-        <div class="sidebar-header header-cover" style="background-image: url(/img/sidebar_header.png);">
-    <!-- Top bar -->
-    <div class="top-bar"></div>
-
-    <!-- Sidebar toggle button -->
-    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
-        <i class="material-icons">clear_all</i>
-        <span class="mdl-button__ripple-container">
-            <span class="mdl-ripple">
-            </span>
-        </span>
-    </button>
-
-    <!-- Sidebar Avatar -->
-    <div class="sidebar-image">
-        <img src="/img/avatar.png" alt="BirdZhang's avatar">
-    </div>
-
-    <!-- Sidebar Email -->
-    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
-        0312birdzhang@email.com
-        <b class="caret"></b>
-    </a>
-</div>
-
-
-        <!-- Sidebar Navigation  -->
-        <ul class="nav sidebar-nav">
-    <!-- User dropdown  -->
-    <li class="dropdown">
-        <ul id="settings-dropdown" class="dropdown-menu">
-            
-                <li>
-                    <a href="mailto:0312birdzhang@gmail.com" target="_blank" title="Email Me">
-                        
-                            <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
-                        
-                        Email Me
-                    </a>
-                </li>
-            
-        </ul>
-    </li>
-
-    <!-- Homepage -->
-    
-        <li id="sidebar-first-li">
-            <a href="/" target="_self">
-                
-                    <i class="material-icons sidebar-material-icons">home</i>
-                
-                主页
-            </a>
-        </li>
-        
-    
-
-    <!-- Archives  -->
-    
-        <li class="dropdown">
-            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
-                
-                    <i class="material-icons sidebar-material-icons">inbox</i>
-                
-                    归档
-                <b class="caret"></b>
-            </a>
-            <ul class="dropdown-menu">
-            <li>
-                <a class="sidebar_archives-link" href="/archives/2019/12/">十二月 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/10/">十月 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/07/">七月 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/06/">六月 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/05/">五月 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/04/">四月 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/12/">十二月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/09/">九月 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/08/">八月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/07/">七月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/06/">六月 2018<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/05/">五月 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/03/">三月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/01/">一月 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/12/">十二月 2017<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/08/">八月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/06/">六月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/05/">五月 2017<span class="sidebar_archives-count">8</span></a>
-            </ul>
-        </li>
-        
-    
-
-    <!-- Categories  -->
-    
-
-    <!-- Pages  -->
-    
-        <li>
-            <a href="/links/" title="友情链接">
-                
-                    <i class="material-icons sidebar-material-icons">link</i>
-                
-                友情链接
-            </a>
-        </li>
-        
-    
-        <li>
-            <a href="/about" title="关于我">
-                
-                    <i class="material-icons sidebar-material-icons">person</i>
-                
-                关于我
-            </a>
-        </li>
-        
-    
-        <li>
-            <a href="/tags" title="标签">
-                
-                    <i class="material-icons sidebar-material-icons">bookmark</i>
-                
-                标签
-            </a>
-        </li>
-        
-    
-
-    <!-- Article Number  -->
-    
-</ul>
-
-
-        <!-- Sidebar Footer -->
-        <!--
-I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
-If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
-It will not impact the appearance and can give developers a lot of support :)
-
-很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
-如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
-它不会影响美观并可以给开发者很大的支持和动力。 :)
--->
-
-<!-- Sidebar Divider -->
-
-    <div class="sidebar-divider"></div>
-
-
-<!-- Theme Material -->
-
-    <a href="https://github.com/viosey/hexo-theme-material"  class="sidebar-footer-text-a" target="_blank">
-        <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
-            主题 - Material
-            <span class="sidebar-badge badge-circle">i</span>
-        </div>
-    </a>
-
-
-<!-- Help & Support -->
-<!--
-
--->
-
-<!-- Feedback -->
-<!--
-
--->
-
-<!-- About Theme -->
-<!--
-
--->
-
-    </div>
-
-    <!-- Sidebar Image -->
-    
-
-</aside>
-
-                    
-
-                    
-                        <!-- Footer Top Button -->
-                        <div class="toTop-wrap">
-    <a href="#top" class="toTop">
-        <i class="material-icons footer_top-i">expand_less</i>
-    </a>
-</div>
-
-                    
-
-                    <!--Footer-->
-<footer class="mdl-mini-footer" id="bottom">
-    
-        <!-- Paradox Footer Left Section -->
-        <div class="mdl-mini-footer--left-section sns-list">
-    <!-- Twitter -->
-    
-        <a href="https://twitter.com/0312birdzhang" target="_blank">
-            <button class="mdl-mini-footer--social-btn social-btn" style="background-image: url(/img/footer/footer_ico-twitter.png);">
-                <span class="visuallyhidden">Twitter</span>
-            </button><!--
-     --></a>
-    
-
-    <!-- Facebook -->
-    
-
-    <!-- Google + -->
-    
-        <a href="https://www.google.com/0312birdzhang" target="_blank">
-            <button class="mdl-mini-footer--social-btn social-btn" style="background-image: url(/img/footer/footer_ico-gplus.png);">
-                <span class="visuallyhidden">Google Plus</span>
-            </button><!--
-     --></a>
-    
-
-    <!-- Weibo -->
-    
-        <a href="http://weibo.com/0312birdzhang" target="_blank">
-            <button class="mdl-mini-footer--social-btn social-btn" style="background-image: url(/img/footer/footer_ico-weibo.png);">
-                <span class="visuallyhidden">Weibo</span>
-            </button><!--
-     --></a>
-    
-
-    <!-- Instagram -->
-    
-
-    <!-- Tumblr -->
-    
-
-    <!-- Github -->
-    
-        <a href="https://github.com/0312birdzhang" target="_blank">
-            <button class="mdl-mini-footer--social-btn social-btn" style="background-image: url(/img/footer/footer_ico-github.png);">
-                <span class="visuallyhidden">Github</span>
-            </button><!--
-     --></a>
-    
-
-    <!-- LinkedIn -->
-    
-
-    <!-- Zhihu -->
-    
-
-    <!-- Bilibili -->
-    
-
-    <!-- Telegram -->
-    
-</div>
-
-
-        <!--Copyright-->
-        <div id="copyright">
-            Copyright&nbsp;©&nbsp;
-            <script type="text/javascript">
-                var fd = new Date();
-                document.write(fd.getFullYear());
-            </script>
-            &nbsp;BirdZhang's Blog
-        </div>
-
-        <!-- Paradox Footer Right Section -->
-
-        <!--
-        I am glad you use this theme, the development is no so easy, I hope you can keep the copyright.
-        It will not impact the appearance and can give developers a lot of support :)
-
-        很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
-        它不会影响美观并可以给开发者很大的支持。 :)
-        -->
-
-        <div class="mdl-mini-footer--right-section">
-            <div>
-                <div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div>
-                <div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div>
-            </div>
-        </div>
-    
-</footer>
-
-
-                    <!-- Import File -->
-<script src="/js/lazyload.min.js"></script>
-<script src="/js/js.min.js"></script>
-<script src="/js/nprogress.js"></script>
-
-<script type="text/javascript">
-    NProgress.configure({
-        showSpinner: true
-    });
-    NProgress.start();
-    $('#nprogress .bar').css({
-        'background': '#29d'
-    });
-    $('#nprogress .peg').css({
-        'box-shadow': '0 0 10px #29d, 0 0 15px #29d'
-    });
-    $('#nprogress .spinner-icon').css({
-        'border-top-color': '#29d',
-        'border-left-color': '#29d'
-    });
-    setTimeout(function() {
-        NProgress.done();
-        $('.fade').removeClass('out');
-    }, 800);
-</script>
-
-
-
-
-
-    <!-- Leancloud -->
-    <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
-    <script>
-        AV.initialize('MguK71QUSGyrb4biWtu5oPqN-gzGzoHsz', 'ghPhHxzVQtKRfKt72twwiUFx');
-    </script>
-    <script>
-    function showTime(Counter) {
-        var query = new AV.Query(Counter);
-        $('.leancloud-views_num').each(function() {
-            var url = $(this).attr('id').trim();
-            query.equalTo('url', url);
-            query.find({
-                success: function(results) {
-                    if (results.length === 0) {
-                        var content = '0 ' + $(document.getElementById(url)).text();
-                        $(document.getElementById(url)).text(content);
-                        return;
-                    }
-                    for (var i = 0; i < results.length; i++) {
-                        var object = results[i];
-                        var content = object.get('time') + ' ' + $(document.getElementById(url)).text();
-                        $(document.getElementById(url)).text(content);
-                    }
-                },
-                error: function(object, error) {
-                    console.log('Error: ' + error.code + ' ' + error.message);
+</div><div class="article-tags size-small is-uppercase mb-4"><span class="mr-2">#</span><a class="link-muted mr-2" rel="tag" href="/tags/sailfish/">sailfish</a><a class="link-muted mr-2" rel="tag" href="/tags/redmi/">redmi</a><a class="link-muted mr-2" rel="tag" href="/tags/vince/">vince</a><a class="link-muted mr-2" rel="tag" href="/tags/hadk/">hadk</a><a class="link-muted mr-2" rel="tag" href="/tags/redmi5plus/">redmi5plus</a></div><div class="sharethis-inline-share-buttons"></div><script src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5ed617a2f956ab59" defer></script></article></div><div class="card"><div class="card-content"><h3 class="menu-label has-text-centered">喜欢这篇文章？打赏一下作者吧</h3><div class="buttons is-centered"><a class="button is-info donate"><span class="icon is-small"><i class="fab fa-alipay"></i></span><span>支付宝</span><span class="qrcode"><img src="/" alt="支付宝"></span></a><a class="button donate" href="/" style="background-color:rgba(255,128,62,.87);border-color:transparent;color:white;" target="_blank" rel="noopener"><span class="icon is-small"><i class="fas fa-coffee"></i></span><span>送我杯咖啡</span></a><a class="button is-danger donate" href="/" target="_blank" rel="noopener"><span class="icon is-small"><i class="fab fa-patreon"></i></span><span>Patreon</span></a><a class="button is-warning donate" onclick="document.getElementById(&#039;paypal-donate-form&#039;).submit()"><span class="icon is-small"><i class="fab fa-paypal"></i></span><span>Paypal</span></a><form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank" rel="noopener" id="paypal-donate-form"><input type="hidden" name="cmd" value="_donations"><input type="hidden" name="business" value="991881011@qq.com"><input type="hidden" name="currency_code" value="USD"></form><a class="button is-success donate"><span class="icon is-small"><i class="fab fa-weixin"></i></span><span>微信</span><span class="qrcode"><img src="/" alt="微信"></span></a></div></div></div><nav class="post-navigation mt-4 level is-mobile"><div class="level-start"><a class="article-nav-prev level level-item link-muted" href="/2018/05/15/Java%E6%94%B9%E5%86%99HttpServletRequest%E8%AF%B7%E6%B1%82%E5%8F%82%E6%95%B0/"><i class="level-item fas fa-chevron-left"></i><span class="level-item">Java改写HttpServletRequest请求参数</span></a></div><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/2018/01/30/Tomcat%E4%BF%A1%E4%BB%BBhttps%E7%BD%91%E7%AB%99/"><span class="level-item">Tomcat信任https网站</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><div class="card"><div class="card-content"><h3 class="title is-5">评论</h3><div id="disqus_thread"><noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript></div><script>var disqus_config = function () {
+            this.page.url = 'http://birdzhang.xyz/2018/03/30/SailfishOS%E7%A7%BB%E6%A4%8D%E5%88%B0Redmi-5-Plus%E7%9A%84%E4%B8%80%E4%BA%9B%E8%AE%B0%E5%BD%95/';
+            this.page.identifier = '2018/03/30/SailfishOS移植到Redmi-5-Plus的一些记录/';
+        };
+        (function() {
+            var d = document, s = d.createElement('script');  
+            s.src = '//' + '0312birdzhang-github-io' + '.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();</script></div></div></div><div class="column column-left is-4-tablet is-4-desktop is-4-widescreen  order-1 is-sticky"><div class="card widget"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="" src="https://www.gravatar.com/avatar/72326950ba674fec08b31a0c90663fe2?s=128" alt="BirdZhang"></figure><p class="title is-size-4 is-block line-height-inherit">BirdZhang</p><p class="is-size-6 is-block">一只笨死的大鸟</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>Earth</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">文章</p><a href="/archives"><p class="title">32</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">分类</p><a href="/categories"><p class="title">0</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">标签</p><a href="/tags"><p class="title">59</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://github.com/0312birdzhang" target="_blank" rel="noopener">关注我</a></div><div class="level is-mobile"><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Github" href="https://github.com/0312birdzhang"><i class="fab fa-github"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Twitter" href="https://twitter.com/0312birdzhang"><i class="fab fa-twitter"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="RSS" href="/atom.xml"><i class="fas fa-rss"></i></a></div></div></div><!--!--><div class="card widget"><div class="card-content"><div class="menu"><h3 class="menu-label">链接</h3><ul class="menu-list"><li><a class="level is-mobile is-mobile" href="https://sailfishos.club" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">旗鱼俱乐部</span></span><span class="level-right"><span class="level-item tag">sailfishos.club</span></span></a></li></ul></div></div></div><!--!--><div class="card widget"><div class="card-content"><h3 class="menu-label">最新文章</h3><article class="media"><div class="media-content size-small"><p><time dateTime="2019-12-30T03:33:17.000Z">2019-12-30</time></p><p class="title is-6"><a class="link-muted" href="/2019/12/30/SailfishOS%E7%A7%BB%E6%A4%8D%E5%88%B0Redmi-K20%E7%9A%84%E4%B8%80%E4%BA%9B%E8%AE%B0%E5%BD%95/">SailfishOS移植到Redmi_K20的一些记录</a></p><p class="is-uppercase"></p></div></article><article class="media"><div class="media-content size-small"><p><time dateTime="2019-10-12T01:58:53.000Z">2019-10-12</time></p><p class="title is-6"><a class="link-muted" href="/2019/10/12/Windows%E4%BD%BF%E7%94%A8frp%E8%BF%9B%E8%A1%8C%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5/">Windows使用frp进行远程连接</a></p><p class="is-uppercase"></p></div></article><article class="media"><div class="media-content size-small"><p><time dateTime="2019-07-30T07:27:36.809Z">2019-07-30</time></p><p class="title is-6"><a class="link-muted" href="/2019/07/30/X-pack%E7%A0%B4%E8%A7%A3/">X-pack破解</a></p><p class="is-uppercase"></p></div></article><article class="media"><div class="media-content size-small"><p><time dateTime="2019-06-13T02:06:52.000Z">2019-06-13</time></p><p class="title is-6"><a class="link-muted" href="/2019/06/13/SailfishOS%E7%A7%BB%E6%A4%8D%E5%88%B0Redmi-5-Plus%E7%9A%84%E4%B8%80%E4%BA%9B%E8%AE%B0%E5%BD%95-2/">SailfishOS移植到Redmi-5-Plus的一些记录(2)</a></p><p class="is-uppercase"></p></div></article><article class="media"><div class="media-content size-small"><p><time dateTime="2019-05-27T06:18:52.000Z">2019-05-27</time></p><p class="title is-6"><a class="link-muted" href="/2019/05/27/%E4%BD%BF%E7%94%A8docker%E7%BC%96%E8%AF%91%E6%89%93%E5%8C%85sailfishos/">使用docker编译打包sailfishos</a></p><p class="is-uppercase"></p></div></article></div></div><div class="card widget"><div class="card-content"><div class="menu"><h3 class="menu-label">归档</h3><ul class="menu-list"><li><a class="level is-mobile is-marginless" href="/archives/2019/12/"><span class="level-start"><span class="level-item">十二月 2019</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2019/10/"><span class="level-start"><span class="level-item">十月 2019</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2019/07/"><span class="level-start"><span class="level-item">七月 2019</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2019/06/"><span class="level-start"><span class="level-item">六月 2019</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2019/05/"><span class="level-start"><span class="level-item">五月 2019</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2019/04/"><span class="level-start"><span class="level-item">四月 2019</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2018/12/"><span class="level-start"><span class="level-item">十二月 2018</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2018/09/"><span class="level-start"><span class="level-item">九月 2018</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2018/08/"><span class="level-start"><span class="level-item">八月 2018</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2018/07/"><span class="level-start"><span class="level-item">七月 2018</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2018/06/"><span class="level-start"><span class="level-item">六月 2018</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2018/05/"><span class="level-start"><span class="level-item">五月 2018</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2018/03/"><span class="level-start"><span class="level-item">三月 2018</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2018/01/"><span class="level-start"><span class="level-item">一月 2018</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2017/12/"><span class="level-start"><span class="level-item">十二月 2017</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2017/08/"><span class="level-start"><span class="level-item">八月 2017</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2017/06/"><span class="level-start"><span class="level-item">六月 2017</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2017/05/"><span class="level-start"><span class="level-item">五月 2017</span></span><span class="level-end"><span class="level-item tag">8</span></span></a></li></ul></div></div></div><div class="card widget"><div class="card-content"><div class="menu"><h3 class="menu-label">标签</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/tags/9t/"><span class="tag">9t</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Java/"><span class="tag">Java</span><span class="tag is-grey-lightest">4</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Python/"><span class="tag">Python</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Terminating/"><span class="tag">Terminating</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Tomcat/"><span class="tag">Tomcat</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/android/"><span class="tag">android</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/cas/"><span class="tag">cas</span><span class="tag is-grey-lightest">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/coinhive/"><span class="tag">coinhive</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/crt/"><span class="tag">crt</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/davinci/"><span class="tag">davinci</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/docker/"><span class="tag">docker</span><span class="tag is-grey-lightest">6</span></a></div><div class="control"><a class="tags has-addons" href="/tags/frp/"><span class="tag">frp</span><span class="tag is-grey-lightest">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/hadk/"><span class="tag">hadk</span><span class="tag is-grey-lightest">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/https/"><span class="tag">https</span><span class="tag is-grey-lightest">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/httpservletrequest/"><span class="tag">httpservletrequest</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/hybris-15-1/"><span class="tag">hybris-15.1</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/hybris-16-0/"><span class="tag">hybris-16.0</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/ios/"><span class="tag">ios</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/ip/"><span class="tag">ip</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/iphone/"><span class="tag">iphone</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/irc/"><span class="tag">irc</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/jolla/"><span class="tag">jolla</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/js/"><span class="tag">js</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/json/"><span class="tag">json</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/k20/"><span class="tag">k20</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/k8s/"><span class="tag">k8s</span><span class="tag is-grey-lightest">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/kubernetes/"><span class="tag">kubernetes</span><span class="tag is-grey-lightest">4</span></a></div><div class="control"><a class="tags has-addons" href="/tags/lineage-15-1/"><span class="tag">lineage-15.1</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/lineage-16-0/"><span class="tag">lineage-16.0</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/lua/"><span class="tag">lua</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/migrate/"><span class="tag">migrate</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/nginx/"><span class="tag">nginx</span><span class="tag is-grey-lightest">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/openresty/"><span class="tag">openresty</span><span class="tag is-grey-lightest">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/opensips/"><span class="tag">opensips</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/pastebin/"><span class="tag">pastebin</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/python/"><span class="tag">python</span><span class="tag is-grey-lightest">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/python2/"><span class="tag">python2</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/rdp/"><span class="tag">rdp</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/redmi/"><span class="tag">redmi</span><span class="tag is-grey-lightest">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/redmi5plus/"><span class="tag">redmi5plus</span><span class="tag is-grey-lightest">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/remix/"><span class="tag">remix</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/sailfish/"><span class="tag">sailfish</span><span class="tag is-grey-lightest">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/sailfishos/"><span class="tag">sailfishos</span><span class="tag is-grey-lightest">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/sip/"><span class="tag">sip</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/socks5/"><span class="tag">socks5</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/tomcat/"><span class="tag">tomcat</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/trustcacerts/"><span class="tag">trustcacerts</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/unix/"><span class="tag">unix</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/vince/"><span class="tag">vince</span><span class="tag is-grey-lightest">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/vmvare/"><span class="tag">vmvare</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/voip/"><span class="tag">voip</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/windows/"><span class="tag">windows</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/x86/"><span class="tag">x86</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/xiaomi/"><span class="tag">xiaomi</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%8F%82%E6%95%B0/"><span class="tag">参数</span><span class="tag is-grey-lightest">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%94%B9%E5%86%99/"><span class="tag">改写</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E8%B7%B3%E8%BF%87/"><span class="tag">跳过</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E8%BF%81%E7%A7%BB/"><span class="tag">迁移</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E9%9A%8F%E7%AC%94/"><span class="tag">随笔</span><span class="tag is-grey-lightest">1</span></a></div></div></div></div></div><div class="card widget"><div class="card-content"><div class="menu"><h3 class="menu-label">订阅更新</h3><form action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open(&#039;https://feedburner.google.com/fb/a/mailverify?uri=&#039;,&#039;popupwindow&#039;,&#039;scrollbars=yes,width=550,height=520&#039;);return true"><input type="hidden" value="" name="uri"><input type="hidden" name="loc" value="en_US"><div class="field has-addons"><div class="control has-icons-left is-expanded"><input class="input" name="email" type="email" placeholder="Email"><span class="icon is-small is-left"><i class="fas fa-envelope"></i></span></div><div class="control"><input class="button is-primary" type="submit" value="订阅"></div></div></form></div></div></div></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/img/avatar.png" alt="BirdZhang&#039;s Blog" height="28"></a><p class="size-small"><span>&copy; 2020 BirdZhang</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script>moment.locale("zh-CN");</script><script>var IcarusThemeSettings = {
+            site: {
+                url: 'http://birdzhang.xyz',
+                external_link: {"enable":true,"exclude":[]}
+            },
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
                 }
-            });
-        });
-    }
-
-    function addCount(Counter) {
-      var Counter = AV.Object.extend('Counter');
-      url = $('.leancloud-views_num').attr('id').trim();
-      title = $('.leancloud-views_num').attr('data-flag-title').trim();
-      var query = new AV.Query(Counter);
-      query.equalTo('url', url);
-      query.find({
-          success: function(results) {
-            if (results.length > 0) {
-                var counter = results[0];
-                counter.fetchWhenSave(true);
-                counter.increment('time');
-                counter.save(null, {
-                    success: function(counter) {
-                        var content =  counter.get('time') + ' ' + $(document.getElementById(url)).text();
-                        $(document.getElementById(url)).text(content);
-                    },
-                    error: function(counter, error) {
-                        console.log('Failed to save Visitor num, with error message: ' + error.message);
-                    }
-                });
-            } else {
-              var newcounter = new Counter();
-              newcounter.set('title', title);
-              newcounter.set('url', url);
-              newcounter.set('time', 1);
-              newcounter.save(null, {
-                  success: function(newcounter) {
-                      console.log('newcounter.get(\'time\')='+newcounter.get('time'));
-                      var content = newcounter.get('time') + ' ' + $(document.getElementById(url)).text();
-                      $(document.getElementById(url)).text(content);
-                  },
-                  error: function(newcounter, error) {
-                      console.log('Failed to create');
-                  }
-              });
             }
-        },
-        error: function(error) {
-            console.log('Error:' + error.code + ' ' + error.message);
-        }
-      });
-    }
-    $(function() {
-        var Counter = AV.Object.extend('Counter');
-        if ($('.leancloud-views_num').length === 1) {
-            addCount(Counter);
-        } else if ($('.post-title-link').length > 1) {
-            showTime(Counter);
-        }
-    });
-</script>
-
-
-
-
-
-
-
-
-    <!-- 使用 DISQUS js 代码 -->
-    <script id="dsq-count-scr" src="//0312birdzhang-github-io.disqus.com/count.js" async></script>
-
-
-
-<!-- Swiftye -->
-
-
-<!-- Local Search-->
-
-
-<!-- Window Load-->
-<script>
-    $(window).load(function() {
-        // Post_Toc parent position fixed
-        $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
-    });
-</script>
-
-<!-- MathJax Load-->
-
-
-                </main>
-            </div>
-        </body>
-    
-</html>
+        };</script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script src="/js/animation.js"></script><a id="back-to-top" title="回到顶端" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back_to_top.js" defer></script><!--!--><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><!--!--><!--!--><script src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="想要查找什么..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"想要查找什么...","untitled":"(无标题)","posts":"文章","pages":"页面","categories":"分类","tags":"标签"});
+        });</script></body></html>

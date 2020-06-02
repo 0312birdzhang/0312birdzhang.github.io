@@ -1,892 +1,259 @@
-<!DOCTYPE html>
-<html lang="zh">
-    <head><meta name="generator" content="Hexo 3.9.0">
-    <!-- 
-        © Material Theme
-        https://github.com/viosey/hexo-theme-material
-        Version: 1.3.0 -->
-
-    <!-- Title -->
-    
-    <title>
-        
-            标签: kubernetes | 
-        
-        BirdZhang&#39;s Blog
-    </title>
-
-    <!-- Favicons -->
-    <link rel="icon shortcut" type="image/ico" href="/img/favicon.png">
-    <link rel="icon" sizes="192x192" href="/img/favicon.png">
-    <link rel="apple-touch-icon" href="/img/favicon.png">
-
-    <!-- Meta & Info -->
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#0097A7">
-    <meta name="author" content="BirdZhang">
-    <meta name="description" content="BirdZhang&#39;s GitHub pages powered by Hexo.io and hexo-theme-material.">
-    <meta name="keywords" content="null">
-
-    <!--iOS -->
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <meta name="apple-mobile-web-app-title" content="Title">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="HandheldFriendly" content="True">
-    <meta name="MobileOptimized" content="480">
-
-    <!-- Add to homescreen for Chrome on Android -->
-    <meta name="mobile-web-app-capable" content="yes">
-
-    <!-- Add to homescreen for Safari on iOS -->
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="apple-mobile-web-app-title" content="BirdZhang&#39;s Blog">
-
-    <!-- The Open Graph protocol -->
-    <meta property="og:url" content="http://birdzhang.xyz">
-    <meta property="og:type" content="blog">
-    <meta property="og:title" content="标签: kubernetes | BirdZhang&#39;s Blog">
-    <meta property="og:description" content="BirdZhang&#39;s GitHub pages powered by Hexo.io and hexo-theme-material.">
-    
-
-    <!--[if lte IE 9]>
-        <link rel="stylesheet" href="/css/ie-blocker.css">
-
-        
-            <script src="/js/ie-blocker.zhCN.js"></script>
-        
-    <![endif]-->
-
-    <!-- Import CSS -->
-    <link rel="stylesheet" href="/css/material.min.css">
-    <link rel="stylesheet" href="/css/style.min.css">
-    <!-- Config CSS -->
-
-
-<!-- Other Styles -->
-<style>
-  body, html {
-    font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
-  }
-
-  a {
-    color: #00838F;
-  }
-
-  .mdl-card__media,
-  #search-label,
-  #search-form-label:after,
-  #scheme-Paradox .hot_tags-count,
-  #scheme-Paradox .sidebar_archives-count,
-  #scheme-Paradox .sidebar-colored .sidebar-header,
-  #scheme-Paradox .sidebar-colored .sidebar-badge{
-    background-color: #0097A7 !important;
-  }
-
-  /* Sidebar User Drop Down Menu Text Color */
-  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
-  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
-    color: #0097A7 !important;
-  }
-
-  #post_entry-right-info,
-  .sidebar-colored .sidebar-nav li:hover > a,
-  .sidebar-colored .sidebar-nav li:hover > a i,
-  .sidebar-colored .sidebar-nav li > a:hover,
-  .sidebar-colored .sidebar-nav li > a:hover i,
-  .sidebar-colored .sidebar-nav li > a:focus i,
-  .sidebar-colored .sidebar-nav > .open > a,
-  .sidebar-colored .sidebar-nav > .open > a:hover,
-  .sidebar-colored .sidebar-nav > .open > a:focus,
-  #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
-    color: #0097A7 !important;
-  }
-
-  .toTop {
-    background: #757575 !important;
-  }
-
-  .material-layout .material-post>.material-nav,
-  .material-layout .material-index>.material-nav,
-  .material-nav a {
-    color: #757575;
-  }
-
-  #scheme-Paradox .MD-burger-layer {
-    background-color: #757575;
-  }
-
-  #scheme-Paradox #post-toc-trigger-btn {
-    color: #757575;
-  }
-
-  .post-toc a:hover {
-    color: #00838F;
-    text-decoration: underline;
-  }
-</style>
-
-
-<!-- Theme Background Related-->
-
-    <style>
-      body{
-        background-color: #F5F5F5;
-      }
-
-      /* blog_info bottom background */
-      #scheme-Paradox .material-layout .something-else .mdl-card__supporting-text{
-        background-color: #fff;
-      }
-    </style>
-
-
-
-
-<!-- Fade Effect -->
-
-    <style>
-      .fade {
-        transition: all 800ms linear;
-        -webkit-transform: translate3d(0,0,0);
-        -moz-transform: translate3d(0,0,0);
-        -ms-transform: translate3d(0,0,0);
-        -o-transform: translate3d(0,0,0);
-        transform: translate3d(0,0,0);
-        opacity: 1;
-      }
-
-      .fade.out{
-        opacity: 0;
-      }
-    </style>
-
-
-
-    <script src="/js/jquery.min.js"></script>
-    <script src="/js/queue.js"></script>
-
-    <!-- UC Browser Compatible -->
-    <script>
-        var agent = navigator.userAgent.toLowerCase();
-        if(agent.indexOf('ucbrowser')>0) {
-            document.write("<link rel=\"stylesheet\" href=\"/css/uc.css\">");
-            alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
-        }
-    </script>
-
-    <script data-ad-client="ca-pub-8361678566464255" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-    
-
-    
-
-    <!-- Bing Background -->
-    
-
-    <!-- Custom Head -->
-    
-</head>
-
-
-    
-        <body id="scheme-Paradox" class="lazy">
-            <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
-                
-
-                <!-- Main Container -->
-                <main class="material-layout__content" id="main">
-
-                    <!-- Top Anchor -->
-                    <div id="top"></div>
-
-                    
-                        <!-- Hamburger Button -->
-                        <button class="MD-burger-icon sidebar-toggle">
-                            <span class="MD-burger-layer"></span>
-                        </button>
-                    
-
-                    <!-- Index Module -->
-<div class="material-index mdl-grid">
-    
-    <div class="locate-thumbnail-symbol"></div>
-
-    <!-- Pin on top -->
-    
-
-    <!-- Normal Post -->
-    
-        
-        
-            <!-- Paradox Thumbnail -->
-            <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2019/04/15/harbor跨大版本升级/">harbor跨大版本升级</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            注意：必须是用域名的方式(也就是有内网的dns)，如果以前用ip，则本方法无效！
-Harbor1.2...
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2019/04/15/harbor跨大版本升级/" target="_self">继续阅读</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="BirdZhang's avatar">
-            </div>
-            <div>
-                <strong>BirdZhang</strong>
-                <span>4月 15, 2019</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                
-            </span>
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-        
-        
-        
-    
-        
-        
-            <!-- Paradox Thumbnail -->
-            <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2018/07/03/清理kubernetes中未正常退出的pod/">清理kubernetes中未正常退出的pod</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            长时间运行的k8s节点可能会存在某些pod不自动退出，一直处于Terminating的状态于是我们可以用这个脚本定...
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2018/07/03/清理kubernetes中未正常退出的pod/" target="_self">继续阅读</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="BirdZhang's avatar">
-            </div>
-            <div>
-                <strong>BirdZhang</strong>
-                <span>7月 03, 2018</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                
-            </span>
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-        
-        
-        
-    
-        
-        
-            <!-- Paradox Thumbnail -->
-            <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/12/08/自动清理k8s中的容器_卷_镜像/">自动清理k8s中的容器、卷、镜像</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            
-镜像源码 
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2017/12/08/自动清理k8s中的容器_卷_镜像/" target="_self">继续阅读</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="BirdZhang's avatar">
-            </div>
-            <div>
-                <strong>BirdZhang</strong>
-                <span>12月 08, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                
-            </span>
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-        
-        
-        
-    
-        
-        
-            <!-- Paradox Thumbnail -->
-            <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/12/08/使用DaemonSet-Taint-Tolerations-NodeSelector部署Nginx-ingress-controller/">使用DaemonSet+Taint/Tolerations+NodeSelector部署Nginx ingress controller</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            
-使用DaemonSet+NodeSelector+Tolerations的方式定义Nginx Ingress Contro...
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2017/12/08/使用DaemonSet-Taint-Tolerations-NodeSelector部署Nginx-ingress-controller/" target="_self">继续阅读</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="BirdZhang's avatar">
-            </div>
-            <div>
-                <strong>BirdZhang</strong>
-                <span>12月 08, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                
-            </span>
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-        
-        
-        
-    
-
-    
-
-    
-        <script>
-    var randomNum;
-
-    var locatePost = $('.locate-thumbnail-symbol').next();
-    for(var i = 0; i < 10; i++) {
-        randomNum = Math.floor(Math.random() * 19 + 1);
-
-        locatePost.children('.post_thumbnail-random').attr('id', 'random_thumbnail-'+randomNum);
-        locatePost.children('.post_thumbnail-random').css('background-image', 'url(' + '/img/random/material-' + randomNum + '.png' + ')')
-
-        locatePost = locatePost.next();
-    }
-</script>
-
-    
-</div>
-
-
-                    
-                        <!-- Overlay For Active Sidebar -->
-<div class="sidebar-overlay"></div>
-
-<!-- Material sidebar -->
-<aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
-    <div id="sidebar-main">
-        <!-- Sidebar Header -->
-        <div class="sidebar-header header-cover" style="background-image: url(/img/sidebar_header.png);">
-    <!-- Top bar -->
-    <div class="top-bar"></div>
-
-    <!-- Sidebar toggle button -->
-    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
-        <i class="material-icons">clear_all</i>
-        <span class="mdl-button__ripple-container">
-            <span class="mdl-ripple">
-            </span>
-        </span>
-    </button>
-
-    <!-- Sidebar Avatar -->
-    <div class="sidebar-image">
-        <img src="/img/avatar.png" alt="BirdZhang's avatar">
-    </div>
-
-    <!-- Sidebar Email -->
-    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
-        0312birdzhang@email.com
-        <b class="caret"></b>
-    </a>
-</div>
-
-
-        <!-- Sidebar Navigation  -->
-        <ul class="nav sidebar-nav">
-    <!-- User dropdown  -->
-    <li class="dropdown">
-        <ul id="settings-dropdown" class="dropdown-menu">
-            
-                <li>
-                    <a href="mailto:0312birdzhang@gmail.com" target="_blank" title="Email Me">
-                        
-                            <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
-                        
-                        Email Me
-                    </a>
-                </li>
-            
-        </ul>
-    </li>
-
-    <!-- Homepage -->
-    
-        <li id="sidebar-first-li">
-            <a href="/" target="_self">
-                
-                    <i class="material-icons sidebar-material-icons">home</i>
-                
-                主页
-            </a>
-        </li>
-        
-    
-
-    <!-- Archives  -->
-    
-        <li class="dropdown">
-            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
-                
-                    <i class="material-icons sidebar-material-icons">inbox</i>
-                
-                    归档
-                <b class="caret"></b>
-            </a>
-            <ul class="dropdown-menu">
-            <li>
-                <a class="sidebar_archives-link" href="/archives/2019/12/">十二月 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/10/">十月 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/07/">七月 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/06/">六月 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/05/">五月 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/04/">四月 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/12/">十二月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/09/">九月 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/08/">八月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/07/">七月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/06/">六月 2018<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/05/">五月 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/03/">三月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/01/">一月 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/12/">十二月 2017<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/08/">八月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/06/">六月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/05/">五月 2017<span class="sidebar_archives-count">8</span></a>
-            </ul>
-        </li>
-        
-    
-
-    <!-- Categories  -->
-    
-
-    <!-- Pages  -->
-    
-        <li>
-            <a href="/links/" title="友情链接">
-                
-                    <i class="material-icons sidebar-material-icons">link</i>
-                
-                友情链接
-            </a>
-        </li>
-        
-    
-        <li>
-            <a href="/about" title="关于我">
-                
-                    <i class="material-icons sidebar-material-icons">person</i>
-                
-                关于我
-            </a>
-        </li>
-        
-    
-        <li>
-            <a href="/tags" title="标签">
-                
-                    <i class="material-icons sidebar-material-icons">bookmark</i>
-                
-                标签
-            </a>
-        </li>
-        
-    
-
-    <!-- Article Number  -->
-    
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><meta name="generator" content="Hexo 4.2.0"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>标签: kubernetes - BirdZhang&#039;s Blog</title><meta description="BirdZhang&amp;#39;s GitHub pages powered by Hexo.io and hexo-theme-material."><meta property="og:type" content="blog"><meta property="og:title" content="BirdZhang&#039;s Blog"><meta property="og:url" content="http://birdzhang.xyz/"><meta property="og:site_name" content="BirdZhang&#039;s Blog"><meta property="og:description" content="BirdZhang&amp;#39;s GitHub pages powered by Hexo.io and hexo-theme-material."><meta property="og:locale" content="zh_CN"><meta property="og:image" content="http://birdzhang.xyz/img/og_image.png"><meta property="article:author" content="BirdZhang"><meta property="twitter:card" content="summary"><meta property="twitter:image" content="/img/og_image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"http://birdzhang.xyz"},"headline":"BirdZhang's Blog","image":["http://birdzhang.xyz/img/og_image.png"],"author":{"@type":"Person","name":"BirdZhang"},"description":"BirdZhang&#39;s GitHub pages powered by Hexo.io and hexo-theme-material."}</script><link rel="alternative" href="/atom.xml" title="BirdZhang&#039;s Blog" type="application/atom+xml"><link rel="icon" href="/img/favicon.png"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css"><!--!--><script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script></head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/avatar.png" alt="BirdZhang&#039;s Blog" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">Home</a><a class="navbar-item" href="/archives">Archives</a><a class="navbar-item" href="/categories">Categories</a><a class="navbar-item" href="/tags">Tags</a><a class="navbar-item" href="/about">About</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-8-widescreen"><div class="card"><div class="card-content"><nav class="breadcrumb" aria-label="breadcrumbs"><ul><li><a href="/tags">标签</a></li><li class="is-active"><a href="#" aria-current="page">kubernetes</a></li></ul></nav></div></div><div class="card"><article class="card-content article" role="article"><div class="article-meta size-small is-uppercase level is-mobile"><div class="level-left"><time class="level-item" dateTime="2019-04-15T02:22:18.000Z" title="2019-04-15T02:22:18.000Z">2019-04-15</time><span class="level-item">2 分钟 读完 (大约 324 个字)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2019/04/15/harbor%E8%B7%A8%E5%A4%A7%E7%89%88%E6%9C%AC%E5%8D%87%E7%BA%A7/">harbor跨大版本升级</a></h1><div class="content"><p><strong>注意：必须是用域名的方式(也就是有内网的dns)，如果以前用ip，则本方法无效！</strong></p>
+<p>Harbor1.2之前的版本不能直接升级到新版本，想要升级到最新版并且业务不中断，可以采用如下方式。</p>
+<p>大体流程如下：</p>
+<p>B机器搭一个新harbor -&gt;  手动将旧harbor的镜像push到新harbor -&gt; 更改A域名指向到B主机ip -&gt;</p>
+<p>   测试B的harbor服务是否正常 -&gt; 铲掉A上的旧harbor  -&gt;  在A上重新搭建harbor  -&gt;  B机器上的harbor同步到A上的harbor </p>
+<p>   测试A的harbor服务是否正常 -&gt;  改回A域名指向A主机 -&gt; 删掉B上的同步。</p>
+<p>手动push旧harbor镜像到新harbor所用到的脚本：<br>pip install python_harborclient<br>get_all.py:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">#!&#x2F;usr&#x2F;bin&#x2F;python</span><br><span class="line">from registry import RegistryApi</span><br><span class="line">api &#x3D; RegistryApi(&#39;admin&#39;, &#39;password&#39;, &#39;http:&#x2F;&#x2F;pk8stemp02.rmz.flamingo-inc.com:8888&#39;)</span><br><span class="line">maxsize &#x3D; 65536</span><br><span class="line">repos &#x3D; api.getRepositoryList(maxsize)</span><br><span class="line">repositories &#x3D; repos.get(&#39;repositories&#39;)</span><br><span class="line">for repo in repositories:</span><br><span class="line">    tags &#x3D; api.getTagList(repo).get(&#39;tags&#39;)</span><br><span class="line">    if tags:</span><br><span class="line">        for tag in tags:</span><br><span class="line">            print(repo + &quot;:&quot; +tag)</span><br><span class="line">&#96;&#96;&#96;</span><br></pre></td></tr></table></figure>
+<p>python get_all.py &gt; all_repos.txt<br>allimages=$(cat all_repos.txt)<br>ORIGIN_HOST=”pk8snode01.rmz.flamingo-inc.com:8888” #旧harbor<br>BACK_HOST=”pk8stemp02.rmz.flamingo-inc.com:8888” #新harbor</p>
+<p>#提前登录一下</p>
+<p>#docker login $BACK_HOST<br>for image in ${allimages}; do<br>  docker pull ${ORIGIN_HOST}/$image<br>  docker tag ${ORIGIN_HOST}/$image ${BACK_HOST}/$image<br>  docker push ${BACK_HOST}/$image<br>  sleep 1<br>  echo $image “done”<br>done<br><code>`</code></p>
+</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta size-small is-uppercase level is-mobile"><div class="level-left"><time class="level-item" dateTime="2018-07-03T03:22:44.000Z" title="2018-07-03T03:22:44.000Z">2018-07-03</time><span class="level-item">1 分钟 读完 (大约 158 个字)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2018/07/03/%E6%B8%85%E7%90%86kubernetes%E4%B8%AD%E6%9C%AA%E6%AD%A3%E5%B8%B8%E9%80%80%E5%87%BA%E7%9A%84pod/">清理kubernetes中未正常退出的pod</a></h1><div class="content"><p>长时间运行的k8s节点可能会存在某些pod不自动退出，一直处于<code>Terminating</code>的状态<br>于是我们可以用这个脚本定时进行清理</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">#!&#x2F;bin&#x2F;bash</span><br><span class="line">#############################</span><br><span class="line">### clean terminated pods ###</span><br><span class="line">### run at you own risk ! ###</span><br><span class="line">#############################</span><br><span class="line">export PATH&#x3D;&#x2F;usr&#x2F;local&#x2F;cfssl&#x2F;bin:&#x2F;usr&#x2F;local&#x2F;docker&#x2F;:&#x2F;usr&#x2F;local&#x2F;kubernetes&#x2F;:&#x2F;usr&#x2F;local&#x2F;sbin:&#x2F;usr&#x2F;local&#x2F;bin:&#x2F;usr&#x2F;sbin:&#x2F;usr&#x2F;bin:&#x2F;root&#x2F;bin</span><br><span class="line">getns()&#123;</span><br><span class="line">  namespaces&#x3D;&#96;kubectl get namespaces|grep -v &quot;NAME&quot;|awk &#39;&#123;print $1&#125;&#39;&#96;</span><br><span class="line">  for n in $&#123;namespaces&#125;;</span><br><span class="line">  do</span><br><span class="line">    pods_str&#x3D;&#96;kubectl get pods -n $&#123;n&#125;|grep &quot;Terminating&quot;&#96;</span><br><span class="line">    IFS&#x3D;$&#39;\n&#39; read -rd &#39;&#39; -a pods  &lt;&lt;&lt;&quot;$pods_str&quot;</span><br><span class="line">    if [ -n &quot;$pods&quot; ]; then</span><br><span class="line">      getpod $&#123;n&#125; $pods;</span><br><span class="line">    fi</span><br><span class="line">  done</span><br><span class="line">&#125;</span><br><span class="line">getpod()&#123;</span><br><span class="line"> ns&#x3D;$1;</span><br><span class="line"> for podinfo in $2;</span><br><span class="line"> do</span><br><span class="line">  pod&#x3D;&#96;echo $podinfo|awk &#39;&#123;print $1&#125;&#39;&#96;</span><br><span class="line">  delpod $pod $ns;</span><br><span class="line"> done</span><br><span class="line">&#125;</span><br><span class="line">delpod()&#123;</span><br><span class="line">   echo &quot;kubectl delete pods $1 -n $2 --grace-period&#x3D;0 --force&quot;</span><br><span class="line">   kubectl delete pods $1 -n $2 --grace-period&#x3D;0 --force</span><br><span class="line">&#125;</span><br><span class="line">main()&#123;</span><br><span class="line">  getns</span><br><span class="line">&#125;</span><br><span class="line">main</span><br></pre></td></tr></table></figure>
+</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta size-small is-uppercase level is-mobile"><div class="level-left"><time class="level-item" dateTime="2017-12-08T09:57:35.000Z" title="2017-12-08T09:57:35.000Z">2017-12-08</time><span class="level-item">3 分钟 读完 (大约 477 个字)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2017/12/08/%E8%87%AA%E5%8A%A8%E6%B8%85%E7%90%86k8s%E4%B8%AD%E7%9A%84%E5%AE%B9%E5%99%A8_%E5%8D%B7_%E9%95%9C%E5%83%8F/">自动清理k8s中的容器、卷、镜像</a></h1><div class="content"><blockquote>
+<p>镜像源码 <a href="https://github.com/meltwater/docker-cleanup">https://github.com/meltwater/docker-cleanup</a></p>
+</blockquote>
+<h4 id="注意：这个镜像会将所有已经退出的容器、未使用的镜像和data-only的容器，除非你将他们加到保存的变量中。注意正确配置docker-api的版本，以免删除所有的镜像。小心挂载-var-lib-docker，因为如果挂载后没有使用的话，也会被当作未使用的卷删掉。"><a href="#注意：这个镜像会将所有已经退出的容器、未使用的镜像和data-only的容器，除非你将他们加到保存的变量中。注意正确配置docker-api的版本，以免删除所有的镜像。小心挂载-var-lib-docker，因为如果挂载后没有使用的话，也会被当作未使用的卷删掉。" class="headerlink" title="注意：这个镜像会将所有已经退出的容器、未使用的镜像和data-only的容器，除非你将他们加到保存的变量中。注意正确配置docker api的版本，以免删除所有的镜像。小心挂载 /var/lib/docker，因为如果挂载后没有使用的话，也会被当作未使用的卷删掉。"></a>注意：这个镜像会将所有已经退出的容器、未使用的镜像和data-only的容器，除非你将他们加到保存的变量中。注意正确配置docker api的版本，以免删除所有的镜像。小心挂载 /var/lib/docker，因为如果挂载后没有使用的话，也会被当作未使用的卷删掉。</h4><p>支持的变量</p>
+<ul>
+<li><strong>CLEAN_PERIOD=1800</strong> - Interval in seconds to sleep after completing a cleaning run. Defaults to 1800 seconds = 30 minutes.</li>
+<li><strong>DELAY_TIME=1800</strong> - Seconds to wait before removing exited containers and unused images. Defaults to 1800 seconds = 30 minutes.</li>
+<li><strong>KEEP_IMAGES</strong> - List of images to avoid cleaning, e.g. “ubuntu:trusty, ubuntu:latest”. Defaults to clean all unused images.</li>
+<li><strong>KEEP_CONTAINERS</strong> - List of images for exited or dead containers to avoid cleaning, e.g. “ubuntu:trusty, ubuntu:latest”.</li>
+<li><strong>KEEP_CONTAINERS_NAMED</strong> - List of names for exited or dead containers to avoid cleaning, e.g. “my-container1, persistent-data”.</li>
+<li><strong>LOOP</strong> - Add the ability to do non-looped cleanups, run it once and exit. Options are true, false. Defaults to true to run it forever in loops.</li>
+<li><strong>DEBUG</strong> - Set to 1 to enable more debugging output on pattern matches</li>
+<li><strong>DOCKER_API_VERSION</strong> - The docker API version to use. This defaults to 1.20, but you can override it here in case the docker version on your host differs from the one that is installed in this container. You can find  - this on your host system by running <code>docker version --format '{{.Client.APIVersion}}'</code>.</li>
 </ul>
-
-
-        <!-- Sidebar Footer -->
-        <!--
-I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
-If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
-It will not impact the appearance and can give developers a lot of support :)
-
-很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
-如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
-它不会影响美观并可以给开发者很大的支持和动力。 :)
--->
-
-<!-- Sidebar Divider -->
-
-    <div class="sidebar-divider"></div>
-
-
-<!-- Theme Material -->
-
-    <a href="https://github.com/viosey/hexo-theme-material"  class="sidebar-footer-text-a" target="_blank">
-        <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
-            主题 - Material
-            <span class="sidebar-badge badge-circle">i</span>
-        </div>
-    </a>
-
-
-<!-- Help & Support -->
-<!--
-
--->
-
-<!-- Feedback -->
-<!--
-
--->
-
-<!-- About Theme -->
-<!--
-
--->
-
-    </div>
-
-    <!-- Sidebar Image -->
-    
-
-</aside>
-
-                    
-
-                    
-
-                    <!--Footer-->
-<footer class="mdl-mini-footer" id="bottom">
-    
-        <!-- Paradox Footer Left Section -->
-        <div class="mdl-mini-footer--left-section sns-list">
-    <!-- Twitter -->
-    
-        <a href="https://twitter.com/0312birdzhang" target="_blank">
-            <button class="mdl-mini-footer--social-btn social-btn" style="background-image: url(/img/footer/footer_ico-twitter.png);">
-                <span class="visuallyhidden">Twitter</span>
-            </button><!--
-     --></a>
-    
-
-    <!-- Facebook -->
-    
-
-    <!-- Google + -->
-    
-        <a href="https://www.google.com/0312birdzhang" target="_blank">
-            <button class="mdl-mini-footer--social-btn social-btn" style="background-image: url(/img/footer/footer_ico-gplus.png);">
-                <span class="visuallyhidden">Google Plus</span>
-            </button><!--
-     --></a>
-    
-
-    <!-- Weibo -->
-    
-        <a href="http://weibo.com/0312birdzhang" target="_blank">
-            <button class="mdl-mini-footer--social-btn social-btn" style="background-image: url(/img/footer/footer_ico-weibo.png);">
-                <span class="visuallyhidden">Weibo</span>
-            </button><!--
-     --></a>
-    
-
-    <!-- Instagram -->
-    
-
-    <!-- Tumblr -->
-    
-
-    <!-- Github -->
-    
-        <a href="https://github.com/0312birdzhang" target="_blank">
-            <button class="mdl-mini-footer--social-btn social-btn" style="background-image: url(/img/footer/footer_ico-github.png);">
-                <span class="visuallyhidden">Github</span>
-            </button><!--
-     --></a>
-    
-
-    <!-- LinkedIn -->
-    
-
-    <!-- Zhihu -->
-    
-
-    <!-- Bilibili -->
-    
-
-    <!-- Telegram -->
-    
-</div>
-
-
-        <!--Copyright-->
-        <div id="copyright">
-            Copyright&nbsp;©&nbsp;
-            <script type="text/javascript">
-                var fd = new Date();
-                document.write(fd.getFullYear());
-            </script>
-            &nbsp;BirdZhang's Blog
-        </div>
-
-        <!-- Paradox Footer Right Section -->
-
-        <!--
-        I am glad you use this theme, the development is no so easy, I hope you can keep the copyright.
-        It will not impact the appearance and can give developers a lot of support :)
-
-        很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
-        它不会影响美观并可以给开发者很大的支持。 :)
-        -->
-
-        <div class="mdl-mini-footer--right-section">
-            <div>
-                <div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div>
-                <div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div>
-            </div>
-        </div>
-    
-</footer>
-
-
-                    <!-- Import File -->
-<script src="/js/lazyload.min.js"></script>
-<script src="/js/js.min.js"></script>
-<script src="/js/nprogress.js"></script>
-
-<script type="text/javascript">
-    NProgress.configure({
-        showSpinner: true
-    });
-    NProgress.start();
-    $('#nprogress .bar').css({
-        'background': '#29d'
-    });
-    $('#nprogress .peg').css({
-        'box-shadow': '0 0 10px #29d, 0 0 15px #29d'
-    });
-    $('#nprogress .spinner-icon').css({
-        'border-top-color': '#29d',
-        'border-left-color': '#29d'
-    });
-    setTimeout(function() {
-        NProgress.done();
-        $('.fade').removeClass('out');
-    }, 800);
-</script>
-
-
-
-
-
-    <!-- Leancloud -->
-    <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
-    <script>
-        AV.initialize('MguK71QUSGyrb4biWtu5oPqN-gzGzoHsz', 'ghPhHxzVQtKRfKt72twwiUFx');
-    </script>
-    <script>
-    function showTime(Counter) {
-        var query = new AV.Query(Counter);
-        $('.leancloud-views_num').each(function() {
-            var url = $(this).attr('id').trim();
-            query.equalTo('url', url);
-            query.find({
-                success: function(results) {
-                    if (results.length === 0) {
-                        var content = '0 ' + $(document.getElementById(url)).text();
-                        $(document.getElementById(url)).text(content);
-                        return;
-                    }
-                    for (var i = 0; i < results.length; i++) {
-                        var object = results[i];
-                        var content = object.get('time') + ' ' + $(document.getElementById(url)).text();
-                        $(document.getElementById(url)).text(content);
-                    }
-                },
-                error: function(object, error) {
-                    console.log('Error: ' + error.code + ' ' + error.message);
+<p>对于即使已经不运行了也不想清理的镜像，使用KEEP_IMAGES变量处理，此处我们添写： </p>
+<p><code>vmware/harbor-*:*,*calico:*,*registry:*,*kubernetes-dashboard-amd64:*,*nginx-ingress-controller:*,*cvallance/mongo-k8s-sidecar:*</code></p>
+<p>docker-cleanup-daemonset.yaml 配置如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line">apiVersion: extensions&#x2F;v1beta1</span><br><span class="line">kind: DaemonSet</span><br><span class="line">metadata:</span><br><span class="line">  labels:</span><br><span class="line">    name: clean-up</span><br><span class="line">  name: clean-up</span><br><span class="line">  namespace: kube-system</span><br><span class="line">spec:</span><br><span class="line">  updateStrategy:</span><br><span class="line">    type: &quot;RollingUpdate&quot;</span><br><span class="line">    rollingUpdate:</span><br><span class="line">      maxUnavailable: 1</span><br><span class="line">  template:</span><br><span class="line">    metadata:</span><br><span class="line">      labels:</span><br><span class="line">        app: clean-up</span><br><span class="line">    spec:</span><br><span class="line">      tolerations:</span><br><span class="line">        - key: &quot;LB&quot;</span><br><span class="line">          operator: &quot;Exists&quot;</span><br><span class="line">          effect: &quot;NoExecute&quot;</span><br><span class="line">      volumes:</span><br><span class="line">        - name: docker-sock</span><br><span class="line">          hostPath:</span><br><span class="line">            path: &#x2F;var&#x2F;run&#x2F;docker.sock</span><br><span class="line">        - name: docker-directory</span><br><span class="line">          hostPath:</span><br><span class="line">            path: &#x2F;data&#x2F;kubernetes&#x2F;docker</span><br><span class="line">      containers:</span><br><span class="line">        - image: meltwater&#x2F;docker-cleanup:latest</span><br><span class="line">          name: clean-up</span><br><span class="line">          env:</span><br><span class="line">            - name: CLEAN_PERIOD</span><br><span class="line">              value: &quot;1800&quot;</span><br><span class="line">            - name: DELAY_TIME</span><br><span class="line">              value: &quot;60&quot;</span><br><span class="line">            - name: DOCKER_API_VERSION</span><br><span class="line">              value: &quot;1.29&quot;</span><br><span class="line">            - name: KEEP_IMAGES</span><br><span class="line">              value: &quot;vmware&#x2F;harbor-*:*,*calico:*,*registry:*,*kubernetes-dashboard-amd64:*,*nginx-ingress-controller:*,*cvallance&#x2F;mongo-k8s-sidecar:*&quot;</span><br><span class="line">          volumeMounts:</span><br><span class="line">            - mountPath: &#x2F;var&#x2F;run&#x2F;docker.sock</span><br><span class="line">              name: docker-sock</span><br><span class="line">              readOnly: false</span><br><span class="line">            - mountPath: &#x2F;var&#x2F;lib&#x2F;docker</span><br><span class="line">              name: docker-directory</span><br><span class="line">              readOnly: false</span><br></pre></td></tr></table></figure></p>
+</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta size-small is-uppercase level is-mobile"><div class="level-left"><time class="level-item" dateTime="2017-12-08T09:49:25.000Z" title="2017-12-08T09:49:25.000Z">2017-12-08</time><span class="level-item">6 分钟 读完 (大约 965 个字)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2017/12/08/%E4%BD%BF%E7%94%A8DaemonSet-Taint-Tolerations-NodeSelector%E9%83%A8%E7%BD%B2Nginx-ingress-controller/">使用DaemonSet+Taint/Tolerations+NodeSelector部署Nginx ingress controller</a></h1><div class="content"><blockquote>
+<p>使用DaemonSet+NodeSelector+Tolerations的方式定义Nginx Ingress Controller，给专门节点打上Label+Taint，使得这些专门节点只运行Nginx Ingress Controller，而不会调度和运行其他业务容器，只用来做代理节点。</p>
+</blockquote>
+<ul>
+<li><p>在Kuberntes Cluster中准备N个节点，我们称之为代理节点。在这N个节点上只部署Nginx Ingress Controller（简称NIC）实例，不会跑其他业务容器。</p>
+</li>
+<li><p>给代理节点打上NoExecute Taint，防止业务容器调度或运行在这些节点。</p>
+<p>  <code>kubectl taint nodes 10.8.8.234 LB=NIC:NoExecute</code></p>
+</li>
+<li><p>给代理节点打上Label，让NIC只部署在打了对应Lable的节点上。<br>  <code>kubectl label nodes 10.8.8.234 LB=NIC</code></p>
+</li>
+<li><p>修改calico-node配置，让calico可以在NoExecute节点上运行</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">    spec:</span><br><span class="line">    ...</span><br><span class="line">    spec:</span><br><span class="line">      tolerations:</span><br><span class="line">      - key: &quot;LB&quot;</span><br><span class="line">        operator: &quot;Exists&quot;</span><br><span class="line">        effect: &quot;NoExecute&quot;</span><br><span class="line">    &#96;&#96;&#96;    </span><br><span class="line"></span><br><span class="line">- 定义DaemonSet Yaml文件，注意加上Tolerations和Node Selector。(注意先创建serviceAccount、role等)</span><br></pre></td></tr></table></figure>
+<p>  apiVersion: extensions/v1beta1<br>  kind: DaemonSet<br>  metadata:<br>  annotations:</p>
+<pre><code>deployment.kubernetes.io/revision: &quot;4&quot;
+</code></pre><p>  labels:</p>
+<pre><code>k8s-app: nginx-ingress-controller
+</code></pre><p>  name: nginx-ingress-controller<br>  namespace: kube-system<br>  spec:<br>  selector:</p>
+<pre><code>matchLabels:
+k8s-app: nginx-ingress-controller
+</code></pre><p>  template:</p>
+<pre><code>metadata:
+annotations:
+    prometheus.io/port: &quot;10254&quot;
+    prometheus.io/scrape: &quot;true&quot;
+creationTimestamp: null
+labels:
+    k8s-app: nginx-ingress-controller
+spec:
+# 加上对应的Node Selector
+nodeSelector:
+    LB: NIC
+# 加上对应的Tolerations
+tolerations:
+- key: &quot;LB&quot;
+    operator: &quot;Equal&quot;
+    value: &quot;NIC&quot;
+    effect: &quot;NoExecute&quot;
+containers:
+- args:
+    - /nginx-ingress-controller
+    - --default-backend-service=$(POD_NAMESPACE)/default-http-backend
+    - --tcp-services-configmap=$(POD_NAMESPACE)/nginx-tcp-ingress-configmap
+    - --configmap=$(POD_NAMESPACE)/nginx-configuration
+    env:
+    - name: POD_NAME
+    valueFrom:
+        fieldRef:
+        apiVersion: v1
+        fieldPath: metadata.name
+    - name: POD_NAMESPACE
+    valueFrom:
+        fieldRef:
+        apiVersion: v1
+        fieldPath: metadata.namespace
+    image: dceph02.rmz.flamingo-inc.com:8888/mynginx/nginx-ingress-controller:0.9.0-beta.11
+    imagePullPolicy: IfNotPresent
+    livenessProbe:
+    failureThreshold: 3
+    httpGet:
+        path: /healthz
+        port: 10254
+        scheme: HTTP
+    initialDelaySeconds: 10
+    periodSeconds: 10
+    successThreshold: 1
+    timeoutSeconds: 1
+    name: nginx-ingress-controller
+    ports:
+    - containerPort: 80
+    hostPort: 80
+    protocol: TCP
+    - containerPort: 443
+    hostPort: 443
+    protocol: TCP
+    readinessProbe:
+    failureThreshold: 3
+    httpGet:
+        path: /healthz
+        port: 10254
+        scheme: HTTP
+    periodSeconds: 10
+    successThreshold: 1
+    timeoutSeconds: 1
+    resources: {}
+hostNetwork: true
+serviceAccount: ingress
+serviceAccountName: ingress
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">    </span><br><span class="line">- 创建default backend服务</span><br></pre></td></tr></table></figure>
+</code></pre><p>  apiVersion: extensions/v1beta1<br>  kind: Deployment<br>  metadata:<br>  name: default-http-backend<br>  labels:</p>
+<pre><code>k8s-app: default-http-backend
+</code></pre><p>  namespace: kube-system<br>  spec:<br>  replicas: 1<br>  template:</p>
+<pre><code>metadata:
+labels:
+    k8s-app: default-http-backend
+spec:
+terminationGracePeriodSeconds: 60
+containers:
+- name: default-http-backend
+    # Any image is permissable as long as:
+    # 1. It serves a 404 page at /
+    # 2. It serves 200 on a /healthz endpoint
+    image: gcr.io/google_containers/defaultbackend:1.0
+    livenessProbe:
+    httpGet:
+        path: /healthz
+        port: 8080
+        scheme: HTTP
+    initialDelaySeconds: 30
+    timeoutSeconds: 5
+    ports:
+    - containerPort: 8080
+    resources:
+    limits:
+        cpu: 10m
+        memory: 20Mi
+    requests:
+        cpu: 10m
+        memory: 20Mi
+</code></pre><hr>
+<p>  apiVersion: v1<br>  kind: Service<br>  metadata:<br>  name: default-http-backend<br>  namespace: kube-system<br>  labels:</p>
+<pre><code>k8s-app: default-http-backend
+</code></pre><p>  spec:<br>  ports:</p>
+<ul>
+<li>port: 80<br>  targetPort: 8080<br>selector:<br>  k8s-app: default-http-backend<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">根据default-backend.yaml创建对应的Deployment和Service。 &#96;kubectl create -f default-backend.yaml&#96;</span><br><span class="line"></span><br><span class="line">- 根据DaemonSet Yaml创建NIC DaemonSet，启动NIC。</span><br><span class="line"></span><br><span class="line">    &#96;kubectl create -f nginx-ingress-daemonset.yaml&#96;</span><br><span class="line"></span><br><span class="line">至此，NIC已经运行在代理节点上了，下面为测试内容。</span><br><span class="line"></span><br><span class="line">- (选择性)确认NIC启动成功后，创建测试用的服务。</span><br></pre></td></tr></table></figure>
+kubectl run echoheaders –image=gcr.io/google_containers/echoserver:1.8 –replicas=1 –port=8080<br>kubectl expose deployment echoheaders –port=80 –target-port=8080 –name=echoheaders-x<br>kubectl expose deployment echoheaders –port=80 –target-port=8080 –name=echoheaders-y<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">创建测试用的Ingress Object</span><br></pre></td></tr></table></figure>
+apiVersion: extensions/v1beta1<br>kind: Ingress<br>metadata:<br>name: echomap<br>namespace: default<br>spec:<br>rules:</li>
+<li>host: foo.bar.com<br>  http:<br>  paths:<ul>
+<li>backend:<br>  serviceName: echoheaders-x<br>  servicePort: 80<br>  path: /foo</li>
+</ul>
+</li>
+<li>host: bar.baz.com<br>  http:<br>  paths:<ul>
+<li>backend:<br>  serviceName: echoheaders-y<br>  servicePort: 80<br>  path: /bar</li>
+<li>backend:<br>  serviceName: echoheaders-x<br>  servicePort: 80<br>  path: /foo<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- (选择性)查看ingress的代理地址</span><br></pre></td></tr></table></figure>
+[root@host ~]# kubectl describe ing echomap<br>Name:                   echomap<br>Namespace:              default<br>Address:                10.8.8.234<br>Default backend:        default-http-backend:80 (172.254.109.193:8080)<br>Rules:<br>Host          Path    Backends</li>
+</ul>
+</li>
+</ul>
+<hr>
+<p>  foo.bar.com</p>
+<pre><code>/foo    echoheaders-x:80 (&lt;none&gt;)
+</code></pre><p>  bar.baz.com</p>
+<pre><code>/bar    echoheaders-y:80 (&lt;none&gt;)
+/foo    echoheaders-x:80 (&lt;none&gt;)
+</code></pre><p>  Annotations:<br>  Events:<br>  FirstSeen     LastSeen        Count   From                    SubObjectPath   Type            Reason  Message</p>
+<hr>
+<p>  35m           35m             1       ingress-controller                      Normal          CREATE  Ingress default/echomap<br>  35m           35m             1       ingress-controller                      Normal          UPDATE  Ingress default/echomap</p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- 测试</span><br></pre></td></tr></table></figure>
+<p>  [root@host ~]# curl 10.8.8.234/foo -H ‘Host: foo.bar.com’</p>
+<p>  Hostname: echoheaders-1076692255-p1ndv<br>  Pod Information:</p>
+<pre><code>-no pod information available-
+</code></pre><p>  Server values:</p>
+<pre><code>server_version=nginx: 1.13.3 - lua: 10008
+</code></pre><p>  Request Information:</p>
+<pre><code>client_address=172.254.246.192
+method=GET
+real path=/foo
+query=
+request_version=1.1
+request_uri=http://foo.bar.com:8080/foo
+</code></pre><p>  Request Headers:</p>
+<pre><code>accept=*/*
+connection=close
+host=foo.bar.com
+user-agent=curl/7.29.0
+x-forwarded-for=10.8.8.234
+x-forwarded-host=foo.bar.com
+x-forwarded-port=80
+x-forwarded-proto=http
+x-original-uri=/foo
+x-real-ip=10.8.8.234
+x-scheme=http
+</code></pre><p>  Request Body:</p>
+<pre><code>-no body in request-
+</code></pre><p>  [root@dceph04 ~]# curl 10.8.8.234/foo -H ‘Host: bar.baz.com’</p>
+<p>  Hostname: echoheaders-1076692255-p1ndv<br>  Pod Information:</p>
+<pre><code>-no pod information available-
+</code></pre><p>  Server values:</p>
+<pre><code>server_version=nginx: 1.13.3 - lua: 10008
+</code></pre><p>  Request Information:</p>
+<pre><code>client_address=172.254.246.192
+method=GET
+real path=/foo
+query=
+request_version=1.1
+request_uri=http://bar.baz.com:8080/foo
+</code></pre><p>  Request Headers:</p>
+<pre><code>accept=*/*
+connection=close
+host=bar.baz.com
+user-agent=curl/7.29.0
+x-forwarded-for=10.8.8.234
+x-forwarded-host=bar.baz.com
+x-forwarded-port=80
+x-forwarded-proto=http
+x-original-uri=/foo
+x-real-ip=10.8.8.234
+x-scheme=http
+</code></pre><p>  Request Body:</p>
+<pre><code>-no body in request-
+</code></pre><p>  <code>`</code></p>
+</li>
+</ul>
+<h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><pre><code>https://my.oschina.net/jxcdwangtao/blog/1523812                
+</code></pre></div></article></div></div><div class="column column-left is-4-tablet is-4-desktop is-4-widescreen  order-1 is-sticky"><div class="card widget"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="" src="https://www.gravatar.com/avatar/72326950ba674fec08b31a0c90663fe2?s=128" alt="BirdZhang"></figure><p class="title is-size-4 is-block line-height-inherit">BirdZhang</p><p class="is-size-6 is-block">一只笨死的大鸟</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>Earth</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">文章</p><a href="/archives"><p class="title">32</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">分类</p><a href="/categories"><p class="title">0</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">标签</p><a href="/tags"><p class="title">59</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://github.com/0312birdzhang" target="_blank" rel="noopener">关注我</a></div><div class="level is-mobile"><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Github" href="https://github.com/0312birdzhang"><i class="fab fa-github"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Twitter" href="https://twitter.com/0312birdzhang"><i class="fab fa-twitter"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="RSS" href="/atom.xml"><i class="fas fa-rss"></i></a></div></div></div><!--!--><div class="card widget"><div class="card-content"><div class="menu"><h3 class="menu-label">链接</h3><ul class="menu-list"><li><a class="level is-mobile is-mobile" href="https://sailfishos.club" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">旗鱼俱乐部</span></span><span class="level-right"><span class="level-item tag">sailfishos.club</span></span></a></li></ul></div></div></div><!--!--><div class="card widget"><div class="card-content"><h3 class="menu-label">最新文章</h3><article class="media"><div class="media-content size-small"><p><time dateTime="2019-12-30T03:33:17.000Z">2019-12-30</time></p><p class="title is-6"><a class="link-muted" href="/2019/12/30/SailfishOS%E7%A7%BB%E6%A4%8D%E5%88%B0Redmi-K20%E7%9A%84%E4%B8%80%E4%BA%9B%E8%AE%B0%E5%BD%95/">SailfishOS移植到Redmi_K20的一些记录</a></p><p class="is-uppercase"></p></div></article><article class="media"><div class="media-content size-small"><p><time dateTime="2019-10-12T01:58:53.000Z">2019-10-12</time></p><p class="title is-6"><a class="link-muted" href="/2019/10/12/Windows%E4%BD%BF%E7%94%A8frp%E8%BF%9B%E8%A1%8C%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5/">Windows使用frp进行远程连接</a></p><p class="is-uppercase"></p></div></article><article class="media"><div class="media-content size-small"><p><time dateTime="2019-07-30T07:27:36.809Z">2019-07-30</time></p><p class="title is-6"><a class="link-muted" href="/2019/07/30/X-pack%E7%A0%B4%E8%A7%A3/">X-pack破解</a></p><p class="is-uppercase"></p></div></article><article class="media"><div class="media-content size-small"><p><time dateTime="2019-06-13T02:06:52.000Z">2019-06-13</time></p><p class="title is-6"><a class="link-muted" href="/2019/06/13/SailfishOS%E7%A7%BB%E6%A4%8D%E5%88%B0Redmi-5-Plus%E7%9A%84%E4%B8%80%E4%BA%9B%E8%AE%B0%E5%BD%95-2/">SailfishOS移植到Redmi-5-Plus的一些记录(2)</a></p><p class="is-uppercase"></p></div></article><article class="media"><div class="media-content size-small"><p><time dateTime="2019-05-27T06:18:52.000Z">2019-05-27</time></p><p class="title is-6"><a class="link-muted" href="/2019/05/27/%E4%BD%BF%E7%94%A8docker%E7%BC%96%E8%AF%91%E6%89%93%E5%8C%85sailfishos/">使用docker编译打包sailfishos</a></p><p class="is-uppercase"></p></div></article></div></div><div class="card widget"><div class="card-content"><div class="menu"><h3 class="menu-label">归档</h3><ul class="menu-list"><li><a class="level is-mobile is-marginless" href="/archives/2019/12/"><span class="level-start"><span class="level-item">十二月 2019</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2019/10/"><span class="level-start"><span class="level-item">十月 2019</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2019/07/"><span class="level-start"><span class="level-item">七月 2019</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2019/06/"><span class="level-start"><span class="level-item">六月 2019</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2019/05/"><span class="level-start"><span class="level-item">五月 2019</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2019/04/"><span class="level-start"><span class="level-item">四月 2019</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2018/12/"><span class="level-start"><span class="level-item">十二月 2018</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2018/09/"><span class="level-start"><span class="level-item">九月 2018</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2018/08/"><span class="level-start"><span class="level-item">八月 2018</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2018/07/"><span class="level-start"><span class="level-item">七月 2018</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2018/06/"><span class="level-start"><span class="level-item">六月 2018</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2018/05/"><span class="level-start"><span class="level-item">五月 2018</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2018/03/"><span class="level-start"><span class="level-item">三月 2018</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2018/01/"><span class="level-start"><span class="level-item">一月 2018</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2017/12/"><span class="level-start"><span class="level-item">十二月 2017</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2017/08/"><span class="level-start"><span class="level-item">八月 2017</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2017/06/"><span class="level-start"><span class="level-item">六月 2017</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2017/05/"><span class="level-start"><span class="level-item">五月 2017</span></span><span class="level-end"><span class="level-item tag">8</span></span></a></li></ul></div></div></div><div class="card widget"><div class="card-content"><div class="menu"><h3 class="menu-label">标签</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/tags/9t/"><span class="tag">9t</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Java/"><span class="tag">Java</span><span class="tag is-grey-lightest">4</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Python/"><span class="tag">Python</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Terminating/"><span class="tag">Terminating</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Tomcat/"><span class="tag">Tomcat</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/android/"><span class="tag">android</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/cas/"><span class="tag">cas</span><span class="tag is-grey-lightest">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/coinhive/"><span class="tag">coinhive</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/crt/"><span class="tag">crt</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/davinci/"><span class="tag">davinci</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/docker/"><span class="tag">docker</span><span class="tag is-grey-lightest">6</span></a></div><div class="control"><a class="tags has-addons" href="/tags/frp/"><span class="tag">frp</span><span class="tag is-grey-lightest">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/hadk/"><span class="tag">hadk</span><span class="tag is-grey-lightest">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/https/"><span class="tag">https</span><span class="tag is-grey-lightest">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/httpservletrequest/"><span class="tag">httpservletrequest</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/hybris-15-1/"><span class="tag">hybris-15.1</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/hybris-16-0/"><span class="tag">hybris-16.0</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/ios/"><span class="tag">ios</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/ip/"><span class="tag">ip</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/iphone/"><span class="tag">iphone</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/irc/"><span class="tag">irc</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/jolla/"><span class="tag">jolla</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/js/"><span class="tag">js</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/json/"><span class="tag">json</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/k20/"><span class="tag">k20</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/k8s/"><span class="tag">k8s</span><span class="tag is-grey-lightest">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/kubernetes/"><span class="tag">kubernetes</span><span class="tag is-grey-lightest">4</span></a></div><div class="control"><a class="tags has-addons" href="/tags/lineage-15-1/"><span class="tag">lineage-15.1</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/lineage-16-0/"><span class="tag">lineage-16.0</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/lua/"><span class="tag">lua</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/migrate/"><span class="tag">migrate</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/nginx/"><span class="tag">nginx</span><span class="tag is-grey-lightest">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/openresty/"><span class="tag">openresty</span><span class="tag is-grey-lightest">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/opensips/"><span class="tag">opensips</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/pastebin/"><span class="tag">pastebin</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/python/"><span class="tag">python</span><span class="tag is-grey-lightest">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/python2/"><span class="tag">python2</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/rdp/"><span class="tag">rdp</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/redmi/"><span class="tag">redmi</span><span class="tag is-grey-lightest">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/redmi5plus/"><span class="tag">redmi5plus</span><span class="tag is-grey-lightest">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/remix/"><span class="tag">remix</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/sailfish/"><span class="tag">sailfish</span><span class="tag is-grey-lightest">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/sailfishos/"><span class="tag">sailfishos</span><span class="tag is-grey-lightest">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/sip/"><span class="tag">sip</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/socks5/"><span class="tag">socks5</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/tomcat/"><span class="tag">tomcat</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/trustcacerts/"><span class="tag">trustcacerts</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/unix/"><span class="tag">unix</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/vince/"><span class="tag">vince</span><span class="tag is-grey-lightest">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/vmvare/"><span class="tag">vmvare</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/voip/"><span class="tag">voip</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/windows/"><span class="tag">windows</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/x86/"><span class="tag">x86</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/xiaomi/"><span class="tag">xiaomi</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%8F%82%E6%95%B0/"><span class="tag">参数</span><span class="tag is-grey-lightest">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%94%B9%E5%86%99/"><span class="tag">改写</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E8%B7%B3%E8%BF%87/"><span class="tag">跳过</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E8%BF%81%E7%A7%BB/"><span class="tag">迁移</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E9%9A%8F%E7%AC%94/"><span class="tag">随笔</span><span class="tag is-grey-lightest">1</span></a></div></div></div></div></div><div class="card widget"><div class="card-content"><div class="menu"><h3 class="menu-label">订阅更新</h3><form action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open(&#039;https://feedburner.google.com/fb/a/mailverify?uri=&#039;,&#039;popupwindow&#039;,&#039;scrollbars=yes,width=550,height=520&#039;);return true"><input type="hidden" value="" name="uri"><input type="hidden" name="loc" value="en_US"><div class="field has-addons"><div class="control has-icons-left is-expanded"><input class="input" name="email" type="email" placeholder="Email"><span class="icon is-small is-left"><i class="fas fa-envelope"></i></span></div><div class="control"><input class="button is-primary" type="submit" value="订阅"></div></div></form></div></div></div></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/img/avatar.png" alt="BirdZhang&#039;s Blog" height="28"></a><p class="size-small"><span>&copy; 2020 BirdZhang</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script>moment.locale("zh-CN");</script><script>var IcarusThemeSettings = {
+            site: {
+                url: 'http://birdzhang.xyz',
+                external_link: {"enable":true,"exclude":[]}
+            },
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
                 }
-            });
-        });
-    }
-
-    function addCount(Counter) {
-      var Counter = AV.Object.extend('Counter');
-      url = $('.leancloud-views_num').attr('id').trim();
-      title = $('.leancloud-views_num').attr('data-flag-title').trim();
-      var query = new AV.Query(Counter);
-      query.equalTo('url', url);
-      query.find({
-          success: function(results) {
-            if (results.length > 0) {
-                var counter = results[0];
-                counter.fetchWhenSave(true);
-                counter.increment('time');
-                counter.save(null, {
-                    success: function(counter) {
-                        var content =  counter.get('time') + ' ' + $(document.getElementById(url)).text();
-                        $(document.getElementById(url)).text(content);
-                    },
-                    error: function(counter, error) {
-                        console.log('Failed to save Visitor num, with error message: ' + error.message);
-                    }
-                });
-            } else {
-              var newcounter = new Counter();
-              newcounter.set('title', title);
-              newcounter.set('url', url);
-              newcounter.set('time', 1);
-              newcounter.save(null, {
-                  success: function(newcounter) {
-                      console.log('newcounter.get(\'time\')='+newcounter.get('time'));
-                      var content = newcounter.get('time') + ' ' + $(document.getElementById(url)).text();
-                      $(document.getElementById(url)).text(content);
-                  },
-                  error: function(newcounter, error) {
-                      console.log('Failed to create');
-                  }
-              });
             }
-        },
-        error: function(error) {
-            console.log('Error:' + error.code + ' ' + error.message);
-        }
-      });
-    }
-    $(function() {
-        var Counter = AV.Object.extend('Counter');
-        if ($('.leancloud-views_num').length === 1) {
-            addCount(Counter);
-        } else if ($('.post-title-link').length > 1) {
-            showTime(Counter);
-        }
-    });
-</script>
-
-
-
-
-
-
-
-
-    <!-- 使用 DISQUS js 代码 -->
-    <script id="dsq-count-scr" src="//0312birdzhang-github-io.disqus.com/count.js" async></script>
-
-
-
-<!-- Swiftye -->
-
-
-<!-- Local Search-->
-
-
-<!-- Window Load-->
-<script>
-    $(window).load(function() {
-        // Post_Toc parent position fixed
-        $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
-    });
-</script>
-
-<!-- MathJax Load-->
-
-
-                </main>
-            </div>
-        </body>
-    
-</html>
+        };</script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script src="/js/animation.js"></script><a id="back-to-top" title="回到顶端" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back_to_top.js" defer></script><!--!--><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><!--!--><!--!--><script src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="想要查找什么..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"想要查找什么...","untitled":"(无标题)","posts":"文章","pages":"页面","categories":"分类","tags":"标签"});
+        });</script></body></html>

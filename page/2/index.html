@@ -1,1244 +1,213 @@
-<!DOCTYPE html>
-<html lang="zh">
-    <head><meta name="generator" content="Hexo 3.9.0">
-    <!-- 
-        © Material Theme
-        https://github.com/viosey/hexo-theme-material
-        Version: 1.3.0 -->
-
-    <!-- Title -->
-    
-    <title>
-        
-        BirdZhang&#39;s Blog
-    </title>
-
-    <!-- Favicons -->
-    <link rel="icon shortcut" type="image/ico" href="/img/favicon.png">
-    <link rel="icon" sizes="192x192" href="/img/favicon.png">
-    <link rel="apple-touch-icon" href="/img/favicon.png">
-
-    <!-- Meta & Info -->
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#0097A7">
-    <meta name="author" content="BirdZhang">
-    <meta name="description" content="BirdZhang&#39;s GitHub pages powered by Hexo.io and hexo-theme-material.">
-    <meta name="keywords" content="null">
-
-    <!--iOS -->
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <meta name="apple-mobile-web-app-title" content="Title">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="HandheldFriendly" content="True">
-    <meta name="MobileOptimized" content="480">
-
-    <!-- Add to homescreen for Chrome on Android -->
-    <meta name="mobile-web-app-capable" content="yes">
-
-    <!-- Add to homescreen for Safari on iOS -->
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="apple-mobile-web-app-title" content="BirdZhang&#39;s Blog">
-
-    <!-- The Open Graph protocol -->
-    <meta property="og:url" content="http://birdzhang.xyz">
-    <meta property="og:type" content="blog">
-    <meta property="og:title" content="BirdZhang&#39;s Blog">
-    <meta property="og:description" content="BirdZhang&#39;s GitHub pages powered by Hexo.io and hexo-theme-material.">
-    
-
-    <!--[if lte IE 9]>
-        <link rel="stylesheet" href="/css/ie-blocker.css">
-
-        
-            <script src="/js/ie-blocker.zhCN.js"></script>
-        
-    <![endif]-->
-
-    <!-- Import CSS -->
-    <link rel="stylesheet" href="/css/material.min.css">
-    <link rel="stylesheet" href="/css/style.min.css">
-    <!-- Config CSS -->
-
-
-<!-- Other Styles -->
-<style>
-  body, html {
-    font-family: Roboto, "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
-  }
-
-  a {
-    color: #00838F;
-  }
-
-  .mdl-card__media,
-  #search-label,
-  #search-form-label:after,
-  #scheme-Paradox .hot_tags-count,
-  #scheme-Paradox .sidebar_archives-count,
-  #scheme-Paradox .sidebar-colored .sidebar-header,
-  #scheme-Paradox .sidebar-colored .sidebar-badge{
-    background-color: #0097A7 !important;
-  }
-
-  /* Sidebar User Drop Down Menu Text Color */
-  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:hover,
-  #scheme-Paradox .sidebar-colored .sidebar-nav>.dropdown>.dropdown-menu>li>a:focus {
-    color: #0097A7 !important;
-  }
-
-  #post_entry-right-info,
-  .sidebar-colored .sidebar-nav li:hover > a,
-  .sidebar-colored .sidebar-nav li:hover > a i,
-  .sidebar-colored .sidebar-nav li > a:hover,
-  .sidebar-colored .sidebar-nav li > a:hover i,
-  .sidebar-colored .sidebar-nav li > a:focus i,
-  .sidebar-colored .sidebar-nav > .open > a,
-  .sidebar-colored .sidebar-nav > .open > a:hover,
-  .sidebar-colored .sidebar-nav > .open > a:focus,
-  #ds-reset #ds-ctx .ds-ctx-entry .ds-ctx-head a {
-    color: #0097A7 !important;
-  }
-
-  .toTop {
-    background: #757575 !important;
-  }
-
-  .material-layout .material-post>.material-nav,
-  .material-layout .material-index>.material-nav,
-  .material-nav a {
-    color: #757575;
-  }
-
-  #scheme-Paradox .MD-burger-layer {
-    background-color: #757575;
-  }
-
-  #scheme-Paradox #post-toc-trigger-btn {
-    color: #757575;
-  }
-
-  .post-toc a:hover {
-    color: #00838F;
-    text-decoration: underline;
-  }
-</style>
-
-
-<!-- Theme Background Related-->
-
-    <style>
-      body{
-        background-color: #F5F5F5;
-      }
-
-      /* blog_info bottom background */
-      #scheme-Paradox .material-layout .something-else .mdl-card__supporting-text{
-        background-color: #fff;
-      }
-    </style>
-
-
-
-
-<!-- Fade Effect -->
-
-    <style>
-      .fade {
-        transition: all 800ms linear;
-        -webkit-transform: translate3d(0,0,0);
-        -moz-transform: translate3d(0,0,0);
-        -ms-transform: translate3d(0,0,0);
-        -o-transform: translate3d(0,0,0);
-        transform: translate3d(0,0,0);
-        opacity: 1;
-      }
-
-      .fade.out{
-        opacity: 0;
-      }
-    </style>
-
-
-
-    <script src="/js/jquery.min.js"></script>
-    <script src="/js/queue.js"></script>
-
-    <!-- UC Browser Compatible -->
-    <script>
-        var agent = navigator.userAgent.toLowerCase();
-        if(agent.indexOf('ucbrowser')>0) {
-            document.write("<link rel=\"stylesheet\" href=\"/css/uc.css\">");
-            alert('由于 UC 浏览器使用极旧的内核，而本网站使用了一些新的特性。\n为了您能更好的浏览，推荐使用 Chrome 或 Firefox 浏览器。');
-        }
-    </script>
-
-    <script data-ad-client="ca-pub-8361678566464255" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-    
-
-    
-
-    <!-- Bing Background -->
-    
-
-    <!-- Custom Head -->
-    
-</head>
-
-
-    
-        <body id="scheme-Paradox" class="lazy">
-            <div class="material-layout  mdl-js-layout has-drawer is-upgraded">
-                
-
-                <!-- Main Container -->
-                <main class="material-layout__content" id="main">
-
-                    <!-- Top Anchor -->
-                    <div id="top"></div>
-
-                    
-                        <!-- Hamburger Button -->
-                        <button class="MD-burger-icon sidebar-toggle">
-                            <span class="MD-burger-layer"></span>
-                        </button>
-                    
-
-                    <!-- Index Module -->
-<div class="material-index mdl-grid">
-    
-    <div class="locate-thumbnail-symbol"></div>
-
-    <!-- Pin on top -->
-    
-
-    <!-- Normal Post -->
-    
-        
-        
-            <!-- Paradox Thumbnail -->
-            <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2018/07/03/清理kubernetes中未正常退出的pod/">清理kubernetes中未正常退出的pod</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            长时间运行的k8s节点可能会存在某些pod不自动退出，一直处于Terminating的状态于是我们可以用这个脚本定...
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2018/07/03/清理kubernetes中未正常退出的pod/" target="_self">继续阅读</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="BirdZhang's avatar">
-            </div>
-            <div>
-                <strong>BirdZhang</strong>
-                <span>7月 03, 2018</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                
-            </span>
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-        
-        
-        
-    
-        
-        
-            <!-- Paradox Thumbnail -->
-            <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2018/06/26/No-subject-alternative-DNS-name-matching-xxx-com-found/">No subject alternative DNS name matching xxx.com found</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            [TOC]
-
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2018/06/26/No-subject-alternative-DNS-name-matching-xxx-com-found/" target="_self">继续阅读</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="BirdZhang's avatar">
-            </div>
-            <div>
-                <strong>BirdZhang</strong>
-                <span>6月 26, 2018</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                
-            </span>
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-        
-        
-        
-    
-        
-        
-            <!-- Paradox Thumbnail -->
-            <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2018/06/25/使用Openresty将pastebin内容格式化显示/">使用Openresty将pastebin内容格式化显示</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            前情提要
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2018/06/25/使用Openresty将pastebin内容格式化显示/" target="_self">继续阅读</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="BirdZhang's avatar">
-            </div>
-            <div>
-                <strong>BirdZhang</strong>
-                <span>6月 25, 2018</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                
-            </span>
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-        
-        
-        
-    
-        
-        
-            <!-- Paradox Thumbnail -->
-            <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2018/06/05/使用openresty搭一个类似ip-cn的接口/">使用openresty搭一个类似ip.cn的接口</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2018/06/05/使用openresty搭一个类似ip-cn的接口/" target="_self">继续阅读</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="BirdZhang's avatar">
-            </div>
-            <div>
-                <strong>BirdZhang</strong>
-                <span>6月 05, 2018</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                
-            </span>
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-        
-        
-        
-    
-        
-        
-            <!-- Paradox Thumbnail -->
-            <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2018/05/15/cas根据请求参数跳过验证/">cas根据请求参数跳过验证</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            接上一篇 
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2018/05/15/cas根据请求参数跳过验证/" target="_self">继续阅读</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="BirdZhang's avatar">
-            </div>
-            <div>
-                <strong>BirdZhang</strong>
-                <span>5月 15, 2018</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                
-            </span>
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-        
-        
-        
-    
-        
-        
-            <!-- Paradox Thumbnail -->
-            <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2018/05/15/Java改写HttpServletRequest请求参数/">Java改写HttpServletRequest请求参数</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            为什么会有这个需求呢？ 因为被 
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2018/05/15/Java改写HttpServletRequest请求参数/" target="_self">继续阅读</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="BirdZhang's avatar">
-            </div>
-            <div>
-                <strong>BirdZhang</strong>
-                <span>5月 15, 2018</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                
-            </span>
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-        
-        
-        
-    
-        
-        
-            <!-- Paradox Thumbnail -->
-            <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2018/03/30/SailfishOS移植到Redmi-5-Plus的一些记录/">SailfishOS移植到Redmi 5 Plus的一些记录</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2018/03/30/SailfishOS移植到Redmi-5-Plus的一些记录/" target="_self">继续阅读</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="BirdZhang's avatar">
-            </div>
-            <div>
-                <strong>BirdZhang</strong>
-                <span>3月 30, 2018</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                
-            </span>
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-        
-        
-        
-    
-        
-        
-            <!-- Paradox Thumbnail -->
-            <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2018/01/30/Tomcat信任https网站/">Tomcat信任https网站</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2018/01/30/Tomcat信任https网站/" target="_self">继续阅读</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="BirdZhang's avatar">
-            </div>
-            <div>
-                <strong>BirdZhang</strong>
-                <span>1月 30, 2018</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                
-            </span>
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-        
-        
-        
-    
-        
-        
-            <!-- Paradox Thumbnail -->
-            <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2018/01/29/opensips安装使用整理/">opensips安装使用整理</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            
-部分内容来自 
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2018/01/29/opensips安装使用整理/" target="_self">继续阅读</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="BirdZhang's avatar">
-            </div>
-            <div>
-                <strong>BirdZhang</strong>
-                <span>1月 29, 2018</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                
-            </span>
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-        
-        
-        
-    
-        
-        
-            <!-- Paradox Thumbnail -->
-            <div class="post_entry-module mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col fade out">
-    <!-- Post Thumbnail -->
-    
-        
-            <!-- Random Thumbnail -->
-            <div class="post_thumbnail-random mdl-card__media mdl-color-text--grey-50">
-        
-    
-
-        <!-- Post Title -->
-        <p class="article-headline-p"><a href="/2017/12/29/使用浏览器挖矿/">使用浏览器挖矿</a></p>
-    </div>
-
-    <!-- Post Excerpt -->
-    <div class="mdl-color-text--grey-600 mdl-card__supporting-text post_entry-content">
-        
-            已GG
-        
-        &nbsp;&nbsp;&nbsp;
-        <span>
-            <a href="/2017/12/29/使用浏览器挖矿/" target="_self">继续阅读</a>
-        </span>
-    </div>
-    <!-- Post_entry Info-->
-    <div id="post_entry-info">
-        <div id="post_entry-left-info" class="mdl-card__supporting-text meta mdl-color-text--grey-600 ">
-            <!-- Author Avatar -->
-            <div id="author-avatar">
-                <img src="/img/avatar.png" width="44px" height="44px" alt="BirdZhang's avatar">
-            </div>
-            <div>
-                <strong>BirdZhang</strong>
-                <span>12月 29, 2017</span>
-            </div>
-        </div>
-        <div id="post_entry-right-info">
-            <!-- Category -->
-            <span class="post_entry-category">
-                
-            </span>
-
-            
-
-            <!-- Post Views -->
-            <span class="post_entry-views">
-            </span>
-        </div>
-    </div>
-</div>
-
-        
-        
-        
-    
-
-    
-    <!-- Index nav -->
-        <nav class="material-nav mdl-cell mdl-cell--12-col">
-            <a class="extend prev" rel="prev" href="/"><button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"><i class="material-icons" role="presentation">arrow_back</i></button></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/3/"><button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon"><i class="material-icons" role="presentation">arrow_forward</i></button></a>
-        </nav>
-    
-
-    
-        <script>
-    var randomNum;
-
-    var locatePost = $('.locate-thumbnail-symbol').next();
-    for(var i = 0; i < 10; i++) {
-        randomNum = Math.floor(Math.random() * 19 + 1);
-
-        locatePost.children('.post_thumbnail-random').attr('id', 'random_thumbnail-'+randomNum);
-        locatePost.children('.post_thumbnail-random').css('background-image', 'url(' + '/img/random/material-' + randomNum + '.png' + ')')
-
-        locatePost = locatePost.next();
-    }
-</script>
-
-    
-</div>
-
-
-                    
-                        <!-- Overlay For Active Sidebar -->
-<div class="sidebar-overlay"></div>
-
-<!-- Material sidebar -->
-<aside id="sidebar" class="sidebar sidebar-colored sidebar-fixed-left" role="navigation">
-    <div id="sidebar-main">
-        <!-- Sidebar Header -->
-        <div class="sidebar-header header-cover" style="background-image: url(/img/sidebar_header.png);">
-    <!-- Top bar -->
-    <div class="top-bar"></div>
-
-    <!-- Sidebar toggle button -->
-    <button type="button" class="sidebar-toggle mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" style="display: initial;" data-upgraded=",MaterialButton,MaterialRipple">
-        <i class="material-icons">clear_all</i>
-        <span class="mdl-button__ripple-container">
-            <span class="mdl-ripple">
-            </span>
-        </span>
-    </button>
-
-    <!-- Sidebar Avatar -->
-    <div class="sidebar-image">
-        <img src="/img/avatar.png" alt="BirdZhang's avatar">
-    </div>
-
-    <!-- Sidebar Email -->
-    <a data-toggle="dropdown" class="sidebar-brand" href="#settings-dropdown">
-        0312birdzhang@email.com
-        <b class="caret"></b>
-    </a>
-</div>
-
-
-        <!-- Sidebar Navigation  -->
-        <ul class="nav sidebar-nav">
-    <!-- User dropdown  -->
-    <li class="dropdown">
-        <ul id="settings-dropdown" class="dropdown-menu">
-            
-                <li>
-                    <a href="mailto:0312birdzhang@gmail.com" target="_blank" title="Email Me">
-                        
-                            <i class="material-icons sidebar-material-icons sidebar-indent-left1pc-element">email</i>
-                        
-                        Email Me
-                    </a>
-                </li>
-            
-        </ul>
-    </li>
-
-    <!-- Homepage -->
-    
-        <li id="sidebar-first-li">
-            <a href="/" target="_self">
-                
-                    <i class="material-icons sidebar-material-icons">home</i>
-                
-                主页
-            </a>
-        </li>
-        
-    
-
-    <!-- Archives  -->
-    
-        <li class="dropdown">
-            <a href="#" class="ripple-effect dropdown-toggle" data-toggle="dropdown">
-                
-                    <i class="material-icons sidebar-material-icons">inbox</i>
-                
-                    归档
-                <b class="caret"></b>
-            </a>
-            <ul class="dropdown-menu">
-            <li>
-                <a class="sidebar_archives-link" href="/archives/2019/12/">十二月 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/10/">十月 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/07/">七月 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/06/">六月 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/05/">五月 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2019/04/">四月 2019<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/12/">十二月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/09/">九月 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/08/">八月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/07/">七月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/06/">六月 2018<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/05/">五月 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/03/">三月 2018<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2018/01/">一月 2018<span class="sidebar_archives-count">2</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/12/">十二月 2017<span class="sidebar_archives-count">3</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/08/">八月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/06/">六月 2017<span class="sidebar_archives-count">1</span></a></li><li><a class="sidebar_archives-link" href="/archives/2017/05/">五月 2017<span class="sidebar_archives-count">8</span></a>
-            </ul>
-        </li>
-        
-    
-
-    <!-- Categories  -->
-    
-
-    <!-- Pages  -->
-    
-        <li>
-            <a href="/links/" title="友情链接">
-                
-                    <i class="material-icons sidebar-material-icons">link</i>
-                
-                友情链接
-            </a>
-        </li>
-        
-    
-        <li>
-            <a href="/about" title="关于我">
-                
-                    <i class="material-icons sidebar-material-icons">person</i>
-                
-                关于我
-            </a>
-        </li>
-        
-    
-        <li>
-            <a href="/tags" title="标签">
-                
-                    <i class="material-icons sidebar-material-icons">bookmark</i>
-                
-                标签
-            </a>
-        </li>
-        
-    
-
-    <!-- Article Number  -->
-    
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><meta name="generator" content="Hexo 4.2.0"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>BirdZhang&#039;s Blog</title><meta description="BirdZhang&amp;#39;s GitHub pages powered by Hexo.io and hexo-theme-material."><meta property="og:type" content="blog"><meta property="og:title" content="BirdZhang&#039;s Blog"><meta property="og:url" content="http://birdzhang.xyz/"><meta property="og:site_name" content="BirdZhang&#039;s Blog"><meta property="og:description" content="BirdZhang&amp;#39;s GitHub pages powered by Hexo.io and hexo-theme-material."><meta property="og:locale" content="zh_CN"><meta property="og:image" content="http://birdzhang.xyz/img/og_image.png"><meta property="article:author" content="BirdZhang"><meta property="twitter:card" content="summary"><meta property="twitter:image" content="/img/og_image.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"http://birdzhang.xyz"},"headline":"BirdZhang's Blog","image":["http://birdzhang.xyz/img/og_image.png"],"author":{"@type":"Person","name":"BirdZhang"},"description":"BirdZhang&#39;s GitHub pages powered by Hexo.io and hexo-theme-material."}</script><link rel="alternative" href="/atom.xml" title="BirdZhang&#039;s Blog" type="application/atom+xml"><link rel="icon" href="/img/favicon.png"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/atom-one-light.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css"><!--!--><script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script></head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/avatar.png" alt="BirdZhang&#039;s Blog" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">Home</a><a class="navbar-item" href="/archives">Archives</a><a class="navbar-item" href="/categories">Categories</a><a class="navbar-item" href="/tags">Tags</a><a class="navbar-item" href="/about">About</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-8-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta size-small is-uppercase level is-mobile"><div class="level-left"><time class="level-item" dateTime="2018-07-03T03:22:44.000Z" title="2018-07-03T03:22:44.000Z">2018-07-03</time><span class="level-item">1 分钟 读完 (大约 158 个字)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2018/07/03/%E6%B8%85%E7%90%86kubernetes%E4%B8%AD%E6%9C%AA%E6%AD%A3%E5%B8%B8%E9%80%80%E5%87%BA%E7%9A%84pod/">清理kubernetes中未正常退出的pod</a></h1><div class="content"><p>长时间运行的k8s节点可能会存在某些pod不自动退出，一直处于<code>Terminating</code>的状态<br>于是我们可以用这个脚本定时进行清理</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">#!&#x2F;bin&#x2F;bash</span><br><span class="line">#############################</span><br><span class="line">### clean terminated pods ###</span><br><span class="line">### run at you own risk ! ###</span><br><span class="line">#############################</span><br><span class="line">export PATH&#x3D;&#x2F;usr&#x2F;local&#x2F;cfssl&#x2F;bin:&#x2F;usr&#x2F;local&#x2F;docker&#x2F;:&#x2F;usr&#x2F;local&#x2F;kubernetes&#x2F;:&#x2F;usr&#x2F;local&#x2F;sbin:&#x2F;usr&#x2F;local&#x2F;bin:&#x2F;usr&#x2F;sbin:&#x2F;usr&#x2F;bin:&#x2F;root&#x2F;bin</span><br><span class="line">getns()&#123;</span><br><span class="line">  namespaces&#x3D;&#96;kubectl get namespaces|grep -v &quot;NAME&quot;|awk &#39;&#123;print $1&#125;&#39;&#96;</span><br><span class="line">  for n in $&#123;namespaces&#125;;</span><br><span class="line">  do</span><br><span class="line">    pods_str&#x3D;&#96;kubectl get pods -n $&#123;n&#125;|grep &quot;Terminating&quot;&#96;</span><br><span class="line">    IFS&#x3D;$&#39;\n&#39; read -rd &#39;&#39; -a pods  &lt;&lt;&lt;&quot;$pods_str&quot;</span><br><span class="line">    if [ -n &quot;$pods&quot; ]; then</span><br><span class="line">      getpod $&#123;n&#125; $pods;</span><br><span class="line">    fi</span><br><span class="line">  done</span><br><span class="line">&#125;</span><br><span class="line">getpod()&#123;</span><br><span class="line"> ns&#x3D;$1;</span><br><span class="line"> for podinfo in $2;</span><br><span class="line"> do</span><br><span class="line">  pod&#x3D;&#96;echo $podinfo|awk &#39;&#123;print $1&#125;&#39;&#96;</span><br><span class="line">  delpod $pod $ns;</span><br><span class="line"> done</span><br><span class="line">&#125;</span><br><span class="line">delpod()&#123;</span><br><span class="line">   echo &quot;kubectl delete pods $1 -n $2 --grace-period&#x3D;0 --force&quot;</span><br><span class="line">   kubectl delete pods $1 -n $2 --grace-period&#x3D;0 --force</span><br><span class="line">&#125;</span><br><span class="line">main()&#123;</span><br><span class="line">  getns</span><br><span class="line">&#125;</span><br><span class="line">main</span><br></pre></td></tr></table></figure>
+</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta size-small is-uppercase level is-mobile"><div class="level-left"><time class="level-item" dateTime="2018-06-26T05:56:40.000Z" title="2018-06-26T05:56:40.000Z">2018-06-26</time><span class="level-item">8 分钟 读完 (大约 1270 个字)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2018/06/26/No-subject-alternative-DNS-name-matching-xxx-com-found/">No subject alternative DNS name matching xxx.com found</a></h1><div class="content"><p>[TOC]</p>
+<h4 id="故事经过-TLDR"><a href="#故事经过-TLDR" class="headerlink" title="故事经过 TLDR;"></a>故事经过 TLDR;</h4><p>故事太长，可以直接看<a href="#解决方法">这里</a> 解决</p>
+<p>昨天下午，突然有同事说OA打不开了，打开页面一看出现如下错误：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">500 Servlet Exception</span><br><span class="line">[show] java.security.cert.CertificateException: No subject alternative DNS name</span><br><span class="line">matching xxx.com found.</span><br><span class="line"></span><br><span class="line">java.lang.RuntimeException: javax.net.ssl.SSLHandshakeException: java.security.cert.CertificateException:</span><br><span class="line">No subject alternative DNS name matching xxx.com found.</span><br><span class="line">	at org.jasig.cas.client.util.CommonUtils.getResponseFromServer(CommonUtils.java:328)</span><br><span class="line">	at org.jasig.cas.client.util.CommonUtils.getResponseFromServer(CommonUtils.java:291)</span><br><span class="line">	at org.jasig.cas.client.validation.AbstractCasProtocolUrlBasedTicketValidator.retrieveResponseFromServer(AbstractCasProtocolUrlBasedTicketValidator.java:32)</span><br><span class="line">	at org.jasig.cas.client.validation.AbstractUrlBasedTicketValidator.validate(AbstractUrlBasedTicketValidator.java:187)</span><br><span class="line">	at org.jasig.cas.client.validation.AbstractTicketValidationFilter.doFilter(AbstractTicketValidationFilter.java:164)</span><br><span class="line">	at com.caucho.server.dispatch.FilterFilterChain.doFilter(FilterFilterChain.java:87)</span><br><span class="line">	at com.xxx.plugin.AuthenticationFilter.doFilter(AuthenticationFilter.java:163)</span><br><span class="line">	at com.caucho.server.dispatch.FilterFilterChain.doFilter(FilterFilterChain.java:87)</span><br><span class="line">	at org.jasig.cas.client.session.SingleSignOutFilter.doFilter(SingleSignOutFilter.java:65)</span><br><span class="line">	at com.caucho.server.dispatch.FilterFilterChain.doFilter(FilterFilterChain.java:87)</span><br><span class="line">	at com.caucho.server.webapp.WebAppFilterChain.doFilter(WebAppFilterChain.java:187)</span><br><span class="line">	at com.caucho.server.dispatch.ServletInvocation.service(ServletInvocation.java:265)</span><br><span class="line">	at com.caucho.server.http.HttpRequest.handleRequest(HttpRequest.java:273)</span><br><span class="line">	at com.caucho.server.port.TcpConnection.run(TcpConnection.java:682)</span><br><span class="line">	at com.caucho.util.ThreadPool$Item.runTasks(ThreadPool.java:730)</span><br><span class="line">	at com.caucho.util.ThreadPool$Item.run(ThreadPool.java:649)</span><br><span class="line">	at java.lang.Thread.run(Thread.java:662)</span><br><span class="line">Caused by: javax.net.ssl.SSLHandshakeException: java.security.cert.CertificateException:</span><br><span class="line">No subject alternative DNS name matching xxx.com found.</span><br><span class="line">	at com.sun.net.ssl.internal.ssl.Alerts.getSSLException(Alerts.java:174)</span><br><span class="line">	at com.sun.net.ssl.internal.ssl.SSLSocketImpl.fatal(SSLSocketImpl.java:1699)</span><br><span class="line">	at com.sun.net.ssl.internal.ssl.Handshaker.fatalSE(Handshaker.java:241)</span><br><span class="line">	at com.sun.net.ssl.internal.ssl.Handshaker.fatalSE(Handshaker.java:235)</span><br></pre></td></tr></table></figure>
+<p>内心中第一反应是证书的问题，于是赶紧上cas服务器查看日志，一切正常😵<br>然后上OA的服务器，将证书导入，重启服务，该是什么错还是什么错。。。</p>
+<p>上谷歌一查，应该是匹配不到证书里的DNS名，但是确实是有的呀。</p>
+<p>由于还有其他java系统接入了CAS登录，都是正常的，于是开始怀疑是OA那台的有问题，开始查看是不是有人最近改动过什么</p>
+<p>然鹅并没有。。。</p>
+<p>然后查看OA的日志（用的Resin中间件。。。<br>发现如下错误：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">[17:00:15.288] &#123;http--8080-6$1533061820&#125; java.lang.RuntimeException: javax.net.ssl.SSLHandshakeException: java.security.cert.CertificateException: No subject alternative DNS name matching auth.corp.flamingo-inc.com found.</span><br><span class="line">[17:00:15.288] &#123;http--8080-6$1533061820&#125; 	at org.jasig.cas.client.util.CommonUtils.getResponseFromServer(CommonUtils.java:295)</span><br><span class="line">[17:00:15.288] &#123;http--8080-6$1533061820&#125; 	at org.jasig.cas.client.validation.AbstractCasProtocolUrlBasedTicketValidator.retrieveResponseFromServer(AbstractCasProtocolUrlBasedTicketValidator.java:33)</span><br><span class="line">[17:00:15.288] &#123;http--8080-6$1533061820&#125; 	at org.jasig.cas.client.validation.AbstractUrlBasedTicketValidator.validate(AbstractUrlBasedTicketValidator.java:178)</span><br><span class="line">[17:00:15.288] &#123;http--8080-6$1533061820&#125; 	at org.jasig.cas.client.validation.AbstractTicketValidationFilter.doFilter(AbstractTicketValidationFilter.java:132)</span><br><span class="line">[17:00:15.288] &#123;http--8080-6$1533061820&#125; 	at com.caucho.server.dispatch.FilterFilterChain.doFilter(FilterFilterChain.java:87)</span><br><span class="line">[17:00:15.288] &#123;http--8080-6$1533061820&#125; 	at com.xxx.plugin.AuthenticationFilter.doFilter(AuthenticationFilter.java:163)</span><br><span class="line">[17:00:15.288] &#123;http--8080-6$1533061820&#125; 	at com.caucho.server.dispatch.FilterFilterChain.doFilter(FilterFilterChain.java:87)</span><br><span class="line">[17:00:15.288] &#123;http--8080-6$1533061820&#125; 	at org.jasig.cas.client.session.SingleSignOutFilter.doFilter(SingleSignOutFilter.java:110)</span><br><span class="line">[17:00:15.288] &#123;http--8080-6$1533061820&#125; 	at com.caucho.server.dispatch.FilterFilterChain.doFilter(FilterFilterChain.java:87)</span><br><span class="line">[17:00:15.288] &#123;http--8080-6$1533061820&#125; 	at com.caucho.server.webapp.WebAppFilterChain.doFilter(WebAppFilterChain.java:187)</span><br><span class="line">[17:00:15.288] &#123;http--8080-6$1533061820&#125; 	at com.caucho.server.dispatch.ServletInvocation.service(ServletInvocation.java:265)</span><br><span class="line">[17:00:15.288] &#123;http--8080-6$1533061820&#125; 	at com.caucho.server.http.HttpRequest.handleRequest(HttpRequest.java:273)</span><br><span class="line">[17:00:15.288] &#123;http--8080-6$1533061820&#125; 	at com.caucho.server.port.TcpConnection.run(TcpConnection.java:682)</span><br><span class="line">[17:00:15.288] &#123;http--8080-6$1533061820&#125; 	at com.caucho.util.ThreadPool$Item.runTasks(ThreadPool.java:730)</span><br><span class="line">[17:00:15.288] &#123;http--8080-6$1533061820&#125; 	at com.caucho.util.ThreadPool$Item.run(ThreadPool.java:649)</span><br><span class="line">[17:00:15.288] &#123;http--8080-6$1533061820&#125; 	at java.lang.Thread.run(Thread.java:662)</span><br><span class="line">[17:00:15.288] &#123;http--8080-6$1533061820&#125; Caused by: javax.net.ssl.SSLHandshakeException: java.security.cert.CertificateException: No subject alternative DNS name matching auth.corp.flamingo-inc.com found.</span><br><span class="line">[17:00:15.288] &#123;http--8080-6$1533061820&#125; 	at com.sun.net.ssl.internal.ssl.Alerts.getSSLException(Alerts.java:174)</span><br><span class="line">[17:00:15.288] &#123;http--8080-6$1533061820&#125; 	at com.sun.net.ssl.internal.ssl.SSLSocketImpl.fatal(SSLSocketImpl.java:1699)</span><br><span class="line">[17:00:15.288] &#123;http--8080-6$1533061820&#125; 	at com.sun.net.ssl.internal.ssl.Handshaker.fatalSE(Handshaker.java:241)</span><br><span class="line">[17:00:15.288] &#123;http--8080-6$1533061820&#125; 	at com.sun.net.ssl.internal.ssl.Handshaker.fatalSE(Handshaker.java:235)</span><br><span class="line">[17:00:15.288] &#123;http--8080-6$1533061820&#125; 	at com.sun.net.ssl.internal.ssl.ClientHandshaker.serverCertificate(ClientHandshaker.java:1206)</span><br><span class="line">[17:00:15.288] &#123;http--8080-6$1533061820&#125; 	at com.sun.net.ssl.internal.ssl.ClientHandshaker.processMessage(ClientHandshaker.java:136)</span><br><span class="line">[17:00:15.288] &#123;http--8080-6$1533061820&#125; 	at com.sun.net.ssl.internal.ssl.Handshaker.processLoop(Handshaker.java:593)</span><br><span class="line">[17:00:15.288] &#123;http--8080-6$1533061820&#125; 	at com.sun.net.ssl.internal.ssl.Handshaker.process_record(Handshaker.java:529)</span><br><span class="line">[17:00:15.288] &#123;http--8080-6$1533061820&#125; 	at com.sun.net.ssl.internal.ssl.SSLSocketImpl.readRecord(SSLSocketImpl.java:893)</span><br><span class="line">[17:00:15.288] &#123;http--8080-6$1533061820&#125; 	at com.sun.net.ssl.internal.ssl.SSLSocketImpl.performInitialHandshake(SSLSocketImpl.java:1138)</span><br><span class="line">[17:00:15.288] &#123;http--8080-6$1533061820&#125; 	at com.sun.net.ssl.internal.ssl.SSLSocketImpl.startHandshake(SSLSocketImpl.java:1165)</span><br><span class="line">[17:00:15.288] &#123;http--8080-6$1533061820&#125; 	at com.sun.net.ssl.internal.ssl.SSLSocketImpl.startHandshake(SSLSocketImpl.java:1149)</span><br><span class="line">[17:00:15.288] &#123;http--8080-6$1533061820&#125; 	at sun.net.www.protocol.https.HttpsClient.afterConnect(HttpsClient.java:434)</span><br><span class="line">[17:00:15.288] &#123;http--8080-6$1533061820&#125; 	at sun.net.www.protocol.https.AbstractDelegateHttpsURLConnection.connect(AbstractDelegateHttpsURLConnection.java:166)</span><br><span class="line">[17:00:15.288] &#123;http--8080-6$1533061820&#125; 	at sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1172)</span><br><span class="line">[17:00:15.288] &#123;http--8080-6$1533061820&#125; 	at sun.net.www.protocol.https.HttpsURLConnectionImpl.getInputStream(HttpsURLConnectionImpl.java:234)</span><br><span class="line">[17:00:15.288] &#123;http--8080-6$1533061820&#125; 	at org.jasig.cas.client.util.CommonUtils.getResponseFromServer(CommonUtils.java:281)</span><br><span class="line">[17:00:15.288] &#123;http--8080-6$1533061820&#125; 	... 15 more</span><br><span class="line">[17:00:15.288] &#123;http--8080-6$1533061820&#125; Caused by: java.security.cert.CertificateException: No subject alternative DNS name matching auth.corp.flamingo-inc.com found.</span><br><span class="line">[17:00:15.288] &#123;http--8080-6$1533061820&#125; 	at sun.security.util.HostnameChecker.matchDNS(HostnameChecker.java:193)</span><br><span class="line">[17:00:15.288] &#123;http--8080-6$1533061820&#125; 	at sun.security.util.HostnameChecker.match(HostnameChecker.java:77)</span><br><span class="line">[17:00:15.288] &#123;http--8080-6$1533061820&#125; 	at com.sun.net.ssl.internal.ssl.X509TrustManagerImpl.checkIdentity(X509TrustManagerImpl.java:264)</span><br><span class="line">[17:00:15.288] &#123;http--8080-6$1533061820&#125; 	at com.sun.net.ssl.internal.ssl.X509TrustManagerImpl.checkServerTrusted(X509TrustManagerImpl.java:250)</span><br><span class="line">[17:00:15.288] &#123;http--8080-6$1533061820&#125; 	at com.sun.net.ssl.internal.ssl.ClientHandshaker.serverCertificate(ClientHandshaker.java:1185)</span><br></pre></td></tr></table></figure>
+<p>开始怀疑是我写的AuthenticationFilter的锅，于是用了个新版本的cas-client-core，依然不行</p>
+<p>开始升级jdk，由于是windows，直接安装的exe，然后改了启动脚本里面的JAVA_HOME，重启依然发现不行。。。 (((φ(◎ロ◎;)φ)))</p>
+<p>于是暂时回退到了没有用CAS接入的版本，下班了。。。</p>
+<p>今天回来不甘心啊，继续尝试解决</p>
+<p>既然证书找不到xxx.com，那我换台nginx直接写host试试？</p>
+<p>更新了一下测服nginx的证书，OA主机指定测服nginx ip</p>
+<p>然后！！！！ 可以了！！！！ 😭</p>
+<p>然后跟同事调试了一会，发现他昨天下午添加了一个域名abc.com，然后导致了default_server不是adc.com了。。。</p>
+<h4 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h4><p>更新一下jdk就可以了（摊手），OA用的是jdk1.6，jdk1.6旧版本不支持SNI，至于什么是SNI等，看这里 <a href="https://github.com/ditunes/blog/issues/13">https://github.com/ditunes/blog/issues/13</a></p>
+<p>之前没成功是因为windows的服务里面写死了jdk的路径。。。</p>
+</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta size-small is-uppercase level is-mobile"><div class="level-left"><time class="level-item" dateTime="2018-06-25T07:09:18.000Z" title="2018-06-25T07:09:18.000Z">2018-06-25</time><span class="level-item">4 分钟 读完 (大约 563 个字)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2018/06/25/%E4%BD%BF%E7%94%A8Openresty%E5%B0%86pastebin%E5%86%85%E5%AE%B9%E6%A0%BC%E5%BC%8F%E5%8C%96%E6%98%BE%E7%A4%BA/">使用Openresty将pastebin内容格式化显示</a></h1><div class="content"><h4 id="前情提要"><a href="#前情提要" class="headerlink" title="前情提要"></a>前情提要</h4><p>这里用的 <a href="https://github.com/solusipse/fiche">https://github.com/solusipse/fiche</a> 的pastebin服务端，功能不多但是贴一些代码或者日志足够了</p>
+<h4 id="痛点"><a href="#痛点" class="headerlink" title="痛点"></a>痛点</h4><p>fiche将贴的内容保存为文件，然后用nginx显示，如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">    listen 80;</span><br><span class="line">    server_name mysite.com www.mysite.com;</span><br><span class="line">    charset utf-8;</span><br><span class="line"></span><br><span class="line">    location &#x2F; &#123;</span><br><span class="line">            root &#x2F;home&#x2F;www&#x2F;code&#x2F;;</span><br><span class="line">            index index.txt index.html;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br>这样显示出来的文本在行数多的时候就看瞎眼了 @_@</p>
+<h4 id="解决痛点"><a href="#解决痛点" class="headerlink" title="解决痛点"></a>解决痛点</h4><p>我们可以用openresty将要显示的文本提前拼凑成html，html中用google的code prettify格式化处理。<br>对于用curl请求的我们不做处理，直接返回纯文本。</p>
+<p>lua代码如下：</p>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">local</span> headers = ngx.req.get_headers()</span><br><span class="line"><span class="keyword">local</span> reqUri = ngx.var.request_uri</span><br><span class="line"><span class="keyword">local</span> uri = ngx.var.uri</span><br><span class="line"><span class="keyword">local</span> userAgent = headers[<span class="string">"user-agent"</span>]</span><br><span class="line"><span class="keyword">local</span> codePath = <span class="string">"/data/fiche/code"</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> uri == <span class="string">"/"</span> <span class="keyword">then</span></span><br><span class="line">  ngx.say(<span class="string">"Welcome to p.qiyuos.cn"</span>)</span><br><span class="line">  ngx.<span class="built_in">exit</span>(<span class="number">200</span>)</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> uri == <span class="string">"/favicon.ico"</span> <span class="keyword">then</span></span><br><span class="line">  ngx.<span class="built_in">exit</span>(<span class="number">200</span>)</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">local</span> <span class="function"><span class="keyword">function</span> <span class="title">file_exists</span><span class="params">(path)</span></span></span><br><span class="line">  <span class="keyword">local</span> file = <span class="built_in">io</span>.<span class="built_in">open</span>(<span class="built_in">path</span>, <span class="string">"rb"</span>)</span><br><span class="line">  <span class="keyword">if</span> file <span class="keyword">then</span> file:<span class="built_in">close</span>() <span class="keyword">end</span></span><br><span class="line">  <span class="keyword">return</span> file ~= <span class="literal">nil</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="comment">--读取文件到内存</span></span><br><span class="line"><span class="keyword">local</span> <span class="function"><span class="keyword">function</span> <span class="title">readFile2Mem</span><span class="params">(file)</span></span></span><br><span class="line">  <span class="keyword">local</span> fp = <span class="built_in">io</span>.<span class="built_in">open</span>(file,<span class="string">"r"</span>)</span><br><span class="line">  <span class="keyword">if</span> fp <span class="keyword">then</span></span><br><span class="line">    <span class="keyword">return</span> fp:<span class="built_in">read</span>(<span class="string">"*all"</span>)</span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">local</span> codeBeauty1 = <span class="string">[[</span></span><br><span class="line"><span class="string">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="string">&lt;html&gt;</span></span><br><span class="line"><span class="string">&lt;head&gt;</span></span><br><span class="line"><span class="string">&lt;meta charset="utf-8" /&gt;</span></span><br><span class="line"><span class="string">&lt;script src="https://cdn.bootcss.com/prettify/r298/run_prettify.min.js?autoload=true&amp;amp;lang=html"&gt;&lt;/script&gt;</span></span><br><span class="line"><span class="string">&lt;style type="text/css"&gt;</span></span><br><span class="line"><span class="string">body &#123;</span></span><br><span class="line"><span class="string">  background: #fff;</span></span><br><span class="line"><span class="string">&#125;</span></span><br><span class="line"><span class="string">pre.prettyprint &#123;</span></span><br><span class="line"><span class="string">  background-color: #eee;</span></span><br><span class="line"><span class="string">&#125;</span></span><br><span class="line"><span class="string">.prettyprint ol.linenums &gt; li &#123; list-style-type: decimal; &#125;</span></span><br><span class="line"><span class="string">.pln&#123;color:#000&#125;@media screen&#123;.str&#123;color:#080&#125;.kwd&#123;color:#008&#125;.com&#123;color:#800&#125;.typ&#123;color:#606&#125;.lit&#123;color:#066&#125;.clo,.opn,.pun&#123;color:#660&#125;.tag&#123;color:#008&#125;.atn&#123;color:#606&#125;.atv&#123;color:#080&#125;.dec,.var&#123;color:#606&#125;.fun&#123;color:red&#125;&#125;@media print,projection&#123;.kwd,.tag,.typ&#123;font-weight:700&#125;.str&#123;color:#060&#125;.kwd&#123;color:#006&#125;.com&#123;color:#600;font-style:italic&#125;.typ&#123;color:#404&#125;.lit&#123;color:#044&#125;.clo,.opn,.pun&#123;color:#440&#125;.tag&#123;color:#006&#125;.atn&#123;color:#404&#125;.atv&#123;color:#060&#125;&#125;pre.prettyprint&#123;padding:2px;border:1px solid #888&#125;ol.linenums&#123;margin-top:0;margin-bottom:0&#125;li.L0,li.L1,li.L2,li.L3,li.L5,li.L6,li.L7,li.L8&#123;list-style-type:none&#125;li.L1,li.L3,li.L5,li.L7,li.L9&#123;background:#eee&#125;</span></span><br><span class="line"><span class="string">&lt;/style&gt;</span></span><br><span class="line"><span class="string">&lt;/head&gt;</span></span><br><span class="line"><span class="string">&lt;body&gt;</span></span><br><span class="line"><span class="string">&lt;pre class="prettyprint linenums" id="quine"&gt;</span></span><br><span class="line"><span class="string">]]</span></span><br><span class="line"><span class="keyword">local</span> codeBeauty2 = <span class="string">[[</span></span><br><span class="line"><span class="string">&lt;/pre&gt;</span></span><br><span class="line"><span class="string">&lt;script type="text/javascript"&gt;//&lt;![CDATA[</span></span><br><span class="line"><span class="string">(function () &#123;</span></span><br><span class="line"><span class="string">  function htmlEscape(s) &#123;</span></span><br><span class="line"><span class="string">    return s;</span></span><br><span class="line"><span class="string">//      .replace(/&amp;/g, '&amp;amp;')</span></span><br><span class="line"><span class="string">//      .replace(/&lt;/g, '&amp;lt;')</span></span><br><span class="line"><span class="string">//      .replace(/&gt;/g, '&amp;gt;');</span></span><br><span class="line"><span class="string">  &#125;</span></span><br><span class="line"><span class="string">  // this page's own source code</span></span><br><span class="line"><span class="string">  var quineHtml = htmlEscape(</span></span><br><span class="line"><span class="string">    document.getElementById("quine").innerHTML</span></span><br><span class="line"><span class="string">  );</span></span><br><span class="line"><span class="string">  // Highlight the operative parts:</span></span><br><span class="line"><span class="string">  quineHtml = quineHtml.replace(</span></span><br><span class="line"><span class="string">    /&amp;lt;script src[\s\S]*?&amp;gt;&amp;lt;\/script&amp;gt;|&amp;lt;!--\?[\s\S]*?--&amp;gt;|&amp;lt;pre\b[\s\S]*?&amp;lt;\/pre&amp;gt;/g,</span></span><br><span class="line"><span class="string">    '&lt;span class="operative"&gt;$&amp;&lt;\/span&gt;');</span></span><br><span class="line"><span class="string">  // insert into PRE</span></span><br><span class="line"><span class="string">  document.getElementById("quine").innerHTML = quineHtml;</span></span><br><span class="line"><span class="string">&#125;)();</span></span><br><span class="line"><span class="string">//\]\]&gt;</span></span><br><span class="line"><span class="string">&lt;/script&gt;</span></span><br><span class="line"><span class="string">&lt;/body&gt;</span></span><br><span class="line"><span class="string">&lt;/html&gt;</span></span><br><span class="line"><span class="string">]]</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> <span class="keyword">not</span> file_exists(codePath .. uri .. <span class="string">"/index.txt"</span>) <span class="keyword">then</span></span><br><span class="line">  ngx.<span class="built_in">exit</span>(<span class="number">404</span>)</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">local</span> paste = readFile2Mem(codePath .. uri .. <span class="string">"/index.txt"</span>)</span><br><span class="line"><span class="keyword">if</span> <span class="keyword">not</span> userAgent <span class="keyword">or</span> <span class="built_in">string</span>.<span class="built_in">len</span>(userAgent) &lt; <span class="number">20</span> <span class="keyword">or</span> <span class="keyword">not</span> <span class="built_in">string</span>.<span class="built_in">match</span>(userAgent, <span class="string">"Mozilla"</span>) <span class="keyword">then</span></span><br><span class="line">  ngx.say(paste)</span><br><span class="line">  ngx.<span class="built_in">exit</span>(<span class="number">200</span>)</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">  ngx.say(codeBeauty1 .. paste .. codeBeauty2)</span><br><span class="line">  ngx.<span class="built_in">exit</span>(<span class="number">200</span>)</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+<p>nginx 配置如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">    listen 80;</span><br><span class="line">    server_name mysite.com www.mysite.com;</span><br><span class="line">    charset utf-8;</span><br><span class="line">    location &#x2F; &#123;</span><br><span class="line">        default_type text&#x2F;html;</span><br><span class="line">        content_by_lua_file &quot;&#x2F;usr&#x2F;local&#x2F;openresty&#x2F;scripts&#x2F;fiche.lua&quot;;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h4 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h4><p>代码还不完善，可能存在一些bug，欢迎提出</p>
+</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta size-small is-uppercase level is-mobile"><div class="level-left"><time class="level-item" dateTime="2018-06-05T02:25:52.000Z" title="2018-06-05T02:25:52.000Z">2018-06-05</time><span class="level-item">2 分钟 读完 (大约 241 个字)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2018/06/05/%E4%BD%BF%E7%94%A8openresty%E6%90%AD%E4%B8%80%E4%B8%AA%E7%B1%BB%E4%BC%BCip-cn%E7%9A%84%E6%8E%A5%E5%8F%A3/">使用openresty搭一个类似ip.cn的接口</a></h1><div class="content"><h3 id="Openresty是什么"><a href="#Openresty是什么" class="headerlink" title="Openresty是什么"></a>Openresty是什么</h3><p>OpenResty® 是一个基于 Nginx 与 Lua 的高性能 Web 平台，其内部集成了大量精良的 Lua 库、第三方模块以及大多数的依赖项。用于方便地搭建能够处理超高并发、扩展性极高的动态 Web 应用、Web 服务和动态网关。</p>
+<p>官网 <a href="https://openresty.org/cn/">https://openresty.org/cn/</a></p>
+<p>Openresty解决了nginx不能很好的添加一些逻辑判断的痛点，而且又不失性能。</p>
+<h3 id="接口代码"><a href="#接口代码" class="headerlink" title="接口代码"></a>接口代码</h3><p>代码简单到不能再简单了，就三行</p>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">local</span> ip = ngx.var.remote_addr</span><br><span class="line">ngx.header[<span class="string">"Content-Type"</span>] = <span class="string">"text/plain charset=utf-8"</span></span><br><span class="line">ngx.say(ip)</span><br></pre></td></tr></table></figure>
+<h5 id="nginx-conf配置："><a href="#nginx-conf配置：" class="headerlink" title="nginx.conf配置："></a>nginx.conf配置：</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line">http</span><br><span class="line">&#123;</span><br><span class="line">    ...</span><br><span class="line">    lua_package_path &quot;&#x2F;usr&#x2F;local&#x2F;openresty&#x2F;script&#x2F;waf&#x2F;?.lua;&#x2F;usr&#x2F;local&#x2F;openresty&#x2F;lualib&#x2F;?.lua&quot;;</span><br><span class="line">    ...</span><br></pre></td></tr></table></figure>
+<h4 id="vhost配置"><a href="#vhost配置" class="headerlink" title="vhost配置"></a>vhost配置</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">server</span><br><span class="line">&#123;</span><br><span class="line">        listen       80;</span><br><span class="line">        server_name ip.testing.cn;</span><br><span class="line">        index index.html index.htm index.php;</span><br><span class="line">        charset utf-8;</span><br><span class="line"># 原生nginx的方式，貌似更简单...        </span><br><span class="line">#        location &#x2F; &#123;</span><br><span class="line">#                default_type text&#x2F;plain;</span><br><span class="line">#                return 200 $remote_addr;</span><br><span class="line">#        &#125;</span><br><span class="line">        location &#x2F;&#123;</span><br><span class="line">            content_by_lua_block &#123;</span><br><span class="line">                local ip &#x3D; ngx.var.remote_addr</span><br><span class="line">                ngx.header[&quot;Content-Type&quot;] &#x3D; &quot;text&#x2F;plain charset&#x3D;utf-8&quot;</span><br><span class="line">                ngx.say(ip)</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta size-small is-uppercase level is-mobile"><div class="level-left"><time class="level-item" dateTime="2018-05-15T02:01:41.000Z" title="2018-05-15T02:01:41.000Z">2018-05-15</time><span class="level-item">9 分钟 读完 (大约 1421 个字)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2018/05/15/cas%E6%A0%B9%E6%8D%AE%E8%AF%B7%E6%B1%82%E5%8F%82%E6%95%B0%E8%B7%B3%E8%BF%87%E9%AA%8C%E8%AF%81/">cas根据请求参数跳过验证</a></h1><div class="content"><p>接上一篇 <a href="https://birdzhang.xyz/2018/05/15/Java%E6%94%B9%E5%86%99HttpServletRequest%E8%AF%B7%E6%B1%82%E5%8F%82%E6%95%B0/">https://birdzhang.xyz/2018/05/15/Java%E6%94%B9%E5%86%99HttpServletRequest%E8%AF%B7%E6%B1%82%E5%8F%82%E6%95%B0/</a> ，这里说一下cas的坑（这里的cas是3.5版本）</p>
+<p>虽然cas有CAS Authentication Filter，但是这个只是根据请求的uri过滤的，那么这里就出现了一个奇怪的bug</p>
+<p>即使我在<code>excludePaths</code>里面添加了<code>/test1/</code>，但是当请求地址为<code>/test1/123?ticket=123</code>的时候，还是会去cas服务器验证！！！</p>
+<p>我们来看代码：</p>
+<h5 id="CAS-Authentication-Filter-代码"><a href="#CAS-Authentication-Filter-代码" class="headerlink" title="CAS Authentication Filter 代码"></a>CAS Authentication Filter 代码</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.birdzhang.demo.check;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> javax.servlet.FilterChain;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.FilterConfig;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.ServletException;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.ServletRequest;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.ServletResponse;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.http.HttpServletRequest;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.http.HttpServletResponse;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.http.HttpSession;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.jasig.cas.client.authentication.DefaultGatewayResolverImpl;</span><br><span class="line"><span class="keyword">import</span> org.jasig.cas.client.authentication.GatewayResolver;</span><br><span class="line"><span class="keyword">import</span> org.jasig.cas.client.util.AbstractCasFilter;</span><br><span class="line"><span class="keyword">import</span> org.jasig.cas.client.util.CommonUtils;</span><br><span class="line"><span class="keyword">import</span> org.jasig.cas.client.validation.Assertion;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">AuthenticationFilter</span> <span class="keyword">extends</span> <span class="title">AbstractCasFilter</span></span>&#123;</span><br><span class="line">	</span><br><span class="line">	</span><br><span class="line">	 <span class="comment">/**</span></span><br><span class="line"><span class="comment">    * The URL to the CAS Server login.</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">   <span class="keyword">private</span> String casServerLoginUrl;</span><br><span class="line"></span><br><span class="line">   <span class="comment">/**</span></span><br><span class="line"><span class="comment">    * Whether to send the renew request or not.</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">   <span class="keyword">private</span> <span class="keyword">boolean</span> renew = <span class="keyword">false</span>;</span><br><span class="line"></span><br><span class="line">   <span class="comment">/**</span></span><br><span class="line"><span class="comment">    * Whether to send the gateway request or not.</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">   <span class="keyword">private</span> <span class="keyword">boolean</span> gateway = <span class="keyword">false</span>;</span><br><span class="line">   <span class="comment">/**</span></span><br><span class="line"><span class="comment">    * 添加属性，这里用来存放不过滤地址正则表达式，可以根据自己需求定制---1</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">   <span class="keyword">private</span> String excludePaths;</span><br><span class="line">   </span><br><span class="line">   <span class="keyword">private</span> GatewayResolver gatewayStorage = <span class="keyword">new</span> DefaultGatewayResolverImpl();</span><br><span class="line"></span><br><span class="line">   <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">initInternal</span><span class="params">(<span class="keyword">final</span> FilterConfig filterConfig)</span> <span class="keyword">throws</span> ServletException </span>&#123;</span><br><span class="line">       <span class="keyword">if</span> (!isIgnoreInitConfiguration()) &#123;</span><br><span class="line">           <span class="keyword">super</span>.initInternal(filterConfig);</span><br><span class="line">           setCasServerLoginUrl(getPropertyFromInitParams(filterConfig, <span class="string">"casServerLoginUrl"</span>, <span class="keyword">null</span>));</span><br><span class="line">           <span class="comment">//log.trace("Loaded CasServerLoginUrl parameter: " + this.casServerLoginUrl);</span></span><br><span class="line">           setRenew(parseBoolean(getPropertyFromInitParams(filterConfig, <span class="string">"renew"</span>, <span class="string">"false"</span>)));</span><br><span class="line">           <span class="comment">//log.trace("Loaded renew parameter: " + this.renew);</span></span><br><span class="line">           setGateway(parseBoolean(getPropertyFromInitParams(filterConfig, <span class="string">"gateway"</span>, <span class="string">"false"</span>)));</span><br><span class="line">           <span class="comment">//log.trace("Loaded gateway parameter: " + this.gateway);</span></span><br><span class="line"></span><br><span class="line">           <span class="keyword">final</span> String gatewayStorageClass = getPropertyFromInitParams(filterConfig, <span class="string">"gatewayStorageClass"</span>, <span class="keyword">null</span>);</span><br><span class="line"></span><br><span class="line">           <span class="keyword">if</span> (gatewayStorageClass != <span class="keyword">null</span>) &#123;</span><br><span class="line">               <span class="keyword">try</span> &#123;</span><br><span class="line">                   <span class="keyword">this</span>.gatewayStorage = (GatewayResolver) Class.forName(gatewayStorageClass).newInstance();</span><br><span class="line">               &#125; <span class="keyword">catch</span> (<span class="keyword">final</span> Exception e) &#123;</span><br><span class="line">                   <span class="comment">//log.error(e,e);</span></span><br><span class="line">                   <span class="keyword">throw</span> <span class="keyword">new</span> ServletException(e);</span><br><span class="line">               &#125;</span><br><span class="line">           &#125;</span><br><span class="line">           <span class="comment">//自定义添加代码，用来读取web配置文件中excludes属性值 ---2</span></span><br><span class="line">           excludePaths = getPropertyFromInitParams(filterConfig, <span class="string">"excludePaths"</span>, <span class="keyword">null</span>);<span class="comment">//filterConfig.getInitParameter("excludePaths");</span></span><br><span class="line">           excludePaths = excludePaths.trim();</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">init</span><span class="params">()</span> </span>&#123;</span><br><span class="line">       <span class="keyword">super</span>.init();</span><br><span class="line">       CommonUtils.assertNotNull(<span class="keyword">this</span>.casServerLoginUrl, <span class="string">"casServerLoginUrl cannot be null."</span>);</span><br><span class="line">   &#125;</span><br><span class="line"><span class="comment">//url判断逻辑，这里大家可以根据自己需要来制订规则</span></span><br><span class="line">   <span class="function"><span class="keyword">private</span> <span class="keyword">boolean</span> <span class="title">isExclude</span><span class="params">(String uri)</span></span>&#123;</span><br><span class="line">   	<span class="keyword">boolean</span> isInWhiteList = <span class="keyword">false</span>;</span><br><span class="line">   	<span class="keyword">if</span>(excludePaths!=<span class="keyword">null</span>&amp;&amp; uri!=<span class="keyword">null</span>)&#123;</span><br><span class="line">   		isInWhiteList = uri.matches(excludePaths);</span><br><span class="line">   	&#125;</span><br><span class="line">       <span class="keyword">return</span> isInWhiteList;</span><br><span class="line">   &#125;</span><br><span class="line">  </span><br><span class="line">   </span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">final</span> <span class="keyword">void</span> <span class="title">doFilter</span><span class="params">(<span class="keyword">final</span> ServletRequest servletRequest, <span class="keyword">final</span> ServletResponse servletResponse, <span class="keyword">final</span> FilterChain filterChain)</span> <span class="keyword">throws</span> IOException, ServletException </span>&#123;</span><br><span class="line">       <span class="keyword">final</span> HttpServletRequest request = (HttpServletRequest) servletRequest;</span><br><span class="line">       <span class="keyword">final</span> HttpServletResponse response = (HttpServletResponse) servletResponse;</span><br><span class="line">       <span class="keyword">final</span> HttpSession session = request.getSession(<span class="keyword">false</span>);</span><br><span class="line">       <span class="keyword">final</span> Assertion assertion = session != <span class="keyword">null</span> ? (Assertion) session.getAttribute(CONST_CAS_ASSERTION) : <span class="keyword">null</span>;</span><br><span class="line">      <span class="comment">// 该判断是自定义的对符合条件的url进行通过处理 ---3</span></span><br><span class="line">       <span class="keyword">if</span>(isExclude(request.getRequestURI()))&#123;</span><br><span class="line">       	filterChain.doFilter(request, response);</span><br><span class="line">           <span class="keyword">return</span>;</span><br><span class="line">       &#125;</span><br><span class="line">       </span><br><span class="line">       <span class="keyword">if</span> (assertion != <span class="keyword">null</span>) &#123;</span><br><span class="line">           filterChain.doFilter(request, response);</span><br><span class="line">           <span class="keyword">return</span>;</span><br><span class="line">       &#125;</span><br><span class="line"></span><br><span class="line">       <span class="keyword">final</span> String serviceUrl = constructServiceUrl(request, response);</span><br><span class="line">       <span class="keyword">final</span> String ticket = CommonUtils.safeGetParameter(request,getArtifactParameterName());</span><br><span class="line">       <span class="keyword">final</span> <span class="keyword">boolean</span> wasGatewayed = <span class="keyword">this</span>.gatewayStorage.hasGatewayedAlready(request, serviceUrl);</span><br><span class="line"></span><br><span class="line">       <span class="keyword">if</span> (CommonUtils.isNotBlank(ticket) || wasGatewayed) &#123;</span><br><span class="line">           filterChain.doFilter(request, response);</span><br><span class="line">           <span class="keyword">return</span>;</span><br><span class="line">       &#125;</span><br><span class="line"></span><br><span class="line">       <span class="keyword">final</span> String modifiedServiceUrl;</span><br><span class="line"></span><br><span class="line">       <span class="comment">//log.debug("no ticket and no assertion found");</span></span><br><span class="line">       <span class="keyword">if</span> (<span class="keyword">this</span>.gateway) &#123;</span><br><span class="line">           <span class="comment">//log.debug("setting gateway attribute in session");</span></span><br><span class="line">           modifiedServiceUrl = <span class="keyword">this</span>.gatewayStorage.storeGatewayInformation(request, serviceUrl);</span><br><span class="line">       &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">           modifiedServiceUrl = serviceUrl;</span><br><span class="line">       &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*       if (log.isDebugEnabled()) &#123;</span></span><br><span class="line"><span class="comment">           log.debug("Constructed service url: " + modifiedServiceUrl);</span></span><br><span class="line"><span class="comment">       &#125;*/</span></span><br><span class="line"></span><br><span class="line">       <span class="keyword">final</span> String urlToRedirectTo = CommonUtils.constructRedirectUrl(<span class="keyword">this</span>.casServerLoginUrl, getServiceParameterName(), modifiedServiceUrl, <span class="keyword">this</span>.renew, <span class="keyword">this</span>.gateway);</span><br><span class="line"></span><br><span class="line">  <span class="comment">/*     if (log.isDebugEnabled()) &#123;</span></span><br><span class="line"><span class="comment">           log.debug("redirecting to \"" + urlToRedirectTo + "\"");</span></span><br><span class="line"><span class="comment">       &#125;*/</span></span><br><span class="line"></span><br><span class="line">       response.sendRedirect(urlToRedirectTo);</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">final</span> <span class="keyword">void</span> <span class="title">setRenew</span><span class="params">(<span class="keyword">final</span> <span class="keyword">boolean</span> renew)</span> </span>&#123;</span><br><span class="line">       <span class="keyword">this</span>.renew = renew;</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">final</span> <span class="keyword">void</span> <span class="title">setGateway</span><span class="params">(<span class="keyword">final</span> <span class="keyword">boolean</span> gateway)</span> </span>&#123;</span><br><span class="line">       <span class="keyword">this</span>.gateway = gateway;</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">final</span> <span class="keyword">void</span> <span class="title">setCasServerLoginUrl</span><span class="params">(<span class="keyword">final</span> String casServerLoginUrl)</span> </span>&#123;</span><br><span class="line">       <span class="keyword">this</span>.casServerLoginUrl = casServerLoginUrl;</span><br><span class="line">   &#125;</span><br><span class="line">   </span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">final</span> <span class="keyword">void</span> <span class="title">setGatewayStorage</span><span class="params">(<span class="keyword">final</span> GatewayResolver gatewayStorage)</span> </span>&#123;</span><br><span class="line">   	<span class="keyword">this</span>.gatewayStorage = gatewayStorage;</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>可以看到在uri匹配到excludepath之后会走<code>filterChain.doFilter(request, response);</code>，由于我们并没有对filterChain做什么修改，所以最终还是跑到cas那里去了</p>
+<p>修改后的代码如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.birdzhang.plugin;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> debo.zhang</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"><span class="keyword">import</span> java.util.HashMap;</span><br><span class="line"><span class="keyword">import</span> java.util.Map;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> javax.servlet.FilterChain;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.FilterConfig;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.ServletException;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.ServletRequest;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.ServletResponse;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.http.HttpServletRequest;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.http.HttpServletResponse;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.http.HttpSession;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.jasig.cas.client.authentication.DefaultGatewayResolverImpl;</span><br><span class="line"><span class="keyword">import</span> org.jasig.cas.client.authentication.GatewayResolver;</span><br><span class="line"><span class="keyword">import</span> org.jasig.cas.client.util.AbstractCasFilter;</span><br><span class="line"><span class="keyword">import</span> org.jasig.cas.client.util.CommonUtils;</span><br><span class="line"><span class="keyword">import</span> org.jasig.cas.client.validation.Assertion;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">AuthenticationFilter</span> <span class="keyword">extends</span> <span class="title">AbstractCasFilter</span></span>&#123;</span><br><span class="line">	</span><br><span class="line">	</span><br><span class="line">	 <span class="comment">/**</span></span><br><span class="line"><span class="comment">    * The URL to the CAS Server login.</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">   <span class="keyword">private</span> String casServerLoginUrl;</span><br><span class="line"></span><br><span class="line">   <span class="comment">/**</span></span><br><span class="line"><span class="comment">    * Whether to send the renew request or not.</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">   <span class="keyword">private</span> <span class="keyword">boolean</span> renew = <span class="keyword">false</span>;</span><br><span class="line"></span><br><span class="line">   <span class="comment">/**</span></span><br><span class="line"><span class="comment">    * Whether to send the gateway request or not.</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">   <span class="keyword">private</span> <span class="keyword">boolean</span> gateway = <span class="keyword">false</span>;</span><br><span class="line">   <span class="comment">/**</span></span><br><span class="line"><span class="comment">    * 添加属性，这里用来存放不过滤地址正则表达式，可以根据自己需求定制---1</span></span><br><span class="line"><span class="comment">    */</span></span><br><span class="line">   <span class="keyword">private</span> String excludePaths;</span><br><span class="line">   </span><br><span class="line">   <span class="keyword">private</span> GatewayResolver gatewayStorage = <span class="keyword">new</span> DefaultGatewayResolverImpl();</span><br><span class="line"></span><br><span class="line">   <span class="function"><span class="keyword">protected</span> <span class="keyword">void</span> <span class="title">initInternal</span><span class="params">(<span class="keyword">final</span> FilterConfig filterConfig)</span> <span class="keyword">throws</span> ServletException </span>&#123;</span><br><span class="line">       <span class="keyword">if</span> (!isIgnoreInitConfiguration()) &#123;</span><br><span class="line">           <span class="keyword">super</span>.initInternal(filterConfig);</span><br><span class="line">           setCasServerLoginUrl(getPropertyFromInitParams(filterConfig, <span class="string">"casServerLoginUrl"</span>, <span class="keyword">null</span>));</span><br><span class="line">           <span class="comment">//log.trace("Loaded CasServerLoginUrl parameter: " + this.casServerLoginUrl);</span></span><br><span class="line">           setRenew(parseBoolean(getPropertyFromInitParams(filterConfig, <span class="string">"renew"</span>, <span class="string">"false"</span>)));</span><br><span class="line">           <span class="comment">//log.trace("Loaded renew parameter: " + this.renew);</span></span><br><span class="line">           setGateway(parseBoolean(getPropertyFromInitParams(filterConfig, <span class="string">"gateway"</span>, <span class="string">"false"</span>)));</span><br><span class="line">           <span class="comment">//log.trace("Loaded gateway parameter: " + this.gateway);</span></span><br><span class="line"></span><br><span class="line">           <span class="keyword">final</span> String gatewayStorageClass = getPropertyFromInitParams(filterConfig, <span class="string">"gatewayStorageClass"</span>, <span class="keyword">null</span>);</span><br><span class="line"></span><br><span class="line">           <span class="keyword">if</span> (gatewayStorageClass != <span class="keyword">null</span>) &#123;</span><br><span class="line">               <span class="keyword">try</span> &#123;</span><br><span class="line">                   <span class="keyword">this</span>.gatewayStorage = (GatewayResolver) Class.forName(gatewayStorageClass).newInstance();</span><br><span class="line">               &#125; <span class="keyword">catch</span> (<span class="keyword">final</span> Exception e) &#123;</span><br><span class="line">                   <span class="comment">//log.error(e,e);</span></span><br><span class="line">                   <span class="keyword">throw</span> <span class="keyword">new</span> ServletException(e);</span><br><span class="line">               &#125;</span><br><span class="line">           &#125;</span><br><span class="line">           <span class="comment">//自定义添加代码，用来读取web配置文件中excludes属性值 ---2</span></span><br><span class="line">           excludePaths = getPropertyFromInitParams(filterConfig, <span class="string">"excludePaths"</span>, <span class="keyword">null</span>);<span class="comment">//filterConfig.getInitParameter("excludePaths");</span></span><br><span class="line">           excludePaths = excludePaths.trim();</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">init</span><span class="params">()</span> </span>&#123;</span><br><span class="line">       <span class="keyword">super</span>.init();</span><br><span class="line">       CommonUtils.assertNotNull(<span class="keyword">this</span>.casServerLoginUrl, <span class="string">"casServerLoginUrl cannot be null."</span>);</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   <span class="comment">//url判断逻辑，这里大家可以根据自己需要来制订规则</span></span><br><span class="line">   <span class="function"><span class="keyword">private</span> <span class="keyword">boolean</span> <span class="title">isExclude</span><span class="params">(String uri)</span></span>&#123;</span><br><span class="line">   	<span class="keyword">boolean</span> isInWhiteList = <span class="keyword">false</span>;</span><br><span class="line">   	<span class="keyword">if</span>(excludePaths!=<span class="keyword">null</span>&amp;&amp; uri!=<span class="keyword">null</span>)&#123;</span><br><span class="line">   		isInWhiteList = uri.matches(excludePaths);</span><br><span class="line">   	&#125;</span><br><span class="line">       <span class="keyword">return</span> isInWhiteList;</span><br><span class="line">   &#125;</span><br><span class="line">  </span><br><span class="line">   </span><br><span class="line">   </span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">final</span> <span class="keyword">void</span> <span class="title">doFilter</span><span class="params">(<span class="keyword">final</span> ServletRequest servletRequest, <span class="keyword">final</span> ServletResponse servletResponse, <span class="keyword">final</span> FilterChain filterChain)</span> <span class="keyword">throws</span> IOException, ServletException </span>&#123;</span><br><span class="line">       HttpServletRequest request = (HttpServletRequest) servletRequest;</span><br><span class="line">       <span class="keyword">final</span> HttpServletResponse response = (HttpServletResponse) servletResponse;</span><br><span class="line">       <span class="keyword">final</span> HttpSession session = request.getSession(<span class="keyword">false</span>);</span><br><span class="line">       </span><br><span class="line">       <span class="keyword">final</span> Assertion assertion = session != <span class="keyword">null</span> ? (Assertion) session.getAttribute(CONST_CAS_ASSERTION) : <span class="keyword">null</span>;</span><br><span class="line"></span><br><span class="line">       <span class="comment">//hack for 云桥</span></span><br><span class="line">       Map&lt;String, String[]&gt;	paramsMap = request.getParameterMap();</span><br><span class="line">       </span><br><span class="line">       <span class="keyword">if</span>(<span class="keyword">null</span> != paramsMap ) &#123;</span><br><span class="line">    	   <span class="keyword">if</span>(paramsMap.containsKey(<span class="string">"ticket"</span>) &amp;&amp; paramsMap.containsKey(<span class="string">"operation"</span>)) &#123;</span><br><span class="line"><span class="comment">/*    		   String token = Arrays.toString(paramsMap.get("ticket"));</span></span><br><span class="line"><span class="comment">    		   request.removeAttribute("ticket");</span></span><br><span class="line"><span class="comment">    		   request.setAttribute("token", token.substring(1, token.length()-1));</span></span><br><span class="line"><span class="comment">    		   filterChain.doFilter(request, response);</span></span><br><span class="line"><span class="comment">               return;*/</span></span><br><span class="line">               </span><br><span class="line">    		   <span class="comment">/*StringBuffer paramsBuff = new StringBuffer();</span></span><br><span class="line"><span class="comment">    	       for(String param: paramsMap.keySet()) &#123;</span></span><br><span class="line"><span class="comment">    	    	   String newString = Arrays.toString(paramsMap.get(param));</span></span><br><span class="line"><span class="comment">    	    	   if(param.equals("ticket")) &#123;</span></span><br><span class="line"><span class="comment">    	    		   paramsBuff.append("&amp;").append("eticket").append("=").append(newString.substring(1, newString.length()-1));</span></span><br><span class="line"><span class="comment">    	    	   &#125;else &#123;</span></span><br><span class="line"><span class="comment">    	    		   paramsBuff.append("&amp;").append(param).append("=").append(newString.substring(1, newString.length()-1));</span></span><br><span class="line"><span class="comment">    	    	   &#125;</span></span><br><span class="line"><span class="comment">    	       &#125;</span></span><br><span class="line"><span class="comment">    	       String port = request.getServerPort() == 80?"":":"+request.getServerPort();</span></span><br><span class="line"><span class="comment">    	       String scheme = request.getScheme();</span></span><br><span class="line"><span class="comment">    	       String host = request.getServerName();</span></span><br><span class="line"><span class="comment">    	       String redirectUrl = String.format("%s://%s%s%s?%s", </span></span><br><span class="line"><span class="comment">    	    		   scheme,</span></span><br><span class="line"><span class="comment">    	    		   host,</span></span><br><span class="line"><span class="comment">    	    		   port,</span></span><br><span class="line"><span class="comment">    	    		   request.getRequestURI(),</span></span><br><span class="line"><span class="comment">    	    		   paramsBuff.toString().substring(1)</span></span><br><span class="line"><span class="comment">    	    		   );</span></span><br><span class="line"><span class="comment">    	       System.out.println("request url:"+redirectUrl);</span></span><br><span class="line"><span class="comment">    	       response.sendRedirect(redirectUrl);</span></span><br><span class="line"><span class="comment">    	       return;*/</span></span><br><span class="line">    		   </span><br><span class="line">    		   Map&lt;String, String[]&gt; extraParams = <span class="keyword">new</span> HashMap&lt;String, String[]&gt;();</span><br><span class="line">    		   HttpServletRequest wrappedRequest = <span class="keyword">new</span> PrettyFacesWrappedRequest(request, extraParams);</span><br><span class="line">    		   request.getRequestDispatcher(request.getRequestURI()).forward(wrappedRequest, response);</span><br><span class="line">    		   <span class="keyword">return</span>;</span><br><span class="line">    	   &#125;</span><br><span class="line">       &#125;</span><br><span class="line">       </span><br><span class="line">       </span><br><span class="line">       <span class="comment">// 该判断是自定义的对符合条件的url进行通过处理 </span></span><br><span class="line">       <span class="keyword">if</span>(isExclude(request.getRequestURI()))&#123;</span><br><span class="line">       	filterChain.doFilter(request, response);</span><br><span class="line">           <span class="keyword">return</span>;</span><br><span class="line">       &#125;</span><br><span class="line">       </span><br><span class="line">      </span><br><span class="line">       </span><br><span class="line">       <span class="keyword">if</span> (assertion != <span class="keyword">null</span>) &#123;</span><br><span class="line">           filterChain.doFilter(request, response);</span><br><span class="line">           <span class="keyword">return</span>;</span><br><span class="line">       &#125;</span><br><span class="line"></span><br><span class="line">       <span class="keyword">final</span> String serviceUrl = constructServiceUrl(request, response);</span><br><span class="line">       <span class="keyword">final</span> String ticket = CommonUtils.safeGetParameter(request,getArtifactParameterName());</span><br><span class="line">       <span class="keyword">final</span> <span class="keyword">boolean</span> wasGatewayed = <span class="keyword">this</span>.gatewayStorage.hasGatewayedAlready(request, serviceUrl);</span><br><span class="line"></span><br><span class="line">       <span class="keyword">if</span> (CommonUtils.isNotBlank(ticket) || wasGatewayed) &#123;</span><br><span class="line">           filterChain.doFilter(request, response);</span><br><span class="line">           <span class="keyword">return</span>;</span><br><span class="line">       &#125;</span><br><span class="line"></span><br><span class="line">       <span class="keyword">final</span> String modifiedServiceUrl;</span><br><span class="line"></span><br><span class="line">       <span class="comment">//log.debug("no ticket and no assertion found");</span></span><br><span class="line">       <span class="keyword">if</span> (<span class="keyword">this</span>.gateway) &#123;</span><br><span class="line">           <span class="comment">//log.debug("setting gateway attribute in session");</span></span><br><span class="line">           modifiedServiceUrl = <span class="keyword">this</span>.gatewayStorage.storeGatewayInformation(request, serviceUrl);</span><br><span class="line">       &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">           modifiedServiceUrl = serviceUrl;</span><br><span class="line">       &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*       if (log.isDebugEnabled()) &#123;</span></span><br><span class="line"><span class="comment">           log.debug("Constructed service url: " + modifiedServiceUrl);</span></span><br><span class="line"><span class="comment">       &#125;*/</span></span><br><span class="line"></span><br><span class="line">       <span class="keyword">final</span> String urlToRedirectTo = CommonUtils.constructRedirectUrl(<span class="keyword">this</span>.casServerLoginUrl, getServiceParameterName(), modifiedServiceUrl, <span class="keyword">this</span>.renew, <span class="keyword">this</span>.gateway);</span><br><span class="line"></span><br><span class="line">  <span class="comment">/*     if (log.isDebugEnabled()) &#123;</span></span><br><span class="line"><span class="comment">           log.debug("redirecting to \"" + urlToRedirectTo + "\"");</span></span><br><span class="line"><span class="comment">       &#125;*/</span></span><br><span class="line"></span><br><span class="line">       response.sendRedirect(urlToRedirectTo);</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">final</span> <span class="keyword">void</span> <span class="title">setRenew</span><span class="params">(<span class="keyword">final</span> <span class="keyword">boolean</span> renew)</span> </span>&#123;</span><br><span class="line">       <span class="keyword">this</span>.renew = renew;</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">final</span> <span class="keyword">void</span> <span class="title">setGateway</span><span class="params">(<span class="keyword">final</span> <span class="keyword">boolean</span> gateway)</span> </span>&#123;</span><br><span class="line">       <span class="keyword">this</span>.gateway = gateway;</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">final</span> <span class="keyword">void</span> <span class="title">setCasServerLoginUrl</span><span class="params">(<span class="keyword">final</span> String casServerLoginUrl)</span> </span>&#123;</span><br><span class="line">       <span class="keyword">this</span>.casServerLoginUrl = casServerLoginUrl;</span><br><span class="line">   &#125;</span><br><span class="line">   </span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">final</span> <span class="keyword">void</span> <span class="title">setGatewayStorage</span><span class="params">(<span class="keyword">final</span> GatewayResolver gatewayStorage)</span> </span>&#123;</span><br><span class="line">   	<span class="keyword">this</span>.gatewayStorage = gatewayStorage;</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta size-small is-uppercase level is-mobile"><div class="level-left"><time class="level-item" dateTime="2018-05-15T01:49:53.000Z" title="2018-05-15T01:49:53.000Z">2018-05-15</time><span class="level-item">2 分钟 读完 (大约 305 个字)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2018/05/15/Java%E6%94%B9%E5%86%99HttpServletRequest%E8%AF%B7%E6%B1%82%E5%8F%82%E6%95%B0/">Java改写HttpServletRequest请求参数</a></h1><div class="content"><p>为什么会有这个需求呢？ 因为被 <a href="https://www.apereo.org/projects/cas">cas</a> 的<code>AuthenticationFilter</code>坑了</p>
+<p>下一篇再说一下<code>AuthenticationFilter</code>的坑，这里主要说修改请求的参数</p>
+<p>代码是从网上找的，找不到具体来源了，直接贴代码吧</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.birdzhang.plugin;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.Collections;</span><br><span class="line"><span class="keyword">import</span> java.util.Enumeration;</span><br><span class="line"><span class="keyword">import</span> java.util.HashMap;</span><br><span class="line"><span class="keyword">import</span> java.util.Map;</span><br><span class="line"><span class="keyword">import</span> java.util.TreeMap;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> javax.servlet.http.HttpServletRequest;</span><br><span class="line"><span class="keyword">import</span> javax.servlet.http.HttpServletRequestWrapper;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@author</span> birdzhang</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">PrettyFacesWrappedRequest</span> <span class="keyword">extends</span> <span class="title">HttpServletRequestWrapper</span></span></span><br><span class="line"><span class="class"></span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> Map&lt;String, String[]&gt; modifiableParameters;</span><br><span class="line">    <span class="keyword">private</span> Map&lt;String, String[]&gt; allParameters = <span class="keyword">null</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * Create a new request wrapper that will merge additional parameters into</span></span><br><span class="line"><span class="comment">     * the request object without prematurely reading parameters from the</span></span><br><span class="line"><span class="comment">     * original request.</span></span><br><span class="line"><span class="comment">     * </span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> request</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@param</span> additionalParams</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">PrettyFacesWrappedRequest</span><span class="params">(<span class="keyword">final</span> HttpServletRequest request, </span></span></span><br><span class="line"><span class="function"><span class="params">                                                    <span class="keyword">final</span> Map&lt;String, String[]&gt; additionalParams)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">super</span>(request);</span><br><span class="line">        modifiableParameters = <span class="keyword">new</span> HashMap&lt;String, String[]&gt;();</span><br><span class="line">        modifiableParameters.putAll(additionalParams);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getParameter</span><span class="params">(<span class="keyword">final</span> String name)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        String[] strings = getParameterMap().get(name);</span><br><span class="line">        <span class="keyword">if</span> (strings != <span class="keyword">null</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">return</span> strings[<span class="number">0</span>];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">super</span>.getParameter(name);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> Map&lt;String, String[]&gt; getParameterMap()</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (allParameters == <span class="keyword">null</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            allParameters = <span class="keyword">new</span> TreeMap&lt;String, String[]&gt;();</span><br><span class="line">            Map&lt;String, String[]&gt; superMap = <span class="keyword">super</span>.getParameterMap();</span><br><span class="line">            <span class="comment">// 在这里根据你的需要修改</span></span><br><span class="line">            <span class="keyword">for</span> (String key : superMap.keySet()) &#123;</span><br><span class="line">				<span class="keyword">if</span>(key.equals(<span class="string">"ticket"</span>)) &#123;</span><br><span class="line">					allParameters.put(<span class="string">"token"</span>, superMap.get(key));</span><br><span class="line">				&#125;<span class="keyword">else</span> &#123;</span><br><span class="line">					allParameters.put(key, superMap.get(key));</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">            allParameters.putAll(modifiableParameters);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//Return an unmodifiable collection because we need to uphold the interface contract.</span></span><br><span class="line">        <span class="keyword">return</span> Collections.unmodifiableMap(allParameters);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Enumeration&lt;String&gt; <span class="title">getParameterNames</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> Collections.enumeration(getParameterMap().keySet());</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> String[] getParameterValues(<span class="keyword">final</span> String name)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">return</span> getParameterMap().get(name);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>使用:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Map&lt;String, String[]&gt; extraParams = <span class="keyword">new</span> HashMap&lt;String, String[]&gt;();</span><br><span class="line">HttpServletRequest wrappedRequest = <span class="keyword">new</span> PrettyFacesWrappedRequest(request, extraParams);</span><br><span class="line">request.getRequestDispatcher(request.getRequestURI()).forward(wrappedRequest, response);</span><br><span class="line"><span class="keyword">return</span>;</span><br></pre></td></tr></table></figure>
+<p>完美的将<code>ticket</code>参数替换为<code>token</code>参数</p>
+</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta size-small is-uppercase level is-mobile"><div class="level-left"><time class="level-item" dateTime="2018-03-30T06:28:28.000Z" title="2018-03-30T06:28:28.000Z">2018-03-30</time><span class="level-item">11 分钟 读完 (大约 1656 个字)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2018/03/30/SailfishOS%E7%A7%BB%E6%A4%8D%E5%88%B0Redmi-5-Plus%E7%9A%84%E4%B8%80%E4%BA%9B%E8%AE%B0%E5%BD%95/">SailfishOS移植到Redmi 5 Plus的一些记录</a></h1><div class="content"><h1 id="移植旗鱼系统到红米5p的过程记录"><a href="#移植旗鱼系统到红米5p的过程记录" class="headerlink" title="移植旗鱼系统到红米5p的过程记录"></a>移植旗鱼系统到红米5p的过程记录</h1><h2 id="可以去ホロ-🐺的博客看看更详细的"><a href="#可以去ホロ-🐺的博客看看更详细的" class="headerlink" title="!!!可以去ホロ 🐺的博客看看更详细的!!!"></a>!!!可以去ホロ 🐺的博客看看更详细的!!!</h2><p>  <a href="https://blog.yoitsu.moe/category/sailfish.html">https://blog.yoitsu.moe/category/sailfish.html</a></p>
+<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><ul>
+<li>一台红米5p手机，解锁过并且刷了lineageos</li>
+<li>有梯子</li>
+<li>一台内存起码8G的电脑(4G也可以)，Ubuntu 系统，硬盘起码40GB大小，或者更高。</li>
+<li><a href="https://sailfishos.org/develop/hadk/">SailfishOS-HardwareAdaptationDevelopmentKit</a> 1 READ部分pdf文档</li>
+<li><del><a href="https://wiki.merproject.org/wiki/Adaptations/faq-hadk">https://wiki.merproject.org/wiki/Adaptations/faq-hadk</a></del> <a href="https://github.com/mer-hybris/hadk-faq">https://github.com/mer-hybris/hadk-faq</a> （2019-10-28更新）</li>
+<li>最关键的，一颗善于折腾的心和善于搜索的你</li>
 </ul>
+<h2 id="搭建环境"><a href="#搭建环境" class="headerlink" title="搭建环境"></a>搭建环境</h2><h3 id="Android编译环境-HADK-第4章"><a href="#Android编译环境-HADK-第4章" class="headerlink" title="Android编译环境(HADK 第4章)"></a>Android编译环境(HADK 第4章)</h3><blockquote>
+<p>需要先配置一下hadk的环境变量，一共三个文件，可以参考这里： <a href="https://github.com/CancroSailors/sailfish-build-environment">https://github.com/CancroSailors/sailfish-build-environment</a></p>
+</blockquote>
+<p>然后<code>source ~/.hadk.env</code>一下</p>
+<h4 id="1-安装git等"><a href="#1-安装git等" class="headerlink" title="1. 安装git等"></a>1. 安装git等</h4><p><code>sudo apt-get install git</code></p>
+<h4 id="2-同步CM的代码"><a href="#2-同步CM的代码" class="headerlink" title="2. 同步CM的代码"></a>2. 同步CM的代码</h4><h5 id="配置git的用户名跟邮箱，填自己的就行，随便填也行"><a href="#配置git的用户名跟邮箱，填自己的就行，随便填也行" class="headerlink" title="配置git的用户名跟邮箱，填自己的就行，随便填也行"></a>配置git的用户名跟邮箱，填自己的就行，随便填也行</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name &quot;Your Name&quot;</span><br><span class="line">git config --global user.email &quot;you@example.com&quot;</span><br></pre></td></tr></table></figure>
+<h5 id="创建检出代码的目录，所在的盘空间要足够"><a href="#创建检出代码的目录，所在的盘空间要足够" class="headerlink" title="创建检出代码的目录，所在的盘空间要足够"></a>创建检出代码的目录，所在的盘空间要足够</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo mkdir -p $ANDROID_ROOT</span><br><span class="line">sudo chown -R $USER $ANDROID_ROOT</span><br><span class="line">cd $ANDROID_ROOT</span><br><span class="line">repo init -u git:&#x2F;&#x2F;github.com&#x2F;mer-hybris&#x2F;android.git -b hybris-14.1</span><br></pre></td></tr></table></figure>
+<h5 id="配置你的设备的仓库，这里是vince"><a href="#配置你的设备的仓库，这里是vince" class="headerlink" title="配置你的设备的仓库，这里是vince"></a>配置你的设备的仓库，这里是vince</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">mkdir $ANDROID_ROOT&#x2F;.repo&#x2F;local_manifests</span><br><span class="line">cat &lt;&lt;&#39;EOF&#39; &gt;&gt; $ANDROID_ROOT&#x2F;.repo&#x2F;local_manifests&#x2F;vince.xml</span><br><span class="line">&lt;?xml version&#x3D;&quot;1.0&quot; encoding&#x3D;&quot;UTF-8&quot;?&gt;</span><br><span class="line">&lt;manifest&gt;</span><br><span class="line">  &lt;project path&#x3D;&quot;device&#x2F;xiaomi&#x2F;vince&quot; name&#x3D;&quot;Sailfish-On-Vince&#x2F;device_xiaomi_vince&quot; revision&#x3D;&quot;cm-14.1&quot; &#x2F;&gt;</span><br><span class="line">  &lt;project path&#x3D;&quot;vendor&#x2F;xiaomi&#x2F;vince&quot; name&#x3D;&quot;Sailfish-On-Vince&#x2F;vendor_xiaomi_vince&quot; revision&#x3D;&quot;cm-14.1&quot; &#x2F;&gt;</span><br><span class="line">  &lt;project path&#x3D;&quot;kernel&#x2F;xiaomi&#x2F;vince&quot; name&#x3D;&quot;Sailfish-On-Vince&#x2F;kernel_xiaomi_msm8953&quot; revision&#x3D;&quot;cm-14.1&quot; &#x2F;&gt;</span><br><span class="line">  &lt;project path&#x3D;&quot;hybris&#x2F;droid-hal-version-vince&quot; name&#x3D;&quot;Sailfish-On-Vince&#x2F;droid-hal-version-vince&quot; revision&#x3D;&quot;master&quot; &#x2F;&gt;</span><br><span class="line">  &lt;project path&#x3D;&quot;hybris&#x2F;droid-config-vince&quot; name&#x3D;&quot;Sailfish-On-Vince&#x2F;droid-config-vince&quot; revision&#x3D;&quot;master&quot; &#x2F;&gt;</span><br><span class="line">  &lt;project path&#x3D;&quot;rpm&quot; name&#x3D;&quot;Sailfish-On-Vince&#x2F;droid-hal-vince&quot; revision&#x3D;&quot;master&quot; &#x2F;&gt;</span><br><span class="line">&lt;&#x2F;manifest&gt;</span><br><span class="line">EOF</span><br></pre></td></tr></table></figure>
+<h5 id="同步代码"><a href="#同步代码" class="headerlink" title="同步代码"></a>同步代码</h5><p><code>repo sync --fetch-submodules</code></p>
+<p>如果你要求快，可以用 <code>repo sync --fetch-submodules -c --no-tags --no-clone-bundle</code>，这样只会拉取当前要用的代码，但是不方便后面的修改提交</p>
+<p>出错就多同步几次</p>
+<h3 id="Mer编译环境"><a href="#Mer编译环境" class="headerlink" title="Mer编译环境"></a>Mer编译环境</h3><blockquote>
+<p>参见官方教程： <a href="https://sailfishos.org/wiki/Platform_SDK_Installation">https://sailfishos.org/wiki/Platform_SDK_Installation</a></p>
+</blockquote>
+<p>安装Platform SDK</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">export PLATFORM_SDK_ROOT&#x3D;&#x2F;srv&#x2F;mer</span><br><span class="line">curl -k -O http:&#x2F;&#x2F;releases.sailfishos.org&#x2F;sdk&#x2F;installers&#x2F;latest&#x2F;Jolla-latest-SailfishOS_Platform_SDK_Chroot-i486.tar.bz2 ;</span><br><span class="line">sudo mkdir -p $PLATFORM_SDK_ROOT&#x2F;sdks&#x2F;sfossdk ;</span><br><span class="line">sudo tar --numeric-owner -p -xjf Jolla-latest-SailfishOS_Platform_SDK_Chroot-i486.tar.bz2 -C $PLATFORM_SDK_ROOT&#x2F;sdks&#x2F;sfossdk  ;</span><br><span class="line">echo &quot;export PLATFORM_SDK_ROOT&#x3D;$PLATFORM_SDK_ROOT&quot; &gt;&gt; ~&#x2F;.bashrc</span><br><span class="line">echo &#39;alias sfossdk&#x3D;$PLATFORM_SDK_ROOT&#x2F;sdks&#x2F;sfossdk&#x2F;mer-sdk-chroot&#39; &gt;&gt; ~&#x2F;.bashrc ; exec bash ;</span><br><span class="line">echo &#39;PS1&#x3D;&quot;PlatformSDK $PS1&quot;&#39; &gt; ~&#x2F;.mersdk.profile ;</span><br><span class="line">echo &#39;[ -d &#x2F;etc&#x2F;bash_completion.d ] &amp;&amp; for i in &#x2F;etc&#x2F;bash_completion.d&#x2F;*;do . $i;done&#39;  &gt;&gt; ~&#x2F;.mersdk.profile ;</span><br><span class="line">sfossdk</span><br></pre></td></tr></table></figure>
+<p>另开一个终端，输入<code>sfossdk</code>，进入mer下</p>
+<blockquote>
+<p>安装targets，官方教程：<a href="https://sailfishos.org/wiki/Platform_SDK_Target_Installation">https://sailfishos.org/wiki/Platform_SDK_Target_Installation</a></p>
+</blockquote>
+<p>其实就是执行下面的命令，要下载这两个包，过程有些慢</p>
+<p>（2019-06-13更新，修复链接地址为最新的） </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sdk-assistant create xiaomi-vince-latest http:&#x2F;&#x2F;releases.sailfishos.org&#x2F;sdk&#x2F;targets&#x2F;Sailfish_OS-latest-Sailfish_SDK_Tooling-i486.tar.7z</span><br><span class="line">sdk-assistant create xiaomi-vince-armv7hl http:&#x2F;&#x2F;releases.sailfishos.org&#x2F;sdk&#x2F;targets&#x2F;Sailfish_OS-latest-Sailfish_SDK_Target-armv7hl.tar.7z</span><br></pre></td></tr></table></figure>
+<p>更新到最新（Update to latest）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo ssu re x.y.z.ab</span><br><span class="line">sudo zypper ref</span><br><span class="line">sudo zypper dup</span><br></pre></td></tr></table></figure></p>
+<p>安装打包的工具</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo zypper in android-tools createrepo_c</span><br></pre></td></tr></table></figure>
+<h2 id="修改fixup-mountpoints"><a href="#修改fixup-mountpoints" class="headerlink" title="修改fixup-mountpoints"></a>修改fixup-mountpoints</h2><p>文件在<code>hybris/hybris-boot/fixup-mountpoints</code>，添加你的设备的，这里是vince。<br>adb到手机上，输入<code>ls -l /dev/block/platform/*/by-name/</code>, 获取分区信息，或者其他路径的，HADK里面有写</p>
+<h2 id="Camera支持"><a href="#Camera支持" class="headerlink" title="Camera支持"></a>Camera支持</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cd $ANDROID_ROOT&#x2F;external&#x2F;droidmedia</span><br><span class="line">echo &#39;DROIDMEDIA_32 :&#x3D; true&#39; &gt;&gt; env.mk #针对64位的系统</span><br><span class="line">echo &#39;FORCE_HAL:&#x3D;1&#39; &gt;&gt; env.mk #使用HAL1，根据自己机型设置</span><br></pre></td></tr></table></figure>
+<h2 id="编译hybris-hal"><a href="#编译hybris-hal" class="headerlink" title="编译hybris-hal"></a>编译hybris-hal</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">cd $ANDROID_ROOT</span><br><span class="line">source build&#x2F;envsetup.sh</span><br><span class="line">export USE_CCACHE&#x3D;1</span><br><span class="line">breakfast $DEVICE</span><br><span class="line">make -j8 hybris-hal</span><br></pre></td></tr></table></figure>
+<p>期间可能会报错，谷歌搜一下</p>
+<h2 id="验证Kernel"><a href="#验证Kernel" class="headerlink" title="验证Kernel"></a>验证Kernel</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd $ANDROID_ROOT</span><br><span class="line">hybris&#x2F;mer-kernel-check&#x2F;mer_verify_kernel_config .&#x2F;out&#x2F;target&#x2F;product&#x2F;$DEVICE&#x2F;obj&#x2F;KERNEL_OBJ&#x2F;.config</span><br></pre></td></tr></table></figure>
+<p>出现WARNING或者ERROR，将提示的加入到你的defconfig中，我的在<code>kernel/xiaomi/vince/arch/arm64/configs/vince_defconfig</code>中<br>然后执行<code>make hybris-root</code>后重新验证。没有出现<code>ERROR</code>后可以执行<code>make hybris-recovery</code></p>
+<h2 id="打包dhd（HADK-第7章）"><a href="#打包dhd（HADK-第7章）" class="headerlink" title="打包dhd（HADK 第7章）"></a>打包dhd（HADK 第7章）</h2><p>再开一个终端(我们这里称终端2)，输入<code>sfossdk</code>，进入mer打包环境下</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd $ANDROID_ROOT</span><br><span class="line">rpm&#x2F;dhd&#x2F;helpers&#x2F;build_packages.sh -d</span><br></pre></td></tr></table></figure>
+<h2 id="打包droidmedia与audioflingerglue"><a href="#打包droidmedia与audioflingerglue" class="headerlink" title="打包droidmedia与audioflingerglue"></a>打包droidmedia与audioflingerglue</h2><blockquote>
+<p>如果你的机器是32位的话那么下面的命令去掉<code>_32</code>,下面的也一样</p>
+</blockquote>
+<p>在终端1中<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">make -j$(nproc --all) $(external&#x2F;droidmedia&#x2F;detect_build_targets.sh $PORT_ARCH $(gettargetarch))</span><br></pre></td></tr></table></figure><br>在终端2中</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">DROIDMEDIA_VERSION&#x3D;$(git --git-dir external&#x2F;droidmedia&#x2F;.git describe --tags | sed \</span><br><span class="line">-r &quot;s&#x2F;\-&#x2F;\+&#x2F;g&quot;)</span><br><span class="line">rpm&#x2F;dhd&#x2F;helpers&#x2F;pack_source_droidmedia-localbuild.sh $DROIDMEDIA_VERSION</span><br><span class="line">mkdir -p hybris&#x2F;mw&#x2F;droidmedia-localbuild&#x2F;rpm</span><br><span class="line">cp rpm&#x2F;dhd&#x2F;helpers&#x2F;droidmedia-localbuild.spec \</span><br><span class="line">hybris&#x2F;mw&#x2F;droidmedia-localbuild&#x2F;rpm&#x2F;droidmedia.spec</span><br><span class="line">sed -ie &quot;s&#x2F;0.0.0&#x2F;$DROIDMEDIA_VERSION&#x2F;&quot; \</span><br><span class="line">hybris&#x2F;mw&#x2F;droidmedia-localbuild&#x2F;rpm&#x2F;droidmedia.spec</span><br><span class="line">mv hybris&#x2F;mw&#x2F;droidmedia-$DROIDMEDIA_VERSION.tgz hybris&#x2F;mw&#x2F;droidmedia-localbuild</span><br><span class="line">rpm&#x2F;dhd&#x2F;helpers&#x2F;build_packages.sh --build&#x3D;hybris&#x2F;mw&#x2F;droidmedia-localbuild</span><br></pre></td></tr></table></figure>
+<p>在终端1中</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">make -j$(nproc --all) $(external&#x2F;audioflingerglue&#x2F;detect_build_targets.sh $PORT_ARCH $(gettargetarch))</span><br></pre></td></tr></table></figure>
+<p>在终端2中<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">AUDIOFLINGERGLUE_VERSION&#x3D;$(git --git-dir external&#x2F;audioflingerglue&#x2F;.git describe --tags | sed \</span><br><span class="line">-r &quot;s&#x2F;\-&#x2F;\+&#x2F;g&quot;)</span><br><span class="line">rpm&#x2F;dhd&#x2F;helpers&#x2F;pack_source_audioflingerglue-localbuild.sh $AUDIOFLINGERGLUE_VERSION</span><br><span class="line">mkdir -p hybris&#x2F;mw&#x2F;audioflingerglue-localbuild&#x2F;rpm</span><br><span class="line">cp rpm&#x2F;dhd&#x2F;helpers&#x2F;audioflingerglue-localbuild.spec \</span><br><span class="line">hybris&#x2F;mw&#x2F;audioflingerglue-localbuild&#x2F;rpm&#x2F;audioflingerglue.spec</span><br><span class="line">sed -ie &quot;s&#x2F;0.0.0&#x2F;$AUDIOFLINGERGLUE_VERSION&#x2F;&quot; \</span><br><span class="line">hybris&#x2F;mw&#x2F;audioflingerglue-localbuild&#x2F;rpm&#x2F;audioflingerglue.spec</span><br><span class="line">mv hybris&#x2F;mw&#x2F;audioflingerglue-$AUDIOFLINGERGLUE_VERSION.tgz hybris&#x2F;mw&#x2F;audioflingerglue-localbuild</span><br><span class="line">rpm&#x2F;dhd&#x2F;helpers&#x2F;build_packages.sh --build&#x3D;hybris&#x2F;mw&#x2F;audioflingerglue-localbuild</span><br></pre></td></tr></table></figure></p>
+<p>然后重新打包dhd<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rpm&#x2F;dhd&#x2F;helpers&#x2F;build_packages.sh --droid-hal</span><br></pre></td></tr></table></figure></p>
+<h2 id="打包其他中间件包-mw"><a href="#打包其他中间件包-mw" class="headerlink" title="打包其他中间件包(mw)"></a>打包其他中间件包(mw)</h2><p>注意到 <a href="https://wiki.merproject.org/wiki/Adaptations/faq-hadk">https://wiki.merproject.org/wiki/Adaptations/faq-hadk</a> 搜索当前版本需要对应的mw版本号，不一定用最新的</p>
+<p>执行 <code>rpm/dhd/helpers/build_packages.sh --mw</code> ,然后选择 <code>all</code> 即可</p>
+<h3 id="【进阶】上传到obs打包"><a href="#【进阶】上传到obs打包" class="headerlink" title="【进阶】上传到obs打包"></a>【进阶】上传到obs打包</h3><p>将droid-local-repo/vince下 droid-hal-vince/<em>.rpm 跟audioflingerglue</em>.rpm 、 droidmedia*.rpm 上传到obs的droid-hal-vince下</p>
+<p>例如这些包：<a href="https://build.merproject.org/package/show/nemo:devel:hw:xiaomi:vince/droid-hal-vince">https://build.merproject.org/package/show/nemo:devel:hw:xiaomi:vince/droid-hal-vince</a></p>
+<p>obs打包还需要dhc,dhv等等几个包，此处不详细说明了，可以到 <a href="https://github.com/mer-hybris">https://github.com/mer-hybris</a> 看其他机型的</p>
+<h2 id="打包dhv"><a href="#打包dhv" class="headerlink" title="打包dhv"></a>打包dhv</h2><p>也就是 droid-hal-$DEVICE-version</p>
+<p><code>rpm/dhd/helpers/build_packages.sh -v</code></p>
+<p>如果提示 droid-configs 之类的找不到，需要手动安装</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sb2 -t $VENDOR-$DEVICE-$PORT_ARCH -R -msdk-install zypper -n install droid-config-$DEVICE</span><br></pre></td></tr></table></figure>
+<h2 id="Jolla-RELEASE-DEVICE-ARCH-ks"><a href="#Jolla-RELEASE-DEVICE-ARCH-ks" class="headerlink" title="Jolla-@RELEASE@-$DEVICE-@ARCH@.ks"></a>Jolla-@RELEASE@-$DEVICE-@ARCH@.ks</h2><p><del>~obs打包完之后，将droid-config-vince-kickstart-configuration-0.2.4*.armv7hl.rpm 下载下来，解压获得Jolla-@RELEASE@-$DEVICE-@ARCH@.ks放到$ANDROID_ROOT下面</del>~</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">cd $ANDROID_ROOT</span><br><span class="line">HA_REPO&#x3D;&quot;repo --name&#x3D;adaptation-community-common-$DEVICE-@RELEASE@&quot;</span><br><span class="line">HA_DEV&#x3D;&quot;repo --name&#x3D;adaptation-community-$DEVICE-@RELEASE@&quot;</span><br><span class="line">KS&#x3D;&quot;Jolla-@RELEASE@-$DEVICE-@ARCH@.ks&quot;</span><br><span class="line">sed \</span><br><span class="line">&quot;&#x2F;$HA_REPO&#x2F;i$HA_DEV --baseurl&#x3D;file:\&#x2F;\&#x2F;$ANDROID_ROOT\&#x2F;droid-local-repo\&#x2F;$DEVICE&quot; \</span><br><span class="line">$ANDROID_ROOT&#x2F;hybris&#x2F;droid-configs&#x2F;installroot&#x2F;usr&#x2F;share&#x2F;kickstarts&#x2F;$KS \</span><br><span class="line">&gt; $KS</span><br></pre></td></tr></table></figure>
+<h2 id="镜像制作"><a href="#镜像制作" class="headerlink" title="镜像制作"></a>镜像制作</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">cd $ANDROID_ROOT</span><br><span class="line">RELEASE&#x3D;2.1.4.14</span><br><span class="line">EXTRA_NAME&#x3D;-alpha1</span><br><span class="line">hybris&#x2F;droid-configs&#x2F;droid-configs-device&#x2F;helpers&#x2F;process_patterns.sh</span><br><span class="line">sudo mic create fs --arch&#x3D;$PORT_ARCH \</span><br><span class="line">--tokenmap&#x3D;ARCH:$PORT_ARCH,RELEASE:$RELEASE,EXTRA_NAME:$EXTRA_NAME \</span><br><span class="line">--record-pkgs&#x3D;name,url \</span><br><span class="line">--outdir&#x3D;sfe-$DEVICE-$RELEASE$EXTRA_NAME \</span><br><span class="line">--pack-to&#x3D;sfe-$DEVICE-$RELEASE$EXTRA_NAME.tar.bz2 \</span><br><span class="line">$ANDROID_ROOT&#x2F;Jolla-@RELEASE@-$DEVICE-@ARCH@.ks</span><br></pre></td></tr></table></figure>
+<p>在当前目录下会有一个 <code>sfe-$DEVICE-$RELEASE$EXTRA_NAME</code>目录，下面的 <code>sailfishos-$DEVICE-$RELEASE$EXTRA_NAME.zip</code>就是要使用的刷机包</p>
+<h2 id="刷机"><a href="#刷机" class="headerlink" title="刷机"></a>刷机</h2><p>刷入 lineageos-14.1的包，刷入上面的<code>sailfishos-$DEVICE-$RELEASE$EXTRA_NAME.zip</code>的包，重启</p>
+<p>可以参考 <a href="https://wiki.merproject.org/wiki/Adaptations/libhybris/Install_SailfishOS_for_Vince">https://wiki.merproject.org/wiki/Adaptations/libhybris/Install_SailfishOS_for_Vince</a></p>
+<h2 id="调试"><a href="#调试" class="headerlink" title="调试"></a>调试</h2><p>欢迎加入 IRC #jolla-cn #sailfishos-porters (只限英文交流) 或 <a href="https://t.me/joinchat/GTqoL1HLIYXWNf-JeijTAg">https://t.me/joinchat/GTqoL1HLIYXWNf-JeijTAg</a> 讨论</p>
+<p>相关文档 </p>
+<ul>
+<li><a href="https://sailfishos.org/hadk">https://sailfishos.org/hadk</a> </li>
+<li><a href="http://bit.ly/faq-hadk">http://bit.ly/faq-hadk</a> </li>
+<li><a href="http://bit.ly/port-channel-log">http://bit.ly/port-channel-log</a> </li>
+<li><a href="http://bit.ly/always-grep-irc-logs">http://bit.ly/always-grep-irc-logs</a></li>
+</ul>
+</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta size-small is-uppercase level is-mobile"><div class="level-left"><time class="level-item" dateTime="2018-01-30T06:28:28.000Z" title="2018-01-30T06:28:28.000Z">2018-01-30</time><span class="level-item">2 分钟 读完 (大约 299 个字)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2018/01/30/Tomcat%E4%BF%A1%E4%BB%BBhttps%E7%BD%91%E7%AB%99/">Tomcat信任https网站</a></h1><div class="content"><h2 id="在使用微信发送告警的时候出现无法使用https网址的问题，解决方式如下"><a href="#在使用微信发送告警的时候出现无法使用https网址的问题，解决方式如下" class="headerlink" title="在使用微信发送告警的时候出现无法使用https网址的问题，解决方式如下"></a>在使用微信发送告警的时候出现无法使用https网址的问题，解决方式如下</h2><h3 id="导出微信的证书"><a href="#导出微信的证书" class="headerlink" title="导出微信的证书"></a>导出微信的证书</h3><p><code>openssl s_client -connect qyapi.weixin.qq.com:443 2&gt;&amp;1 |sed -ne &#39;/-BEGIN CERTIFICATE-/,/-END CERTIFICATE-/p&#39; &gt; weixin.crt</code></p>
+<p>使用<a href="/files/SSLPoke.class">SSLPoke.class</a>确认是否还有上层证书，如果存在也导入</p>
+<p><code>java -Djavax.net.debug=ssl  SSLPoke qyapi.weixin.qq.com 443</code></p>
+<p>看到有类似下面的则表明有上层证书:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">AuthorityInfoAccess [</span><br><span class="line">  [</span><br><span class="line">   accessMethod: ocsp</span><br><span class="line">   accessLocation: URIName: http:&#x2F;&#x2F;gn.symcd.com</span><br><span class="line">,</span><br><span class="line">   accessMethod: caIssuers</span><br><span class="line">   accessLocation: URIName: http:&#x2F;&#x2F;gn.symcb.com&#x2F;gn.crt</span><br><span class="line">]</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<p>将<a href="http://gn.symcb.com/gn.crt下载下来，并导入">http://gn.symcb.com/gn.crt下载下来，并导入</a><br><code>sudo keytool -import -v -trustcacerts -alias gnsymcb -keystore $JAVA_HOME/jre/lib/security/jssecacerts -file gn.crt</code></p>
+<h3 id="导入到jdk中"><a href="#导入到jdk中" class="headerlink" title="导入到jdk中"></a>导入到jdk中</h3><p><code>sudo keytool -import -v -trustcacerts -alias qyapiweixin -keystore $JAVA_HOME/jre/lib/security/jssecacerts -file weixin.crt</code></p>
+<h3 id="更新证书"><a href="#更新证书" class="headerlink" title="更新证书"></a>更新证书</h3><p>需要先删除再导入新的<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo keytool -delete -keystore $JAVA_HOME&#x2F;jre&#x2F;lib&#x2F;security&#x2F;cacerts -alias qyapiweixin    </span><br><span class="line">sudo keytool -import -v -trustcacerts -alias qyapiweixin -keystore $JAVA_HOME&#x2F;jre&#x2F;lib&#x2F;security&#x2F;cacerts -file weixin.crt</span><br></pre></td></tr></table></figure></p>
+<h3 id="指定tomcat使用证书-非必须"><a href="#指定tomcat使用证书-非必须" class="headerlink" title="指定tomcat使用证书(非必须)"></a>指定tomcat使用证书(非必须)</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">vim &#x2F;usr&#x2F;local&#x2F;apache-tomcat-8.5.6&#x2F;bin&#x2F;setenv.sh</span><br><span class="line">JAVA_OPTS&#x3D;&quot;-Djava.awt.headless&#x3D;true -Dfile.encoding&#x3D;UTF-8 -server -Xms2048m -Xmx2048m -XX:NewSize&#x3D;512m -XX:MaxNewSize&#x3D;512m -XX:PermSize&#x3D;512m -XX:MaxPermSize&#x3D;512m -XX:+DisableExplicitGC -Djavax.net.ssl.trustStore&#x3D;&#x2F;usr&#x2F;local&#x2F;java&#x2F;jdk8&#x2F;jre&#x2F;lib&#x2F;security&#x2F;jssecacerts&quot;</span><br></pre></td></tr></table></figure>
+<p>或者在 /usr/local/apache-tomcat-8.5.6/conf/server.xml的ssl配置部分指定keystore，如下</p>
+<pre><code>&lt;Connector port=&quot;443&quot; protocol=&quot;org.apache.coyote.http11.Http11Protocol&quot;
+              maxThreads=&quot;150&quot; SSLEnabled=&quot;true&quot; scheme=&quot;https&quot; secure=&quot;true&quot;
+              clientAuth=&quot;false&quot; sslProtocol=&quot;TLS&quot;
+              URIEncoding=&quot;utf-8&quot;
+              keystoreFile=&quot;/usr/local/java/jdk7/jre/lib/security/jssecacerts&quot;
+              keystorePass=&quot;flamingo@1&quot;
+              /&gt;
+</code></pre></div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta size-small is-uppercase level is-mobile"><div class="level-left"><time class="level-item" dateTime="2018-01-29T08:36:17.000Z" title="2018-01-29T08:36:17.000Z">2018-01-29</time><span class="level-item">5 分钟 读完 (大约 742 个字)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2018/01/29/opensips%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8%E6%95%B4%E7%90%86/">opensips安装使用整理</a></h1><div class="content"><blockquote>
+<p>部分内容来自 <a href="https://github.com/Ci-Jie/OpenSIPS">https://github.com/Ci-Jie/OpenSIPS</a> ，其他的很多教程都是坑！！！</p>
+</blockquote>
+<h2 id="安装opensips"><a href="#安装opensips" class="headerlink" title="安装opensips"></a>安装opensips</h2><ul>
+<li>CentOS release 6.9 (Final) (内核 4.10.4)</li>
+<li>MySQL 5.6</li>
+<li>Opensips 2.1</li>
+</ul>
+<h4 id="安装依赖库等"><a href="#安装依赖库等" class="headerlink" title="安装依赖库等"></a>安装依赖库等</h4><p><code>sudo yum -y install mysql mysql-server mysql-devel git make bison libdbi-dbd-mysql</code> (具体还有什么忘记了，不能重现当时安装的了，后面缺什么再装吧)</p>
+<h4 id="检出代码"><a href="#检出代码" class="headerlink" title="检出代码"></a>检出代码</h4><p><code>cd ~/ &amp;&amp; git clone https://github.com/OpenSIPS/opensips.git -b 2.1 opensips_2_1</code></p>
+<h4 id="修改配置开启mysql支持"><a href="#修改配置开启mysql支持" class="headerlink" title="修改配置开启mysql支持"></a>修改配置开启mysql支持</h4><p><code>vim ~/opensips_2_1/Makefile.conf.tmplate</code> ,移除<code>exclude_modules</code>中db_mysql</p>
+<h4 id="安装opensips-1"><a href="#安装opensips-1" class="headerlink" title="安装opensips"></a>安装opensips</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> ~/opensips_2_1</span><br><span class="line">sudo make all</span><br><span class="line">sudo make install</span><br></pre></td></tr></table></figure>
+<h4 id="安裝完后，修改部分opensipsctlrc文件，如下："><a href="#安裝完后，修改部分opensipsctlrc文件，如下：" class="headerlink" title="安裝完后，修改部分opensipsctlrc文件，如下："></a>安裝完后，修改部分opensipsctlrc文件，如下：</h4><p><code>sudo vim /usr/local/etc/opensips/opensipsctlrc</code></p>
+<p>将DB开头的修改为自己的mysql连接情况（事先创建好opensips用户，或者偷懒用root，但是一定要注意安全），SIP_DOMAIN修改为主机ip<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">## your SIP domain</span><br><span class="line">SIP_DOMAIN&#x3D;yourip</span><br><span class="line">## chrooted directory</span><br><span class="line"># $CHROOT_DIR&#x3D;&quot;&#x2F;path&#x2F;to&#x2F;chrooted&#x2F;directory&quot;</span><br><span class="line">## database type: MYSQL, PGSQL, ORACLE, DB_BERKELEY, or DBTEXT, </span><br><span class="line">## by default none is loaded</span><br><span class="line"># If you want to setup a database with opensipsdbctl, you must at least specify</span><br><span class="line"># this parameter.</span><br><span class="line">DBENGINE&#x3D;MYSQL</span><br><span class="line">## database host</span><br><span class="line">DBHOST&#x3D;localhost</span><br><span class="line">## database name (for ORACLE this is TNS name)</span><br><span class="line">DBNAME&#x3D;opensips</span><br><span class="line"># database path used by dbtext or db_berkeley</span><br><span class="line">DB_PATH&#x3D;&quot;&#x2F;usr&#x2F;local&#x2F;etc&#x2F;opensips&#x2F;dbtext&quot;</span><br><span class="line">## database read&#x2F;write user</span><br><span class="line">DBRWUSER&#x3D;opensips</span><br><span class="line">## password for database read&#x2F;write user</span><br><span class="line">DBRWPW&#x3D;&quot;opensipsrw&quot;</span><br><span class="line">## database super user (for ORACLE this is &#39;scheme-creator&#39; user)</span><br><span class="line">DBROOTUSER&#x3D;&quot;root&quot;</span><br><span class="line"># user name column</span><br><span class="line">USERCOL&#x3D;&quot;username&quot;</span><br></pre></td></tr></table></figure></p>
+<h4 id="初始化mysql数据库表"><a href="#初始化mysql数据库表" class="headerlink" title="初始化mysql数据库表"></a>初始化mysql数据库表</h4><p><code>sudo /usr/local/sbin/opensipsdbctl create</code>，会提示输入root密码，然后会出现下面的提示<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">MySQL password for root: </span><br><span class="line">INFO: test server charset</span><br><span class="line">INFO: creating database opensips ...</span><br><span class="line">INFO: Core OpenSIPS tables succesfully created.</span><br><span class="line">Install presence related tables? (y&#x2F;n): y  </span><br><span class="line">INFO: creating presence tables into opensips ...</span><br><span class="line">INFO: Presence tables succesfully created.</span><br><span class="line">Install tables for imc cpl siptrace domainpolicy carrierroute userblacklist? (y&#x2F;n): y</span><br><span class="line">INFO: creating extra tables into opensips ...</span><br><span class="line">INFO: Extra tables succesfully created.</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>如果出现 <code>ERROR: database engine not specified, please setup one in the config script</code>，看看是否有执行权限</p>
+</blockquote>
+<h4 id="自定义监听端口及协议"><a href="#自定义监听端口及协议" class="headerlink" title="自定义监听端口及协议"></a>自定义监听端口及协议</h4><p>可以通过修改<code>/usr/local/etc/opensips/opensips.cfg</code>文件，修改<code>listen=</code>，注意这里的ip要用外网ip，udp改为tcp可以使用keepalive，让手机长时间在线。我的配置如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">advertised_address&#x3D;myip</span><br><span class="line">alias&#x3D;myip</span><br><span class="line">...</span><br><span class="line">listen&#x3D;tcp:myip:5060   # CUSTOMIZE ME</span><br><span class="line">tcp_connection_lifetime&#x3D;3600</span><br><span class="line">tcp_connect_timeout&#x3D;5000</span><br><span class="line">tcp_keepalive&#x3D;1</span><br><span class="line">tcp_keepcount&#x3D;30</span><br><span class="line">tcp_keepidle&#x3D;60</span><br><span class="line">tcp_keepinterval &#x3D; 60</span><br></pre></td></tr></table></figure></p>
+<h4 id="新增domain到数据库"><a href="#新增domain到数据库" class="headerlink" title="新增domain到数据库"></a>新增domain到数据库</h4><blockquote>
+<p>这个domain就是上面填写的ip地址，创建用户的时候也要用到。</p>
+</blockquote>
+<p>用root连接mysql，选择opensips库，插入一条记录<code>INSERT INTO opensips.domain(domain) VALUES(&#39;your ip&#39;);</code>(注意修改为自己的ip)</p>
+<h4 id="opensips操作"><a href="#opensips操作" class="headerlink" title="opensips操作"></a>opensips操作</h4><p>启动 <code>/usr/local/sbin/opensipsctl start</code></p>
+<p>停止 <code>/usr/local/sbin/opensipsctl stop</code></p>
+<p>重启 <code>/usr/local/sbin/opensipsctl restart</code></p>
+<h4 id="创建用户"><a href="#创建用户" class="headerlink" title="创建用户"></a>创建用户</h4><p><code>/usr/local/sbin/opensipsctl add user@myourip password</code></p>
+<p>这里的user就是号码，尽量用数字（键盘上没有字母啊）</p>
+<h3 id="客户端"><a href="#客户端" class="headerlink" title="客户端"></a>客户端</h3><ul>
+<li>PC <ul>
+<li>Zoiper</li>
+<li>Linphone</li>
+</ul>
+</li>
+<li>Ios<ul>
+<li>Zoiper</li>
+</ul>
+</li>
+</ul>
+<p>其他未测试，可以到 <a href="http://www.voip-info.org/wiki/view/Open+Source+VOIP+Software">http://www.voip-info.org/wiki/view/Open+Source+VOIP+Software</a> 查找</p>
+<h4 id="ios端配置（尽量后台运行）"><a href="#ios端配置（尽量后台运行）" class="headerlink" title="ios端配置（尽量后台运行）"></a>ios端配置（尽量后台运行）</h4><p>如图所示：</p>
+<p><img src="https://i.loli.net/2018/01/29/5a6ee3c84b5b4.jpg" alt="微信图片_20180129170327.jpg"><br><img src="https://i.loli.net/2018/01/29/5a6ee3c86f20d.jpg" alt="微信图片_20180129170352.jpg"><br><img src="https://i.loli.net/2018/01/29/5a6ee3c876295.jpg" alt="微信图片_20180129170357.jpg"></p>
+</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta size-small is-uppercase level is-mobile"><div class="level-left"><time class="level-item" dateTime="2017-12-29T06:32:00.000Z" title="2017-12-29T06:32:00.000Z">2017-12-29</time><span class="level-item">几秒 读完 (大约 75 个字)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2017/12/29/%E4%BD%BF%E7%94%A8%E6%B5%8F%E8%A7%88%E5%99%A8%E6%8C%96%E7%9F%BF/">使用浏览器挖矿</a></h1><div class="content"><h3 id="已GG"><a href="#已GG" class="headerlink" title="已GG"></a>已GG</h3><iframe src="https://authedmine.com/media/miner.html?key=Tjj5gaLGfnQ2157RNOMjhdT1ck0mluS5" width="auto" height="280" frameborder="0"></iframe>
 
-
-        <!-- Sidebar Footer -->
-        <!--
-I'm glad you use this theme, the development is no so easy, I hope you can keep the copyright, I will thank you so much.
-If you still want to delete the copyrights, could you still retain the first one? Which namely "Theme Material"
-It will not impact the appearance and can give developers a lot of support :)
-
-很高兴您使用并喜欢该主题，开发不易 十分谢谢与希望您可以保留一下版权声明。
-如果您仍然想删除的话 能否只保留第一项呢？即 "Theme Material"
-它不会影响美观并可以给开发者很大的支持和动力。 :)
--->
-
-<!-- Sidebar Divider -->
-
-    <div class="sidebar-divider"></div>
-
-
-<!-- Theme Material -->
-
-    <a href="https://github.com/viosey/hexo-theme-material"  class="sidebar-footer-text-a" target="_blank">
-        <div class="sidebar-text mdl-button mdl-js-button mdl-js-ripple-effect sidebar-footer-text-div" data-upgraded=",MaterialButton,MaterialRipple">
-            主题 - Material
-            <span class="sidebar-badge badge-circle">i</span>
-        </div>
-    </a>
-
-
-<!-- Help & Support -->
-<!--
-
--->
-
-<!-- Feedback -->
-<!--
-
--->
-
-<!-- About Theme -->
-<!--
-
--->
-
-    </div>
-
-    <!-- Sidebar Image -->
-    
-
-</aside>
-
-                    
-
-                    
-                        <!-- Footer Top Button -->
-                        <div class="toTop-wrap">
-    <a href="#top" class="toTop">
-        <i class="material-icons footer_top-i">expand_less</i>
-    </a>
-</div>
-
-                    
-
-                    <!--Footer-->
-<footer class="mdl-mini-footer" id="bottom">
-    
-        <!-- Paradox Footer Left Section -->
-        <div class="mdl-mini-footer--left-section sns-list">
-    <!-- Twitter -->
-    
-        <a href="https://twitter.com/0312birdzhang" target="_blank">
-            <button class="mdl-mini-footer--social-btn social-btn" style="background-image: url(/img/footer/footer_ico-twitter.png);">
-                <span class="visuallyhidden">Twitter</span>
-            </button><!--
-     --></a>
-    
-
-    <!-- Facebook -->
-    
-
-    <!-- Google + -->
-    
-        <a href="https://www.google.com/0312birdzhang" target="_blank">
-            <button class="mdl-mini-footer--social-btn social-btn" style="background-image: url(/img/footer/footer_ico-gplus.png);">
-                <span class="visuallyhidden">Google Plus</span>
-            </button><!--
-     --></a>
-    
-
-    <!-- Weibo -->
-    
-        <a href="http://weibo.com/0312birdzhang" target="_blank">
-            <button class="mdl-mini-footer--social-btn social-btn" style="background-image: url(/img/footer/footer_ico-weibo.png);">
-                <span class="visuallyhidden">Weibo</span>
-            </button><!--
-     --></a>
-    
-
-    <!-- Instagram -->
-    
-
-    <!-- Tumblr -->
-    
-
-    <!-- Github -->
-    
-        <a href="https://github.com/0312birdzhang" target="_blank">
-            <button class="mdl-mini-footer--social-btn social-btn" style="background-image: url(/img/footer/footer_ico-github.png);">
-                <span class="visuallyhidden">Github</span>
-            </button><!--
-     --></a>
-    
-
-    <!-- LinkedIn -->
-    
-
-    <!-- Zhihu -->
-    
-
-    <!-- Bilibili -->
-    
-
-    <!-- Telegram -->
-    
-</div>
-
-
-        <!--Copyright-->
-        <div id="copyright">
-            Copyright&nbsp;©&nbsp;
-            <script type="text/javascript">
-                var fd = new Date();
-                document.write(fd.getFullYear());
-            </script>
-            &nbsp;BirdZhang's Blog
-        </div>
-
-        <!-- Paradox Footer Right Section -->
-
-        <!--
-        I am glad you use this theme, the development is no so easy, I hope you can keep the copyright.
-        It will not impact the appearance and can give developers a lot of support :)
-
-        很高兴您使用该主题，开发不易，希望您可以保留一下版权声明。
-        它不会影响美观并可以给开发者很大的支持。 :)
-        -->
-
-        <div class="mdl-mini-footer--right-section">
-            <div>
-                <div class="footer-develop-div">Powered by <a href="https://hexo.io" target="_blank" class="footer-develop-a">Hexo</a></div>
-                <div class="footer-develop-div">Theme - <a href="https://github.com/viosey/hexo-theme-material" target="_blank" class="footer-develop-a">Material</a></div>
-            </div>
-        </div>
-    
-</footer>
-
-
-                    <!-- Import File -->
-<script src="/js/lazyload.min.js"></script>
-<script src="/js/js.min.js"></script>
-<script src="/js/nprogress.js"></script>
-
-<script type="text/javascript">
-    NProgress.configure({
-        showSpinner: true
-    });
-    NProgress.start();
-    $('#nprogress .bar').css({
-        'background': '#29d'
-    });
-    $('#nprogress .peg').css({
-        'box-shadow': '0 0 10px #29d, 0 0 15px #29d'
-    });
-    $('#nprogress .spinner-icon').css({
-        'border-top-color': '#29d',
-        'border-left-color': '#29d'
-    });
-    setTimeout(function() {
-        NProgress.done();
-        $('.fade').removeClass('out');
-    }, 800);
-</script>
-
-
-
-
-
-    <!-- Leancloud -->
-    <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
-    <script>
-        AV.initialize('MguK71QUSGyrb4biWtu5oPqN-gzGzoHsz', 'ghPhHxzVQtKRfKt72twwiUFx');
-    </script>
-    <script>
-    function showTime(Counter) {
-        var query = new AV.Query(Counter);
-        $('.leancloud-views_num').each(function() {
-            var url = $(this).attr('id').trim();
-            query.equalTo('url', url);
-            query.find({
-                success: function(results) {
-                    if (results.length === 0) {
-                        var content = '0 ' + $(document.getElementById(url)).text();
-                        $(document.getElementById(url)).text(content);
-                        return;
-                    }
-                    for (var i = 0; i < results.length; i++) {
-                        var object = results[i];
-                        var content = object.get('time') + ' ' + $(document.getElementById(url)).text();
-                        $(document.getElementById(url)).text(content);
-                    }
-                },
-                error: function(object, error) {
-                    console.log('Error: ' + error.code + ' ' + error.message);
+<p>如上所示，如果你浏览器的广告拦截插件正常的话。</p>
+<p>具体使用见：<a href="https://coinhive.com/documentation">https://coinhive.com/documentation</a> ，有四种模式，静默加载的基本上被adblock掉了，建议用simple ui</p>
+<p>或者自己搭代理：<a href="https://github.com/cazala/coin-hive-stratum">https://github.com/cazala/coin-hive-stratum</a></p>
+</div></article></div><nav class="pagination is-centered mt-4" role="navigation" aria-label="pagination"><div class="pagination-previous"><a href="/">上一页</a></div><div class="pagination-next"><a href="/page/3/">下一页</a></div><ul class="pagination-list is-hidden-mobile"><li><a class="pagination-link" href="/">1</a></li><li><a class="pagination-link is-current" href="/page/2/">2</a></li><li><a class="pagination-link" href="/page/3/">3</a></li><li><a class="pagination-link" href="/page/4/">4</a></li></ul></nav></div><div class="column column-left is-4-tablet is-4-desktop is-4-widescreen  order-1 is-sticky"><div class="card widget"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="" src="https://www.gravatar.com/avatar/72326950ba674fec08b31a0c90663fe2?s=128" alt="BirdZhang"></figure><p class="title is-size-4 is-block line-height-inherit">BirdZhang</p><p class="is-size-6 is-block">一只笨死的大鸟</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>Earth</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">文章</p><a href="/archives"><p class="title">32</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">分类</p><a href="/categories"><p class="title">0</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">标签</p><a href="/tags"><p class="title">59</p></a></div></div></nav><div class="level"><a class="level-item button is-primary is-rounded" href="https://github.com/0312birdzhang" target="_blank" rel="noopener">关注我</a></div><div class="level is-mobile"><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Github" href="https://github.com/0312birdzhang"><i class="fab fa-github"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Twitter" href="https://twitter.com/0312birdzhang"><i class="fab fa-twitter"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="RSS" href="/atom.xml"><i class="fas fa-rss"></i></a></div></div></div><!--!--><div class="card widget"><div class="card-content"><div class="menu"><h3 class="menu-label">链接</h3><ul class="menu-list"><li><a class="level is-mobile is-mobile" href="https://sailfishos.club" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">旗鱼俱乐部</span></span><span class="level-right"><span class="level-item tag">sailfishos.club</span></span></a></li></ul></div></div></div><!--!--><div class="card widget"><div class="card-content"><h3 class="menu-label">最新文章</h3><article class="media"><div class="media-content size-small"><p><time dateTime="2019-12-30T03:33:17.000Z">2019-12-30</time></p><p class="title is-6"><a class="link-muted" href="/2019/12/30/SailfishOS%E7%A7%BB%E6%A4%8D%E5%88%B0Redmi-K20%E7%9A%84%E4%B8%80%E4%BA%9B%E8%AE%B0%E5%BD%95/">SailfishOS移植到Redmi_K20的一些记录</a></p><p class="is-uppercase"></p></div></article><article class="media"><div class="media-content size-small"><p><time dateTime="2019-10-12T01:58:53.000Z">2019-10-12</time></p><p class="title is-6"><a class="link-muted" href="/2019/10/12/Windows%E4%BD%BF%E7%94%A8frp%E8%BF%9B%E8%A1%8C%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5/">Windows使用frp进行远程连接</a></p><p class="is-uppercase"></p></div></article><article class="media"><div class="media-content size-small"><p><time dateTime="2019-07-30T07:27:36.809Z">2019-07-30</time></p><p class="title is-6"><a class="link-muted" href="/2019/07/30/X-pack%E7%A0%B4%E8%A7%A3/">X-pack破解</a></p><p class="is-uppercase"></p></div></article><article class="media"><div class="media-content size-small"><p><time dateTime="2019-06-13T02:06:52.000Z">2019-06-13</time></p><p class="title is-6"><a class="link-muted" href="/2019/06/13/SailfishOS%E7%A7%BB%E6%A4%8D%E5%88%B0Redmi-5-Plus%E7%9A%84%E4%B8%80%E4%BA%9B%E8%AE%B0%E5%BD%95-2/">SailfishOS移植到Redmi-5-Plus的一些记录(2)</a></p><p class="is-uppercase"></p></div></article><article class="media"><div class="media-content size-small"><p><time dateTime="2019-05-27T06:18:52.000Z">2019-05-27</time></p><p class="title is-6"><a class="link-muted" href="/2019/05/27/%E4%BD%BF%E7%94%A8docker%E7%BC%96%E8%AF%91%E6%89%93%E5%8C%85sailfishos/">使用docker编译打包sailfishos</a></p><p class="is-uppercase"></p></div></article></div></div><div class="card widget"><div class="card-content"><div class="menu"><h3 class="menu-label">归档</h3><ul class="menu-list"><li><a class="level is-mobile is-marginless" href="/archives/2019/12/"><span class="level-start"><span class="level-item">十二月 2019</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2019/10/"><span class="level-start"><span class="level-item">十月 2019</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2019/07/"><span class="level-start"><span class="level-item">七月 2019</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2019/06/"><span class="level-start"><span class="level-item">六月 2019</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2019/05/"><span class="level-start"><span class="level-item">五月 2019</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2019/04/"><span class="level-start"><span class="level-item">四月 2019</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2018/12/"><span class="level-start"><span class="level-item">十二月 2018</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2018/09/"><span class="level-start"><span class="level-item">九月 2018</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2018/08/"><span class="level-start"><span class="level-item">八月 2018</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2018/07/"><span class="level-start"><span class="level-item">七月 2018</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2018/06/"><span class="level-start"><span class="level-item">六月 2018</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2018/05/"><span class="level-start"><span class="level-item">五月 2018</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2018/03/"><span class="level-start"><span class="level-item">三月 2018</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2018/01/"><span class="level-start"><span class="level-item">一月 2018</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2017/12/"><span class="level-start"><span class="level-item">十二月 2017</span></span><span class="level-end"><span class="level-item tag">3</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2017/08/"><span class="level-start"><span class="level-item">八月 2017</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2017/06/"><span class="level-start"><span class="level-item">六月 2017</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile is-marginless" href="/archives/2017/05/"><span class="level-start"><span class="level-item">五月 2017</span></span><span class="level-end"><span class="level-item tag">8</span></span></a></li></ul></div></div></div><div class="card widget"><div class="card-content"><div class="menu"><h3 class="menu-label">标签</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/tags/9t/"><span class="tag">9t</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Java/"><span class="tag">Java</span><span class="tag is-grey-lightest">4</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Python/"><span class="tag">Python</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Terminating/"><span class="tag">Terminating</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Tomcat/"><span class="tag">Tomcat</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/android/"><span class="tag">android</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/cas/"><span class="tag">cas</span><span class="tag is-grey-lightest">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/coinhive/"><span class="tag">coinhive</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/crt/"><span class="tag">crt</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/davinci/"><span class="tag">davinci</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/docker/"><span class="tag">docker</span><span class="tag is-grey-lightest">6</span></a></div><div class="control"><a class="tags has-addons" href="/tags/frp/"><span class="tag">frp</span><span class="tag is-grey-lightest">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/hadk/"><span class="tag">hadk</span><span class="tag is-grey-lightest">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/https/"><span class="tag">https</span><span class="tag is-grey-lightest">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/httpservletrequest/"><span class="tag">httpservletrequest</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/hybris-15-1/"><span class="tag">hybris-15.1</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/hybris-16-0/"><span class="tag">hybris-16.0</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/ios/"><span class="tag">ios</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/ip/"><span class="tag">ip</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/iphone/"><span class="tag">iphone</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/irc/"><span class="tag">irc</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/jolla/"><span class="tag">jolla</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/js/"><span class="tag">js</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/json/"><span class="tag">json</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/k20/"><span class="tag">k20</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/k8s/"><span class="tag">k8s</span><span class="tag is-grey-lightest">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/kubernetes/"><span class="tag">kubernetes</span><span class="tag is-grey-lightest">4</span></a></div><div class="control"><a class="tags has-addons" href="/tags/lineage-15-1/"><span class="tag">lineage-15.1</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/lineage-16-0/"><span class="tag">lineage-16.0</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/lua/"><span class="tag">lua</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/migrate/"><span class="tag">migrate</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/nginx/"><span class="tag">nginx</span><span class="tag is-grey-lightest">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/openresty/"><span class="tag">openresty</span><span class="tag is-grey-lightest">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/opensips/"><span class="tag">opensips</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/pastebin/"><span class="tag">pastebin</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/python/"><span class="tag">python</span><span class="tag is-grey-lightest">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/python2/"><span class="tag">python2</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/rdp/"><span class="tag">rdp</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/redmi/"><span class="tag">redmi</span><span class="tag is-grey-lightest">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/redmi5plus/"><span class="tag">redmi5plus</span><span class="tag is-grey-lightest">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/remix/"><span class="tag">remix</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/sailfish/"><span class="tag">sailfish</span><span class="tag is-grey-lightest">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/sailfishos/"><span class="tag">sailfishos</span><span class="tag is-grey-lightest">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/sip/"><span class="tag">sip</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/socks5/"><span class="tag">socks5</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/tomcat/"><span class="tag">tomcat</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/trustcacerts/"><span class="tag">trustcacerts</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/unix/"><span class="tag">unix</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/vince/"><span class="tag">vince</span><span class="tag is-grey-lightest">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/vmvare/"><span class="tag">vmvare</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/voip/"><span class="tag">voip</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/windows/"><span class="tag">windows</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/x86/"><span class="tag">x86</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/xiaomi/"><span class="tag">xiaomi</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%8F%82%E6%95%B0/"><span class="tag">参数</span><span class="tag is-grey-lightest">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%94%B9%E5%86%99/"><span class="tag">改写</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E8%B7%B3%E8%BF%87/"><span class="tag">跳过</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E8%BF%81%E7%A7%BB/"><span class="tag">迁移</span><span class="tag is-grey-lightest">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E9%9A%8F%E7%AC%94/"><span class="tag">随笔</span><span class="tag is-grey-lightest">1</span></a></div></div></div></div></div><div class="card widget"><div class="card-content"><div class="menu"><h3 class="menu-label">订阅更新</h3><form action="https://feedburner.google.com/fb/a/mailverify" method="post" target="popupwindow" onsubmit="window.open(&#039;https://feedburner.google.com/fb/a/mailverify?uri=&#039;,&#039;popupwindow&#039;,&#039;scrollbars=yes,width=550,height=520&#039;);return true"><input type="hidden" value="" name="uri"><input type="hidden" name="loc" value="en_US"><div class="field has-addons"><div class="control has-icons-left is-expanded"><input class="input" name="email" type="email" placeholder="Email"><span class="icon is-small is-left"><i class="fas fa-envelope"></i></span></div><div class="control"><input class="button is-primary" type="submit" value="订阅"></div></div></form></div></div></div></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/img/avatar.png" alt="BirdZhang&#039;s Blog" height="28"></a><p class="size-small"><span>&copy; 2020 BirdZhang</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script>moment.locale("zh-CN");</script><script>var IcarusThemeSettings = {
+            site: {
+                url: 'http://birdzhang.xyz',
+                external_link: {"enable":true,"exclude":[]}
+            },
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
                 }
-            });
-        });
-    }
-
-    function addCount(Counter) {
-      var Counter = AV.Object.extend('Counter');
-      url = $('.leancloud-views_num').attr('id').trim();
-      title = $('.leancloud-views_num').attr('data-flag-title').trim();
-      var query = new AV.Query(Counter);
-      query.equalTo('url', url);
-      query.find({
-          success: function(results) {
-            if (results.length > 0) {
-                var counter = results[0];
-                counter.fetchWhenSave(true);
-                counter.increment('time');
-                counter.save(null, {
-                    success: function(counter) {
-                        var content =  counter.get('time') + ' ' + $(document.getElementById(url)).text();
-                        $(document.getElementById(url)).text(content);
-                    },
-                    error: function(counter, error) {
-                        console.log('Failed to save Visitor num, with error message: ' + error.message);
-                    }
-                });
-            } else {
-              var newcounter = new Counter();
-              newcounter.set('title', title);
-              newcounter.set('url', url);
-              newcounter.set('time', 1);
-              newcounter.save(null, {
-                  success: function(newcounter) {
-                      console.log('newcounter.get(\'time\')='+newcounter.get('time'));
-                      var content = newcounter.get('time') + ' ' + $(document.getElementById(url)).text();
-                      $(document.getElementById(url)).text(content);
-                  },
-                  error: function(newcounter, error) {
-                      console.log('Failed to create');
-                  }
-              });
             }
-        },
-        error: function(error) {
-            console.log('Error:' + error.code + ' ' + error.message);
-        }
-      });
-    }
-    $(function() {
-        var Counter = AV.Object.extend('Counter');
-        if ($('.leancloud-views_num').length === 1) {
-            addCount(Counter);
-        } else if ($('.post-title-link').length > 1) {
-            showTime(Counter);
-        }
-    });
-</script>
-
-
-
-
-
-
-
-
-    <!-- 使用 DISQUS js 代码 -->
-    <script id="dsq-count-scr" src="//0312birdzhang-github-io.disqus.com/count.js" async></script>
-
-
-
-<!-- Swiftye -->
-
-
-<!-- Local Search-->
-
-
-<!-- Window Load-->
-<script>
-    $(window).load(function() {
-        // Post_Toc parent position fixed
-        $('.post-toc-wrap').parent('.mdl-menu__container').css('position', 'fixed');
-    });
-</script>
-
-<!-- MathJax Load-->
-
-
-                </main>
-            </div>
-        </body>
-    
-</html>
+        };</script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script src="/js/animation.js"></script><a id="back-to-top" title="回到顶端" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back_to_top.js" defer></script><!--!--><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><!--!--><!--!--><script src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="想要查找什么..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"想要查找什么...","untitled":"(无标题)","posts":"文章","pages":"页面","categories":"分类","tags":"标签"});
+        });</script></body></html>
