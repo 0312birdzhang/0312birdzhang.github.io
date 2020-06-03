@@ -10239,10 +10239,19 @@ fieldset[disabled] .select select:hover {
   color: #000;
 }
 html {
+  height: 100%;
   -webkit-text-size-adjust: 100%;
   -moz-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
   text-size-adjust: 100%;
+}
+body {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+body > .section {
+  flex-grow: 1;
 }
 .ml-0,
 .mx-0 {
@@ -10708,6 +10717,10 @@ html {
   position: absolute;
   right: 0;
   top: 0;
+}
+.image .avatar {
+  height: 100%;
+  object-fit: cover;
 }
 .button.is-transparent {
   color: inherit;
