@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://birdzhang.xyz/"/>
-  <updated>2020-03-02T08:00:58.481Z</updated>
+  <updated>2020-06-05T09:04:29.658Z</updated>
   <id>http://birdzhang.xyz/</id>
   
   <author>
@@ -14,6 +14,38 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>debian,ubuntu无法使用apt下载源数据的解决方法</title>
+    <link href="http://birdzhang.xyz/2020/06/05/debian-ubuntu%E6%97%A0%E6%B3%95%E4%BD%BF%E7%94%A8apt%E4%B8%8B%E8%BD%BD%E6%BA%90%E6%95%B0%E6%8D%AE%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/"/>
+    <id>http://birdzhang.xyz/2020/06/05/debian-ubuntu无法使用apt下载源数据的解决方法/</id>
+    <published>2020-06-05T08:59:57.000Z</published>
+    <updated>2020-06-05T09:04:29.658Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="现象："><a href="#现象：" class="headerlink" title="现象："></a>现象：</h3><p>不管是默认的源还是ustc的都直接提示 Connection failed，但可以ping通。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">root@77ec78c7b3b7:&#x2F;# printf &quot;deb http:&#x2F;&#x2F;mirrors.ustc.edu.cn&#x2F;debian&#x2F; buster main contrib non-free\n#deb-src http:&#x2F;&#x2F;mirrors.ustc.edu.cn&#x2F;debian&#x2F; buster main contrib non-free\ndeb http:&#x2F;&#x2F;mirrors.ustc.edu.cn&#x2F;debian&#x2F; buster-updates main contrib non-free\n#deb-src http:&#x2F;&#x2F;mirrors.ustc.edu.cn&#x2F;debian&#x2F; buster-updates main contrib non-free\n#deb http:&#x2F;&#x2F;mirrors.ustc.edu.cn&#x2F;debian-security&#x2F; buster&#x2F;updates main contrib non-free\n#deb-src http:&#x2F;&#x2F;mirrors.ustc.edu.cn&#x2F;debian-security&#x2F; buster&#x2F;updates main contrib non-free&quot; &gt; &#x2F;etc&#x2F;apt&#x2F;sources.list</span><br><span class="line">root@77ec78c7b3b7:&#x2F;# apt update</span><br><span class="line">Err:1 http:&#x2F;&#x2F;mirrors.ustc.edu.cn&#x2F;debian buster InRelease</span><br><span class="line">  Connection failed [IP: 202.141.176.110 80]</span><br><span class="line">Err:2 http:&#x2F;&#x2F;mirrors.ustc.edu.cn&#x2F;debian buster-updates InRelease</span><br><span class="line">  Connection failed [IP: 202.141.176.110 80]</span><br><span class="line">Reading package lists... Done                                </span><br><span class="line">Building dependency tree      </span><br><span class="line">Reading state information... Done</span><br><span class="line">All packages are up to date.</span><br><span class="line">W: Failed to fetch http:&#x2F;&#x2F;mirrors.ustc.edu.cn&#x2F;debian&#x2F;dists&#x2F;buster&#x2F;InRelease  Connection failed [IP: 202.141.176.110 80]</span><br><span class="line">W: Failed to fetch http:&#x2F;&#x2F;mirrors.ustc.edu.cn&#x2F;debian&#x2F;dists&#x2F;buster-updates&#x2F;InRelease  Connection failed [IP: 202.141.176.110 80]</span><br><span class="line">W: Some index files failed to download. They have been ignored, or old ones used instead.</span><br></pre></td></tr></table></figure></p>
+<h3 id="解决方法："><a href="#解决方法：" class="headerlink" title="解决方法："></a>解决方法：</h3><p>更改apt的默认UA</p>
+<p><code>printf &#39;Acquire\n{\n  http::User-Agent &quot;Mozilla/5.0 (Windows NT 5.1; rv:25.0) \nGecko/20100101 Firefox/25.0&quot;;\n};&#39; &gt; /etc/apt/apt.conf</code></p>
+<h3 id="参考："><a href="#参考：" class="headerlink" title="参考："></a>参考：</h3><ul>
+<li><a href="https://samhassell.com/apt-cant-see-sources-try-changing-the-user-agent/">https://samhassell.com/apt-cant-see-sources-try-changing-the-user-agent/</a></li>
+</ul>
+<h3 id="原因"><a href="#原因" class="headerlink" title="原因:"></a>原因:</h3><p>未知。。。，在另一个网络环境下就可以，也是神奇。</p>
+<p>P.S. 感谢公司大数据部门的同学，让我又可以水一篇了 xD (<del>划掉划掉</del>)</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;现象：&quot;&gt;&lt;a href=&quot;#现象：&quot; class=&quot;headerlink&quot; title=&quot;现象：&quot;&gt;&lt;/a&gt;现象：&lt;/h3&gt;&lt;p&gt;不管是默认的源还是ustc的都直接提示 Connection failed，但可以ping通。&lt;br&gt;&lt;figure class=&quot;
+    
+    </summary>
+    
+    
+      <category term="apt" scheme="http://birdzhang.xyz/tags/apt/"/>
+    
+      <category term="debian" scheme="http://birdzhang.xyz/tags/debian/"/>
+    
+      <category term="ubuntu" scheme="http://birdzhang.xyz/tags/ubuntu/"/>
+    
+  </entry>
   
   <entry>
     <title>SailfishOS移植到Redmi_K20的一些记录</title>
@@ -42,9 +74,9 @@
     
       <category term="redmi" scheme="http://birdzhang.xyz/tags/redmi/"/>
     
-      <category term="hadk" scheme="http://birdzhang.xyz/tags/hadk/"/>
-    
       <category term="davinci" scheme="http://birdzhang.xyz/tags/davinci/"/>
+    
+      <category term="hadk" scheme="http://birdzhang.xyz/tags/hadk/"/>
     
       <category term="k20" scheme="http://birdzhang.xyz/tags/k20/"/>
     
@@ -194,9 +226,9 @@
     
       <category term="redmi" scheme="http://birdzhang.xyz/tags/redmi/"/>
     
-      <category term="vince" scheme="http://birdzhang.xyz/tags/vince/"/>
-    
       <category term="hadk" scheme="http://birdzhang.xyz/tags/hadk/"/>
+    
+      <category term="vince" scheme="http://birdzhang.xyz/tags/vince/"/>
     
       <category term="redmi5plus" scheme="http://birdzhang.xyz/tags/redmi5plus/"/>
     
@@ -813,9 +845,9 @@ pipelines:
     
       <category term="redmi" scheme="http://birdzhang.xyz/tags/redmi/"/>
     
-      <category term="vince" scheme="http://birdzhang.xyz/tags/vince/"/>
-    
       <category term="hadk" scheme="http://birdzhang.xyz/tags/hadk/"/>
+    
+      <category term="vince" scheme="http://birdzhang.xyz/tags/vince/"/>
     
       <category term="redmi5plus" scheme="http://birdzhang.xyz/tags/redmi5plus/"/>
     
@@ -928,33 +960,6 @@ pipelines:
       <category term="voip" scheme="http://birdzhang.xyz/tags/voip/"/>
     
       <category term="sip" scheme="http://birdzhang.xyz/tags/sip/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>使用浏览器挖矿</title>
-    <link href="http://birdzhang.xyz/2017/12/29/%E4%BD%BF%E7%94%A8%E6%B5%8F%E8%A7%88%E5%99%A8%E6%8C%96%E7%9F%BF/"/>
-    <id>http://birdzhang.xyz/2017/12/29/使用浏览器挖矿/</id>
-    <published>2017-12-29T06:32:00.000Z</published>
-    <updated>2019-10-21T08:30:21.874Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="已GG"><a href="#已GG" class="headerlink" title="已GG"></a>已GG</h3><iframe src="https://authedmine.com/media/miner.html?key=Tjj5gaLGfnQ2157RNOMjhdT1ck0mluS5" width="auto" height="280" frameborder="0"></iframe>
-
-<p>如上所示，如果你浏览器的广告拦截插件正常的话。</p>
-<p>具体使用见：<a href="https://coinhive.com/documentation">https://coinhive.com/documentation</a> ，有四种模式，静默加载的基本上被adblock掉了，建议用simple ui</p>
-<p>或者自己搭代理：<a href="https://github.com/cazala/coin-hive-stratum">https://github.com/cazala/coin-hive-stratum</a></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;已GG&quot;&gt;&lt;a href=&quot;#已GG&quot; class=&quot;headerlink&quot; title=&quot;已GG&quot;&gt;&lt;/a&gt;已GG&lt;/h3&gt;&lt;iframe src=&quot;https://authedmine.com/media/miner.html?key=Tjj5gaLGfnQ2
-    
-    </summary>
-    
-    
-      <category term="js" scheme="http://birdzhang.xyz/tags/js/"/>
-    
-      <category term="coinhive" scheme="http://birdzhang.xyz/tags/coinhive/"/>
     
   </entry>
   
