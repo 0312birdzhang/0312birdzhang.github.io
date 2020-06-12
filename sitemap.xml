@@ -2,6 +2,69 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://birdzhang.xyz/2018/03/30/SailfishOS%25E7%25A7%25BB%25E6%25A4%258D%25E5%2588%25B0Redmi-5-Plus%25E7%259A%2584%25E4%25B8%2580%25E4%25BA%259B%25E8%25AE%25B0%25E5%25BD%2595/</loc>
+    
+    <lastmod>2020-06-12T10:02:49.111Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://birdzhang.xyz/2019/06/13/SailfishOS%25E7%25A7%25BB%25E6%25A4%258D%25E5%2588%25B0Redmi-5-Plus%25E7%259A%2584%25E4%25B8%2580%25E4%25BA%259B%25E8%25AE%25B0%25E5%25BD%2595-2/</loc>
+    
+    <lastmod>2020-06-12T10:02:40.070Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://birdzhang.xyz/2018/09/05/Docker-on-SailfishOS/</loc>
+    
+    <lastmod>2020-06-12T10:02:36.487Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://birdzhang.xyz/2019/12/30/SailfishOS%25E7%25A7%25BB%25E6%25A4%258D%25E5%2588%25B0Redmi-K20%25E7%259A%2584%25E4%25B8%2580%25E4%25BA%259B%25E8%25AE%25B0%25E5%25BD%2595/</loc>
+    
+    <lastmod>2020-06-12T10:02:27.681Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://birdzhang.xyz/2017/05/19/irc-%25E5%258A%25A0%25E5%259B%259E%25E9%25A2%2591%25E9%2581%2593op/</loc>
+    
+    <lastmod>2020-06-12T10:02:18.053Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://birdzhang.xyz/2017/06/02/Java-%25E8%25A7%25A3%25E6%259E%2590json%25E6%2595%25B0%25E7%25BB%2584%25E5%25AD%2597%25E7%25AC%25A6%25E4%25B8%25B2%25E4%25B8%25BAJava%25E5%25AF%25B9%25E8%25B1%25A1/</loc>
+    
+    <lastmod>2020-06-12T10:02:10.005Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://birdzhang.xyz/2018/09/12/Nginx%25E8%258E%25B7%25E5%258F%2596%25E7%2594%25A8%25E6%2588%25B7%25E7%259C%259F%25E5%25AE%259EIP/</loc>
+    
+    <lastmod>2020-06-12T10:02:02.789Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://birdzhang.xyz/2017/08/21/Java%25E4%25B8%258EPython%25E5%25AE%2589%25E5%2585%25A8%25E8%25BD%25AC%25E7%25A0%2581%25E9%2593%25BE%25E6%258E%25A5/</loc>
+    
+    <lastmod>2020-06-12T10:01:55.157Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://birdzhang.xyz/2018/01/30/Tomcat%25E4%25BF%25A1%25E4%25BB%25BBhttps%25E7%25BD%2591%25E7%25AB%2599/</loc>
+    
+    <lastmod>2020-06-12T10:00:08.566Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://birdzhang.xyz/2020/06/05/debian-ubuntu%25E6%2597%25A0%25E6%25B3%2595%25E4%25BD%25BF%25E7%2594%25A8apt%25E4%25B8%258B%25E8%25BD%25BD%25E6%25BA%2590%25E6%2595%25B0%25E6%258D%25AE%25E7%259A%2584%25E8%25A7%25A3%25E5%2586%25B3%25E6%2596%25B9%25E6%25B3%2595/</loc>
     
     <lastmod>2020-06-05T09:04:29.658Z</lastmod>
@@ -58,6 +121,13 @@
   </url>
   
   <url>
+    <loc>http://birdzhang.xyz/2017/05/24/%25E9%259A%258F%25E7%25AC%2594/</loc>
+    
+    <lastmod>2019-07-30T07:27:36.814Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://birdzhang.xyz/about/index.html</loc>
     
     <lastmod>2019-07-30T07:27:36.814Z</lastmod>
@@ -73,13 +143,6 @@
   
   <url>
     <loc>http://birdzhang.xyz/2018/07/03/%25E6%25B8%2585%25E7%2590%2586kubernetes%25E4%25B8%25AD%25E6%259C%25AA%25E6%25AD%25A3%25E5%25B8%25B8%25E9%2580%2580%25E5%2587%25BA%25E7%259A%2584pod/</loc>
-    
-    <lastmod>2019-07-30T07:27:36.814Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://birdzhang.xyz/2017/05/24/%25E9%259A%258F%25E7%25AC%2594/</loc>
     
     <lastmod>2019-07-30T07:27:36.814Z</lastmod>
     
@@ -107,14 +170,14 @@
   </url>
   
   <url>
-    <loc>http://birdzhang.xyz/2018/06/25/%25E4%25BD%25BF%25E7%2594%25A8Openresty%25E5%25B0%2586pastebin%25E5%2586%2585%25E5%25AE%25B9%25E6%25A0%25BC%25E5%25BC%258F%25E5%258C%2596%25E6%2598%25BE%25E7%25A4%25BA/</loc>
+    <loc>http://birdzhang.xyz/2018/12/06/%25E4%25BD%25BF%25E7%2594%25A8Gitlab-Bitbucket%25E7%25AD%2589CI%25E6%2590%25AD%25E5%25BB%25BA%25E8%2587%25AA%25E5%25B7%25B1%25E7%259A%2584%25E4%25B8%25B4%25E6%2597%25B6%25E4%25BB%25A3%25E7%2590%2586/</loc>
     
     <lastmod>2019-07-30T07:27:36.812Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://birdzhang.xyz/2018/12/06/%25E4%25BD%25BF%25E7%2594%25A8Gitlab-Bitbucket%25E7%25AD%2589CI%25E6%2590%25AD%25E5%25BB%25BA%25E8%2587%25AA%25E5%25B7%25B1%25E7%259A%2584%25E4%25B8%25B4%25E6%2597%25B6%25E4%25BB%25A3%25E7%2590%2586/</loc>
+    <loc>http://birdzhang.xyz/2018/06/25/%25E4%25BD%25BF%25E7%2594%25A8Openresty%25E5%25B0%2586pastebin%25E5%2586%2585%25E5%25AE%25B9%25E6%25A0%25BC%25E5%25BC%258F%25E5%258C%2596%25E6%2598%25BE%25E7%25A4%25BA/</loc>
     
     <lastmod>2019-07-30T07:27:36.812Z</lastmod>
     
@@ -128,14 +191,14 @@
   </url>
   
   <url>
-    <loc>http://birdzhang.xyz/2018/08/09/%25E4%25BB%258EiOS%25E8%25BF%2581%25E7%25A7%25BB%25E5%2588%25B0SailfishOS%25E8%25AE%25A1%25E5%2588%2592/</loc>
+    <loc>http://birdzhang.xyz/2018/01/29/opensips%25E5%25AE%2589%25E8%25A3%2585%25E4%25BD%25BF%25E7%2594%25A8%25E6%2595%25B4%25E7%2590%2586/</loc>
     
     <lastmod>2019-07-30T07:27:36.811Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://birdzhang.xyz/2018/01/29/opensips%25E5%25AE%2589%25E8%25A3%2585%25E4%25BD%25BF%25E7%2594%25A8%25E6%2595%25B4%25E7%2590%2586/</loc>
+    <loc>http://birdzhang.xyz/2018/08/09/%25E4%25BB%258EiOS%25E8%25BF%2581%25E7%25A7%25BB%25E5%2588%25B0SailfishOS%25E8%25AE%25A1%25E5%2588%2592/</loc>
     
     <lastmod>2019-07-30T07:27:36.811Z</lastmod>
     
@@ -149,21 +212,7 @@
   </url>
   
   <url>
-    <loc>http://birdzhang.xyz/2017/05/19/irc-%25E5%258A%25A0%25E5%259B%259E%25E9%25A2%2591%25E9%2581%2593op/</loc>
-    
-    <lastmod>2019-07-30T07:27:36.811Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://birdzhang.xyz/2018/05/15/cas%25E6%25A0%25B9%25E6%258D%25AE%25E8%25AF%25B7%25E6%25B1%2582%25E5%258F%2582%25E6%2595%25B0%25E8%25B7%25B3%25E8%25BF%2587%25E9%25AA%258C%25E8%25AF%2581/</loc>
-    
-    <lastmod>2019-07-30T07:27:36.810Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://birdzhang.xyz/2019/04/15/harbor%25E8%25B7%25A8%25E5%25A4%25A7%25E7%2589%2588%25E6%259C%25AC%25E5%258D%2587%25E7%25BA%25A7/</loc>
     
     <lastmod>2019-07-30T07:27:36.810Z</lastmod>
     
@@ -177,9 +226,9 @@
   </url>
   
   <url>
-    <loc>http://birdzhang.xyz/2018/01/30/Tomcat%25E4%25BF%25A1%25E4%25BB%25BBhttps%25E7%25BD%2591%25E7%25AB%2599/</loc>
+    <loc>http://birdzhang.xyz/2019/04/15/harbor%25E8%25B7%25A8%25E5%25A4%25A7%25E7%2589%2588%25E6%259C%25AC%25E5%258D%2587%25E7%25BA%25A7/</loc>
     
-    <lastmod>2019-07-30T07:27:36.809Z</lastmod>
+    <lastmod>2019-07-30T07:27:36.810Z</lastmod>
     
   </url>
   
