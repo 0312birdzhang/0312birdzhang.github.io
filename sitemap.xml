@@ -121,13 +121,6 @@
   </url>
   
   <url>
-    <loc>http://birdzhang.xyz/2017/05/24/%25E9%259A%258F%25E7%25AC%2594/</loc>
-    
-    <lastmod>2019-07-30T07:27:36.814Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://birdzhang.xyz/about/index.html</loc>
     
     <lastmod>2019-07-30T07:27:36.814Z</lastmod>
@@ -136,6 +129,13 @@
   
   <url>
     <loc>http://birdzhang.xyz/2017/05/24/%25E7%2594%25A8Python%25E6%258A%2593%25E5%258F%2596%25E7%258E%258B%25E5%259E%25A0%25E7%259A%2584%25E5%258D%259A%25E5%25AE%25A2/</loc>
+    
+    <lastmod>2019-07-30T07:27:36.814Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://birdzhang.xyz/2017/05/24/%25E9%259A%258F%25E7%25AC%2594/</loc>
     
     <lastmod>2019-07-30T07:27:36.814Z</lastmod>
     
@@ -170,7 +170,7 @@
   </url>
   
   <url>
-    <loc>http://birdzhang.xyz/2018/12/06/%25E4%25BD%25BF%25E7%2594%25A8Gitlab-Bitbucket%25E7%25AD%2589CI%25E6%2590%25AD%25E5%25BB%25BA%25E8%2587%25AA%25E5%25B7%25B1%25E7%259A%2584%25E4%25B8%25B4%25E6%2597%25B6%25E4%25BB%25A3%25E7%2590%2586/</loc>
+    <loc>http://birdzhang.xyz/2017/12/08/%25E4%25BD%25BF%25E7%2594%25A8DaemonSet-Taint-Tolerations-NodeSelector%25E9%2583%25A8%25E7%25BD%25B2Nginx-ingress-controller/</loc>
     
     <lastmod>2019-07-30T07:27:36.812Z</lastmod>
     
@@ -184,7 +184,7 @@
   </url>
   
   <url>
-    <loc>http://birdzhang.xyz/2017/12/08/%25E4%25BD%25BF%25E7%2594%25A8DaemonSet-Taint-Tolerations-NodeSelector%25E9%2583%25A8%25E7%25BD%25B2Nginx-ingress-controller/</loc>
+    <loc>http://birdzhang.xyz/2018/12/06/%25E4%25BD%25BF%25E7%2594%25A8Gitlab-Bitbucket%25E7%25AD%2589CI%25E6%2590%25AD%25E5%25BB%25BA%25E8%2587%25AA%25E5%25B7%25B1%25E7%259A%2584%25E4%25B8%25B4%25E6%2597%25B6%25E4%25BB%25A3%25E7%2590%2586/</loc>
     
     <lastmod>2019-07-30T07:27:36.812Z</lastmod>
     
@@ -233,14 +233,14 @@
   </url>
   
   <url>
-    <loc>http://birdzhang.xyz/2017/05/27/Python%25E4%25B8%2580%25E4%25BA%259B%25E6%25A8%25A1%25E5%259D%2597%25E5%25AE%2589%25E8%25A3%2585%25E6%2596%25B9%25E6%25B3%2595%25E8%25AE%25B0%25E5%25BD%2595/</loc>
+    <loc>http://birdzhang.xyz/2018/06/26/No-subject-alternative-DNS-name-matching-xxx-com-found/</loc>
     
     <lastmod>2019-07-30T07:27:36.808Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://birdzhang.xyz/2018/06/26/No-subject-alternative-DNS-name-matching-xxx-com-found/</loc>
+    <loc>http://birdzhang.xyz/2017/05/27/Python%25E4%25B8%2580%25E4%25BA%259B%25E6%25A8%25A1%25E5%259D%2597%25E5%25AE%2589%25E8%25A3%2585%25E6%2596%25B9%25E6%25B3%2595%25E8%25AE%25B0%25E5%25BD%2595/</loc>
     
     <lastmod>2019-07-30T07:27:36.808Z</lastmod>
     

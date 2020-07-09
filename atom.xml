@@ -245,9 +245,9 @@
     </summary>
     
     
-      <category term="docker" scheme="http://birdzhang.xyz/tags/docker/"/>
-    
       <category term="sailfishos" scheme="http://birdzhang.xyz/tags/sailfishos/"/>
+    
+      <category term="docker" scheme="http://birdzhang.xyz/tags/docker/"/>
     
   </entry>
   
@@ -439,9 +439,9 @@ pipelines:
       <category term="Docker" scheme="http://birdzhang.xyz/categories/SailfishOS/Docker/"/>
     
     
-      <category term="docker" scheme="http://birdzhang.xyz/tags/docker/"/>
-    
       <category term="sailfishos" scheme="http://birdzhang.xyz/tags/sailfishos/"/>
+    
+      <category term="docker" scheme="http://birdzhang.xyz/tags/docker/"/>
     
   </entry>
   
