@@ -2,6 +2,7 @@
 title: Nginx获取用户真实IP
 date: 2018-09-12 11:10:54
 tags: [nginx,openresty]
+categories: [Nginx]
 ---
 
 首先强调的是，这里需要两层nginx，用户访问nginx1，转发到nginx2(192.168.1.111)，nginx2到真实后端。

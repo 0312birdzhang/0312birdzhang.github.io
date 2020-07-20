@@ -2,6 +2,7 @@
 title: irc 加回频道op
 date: 2017-05-19 10:48:59
 tags: [irc]
+categories: [Irc]
 ---
 
 用以下命令：

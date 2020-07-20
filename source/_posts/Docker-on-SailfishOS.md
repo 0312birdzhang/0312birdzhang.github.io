@@ -2,6 +2,7 @@
 title: Docker on SailfishOS
 date: 2018-09-05 17:00:03
 tags: [docker,sailfishos]
+categories: [SailfishOS, Docker]
 ---
 
 # How to install Docker on SailfishOS/如何将Docker安装到SailfishOS

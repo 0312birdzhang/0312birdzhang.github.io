@@ -2,6 +2,7 @@
 title: SailfishOS移植到Redmi-5-Plus的一些记录(2)
 date: 2019-06-13 10:06:52
 tags: [sailfish,redmi,vince,hadk,redmi5plus,lineage-15.1,hybris-15.1]
+categories: [SailfishOS]
 ---
 
 

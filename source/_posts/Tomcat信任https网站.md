@@ -2,6 +2,7 @@
 title: Tomcat信任https网站
 date: 2018-01-30 14:28:28
 tags: [tomcat,https,trustcacerts]
+categories: [Java,Tomcat]
 ---
 
 ## 在使用微信发送告警的时候出现无法使用https网址的问题，解决方式如下

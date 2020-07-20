@@ -2,6 +2,7 @@
 title: SailfishOS移植到Redmi_K20的一些记录
 date: 2019-12-30 11:33:17
 tags: [sailfish,redmi,davinci,hadk,k20,lineage-16.0,hybris-16.0,xiaomi,9t]
+categories: [SailfishOS]
 ---
 
 源码地址：https://github.com/sailfish-on-davinci

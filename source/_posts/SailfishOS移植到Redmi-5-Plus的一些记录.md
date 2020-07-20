@@ -2,6 +2,7 @@
 title: SailfishOS移植到Redmi 5 Plus的一些记录
 date: 2018-03-30 14:28:28
 tags: [sailfish,redmi,vince,hadk,redmi5plus]
+categories: [SailfishOS]
 ---
 
 # 移植旗鱼系统到红米5p的过程记录
