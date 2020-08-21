@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://birdzhang.xyz/"/>
-  <updated>2020-06-05T09:04:29.658Z</updated>
+  <updated>2020-08-21T05:56:41.032Z</updated>
   <id>http://birdzhang.xyz/</id>
   
   <author>
@@ -14,6 +14,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>使用yavijava创建兼容低版本的虚拟机</title>
+    <link href="http://birdzhang.xyz/2020/08/21/%E4%BD%BF%E7%94%A8yavijava%E5%88%9B%E5%BB%BA%E5%85%BC%E5%AE%B9%E4%BD%8E%E7%89%88%E6%9C%AC%E7%9A%84%E8%99%9A%E6%8B%9F%E6%9C%BA/"/>
+    <id>http://birdzhang.xyz/2020/08/21/使用yavijava创建兼容低版本的虚拟机/</id>
+    <published>2020-08-21T05:43:54.000Z</published>
+    <updated>2020-08-21T05:56:41.032Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="痛点"><a href="#痛点" class="headerlink" title="痛点"></a>痛点</h3><p>在使用 <a href="https://github.com/yavijava/yavijava">https://github.com/yavijava/yavijava</a> 创建虚拟机的过程中，默认会将虚拟机的兼容性自动设置为ESXI的版本，如在ESXI 6.5上创建的虚拟机，其兼容性则为 <strong>ESXi 6.5 及更高版本 (虚拟机版本 13)</strong>, 这样导致迁移的时候不能将这个虚拟机迁移到小于ESXI 6.5版本的主机上。</p>
+<h3 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h3><p>在查询很多资料之后，确认可以通过 <a href="https://www.altaro.com/vmware/4-ways-to-downgrade-the-vm-hardware-version/">https://www.altaro.com/vmware/4-ways-to-downgrade-the-vm-hardware-version/</a> 文中的方法，将虚拟机先从清单中删掉，更改虚拟机的vmx文件，将<code>virtualHW.version</code>改为需要的版本，重新注册虚拟机即可。</p>
+<p>在已知了这些方法之后，进行尝试, 发现在初始化虚拟机之后是无法再进行更改的，只有创建的时候设置好才行，如下即可。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">vmSpec.setVersion(&quot;vmx-10&quot;); # 10 表示 esxi 5.5</span><br><span class="line">&#x2F;&#x2F; call the createVM_Task method on the vm folder</span><br><span class="line">Task task &#x3D; vmFolder.createVM_Task(vmSpec, rp, null);</span><br><span class="line">String result &#x3D; task.waitForTask();</span><br><span class="line"></span><br><span class="line">if(result &#x3D;&#x3D; Task.SUCCESS)&#123;</span><br><span class="line">	System.out.println(&quot;VM Created Sucessfully&quot;);</span><br><span class="line">&#125;else&#123;</span><br><span class="line">	System.out.println(&quot;VM could not be created. &quot;);</span><br><span class="line">	return;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;痛点&quot;&gt;&lt;a href=&quot;#痛点&quot; class=&quot;headerlink&quot; title=&quot;痛点&quot;&gt;&lt;/a&gt;痛点&lt;/h3&gt;&lt;p&gt;在使用 &lt;a href=&quot;https://github.com/yavijava/yavijava&quot;&gt;https://github.com/
+    
+    </summary>
+    
+    
+      <category term="yavijava" scheme="http://birdzhang.xyz/tags/yavijava/"/>
+    
+      <category term="java" scheme="http://birdzhang.xyz/tags/java/"/>
+    
+  </entry>
   
   <entry>
     <title>debian,ubuntu无法使用apt下载源数据的解决方法</title>
@@ -130,9 +156,9 @@
     </summary>
     
     
-      <category term="windows" scheme="http://birdzhang.xyz/tags/windows/"/>
-    
       <category term="frp" scheme="http://birdzhang.xyz/tags/frp/"/>
+    
+      <category term="windows" scheme="http://birdzhang.xyz/tags/windows/"/>
     
       <category term="rdp" scheme="http://birdzhang.xyz/tags/rdp/"/>
     
@@ -337,9 +363,9 @@ pipelines:
     </summary>
     
     
-      <category term="frp" scheme="http://birdzhang.xyz/tags/frp/"/>
-    
       <category term="socks5" scheme="http://birdzhang.xyz/tags/socks5/"/>
+    
+      <category term="frp" scheme="http://birdzhang.xyz/tags/frp/"/>
     
   </entry>
   
@@ -381,7 +407,7 @@ pipelines:
     <link href="http://birdzhang.xyz/2018/09/05/Docker-on-SailfishOS/"/>
     <id>http://birdzhang.xyz/2018/09/05/Docker-on-SailfishOS/</id>
     <published>2018-09-05T09:00:03.000Z</published>
-    <updated>2020-06-12T10:02:36.487Z</updated>
+    <updated>2020-08-14T06:00:24.665Z</updated>
     
     <content type="html"><![CDATA[<h1 id="How-to-install-Docker-on-SailfishOS-如何将Docker安装到SailfishOS"><a href="#How-to-install-Docker-on-SailfishOS-如何将Docker安装到SailfishOS" class="headerlink" title="How to install Docker on SailfishOS/如何将Docker安装到SailfishOS"></a>How to install Docker on SailfishOS/如何将Docker安装到SailfishOS</h1><p>This post will show you how to install Docker on SailfishOS, and some hacks need to do.</p>
 <p>这篇文章将介绍如何将Docker安装到SailfishOS上，和需要做的一些hack。</p>
@@ -408,7 +434,7 @@ pipelines:
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br></pre></td><td class="code"><pre><span class="line">[nemo@Sailfish ~]$ .&#x2F;check-config.sh </span><br><span class="line">info: reading kernel config from &#x2F;proc&#x2F;config.gz ...</span><br><span class="line"></span><br><span class="line">Generally Necessary:</span><br><span class="line">- cgroup hierarchy: properly mounted [&#x2F;sys&#x2F;fs&#x2F;cgroup]</span><br><span class="line">- CONFIG_NAMESPACES: enabled</span><br><span class="line">- CONFIG_NET_NS: enabled</span><br><span class="line">- CONFIG_PID_NS: enabled</span><br><span class="line">- CONFIG_IPC_NS: enabled</span><br><span class="line">- CONFIG_UTS_NS: enabled</span><br><span class="line">- CONFIG_CGROUPS: enabled</span><br><span class="line">- CONFIG_CGROUP_CPUACCT: enabled</span><br><span class="line">- CONFIG_CGROUP_DEVICE: enabled</span><br><span class="line">- CONFIG_CGROUP_FREEZER: enabled</span><br><span class="line">- CONFIG_CGROUP_SCHED: enabled</span><br><span class="line">- CONFIG_CPUSETS: enabled</span><br><span class="line">- CONFIG_MEMCG: enabled</span><br><span class="line">- CONFIG_KEYS: enabled</span><br><span class="line">- CONFIG_VETH: enabled</span><br><span class="line">- CONFIG_BRIDGE: enabled</span><br><span class="line">- CONFIG_BRIDGE_NETFILTER: enabled (as module)</span><br><span class="line">- CONFIG_NF_NAT_IPV4: enabled</span><br><span class="line">- CONFIG_IP_NF_FILTER: enabled</span><br><span class="line">- CONFIG_IP_NF_TARGET_MASQUERADE: enabled</span><br><span class="line">- CONFIG_NETFILTER_XT_MATCH_ADDRTYPE: enabled</span><br><span class="line">- CONFIG_NETFILTER_XT_MATCH_CONNTRACK: enabled</span><br><span class="line">- CONFIG_NETFILTER_XT_MATCH_IPVS: enabled</span><br><span class="line">- CONFIG_IP_NF_NAT: enabled</span><br><span class="line">- CONFIG_NF_NAT: enabled</span><br><span class="line">- CONFIG_NF_NAT_NEEDED: enabled</span><br><span class="line">- CONFIG_POSIX_MQUEUE: enabled</span><br><span class="line">- CONFIG_DEVPTS_MULTIPLE_INSTANCES: enabled</span><br><span class="line"></span><br><span class="line">Optional Features:</span><br><span class="line">- CONFIG_USER_NS: enabled</span><br><span class="line">- CONFIG_SECCOMP: enabled</span><br><span class="line">- CONFIG_CGROUP_PIDS: missing</span><br><span class="line">- CONFIG_MEMCG_SWAP: enabled</span><br><span class="line">- CONFIG_MEMCG_SWAP_ENABLED: enabled</span><br><span class="line">    (cgroup swap accounting is currently enabled)</span><br><span class="line">- CONFIG_MEMCG_KMEM: enabled</span><br><span class="line">- CONFIG_RESOURCE_COUNTERS: enabled</span><br><span class="line">- CONFIG_BLK_CGROUP: enabled</span><br><span class="line">- CONFIG_BLK_DEV_THROTTLING: missing</span><br><span class="line">- CONFIG_IOSCHED_CFQ: enabled</span><br><span class="line">- CONFIG_CFQ_GROUP_IOSCHED: missing</span><br><span class="line">- CONFIG_CGROUP_PERF: enabled</span><br><span class="line">- CONFIG_CGROUP_HUGETLB: missing</span><br><span class="line">- CONFIG_NET_CLS_CGROUP: enabled</span><br><span class="line">- CONFIG_CGROUP_NET_PRIO: enabled</span><br><span class="line">- CONFIG_CFS_BANDWIDTH: missing</span><br><span class="line">- CONFIG_FAIR_GROUP_SCHED: enabled</span><br><span class="line">- CONFIG_RT_GROUP_SCHED: enabled</span><br><span class="line">- CONFIG_IP_VS: enabled</span><br><span class="line">- CONFIG_IP_VS_NFCT: enabled</span><br><span class="line">- CONFIG_IP_VS_RR: enabled</span><br><span class="line">- CONFIG_EXT3_FS: enabled</span><br><span class="line">- CONFIG_EXT3_FS_XATTR: enabled</span><br><span class="line">- CONFIG_EXT3_FS_POSIX_ACL: enabled</span><br><span class="line">- CONFIG_EXT3_FS_SECURITY: enabled</span><br><span class="line">- CONFIG_EXT4_FS: enabled</span><br><span class="line">- CONFIG_EXT4_FS_POSIX_ACL: missing</span><br><span class="line">- CONFIG_EXT4_FS_SECURITY: enabled</span><br><span class="line">    enable these ext4 configs if you are using ext4 as backing filesystem</span><br><span class="line">- Network Drivers:</span><br><span class="line">  - &quot;overlay&quot;:</span><br><span class="line">    - CONFIG_VXLAN: enabled</span><br><span class="line">      Optional (for encrypted networks):</span><br><span class="line">      - CONFIG_CRYPTO: enabled</span><br><span class="line">      - CONFIG_CRYPTO_AEAD: enabled</span><br><span class="line">      - CONFIG_CRYPTO_GCM: enabled</span><br><span class="line">      - CONFIG_CRYPTO_SEQIV: enabled</span><br><span class="line">      - CONFIG_CRYPTO_GHASH: enabled</span><br><span class="line">      - CONFIG_XFRM: enabled</span><br><span class="line">      - CONFIG_XFRM_USER: enabled</span><br><span class="line">      - CONFIG_XFRM_ALGO: enabled</span><br><span class="line">      - CONFIG_INET_ESP: enabled</span><br><span class="line">      - CONFIG_INET_XFRM_MODE_TRANSPORT: enabled</span><br><span class="line">  - &quot;ipvlan&quot;:</span><br><span class="line">    - CONFIG_IPVLAN: missing</span><br><span class="line">  - &quot;macvlan&quot;:</span><br><span class="line">    - CONFIG_MACVLAN: enabled</span><br><span class="line">    - CONFIG_DUMMY: missing</span><br><span class="line">  - &quot;ftp,tftp client in container&quot;:</span><br><span class="line">    - CONFIG_NF_NAT_FTP: enabled</span><br><span class="line">    - CONFIG_NF_CONNTRACK_FTP: enabled</span><br><span class="line">    - CONFIG_NF_NAT_TFTP: enabled</span><br><span class="line">    - CONFIG_NF_CONNTRACK_TFTP: enabled</span><br><span class="line">- Storage Drivers:</span><br><span class="line">  - &quot;aufs&quot;:</span><br><span class="line">    - CONFIG_AUFS_FS: missing</span><br><span class="line">  - &quot;btrfs&quot;:</span><br><span class="line">    - CONFIG_BTRFS_FS: enabled</span><br><span class="line">    - CONFIG_BTRFS_FS_POSIX_ACL: enabled</span><br><span class="line">  - &quot;devicemapper&quot;:</span><br><span class="line">    - CONFIG_BLK_DEV_DM: enabled</span><br><span class="line">    - CONFIG_DM_THIN_PROVISIONING: missing</span><br><span class="line">  - &quot;overlay&quot;:</span><br><span class="line">    - CONFIG_OVERLAY_FS: enabled</span><br><span class="line">  - &quot;zfs&quot;:</span><br><span class="line">    - &#x2F;dev&#x2F;zfs: missing</span><br><span class="line">    - zfs command: missing</span><br><span class="line">    - zpool command: missing</span><br><span class="line"></span><br><span class="line">Limits:</span><br><span class="line">- &#x2F;proc&#x2F;sys&#x2F;kernel&#x2F;keys&#x2F;root_maxkeys: 1000000</span><br><span class="line"></span><br><span class="line">[nemo@Sailfish ~]$</span><br></pre></td></tr></table></figure>
 <p>Generally Necessary must be all <code>enabled</code>, if not enabled, you must enable it in your kernel defconfig, and rebuild kernel.<br>Generally Necessary 部分必须全部是<code>enabled</code>, 如果没有启用，必须启用然后重启编译内核。</p>
 <h2 id="Download-the-static-binary-archive-下载静态二进制文件"><a href="#Download-the-static-binary-archive-下载静态二进制文件" class="headerlink" title="Download the static binary archive/下载静态二进制文件"></a>Download the static binary archive/下载静态二进制文件</h2><p><a href="https://download.docker.com/linux/static/stable/aarch64/">https://download.docker.com/linux/static/stable/aarch64/</a></p>
-<p>Extract the archive and put them to <code>/usr/bin/</code></p>
+<p>Extract the archive and put them to <code>/usr/bin/</code>, <code>18.06</code> is a working version.</p>
 <h2 id="Add-nemo-to-docker-group-将nemo用户添加到docker组"><a href="#Add-nemo-to-docker-group-将nemo用户添加到docker组" class="headerlink" title="Add nemo to docker group/将nemo用户添加到docker组"></a>Add nemo to docker group/将nemo用户添加到docker组</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">groupadd docker</span><br><span class="line">usermod -a -G docker nemo</span><br></pre></td></tr></table></figure>
 <h2 id="Run-Docker-启动Docker"><a href="#Run-Docker-启动Docker" class="headerlink" title="Run Docker/启动Docker"></a>Run Docker/启动Docker</h2><p>Start docker daemon/ 启动docker守护进程<br><code>devel-su /usr/bin/dockerd</code></p>
 <p>Or use systemd/ 或者使用systemd</p>
@@ -730,7 +756,7 @@ pipelines:
     <link href="http://birdzhang.xyz/2018/03/30/SailfishOS%E7%A7%BB%E6%A4%8D%E5%88%B0Redmi-5-Plus%E7%9A%84%E4%B8%80%E4%BA%9B%E8%AE%B0%E5%BD%95/"/>
     <id>http://birdzhang.xyz/2018/03/30/SailfishOS移植到Redmi-5-Plus的一些记录/</id>
     <published>2018-03-30T06:28:28.000Z</published>
-    <updated>2020-06-12T10:02:49.111Z</updated>
+    <updated>2020-08-21T03:29:00.080Z</updated>
     
     <content type="html"><![CDATA[<h1 id="移植旗鱼系统到红米5p的过程记录"><a href="#移植旗鱼系统到红米5p的过程记录" class="headerlink" title="移植旗鱼系统到红米5p的过程记录"></a>移植旗鱼系统到红米5p的过程记录</h1><h2 id="可以去ホロ-🐺的博客看看更详细的"><a href="#可以去ホロ-🐺的博客看看更详细的" class="headerlink" title="!!!可以去ホロ 🐺的博客看看更详细的!!!"></a>!!!可以去ホロ 🐺的博客看看更详细的!!!</h2><p>  <a href="https://blog.yoitsu.moe/category/sailfish.html">https://blog.yoitsu.moe/category/sailfish.html</a></p>
 <h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><ul>
@@ -740,6 +766,7 @@ pipelines:
 <li><a href="https://sailfishos.org/develop/hadk/">SailfishOS-HardwareAdaptationDevelopmentKit</a> 1 READ部分pdf文档</li>
 <li><del><a href="https://wiki.merproject.org/wiki/Adaptations/faq-hadk">https://wiki.merproject.org/wiki/Adaptations/faq-hadk</a></del> <a href="https://github.com/mer-hybris/hadk-faq">https://github.com/mer-hybris/hadk-faq</a> （2019-10-28更新）</li>
 <li>最关键的，一颗善于折腾的心和善于搜索的你</li>
+<li>irc日志 <a href="https://irclogs.sailfishos.org/logs/%23sailfishos-porters/">https://irclogs.sailfishos.org/logs/%23sailfishos-porters/</a> </li>
 </ul>
 <h2 id="搭建环境"><a href="#搭建环境" class="headerlink" title="搭建环境"></a>搭建环境</h2><h3 id="Android编译环境-HADK-第4章"><a href="#Android编译环境-HADK-第4章" class="headerlink" title="Android编译环境(HADK 第4章)"></a>Android编译环境(HADK 第4章)</h3><blockquote>
 <p>需要先配置一下hadk的环境变量，一共三个文件，可以参考这里： <a href="https://github.com/CancroSailors/sailfish-build-environment">https://github.com/CancroSailors/sailfish-build-environment</a></p>
@@ -941,33 +968,6 @@ pipelines:
       <category term="voip" scheme="http://birdzhang.xyz/tags/voip/"/>
     
       <category term="sip" scheme="http://birdzhang.xyz/tags/sip/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>使用浏览器挖矿</title>
-    <link href="http://birdzhang.xyz/2017/12/29/%E4%BD%BF%E7%94%A8%E6%B5%8F%E8%A7%88%E5%99%A8%E6%8C%96%E7%9F%BF/"/>
-    <id>http://birdzhang.xyz/2017/12/29/使用浏览器挖矿/</id>
-    <published>2017-12-29T06:32:00.000Z</published>
-    <updated>2019-10-21T08:30:21.874Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="已GG"><a href="#已GG" class="headerlink" title="已GG"></a>已GG</h3><iframe src="https://authedmine.com/media/miner.html?key=Tjj5gaLGfnQ2157RNOMjhdT1ck0mluS5" width="auto" height="280" frameborder="0"></iframe>
-
-<p>如上所示，如果你浏览器的广告拦截插件正常的话。</p>
-<p>具体使用见：<a href="https://coinhive.com/documentation">https://coinhive.com/documentation</a> ，有四种模式，静默加载的基本上被adblock掉了，建议用simple ui</p>
-<p>或者自己搭代理：<a href="https://github.com/cazala/coin-hive-stratum">https://github.com/cazala/coin-hive-stratum</a></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;已GG&quot;&gt;&lt;a href=&quot;#已GG&quot; class=&quot;headerlink&quot; title=&quot;已GG&quot;&gt;&lt;/a&gt;已GG&lt;/h3&gt;&lt;iframe src=&quot;https://authedmine.com/media/miner.html?key=Tjj5gaLGfnQ2
-    
-    </summary>
-    
-    
-      <category term="js" scheme="http://birdzhang.xyz/tags/js/"/>
-    
-      <category term="coinhive" scheme="http://birdzhang.xyz/tags/coinhive/"/>
     
   </entry>
   
