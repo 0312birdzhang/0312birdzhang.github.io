@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://birdzhang.xyz/"/>
-  <updated>2020-08-21T05:56:41.032Z</updated>
+  <updated>2020-11-23T08:24:21.461Z</updated>
   <id>http://birdzhang.xyz/</id>
   
   <author>
@@ -14,6 +14,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>python使用subprocess查看进程并过滤</title>
+    <link href="http://birdzhang.xyz/2020/11/23/python%E4%BD%BF%E7%94%A8subprocess%E6%9F%A5%E7%9C%8B%E8%BF%9B%E7%A8%8B%E5%B9%B6%E8%BF%87%E6%BB%A4/"/>
+    <id>http://birdzhang.xyz/2020/11/23/python使用subprocess查看进程并过滤/</id>
+    <published>2020-11-23T08:22:17.000Z</published>
+    <updated>2020-11-23T08:24:21.461Z</updated>
+    
+    <content type="html"><![CDATA[<p>来源： <a href="https://stackoverflow.com/questions/6780035/how-to-run-ps-cax-grep-something-in-python">https://stackoverflow.com/questions/6780035/how-to-run-ps-cax-grep-something-in-python</a></p>
+<p>将proc1的输出当作proc2的输入来实现</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">import subprocess</span><br><span class="line"></span><br><span class="line">proc1 &#x3D; subprocess.Popen([&quot;ps&quot;,&quot;-ef&quot;],stdout&#x3D;subprocess.PIPE)</span><br><span class="line">proc2 &#x3D; subprocess.Popen([&#39;grep&#39;, &#39;mysql&#39;], stdin&#x3D;proc1.stdout,</span><br><span class="line">     stdout&#x3D;subprocess.PIPE, stderr&#x3D;subprocess.PIPE)</span><br><span class="line">proc1.stdout.close() # Allow proc1 to receive a SIGPIPE if proc2 exits.</span><br><span class="line">out, err &#x3D; proc2.communicate()</span><br><span class="line">outline &#x3D; &#39;&#123;0&#125;&#39;.format(out)</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;来源： &lt;a href=&quot;https://stackoverflow.com/questions/6780035/how-to-run-ps-cax-grep-something-in-python&quot;&gt;https://stackoverflow.com/questions/
+    
+    </summary>
+    
+    
+      <category term="python" scheme="http://birdzhang.xyz/tags/python/"/>
+    
+      <category term="subprocess" scheme="http://birdzhang.xyz/tags/subprocess/"/>
+    
+  </entry>
   
   <entry>
     <title>使用yavijava创建兼容低版本的虚拟机</title>
@@ -156,9 +180,9 @@
     </summary>
     
     
-      <category term="frp" scheme="http://birdzhang.xyz/tags/frp/"/>
-    
       <category term="windows" scheme="http://birdzhang.xyz/tags/windows/"/>
+    
+      <category term="frp" scheme="http://birdzhang.xyz/tags/frp/"/>
     
       <category term="rdp" scheme="http://birdzhang.xyz/tags/rdp/"/>
     
@@ -363,9 +387,9 @@ pipelines:
     </summary>
     
     
-      <category term="socks5" scheme="http://birdzhang.xyz/tags/socks5/"/>
-    
       <category term="frp" scheme="http://birdzhang.xyz/tags/frp/"/>
+    
+      <category term="socks5" scheme="http://birdzhang.xyz/tags/socks5/"/>
     
   </entry>
   
@@ -899,75 +923,6 @@ pipelines:
       <category term="https" scheme="http://birdzhang.xyz/tags/https/"/>
     
       <category term="trustcacerts" scheme="http://birdzhang.xyz/tags/trustcacerts/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>opensips安装使用整理</title>
-    <link href="http://birdzhang.xyz/2018/01/29/opensips%E5%AE%89%E8%A3%85%E4%BD%BF%E7%94%A8%E6%95%B4%E7%90%86/"/>
-    <id>http://birdzhang.xyz/2018/01/29/opensips安装使用整理/</id>
-    <published>2018-01-29T08:36:17.000Z</published>
-    <updated>2019-07-30T07:27:36.811Z</updated>
-    
-    <content type="html"><![CDATA[<blockquote>
-<p>部分内容来自 <a href="https://github.com/Ci-Jie/OpenSIPS">https://github.com/Ci-Jie/OpenSIPS</a> ，其他的很多教程都是坑！！！</p>
-</blockquote>
-<h2 id="安装opensips"><a href="#安装opensips" class="headerlink" title="安装opensips"></a>安装opensips</h2><ul>
-<li>CentOS release 6.9 (Final) (内核 4.10.4)</li>
-<li>MySQL 5.6</li>
-<li>Opensips 2.1</li>
-</ul>
-<h4 id="安装依赖库等"><a href="#安装依赖库等" class="headerlink" title="安装依赖库等"></a>安装依赖库等</h4><p><code>sudo yum -y install mysql mysql-server mysql-devel git make bison libdbi-dbd-mysql</code> (具体还有什么忘记了，不能重现当时安装的了，后面缺什么再装吧)</p>
-<h4 id="检出代码"><a href="#检出代码" class="headerlink" title="检出代码"></a>检出代码</h4><p><code>cd ~/ &amp;&amp; git clone https://github.com/OpenSIPS/opensips.git -b 2.1 opensips_2_1</code></p>
-<h4 id="修改配置开启mysql支持"><a href="#修改配置开启mysql支持" class="headerlink" title="修改配置开启mysql支持"></a>修改配置开启mysql支持</h4><p><code>vim ~/opensips_2_1/Makefile.conf.tmplate</code> ,移除<code>exclude_modules</code>中db_mysql</p>
-<h4 id="安装opensips-1"><a href="#安装opensips-1" class="headerlink" title="安装opensips"></a>安装opensips</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> ~/opensips_2_1</span><br><span class="line">sudo make all</span><br><span class="line">sudo make install</span><br></pre></td></tr></table></figure>
-<h4 id="安裝完后，修改部分opensipsctlrc文件，如下："><a href="#安裝完后，修改部分opensipsctlrc文件，如下：" class="headerlink" title="安裝完后，修改部分opensipsctlrc文件，如下："></a>安裝完后，修改部分opensipsctlrc文件，如下：</h4><p><code>sudo vim /usr/local/etc/opensips/opensipsctlrc</code></p>
-<p>将DB开头的修改为自己的mysql连接情况（事先创建好opensips用户，或者偷懒用root，但是一定要注意安全），SIP_DOMAIN修改为主机ip<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">## your SIP domain</span><br><span class="line">SIP_DOMAIN&#x3D;yourip</span><br><span class="line">## chrooted directory</span><br><span class="line"># $CHROOT_DIR&#x3D;&quot;&#x2F;path&#x2F;to&#x2F;chrooted&#x2F;directory&quot;</span><br><span class="line">## database type: MYSQL, PGSQL, ORACLE, DB_BERKELEY, or DBTEXT, </span><br><span class="line">## by default none is loaded</span><br><span class="line"># If you want to setup a database with opensipsdbctl, you must at least specify</span><br><span class="line"># this parameter.</span><br><span class="line">DBENGINE&#x3D;MYSQL</span><br><span class="line">## database host</span><br><span class="line">DBHOST&#x3D;localhost</span><br><span class="line">## database name (for ORACLE this is TNS name)</span><br><span class="line">DBNAME&#x3D;opensips</span><br><span class="line"># database path used by dbtext or db_berkeley</span><br><span class="line">DB_PATH&#x3D;&quot;&#x2F;usr&#x2F;local&#x2F;etc&#x2F;opensips&#x2F;dbtext&quot;</span><br><span class="line">## database read&#x2F;write user</span><br><span class="line">DBRWUSER&#x3D;opensips</span><br><span class="line">## password for database read&#x2F;write user</span><br><span class="line">DBRWPW&#x3D;&quot;opensipsrw&quot;</span><br><span class="line">## database super user (for ORACLE this is &#39;scheme-creator&#39; user)</span><br><span class="line">DBROOTUSER&#x3D;&quot;root&quot;</span><br><span class="line"># user name column</span><br><span class="line">USERCOL&#x3D;&quot;username&quot;</span><br></pre></td></tr></table></figure></p>
-<h4 id="初始化mysql数据库表"><a href="#初始化mysql数据库表" class="headerlink" title="初始化mysql数据库表"></a>初始化mysql数据库表</h4><p><code>sudo /usr/local/sbin/opensipsdbctl create</code>，会提示输入root密码，然后会出现下面的提示<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">MySQL password for root: </span><br><span class="line">INFO: test server charset</span><br><span class="line">INFO: creating database opensips ...</span><br><span class="line">INFO: Core OpenSIPS tables succesfully created.</span><br><span class="line">Install presence related tables? (y&#x2F;n): y  </span><br><span class="line">INFO: creating presence tables into opensips ...</span><br><span class="line">INFO: Presence tables succesfully created.</span><br><span class="line">Install tables for imc cpl siptrace domainpolicy carrierroute userblacklist? (y&#x2F;n): y</span><br><span class="line">INFO: creating extra tables into opensips ...</span><br><span class="line">INFO: Extra tables succesfully created.</span><br></pre></td></tr></table></figure></p>
-<blockquote>
-<p>如果出现 <code>ERROR: database engine not specified, please setup one in the config script</code>，看看是否有执行权限</p>
-</blockquote>
-<h4 id="自定义监听端口及协议"><a href="#自定义监听端口及协议" class="headerlink" title="自定义监听端口及协议"></a>自定义监听端口及协议</h4><p>可以通过修改<code>/usr/local/etc/opensips/opensips.cfg</code>文件，修改<code>listen=</code>，注意这里的ip要用外网ip，udp改为tcp可以使用keepalive，让手机长时间在线。我的配置如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">advertised_address&#x3D;myip</span><br><span class="line">alias&#x3D;myip</span><br><span class="line">...</span><br><span class="line">listen&#x3D;tcp:myip:5060   # CUSTOMIZE ME</span><br><span class="line">tcp_connection_lifetime&#x3D;3600</span><br><span class="line">tcp_connect_timeout&#x3D;5000</span><br><span class="line">tcp_keepalive&#x3D;1</span><br><span class="line">tcp_keepcount&#x3D;30</span><br><span class="line">tcp_keepidle&#x3D;60</span><br><span class="line">tcp_keepinterval &#x3D; 60</span><br></pre></td></tr></table></figure></p>
-<h4 id="新增domain到数据库"><a href="#新增domain到数据库" class="headerlink" title="新增domain到数据库"></a>新增domain到数据库</h4><blockquote>
-<p>这个domain就是上面填写的ip地址，创建用户的时候也要用到。</p>
-</blockquote>
-<p>用root连接mysql，选择opensips库，插入一条记录<code>INSERT INTO opensips.domain(domain) VALUES(&#39;your ip&#39;);</code>(注意修改为自己的ip)</p>
-<h4 id="opensips操作"><a href="#opensips操作" class="headerlink" title="opensips操作"></a>opensips操作</h4><p>启动 <code>/usr/local/sbin/opensipsctl start</code></p>
-<p>停止 <code>/usr/local/sbin/opensipsctl stop</code></p>
-<p>重启 <code>/usr/local/sbin/opensipsctl restart</code></p>
-<h4 id="创建用户"><a href="#创建用户" class="headerlink" title="创建用户"></a>创建用户</h4><p><code>/usr/local/sbin/opensipsctl add user@myourip password</code></p>
-<p>这里的user就是号码，尽量用数字（键盘上没有字母啊）</p>
-<h3 id="客户端"><a href="#客户端" class="headerlink" title="客户端"></a>客户端</h3><ul>
-<li>PC <ul>
-<li>Zoiper</li>
-<li>Linphone</li>
-</ul>
-</li>
-<li>Ios<ul>
-<li>Zoiper</li>
-</ul>
-</li>
-</ul>
-<p>其他未测试，可以到 <a href="http://www.voip-info.org/wiki/view/Open+Source+VOIP+Software">http://www.voip-info.org/wiki/view/Open+Source+VOIP+Software</a> 查找</p>
-<h4 id="ios端配置（尽量后台运行）"><a href="#ios端配置（尽量后台运行）" class="headerlink" title="ios端配置（尽量后台运行）"></a>ios端配置（尽量后台运行）</h4><p>如图所示：</p>
-<p><img src="https://i.loli.net/2018/01/29/5a6ee3c84b5b4.jpg" alt="微信图片_20180129170327.jpg"><br><img src="https://i.loli.net/2018/01/29/5a6ee3c86f20d.jpg" alt="微信图片_20180129170352.jpg"><br><img src="https://i.loli.net/2018/01/29/5a6ee3c876295.jpg" alt="微信图片_20180129170357.jpg"></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;部分内容来自 &lt;a href=&quot;https://github.com/Ci-Jie/OpenSIPS&quot;&gt;https://github.com/Ci-Jie/OpenSIPS&lt;/a&gt; ，其他的很多教程都是坑！！！&lt;/p&gt;
-&lt;/blockquote&gt;
-
-    
-    </summary>
-    
-    
-      <category term="opensips" scheme="http://birdzhang.xyz/tags/opensips/"/>
-    
-      <category term="voip" scheme="http://birdzhang.xyz/tags/voip/"/>
-    
-      <category term="sip" scheme="http://birdzhang.xyz/tags/sip/"/>
     
   </entry>
   
