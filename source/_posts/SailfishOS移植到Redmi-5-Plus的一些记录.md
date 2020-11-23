@@ -19,6 +19,7 @@ categories: [SailfishOS]
 * [SailfishOS-HardwareAdaptationDevelopmentKit](https://sailfishos.org/develop/hadk/) 1 READ部分pdf文档
 * ~~https://wiki.merproject.org/wiki/Adaptations/faq-hadk~~ https://github.com/mer-hybris/hadk-faq （2019-10-28更新）
 * 最关键的，一颗善于折腾的心和善于搜索的你
+* irc日志 https://irclogs.sailfishos.org/logs/%23sailfishos-porters/ 
 
 
 

@@ -59,6 +59,6 @@ JAVA_OPTS="-Djava.awt.headless=true -Dfile.encoding=UTF-8 -server -Xms2048m -Xmx
               clientAuth="false" sslProtocol="TLS"
               URIEncoding="utf-8"
               keystoreFile="/usr/local/java/jdk7/jre/lib/security/jssecacerts"
-              keystorePass="flamingo@1"
+              keystorePass="yourpassword"
               />
 ``` 
