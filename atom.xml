@@ -886,7 +886,7 @@ pipelines:
     <link href="http://birdzhang.xyz/2018/01/30/Tomcat%E4%BF%A1%E4%BB%BBhttps%E7%BD%91%E7%AB%99/"/>
     <id>http://birdzhang.xyz/2018/01/30/Tomcat信任https网站/</id>
     <published>2018-01-30T06:28:28.000Z</published>
-    <updated>2020-06-12T10:00:08.566Z</updated>
+    <updated>2020-11-23T09:18:01.932Z</updated>
     
     <content type="html"><![CDATA[<h2 id="在使用微信发送告警的时候出现无法使用https网址的问题，解决方式如下"><a href="#在使用微信发送告警的时候出现无法使用https网址的问题，解决方式如下" class="headerlink" title="在使用微信发送告警的时候出现无法使用https网址的问题，解决方式如下"></a>在使用微信发送告警的时候出现无法使用https网址的问题，解决方式如下</h2><h3 id="导出微信的证书"><a href="#导出微信的证书" class="headerlink" title="导出微信的证书"></a>导出微信的证书</h3><p><code>openssl s_client -connect qyapi.weixin.qq.com:443 2&gt;&amp;1 |sed -ne &#39;/-BEGIN CERTIFICATE-/,/-END CERTIFICATE-/p&#39; &gt; weixin.crt</code></p>
 <p>使用<a href="/files/SSLPoke.class">SSLPoke.class</a>确认是否还有上层证书，如果存在也导入</p>
@@ -903,7 +903,7 @@ pipelines:
               clientAuth=&quot;false&quot; sslProtocol=&quot;TLS&quot;
               URIEncoding=&quot;utf-8&quot;
               keystoreFile=&quot;/usr/local/java/jdk7/jre/lib/security/jssecacerts&quot;
-              keystorePass=&quot;flamingo@1&quot;
+              keystorePass=&quot;yourpassword&quot;
               /&gt;
 </code></pre>]]></content>
     
