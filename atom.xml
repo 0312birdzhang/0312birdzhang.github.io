@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://birdzhang.xyz/"/>
-  <updated>2020-12-03T02:43:53.746Z</updated>
+  <updated>2020-11-23T08:24:21.461Z</updated>
   <id>http://birdzhang.xyz/</id>
   
   <author>
@@ -14,28 +14,6 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>She said the pie had flavor and memories.</title>
-    <link href="http://birdzhang.xyz/2020/12/03/She-said-the-pie-had-flavor-and-memories/"/>
-    <id>http://birdzhang.xyz/2020/12/03/She-said-the-pie-had-flavor-and-memories/</id>
-    <published>2020-12-03T02:41:49.000Z</published>
-    <updated>2020-12-03T02:43:53.746Z</updated>
-    
-    <content type="html"><![CDATA[<p>她说那个饼有味道有回忆，我想说，那应该是恋爱的感觉😳</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;她说那个饼有味道有回忆，我想说，那应该是恋爱的感觉😳&lt;/p&gt;
-
-    
-    </summary>
-    
-    
-      <category term="她" scheme="http://birdzhang.xyz/tags/%E5%A5%B9/"/>
-    
-  </entry>
   
   <entry>
     <title>python使用subprocess查看进程并过滤</title>
@@ -148,9 +126,9 @@
     
       <category term="redmi" scheme="http://birdzhang.xyz/tags/redmi/"/>
     
-      <category term="hadk" scheme="http://birdzhang.xyz/tags/hadk/"/>
-    
       <category term="davinci" scheme="http://birdzhang.xyz/tags/davinci/"/>
+    
+      <category term="hadk" scheme="http://birdzhang.xyz/tags/hadk/"/>
     
       <category term="k20" scheme="http://birdzhang.xyz/tags/k20/"/>
     
@@ -267,9 +245,9 @@
     
       <category term="redmi" scheme="http://birdzhang.xyz/tags/redmi/"/>
     
-      <category term="vince" scheme="http://birdzhang.xyz/tags/vince/"/>
-    
       <category term="hadk" scheme="http://birdzhang.xyz/tags/hadk/"/>
+    
+      <category term="vince" scheme="http://birdzhang.xyz/tags/vince/"/>
     
       <category term="redmi5plus" scheme="http://birdzhang.xyz/tags/redmi5plus/"/>
     
@@ -663,9 +641,9 @@ pipelines:
     
       <category term="Java" scheme="http://birdzhang.xyz/tags/Java/"/>
     
-      <category term="https" scheme="http://birdzhang.xyz/tags/https/"/>
-    
       <category term="cas" scheme="http://birdzhang.xyz/tags/cas/"/>
+    
+      <category term="https" scheme="http://birdzhang.xyz/tags/https/"/>
     
       <category term="crt" scheme="http://birdzhang.xyz/tags/crt/"/>
     
@@ -893,11 +871,56 @@ pipelines:
     
       <category term="redmi" scheme="http://birdzhang.xyz/tags/redmi/"/>
     
-      <category term="vince" scheme="http://birdzhang.xyz/tags/vince/"/>
-    
       <category term="hadk" scheme="http://birdzhang.xyz/tags/hadk/"/>
     
+      <category term="vince" scheme="http://birdzhang.xyz/tags/vince/"/>
+    
       <category term="redmi5plus" scheme="http://birdzhang.xyz/tags/redmi5plus/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Tomcat信任https网站</title>
+    <link href="http://birdzhang.xyz/2018/01/30/Tomcat%E4%BF%A1%E4%BB%BBhttps%E7%BD%91%E7%AB%99/"/>
+    <id>http://birdzhang.xyz/2018/01/30/Tomcat信任https网站/</id>
+    <published>2018-01-30T06:28:28.000Z</published>
+    <updated>2020-11-23T09:18:01.932Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="在使用微信发送告警的时候出现无法使用https网址的问题，解决方式如下"><a href="#在使用微信发送告警的时候出现无法使用https网址的问题，解决方式如下" class="headerlink" title="在使用微信发送告警的时候出现无法使用https网址的问题，解决方式如下"></a>在使用微信发送告警的时候出现无法使用https网址的问题，解决方式如下</h2><h3 id="导出微信的证书"><a href="#导出微信的证书" class="headerlink" title="导出微信的证书"></a>导出微信的证书</h3><p><code>openssl s_client -connect qyapi.weixin.qq.com:443 2&gt;&amp;1 |sed -ne &#39;/-BEGIN CERTIFICATE-/,/-END CERTIFICATE-/p&#39; &gt; weixin.crt</code></p>
+<p>使用<a href="/files/SSLPoke.class">SSLPoke.class</a>确认是否还有上层证书，如果存在也导入</p>
+<p><code>java -Djavax.net.debug=ssl  SSLPoke qyapi.weixin.qq.com 443</code></p>
+<p>看到有类似下面的则表明有上层证书:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">AuthorityInfoAccess [</span><br><span class="line">  [</span><br><span class="line">   accessMethod: ocsp</span><br><span class="line">   accessLocation: URIName: http:&#x2F;&#x2F;gn.symcd.com</span><br><span class="line">,</span><br><span class="line">   accessMethod: caIssuers</span><br><span class="line">   accessLocation: URIName: http:&#x2F;&#x2F;gn.symcb.com&#x2F;gn.crt</span><br><span class="line">]</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<p>将<a href="http://gn.symcb.com/gn.crt下载下来，并导入">http://gn.symcb.com/gn.crt下载下来，并导入</a><br><code>sudo keytool -import -v -trustcacerts -alias gnsymcb -keystore $JAVA_HOME/jre/lib/security/jssecacerts -file gn.crt</code></p>
+<h3 id="导入到jdk中"><a href="#导入到jdk中" class="headerlink" title="导入到jdk中"></a>导入到jdk中</h3><p><code>sudo keytool -import -v -trustcacerts -alias qyapiweixin -keystore $JAVA_HOME/jre/lib/security/jssecacerts -file weixin.crt</code></p>
+<h3 id="更新证书"><a href="#更新证书" class="headerlink" title="更新证书"></a>更新证书</h3><p>需要先删除再导入新的<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo keytool -delete -keystore $JAVA_HOME&#x2F;jre&#x2F;lib&#x2F;security&#x2F;cacerts -alias qyapiweixin    </span><br><span class="line">sudo keytool -import -v -trustcacerts -alias qyapiweixin -keystore $JAVA_HOME&#x2F;jre&#x2F;lib&#x2F;security&#x2F;cacerts -file weixin.crt</span><br></pre></td></tr></table></figure></p>
+<h3 id="指定tomcat使用证书-非必须"><a href="#指定tomcat使用证书-非必须" class="headerlink" title="指定tomcat使用证书(非必须)"></a>指定tomcat使用证书(非必须)</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">vim &#x2F;usr&#x2F;local&#x2F;apache-tomcat-8.5.6&#x2F;bin&#x2F;setenv.sh</span><br><span class="line">JAVA_OPTS&#x3D;&quot;-Djava.awt.headless&#x3D;true -Dfile.encoding&#x3D;UTF-8 -server -Xms2048m -Xmx2048m -XX:NewSize&#x3D;512m -XX:MaxNewSize&#x3D;512m -XX:PermSize&#x3D;512m -XX:MaxPermSize&#x3D;512m -XX:+DisableExplicitGC -Djavax.net.ssl.trustStore&#x3D;&#x2F;usr&#x2F;local&#x2F;java&#x2F;jdk8&#x2F;jre&#x2F;lib&#x2F;security&#x2F;jssecacerts&quot;</span><br></pre></td></tr></table></figure>
+<p>或者在 /usr/local/apache-tomcat-8.5.6/conf/server.xml的ssl配置部分指定keystore，如下</p>
+<pre><code>&lt;Connector port=&quot;443&quot; protocol=&quot;org.apache.coyote.http11.Http11Protocol&quot;
+              maxThreads=&quot;150&quot; SSLEnabled=&quot;true&quot; scheme=&quot;https&quot; secure=&quot;true&quot;
+              clientAuth=&quot;false&quot; sslProtocol=&quot;TLS&quot;
+              URIEncoding=&quot;utf-8&quot;
+              keystoreFile=&quot;/usr/local/java/jdk7/jre/lib/security/jssecacerts&quot;
+              keystorePass=&quot;yourpassword&quot;
+              /&gt;
+</code></pre>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;在使用微信发送告警的时候出现无法使用https网址的问题，解决方式如下&quot;&gt;&lt;a href=&quot;#在使用微信发送告警的时候出现无法使用https网址的问题，解决方式如下&quot; class=&quot;headerlink&quot; title=&quot;在使用微信发送告警的时候出现无法使用http
+    
+    </summary>
+    
+      <category term="Java" scheme="http://birdzhang.xyz/categories/Java/"/>
+    
+      <category term="Tomcat" scheme="http://birdzhang.xyz/categories/Java/Tomcat/"/>
+    
+    
+      <category term="https" scheme="http://birdzhang.xyz/tags/https/"/>
+    
+      <category term="tomcat" scheme="http://birdzhang.xyz/tags/tomcat/"/>
+    
+      <category term="trustcacerts" scheme="http://birdzhang.xyz/tags/trustcacerts/"/>
     
   </entry>
   
