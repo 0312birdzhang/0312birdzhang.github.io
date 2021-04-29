@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>BirdZhang&#39;s Blog</title>
-  <subtitle>一只笨死的大鸟</subtitle>
+  <subtitle>一只早起的懒鸟</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://birdzhang.xyz/"/>
+  <link href="https://birdzhang.xyz/"/>
   <updated>2021-04-16T08:41:12.043Z</updated>
-  <id>http://birdzhang.xyz/</id>
+  <id>https://birdzhang.xyz/</id>
   
   <author>
     <name>BirdZhang</name>
@@ -17,8 +17,8 @@
   
   <entry>
     <title>Gitlab CE使用drbd实现主备方案</title>
-    <link href="http://birdzhang.xyz/2021/04/16/Gitlab-CE%E4%BD%BF%E7%94%A8drbd%E5%AE%9E%E7%8E%B0%E4%B8%BB%E5%A4%87%E6%96%B9%E6%A1%88/"/>
-    <id>http://birdzhang.xyz/2021/04/16/Gitlab-CE使用drbd实现主备方案/</id>
+    <link href="https://birdzhang.xyz/2021/04/16/Gitlab-CE%E4%BD%BF%E7%94%A8drbd%E5%AE%9E%E7%8E%B0%E4%B8%BB%E5%A4%87%E6%96%B9%E6%A1%88/"/>
+    <id>https://birdzhang.xyz/2021/04/16/Gitlab-CE使用drbd实现主备方案/</id>
     <published>2021-04-16T08:19:56.000Z</published>
     <updated>2021-04-16T08:41:12.043Z</updated>
     
@@ -38,16 +38,16 @@
     </summary>
     
     
-      <category term="gitlab" scheme="http://birdzhang.xyz/tags/gitlab/"/>
+      <category term="gitlab" scheme="https://birdzhang.xyz/tags/gitlab/"/>
     
-      <category term="drbd" scheme="http://birdzhang.xyz/tags/drbd/"/>
+      <category term="drbd" scheme="https://birdzhang.xyz/tags/drbd/"/>
     
   </entry>
   
   <entry>
     <title>python使用subprocess查看进程并过滤</title>
-    <link href="http://birdzhang.xyz/2020/11/23/python%E4%BD%BF%E7%94%A8subprocess%E6%9F%A5%E7%9C%8B%E8%BF%9B%E7%A8%8B%E5%B9%B6%E8%BF%87%E6%BB%A4/"/>
-    <id>http://birdzhang.xyz/2020/11/23/python使用subprocess查看进程并过滤/</id>
+    <link href="https://birdzhang.xyz/2020/11/23/python%E4%BD%BF%E7%94%A8subprocess%E6%9F%A5%E7%9C%8B%E8%BF%9B%E7%A8%8B%E5%B9%B6%E8%BF%87%E6%BB%A4/"/>
+    <id>https://birdzhang.xyz/2020/11/23/python使用subprocess查看进程并过滤/</id>
     <published>2020-11-23T08:22:17.000Z</published>
     <updated>2020-11-23T08:24:21.461Z</updated>
     
@@ -62,16 +62,16 @@
     </summary>
     
     
-      <category term="python" scheme="http://birdzhang.xyz/tags/python/"/>
+      <category term="python" scheme="https://birdzhang.xyz/tags/python/"/>
     
-      <category term="subprocess" scheme="http://birdzhang.xyz/tags/subprocess/"/>
+      <category term="subprocess" scheme="https://birdzhang.xyz/tags/subprocess/"/>
     
   </entry>
   
   <entry>
     <title>使用yavijava创建兼容低版本的虚拟机</title>
-    <link href="http://birdzhang.xyz/2020/08/21/%E4%BD%BF%E7%94%A8yavijava%E5%88%9B%E5%BB%BA%E5%85%BC%E5%AE%B9%E4%BD%8E%E7%89%88%E6%9C%AC%E7%9A%84%E8%99%9A%E6%8B%9F%E6%9C%BA/"/>
-    <id>http://birdzhang.xyz/2020/08/21/使用yavijava创建兼容低版本的虚拟机/</id>
+    <link href="https://birdzhang.xyz/2020/08/21/%E4%BD%BF%E7%94%A8yavijava%E5%88%9B%E5%BB%BA%E5%85%BC%E5%AE%B9%E4%BD%8E%E7%89%88%E6%9C%AC%E7%9A%84%E8%99%9A%E6%8B%9F%E6%9C%BA/"/>
+    <id>https://birdzhang.xyz/2020/08/21/使用yavijava创建兼容低版本的虚拟机/</id>
     <published>2020-08-21T05:43:54.000Z</published>
     <updated>2020-08-21T05:56:41.032Z</updated>
     
@@ -88,16 +88,16 @@
     </summary>
     
     
-      <category term="yavijava" scheme="http://birdzhang.xyz/tags/yavijava/"/>
+      <category term="yavijava" scheme="https://birdzhang.xyz/tags/yavijava/"/>
     
-      <category term="java" scheme="http://birdzhang.xyz/tags/java/"/>
+      <category term="java" scheme="https://birdzhang.xyz/tags/java/"/>
     
   </entry>
   
   <entry>
     <title>debian,ubuntu无法使用apt下载源数据的解决方法</title>
-    <link href="http://birdzhang.xyz/2020/06/05/debian-ubuntu%E6%97%A0%E6%B3%95%E4%BD%BF%E7%94%A8apt%E4%B8%8B%E8%BD%BD%E6%BA%90%E6%95%B0%E6%8D%AE%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/"/>
-    <id>http://birdzhang.xyz/2020/06/05/debian-ubuntu无法使用apt下载源数据的解决方法/</id>
+    <link href="https://birdzhang.xyz/2020/06/05/debian-ubuntu%E6%97%A0%E6%B3%95%E4%BD%BF%E7%94%A8apt%E4%B8%8B%E8%BD%BD%E6%BA%90%E6%95%B0%E6%8D%AE%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/"/>
+    <id>https://birdzhang.xyz/2020/06/05/debian-ubuntu无法使用apt下载源数据的解决方法/</id>
     <published>2020-06-05T08:59:57.000Z</published>
     <updated>2020-06-05T09:04:29.658Z</updated>
     
@@ -118,18 +118,18 @@
     </summary>
     
     
-      <category term="apt" scheme="http://birdzhang.xyz/tags/apt/"/>
+      <category term="apt" scheme="https://birdzhang.xyz/tags/apt/"/>
     
-      <category term="debian" scheme="http://birdzhang.xyz/tags/debian/"/>
+      <category term="debian" scheme="https://birdzhang.xyz/tags/debian/"/>
     
-      <category term="ubuntu" scheme="http://birdzhang.xyz/tags/ubuntu/"/>
+      <category term="ubuntu" scheme="https://birdzhang.xyz/tags/ubuntu/"/>
     
   </entry>
   
   <entry>
     <title>SailfishOS移植到Redmi_K20的一些记录</title>
-    <link href="http://birdzhang.xyz/2019/12/30/SailfishOS%E7%A7%BB%E6%A4%8D%E5%88%B0Redmi-K20%E7%9A%84%E4%B8%80%E4%BA%9B%E8%AE%B0%E5%BD%95/"/>
-    <id>http://birdzhang.xyz/2019/12/30/SailfishOS移植到Redmi-K20的一些记录/</id>
+    <link href="https://birdzhang.xyz/2019/12/30/SailfishOS%E7%A7%BB%E6%A4%8D%E5%88%B0Redmi-K20%E7%9A%84%E4%B8%80%E4%BA%9B%E8%AE%B0%E5%BD%95/"/>
+    <id>https://birdzhang.xyz/2019/12/30/SailfishOS移植到Redmi-K20的一些记录/</id>
     <published>2019-12-30T03:33:17.000Z</published>
     <updated>2020-06-12T10:02:27.681Z</updated>
     
@@ -148,33 +148,33 @@
     
     </summary>
     
-      <category term="SailfishOS" scheme="http://birdzhang.xyz/categories/SailfishOS/"/>
+      <category term="SailfishOS" scheme="https://birdzhang.xyz/categories/SailfishOS/"/>
     
     
-      <category term="sailfish" scheme="http://birdzhang.xyz/tags/sailfish/"/>
+      <category term="sailfish" scheme="https://birdzhang.xyz/tags/sailfish/"/>
     
-      <category term="redmi" scheme="http://birdzhang.xyz/tags/redmi/"/>
+      <category term="redmi" scheme="https://birdzhang.xyz/tags/redmi/"/>
     
-      <category term="hadk" scheme="http://birdzhang.xyz/tags/hadk/"/>
+      <category term="davinci" scheme="https://birdzhang.xyz/tags/davinci/"/>
     
-      <category term="davinci" scheme="http://birdzhang.xyz/tags/davinci/"/>
+      <category term="hadk" scheme="https://birdzhang.xyz/tags/hadk/"/>
     
-      <category term="k20" scheme="http://birdzhang.xyz/tags/k20/"/>
+      <category term="k20" scheme="https://birdzhang.xyz/tags/k20/"/>
     
-      <category term="lineage-16.0" scheme="http://birdzhang.xyz/tags/lineage-16-0/"/>
+      <category term="lineage-16.0" scheme="https://birdzhang.xyz/tags/lineage-16-0/"/>
     
-      <category term="hybris-16.0" scheme="http://birdzhang.xyz/tags/hybris-16-0/"/>
+      <category term="hybris-16.0" scheme="https://birdzhang.xyz/tags/hybris-16-0/"/>
     
-      <category term="xiaomi" scheme="http://birdzhang.xyz/tags/xiaomi/"/>
+      <category term="xiaomi" scheme="https://birdzhang.xyz/tags/xiaomi/"/>
     
-      <category term="9t" scheme="http://birdzhang.xyz/tags/9t/"/>
+      <category term="9t" scheme="https://birdzhang.xyz/tags/9t/"/>
     
   </entry>
   
   <entry>
     <title>Windows使用frp进行远程连接</title>
-    <link href="http://birdzhang.xyz/2019/10/12/Windows%E4%BD%BF%E7%94%A8frp%E8%BF%9B%E8%A1%8C%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5/"/>
-    <id>http://birdzhang.xyz/2019/10/12/Windows使用frp进行远程连接/</id>
+    <link href="https://birdzhang.xyz/2019/10/12/Windows%E4%BD%BF%E7%94%A8frp%E8%BF%9B%E8%A1%8C%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5/"/>
+    <id>https://birdzhang.xyz/2019/10/12/Windows使用frp进行远程连接/</id>
     <published>2019-10-12T01:58:53.000Z</published>
     <updated>2019-10-12T02:05:48.038Z</updated>
     
@@ -209,18 +209,18 @@
     </summary>
     
     
-      <category term="windows" scheme="http://birdzhang.xyz/tags/windows/"/>
+      <category term="windows" scheme="https://birdzhang.xyz/tags/windows/"/>
     
-      <category term="frp" scheme="http://birdzhang.xyz/tags/frp/"/>
+      <category term="frp" scheme="https://birdzhang.xyz/tags/frp/"/>
     
-      <category term="rdp" scheme="http://birdzhang.xyz/tags/rdp/"/>
+      <category term="rdp" scheme="https://birdzhang.xyz/tags/rdp/"/>
     
   </entry>
   
   <entry>
     <title>SailfishOS移植到Redmi-5-Plus的一些记录(2)</title>
-    <link href="http://birdzhang.xyz/2019/06/13/SailfishOS%E7%A7%BB%E6%A4%8D%E5%88%B0Redmi-5-Plus%E7%9A%84%E4%B8%80%E4%BA%9B%E8%AE%B0%E5%BD%95-2/"/>
-    <id>http://birdzhang.xyz/2019/06/13/SailfishOS移植到Redmi-5-Plus的一些记录-2/</id>
+    <link href="https://birdzhang.xyz/2019/06/13/SailfishOS%E7%A7%BB%E6%A4%8D%E5%88%B0Redmi-5-Plus%E7%9A%84%E4%B8%80%E4%BA%9B%E8%AE%B0%E5%BD%95-2/"/>
+    <id>https://birdzhang.xyz/2019/06/13/SailfishOS移植到Redmi-5-Plus的一些记录-2/</id>
     <published>2019-06-13T02:06:52.000Z</published>
     <updated>2020-06-12T10:02:40.070Z</updated>
     
@@ -267,29 +267,29 @@
     
     </summary>
     
-      <category term="SailfishOS" scheme="http://birdzhang.xyz/categories/SailfishOS/"/>
+      <category term="SailfishOS" scheme="https://birdzhang.xyz/categories/SailfishOS/"/>
     
     
-      <category term="sailfish" scheme="http://birdzhang.xyz/tags/sailfish/"/>
+      <category term="sailfish" scheme="https://birdzhang.xyz/tags/sailfish/"/>
     
-      <category term="redmi" scheme="http://birdzhang.xyz/tags/redmi/"/>
+      <category term="redmi" scheme="https://birdzhang.xyz/tags/redmi/"/>
     
-      <category term="vince" scheme="http://birdzhang.xyz/tags/vince/"/>
+      <category term="hadk" scheme="https://birdzhang.xyz/tags/hadk/"/>
     
-      <category term="hadk" scheme="http://birdzhang.xyz/tags/hadk/"/>
+      <category term="vince" scheme="https://birdzhang.xyz/tags/vince/"/>
     
-      <category term="redmi5plus" scheme="http://birdzhang.xyz/tags/redmi5plus/"/>
+      <category term="redmi5plus" scheme="https://birdzhang.xyz/tags/redmi5plus/"/>
     
-      <category term="lineage-15.1" scheme="http://birdzhang.xyz/tags/lineage-15-1/"/>
+      <category term="lineage-15.1" scheme="https://birdzhang.xyz/tags/lineage-15-1/"/>
     
-      <category term="hybris-15.1" scheme="http://birdzhang.xyz/tags/hybris-15-1/"/>
+      <category term="hybris-15.1" scheme="https://birdzhang.xyz/tags/hybris-15-1/"/>
     
   </entry>
   
   <entry>
     <title>使用docker编译打包sailfishos</title>
-    <link href="http://birdzhang.xyz/2019/05/27/%E4%BD%BF%E7%94%A8docker%E7%BC%96%E8%AF%91%E6%89%93%E5%8C%85sailfishos/"/>
-    <id>http://birdzhang.xyz/2019/05/27/使用docker编译打包sailfishos/</id>
+    <link href="https://birdzhang.xyz/2019/05/27/%E4%BD%BF%E7%94%A8docker%E7%BC%96%E8%AF%91%E6%89%93%E5%8C%85sailfishos/"/>
+    <id>https://birdzhang.xyz/2019/05/27/使用docker编译打包sailfishos/</id>
     <published>2019-05-27T06:18:52.000Z</published>
     <updated>2020-04-02T02:07:55.056Z</updated>
     
@@ -324,16 +324,16 @@
     </summary>
     
     
-      <category term="docker" scheme="http://birdzhang.xyz/tags/docker/"/>
+      <category term="docker" scheme="https://birdzhang.xyz/tags/docker/"/>
     
-      <category term="sailfishos" scheme="http://birdzhang.xyz/tags/sailfishos/"/>
+      <category term="sailfishos" scheme="https://birdzhang.xyz/tags/sailfishos/"/>
     
   </entry>
   
   <entry>
     <title>harbor跨大版本升级</title>
-    <link href="http://birdzhang.xyz/2019/04/15/harbor%E8%B7%A8%E5%A4%A7%E7%89%88%E6%9C%AC%E5%8D%87%E7%BA%A7/"/>
-    <id>http://birdzhang.xyz/2019/04/15/harbor跨大版本升级/</id>
+    <link href="https://birdzhang.xyz/2019/04/15/harbor%E8%B7%A8%E5%A4%A7%E7%89%88%E6%9C%AC%E5%8D%87%E7%BA%A7/"/>
+    <id>https://birdzhang.xyz/2019/04/15/harbor跨大版本升级/</id>
     <published>2019-04-15T02:22:18.000Z</published>
     <updated>2019-07-30T07:27:36.810Z</updated>
     
@@ -360,18 +360,18 @@
     </summary>
     
     
-      <category term="docker" scheme="http://birdzhang.xyz/tags/docker/"/>
+      <category term="docker" scheme="https://birdzhang.xyz/tags/docker/"/>
     
-      <category term="kubernetes" scheme="http://birdzhang.xyz/tags/kubernetes/"/>
+      <category term="kubernetes" scheme="https://birdzhang.xyz/tags/kubernetes/"/>
     
-      <category term="vmvare" scheme="http://birdzhang.xyz/tags/vmvare/"/>
+      <category term="vmvare" scheme="https://birdzhang.xyz/tags/vmvare/"/>
     
   </entry>
   
   <entry>
     <title>使用Gitlab/Bitbucket等CI搭建自己的临时代理</title>
-    <link href="http://birdzhang.xyz/2018/12/06/%E4%BD%BF%E7%94%A8Gitlab-Bitbucket%E7%AD%89CI%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%B4%E6%97%B6%E4%BB%A3%E7%90%86/"/>
-    <id>http://birdzhang.xyz/2018/12/06/使用Gitlab-Bitbucket等CI搭建自己的临时代理/</id>
+    <link href="https://birdzhang.xyz/2018/12/06/%E4%BD%BF%E7%94%A8Gitlab-Bitbucket%E7%AD%89CI%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%B4%E6%97%B6%E4%BB%A3%E7%90%86/"/>
+    <id>https://birdzhang.xyz/2018/12/06/使用Gitlab-Bitbucket等CI搭建自己的临时代理/</id>
     <published>2018-12-06T05:44:20.000Z</published>
     <updated>2019-07-30T07:27:36.812Z</updated>
     
@@ -416,16 +416,16 @@ pipelines:
     </summary>
     
     
-      <category term="frp" scheme="http://birdzhang.xyz/tags/frp/"/>
+      <category term="frp" scheme="https://birdzhang.xyz/tags/frp/"/>
     
-      <category term="socks5" scheme="http://birdzhang.xyz/tags/socks5/"/>
+      <category term="socks5" scheme="https://birdzhang.xyz/tags/socks5/"/>
     
   </entry>
   
   <entry>
     <title>Nginx获取用户真实IP</title>
-    <link href="http://birdzhang.xyz/2018/09/12/Nginx%E8%8E%B7%E5%8F%96%E7%94%A8%E6%88%B7%E7%9C%9F%E5%AE%9EIP/"/>
-    <id>http://birdzhang.xyz/2018/09/12/Nginx获取用户真实IP/</id>
+    <link href="https://birdzhang.xyz/2018/09/12/Nginx%E8%8E%B7%E5%8F%96%E7%94%A8%E6%88%B7%E7%9C%9F%E5%AE%9EIP/"/>
+    <id>https://birdzhang.xyz/2018/09/12/Nginx获取用户真实IP/</id>
     <published>2018-09-12T03:10:54.000Z</published>
     <updated>2020-06-12T10:02:02.789Z</updated>
     
@@ -446,19 +446,19 @@ pipelines:
     
     </summary>
     
-      <category term="Nginx" scheme="http://birdzhang.xyz/categories/Nginx/"/>
+      <category term="Nginx" scheme="https://birdzhang.xyz/categories/Nginx/"/>
     
     
-      <category term="nginx" scheme="http://birdzhang.xyz/tags/nginx/"/>
+      <category term="nginx" scheme="https://birdzhang.xyz/tags/nginx/"/>
     
-      <category term="openresty" scheme="http://birdzhang.xyz/tags/openresty/"/>
+      <category term="openresty" scheme="https://birdzhang.xyz/tags/openresty/"/>
     
   </entry>
   
   <entry>
     <title>Docker on SailfishOS</title>
-    <link href="http://birdzhang.xyz/2018/09/05/Docker-on-SailfishOS/"/>
-    <id>http://birdzhang.xyz/2018/09/05/Docker-on-SailfishOS/</id>
+    <link href="https://birdzhang.xyz/2018/09/05/Docker-on-SailfishOS/"/>
+    <id>https://birdzhang.xyz/2018/09/05/Docker-on-SailfishOS/</id>
     <published>2018-09-05T09:00:03.000Z</published>
     <updated>2020-08-14T06:00:24.665Z</updated>
     
@@ -513,21 +513,21 @@ pipelines:
     
     </summary>
     
-      <category term="SailfishOS" scheme="http://birdzhang.xyz/categories/SailfishOS/"/>
+      <category term="SailfishOS" scheme="https://birdzhang.xyz/categories/SailfishOS/"/>
     
-      <category term="Docker" scheme="http://birdzhang.xyz/categories/SailfishOS/Docker/"/>
+      <category term="Docker" scheme="https://birdzhang.xyz/categories/SailfishOS/Docker/"/>
     
     
-      <category term="docker" scheme="http://birdzhang.xyz/tags/docker/"/>
+      <category term="docker" scheme="https://birdzhang.xyz/tags/docker/"/>
     
-      <category term="sailfishos" scheme="http://birdzhang.xyz/tags/sailfishos/"/>
+      <category term="sailfishos" scheme="https://birdzhang.xyz/tags/sailfishos/"/>
     
   </entry>
   
   <entry>
     <title>从iOS迁移到SailfishOS计划</title>
-    <link href="http://birdzhang.xyz/2018/08/09/%E4%BB%8EiOS%E8%BF%81%E7%A7%BB%E5%88%B0SailfishOS%E8%AE%A1%E5%88%92/"/>
-    <id>http://birdzhang.xyz/2018/08/09/从iOS迁移到SailfishOS计划/</id>
+    <link href="https://birdzhang.xyz/2018/08/09/%E4%BB%8EiOS%E8%BF%81%E7%A7%BB%E5%88%B0SailfishOS%E8%AE%A1%E5%88%92/"/>
+    <id>https://birdzhang.xyz/2018/08/09/从iOS迁移到SailfishOS计划/</id>
     <published>2018-08-09T02:34:36.000Z</published>
     <updated>2019-07-30T07:27:36.811Z</updated>
     
@@ -588,24 +588,24 @@ pipelines:
     </summary>
     
     
-      <category term="sailfishos" scheme="http://birdzhang.xyz/tags/sailfishos/"/>
+      <category term="sailfishos" scheme="https://birdzhang.xyz/tags/sailfishos/"/>
     
-      <category term="iphone" scheme="http://birdzhang.xyz/tags/iphone/"/>
+      <category term="iphone" scheme="https://birdzhang.xyz/tags/iphone/"/>
     
-      <category term="ios" scheme="http://birdzhang.xyz/tags/ios/"/>
+      <category term="ios" scheme="https://birdzhang.xyz/tags/ios/"/>
     
-      <category term="jolla" scheme="http://birdzhang.xyz/tags/jolla/"/>
+      <category term="jolla" scheme="https://birdzhang.xyz/tags/jolla/"/>
     
-      <category term="迁移" scheme="http://birdzhang.xyz/tags/%E8%BF%81%E7%A7%BB/"/>
+      <category term="迁移" scheme="https://birdzhang.xyz/tags/%E8%BF%81%E7%A7%BB/"/>
     
-      <category term="migrate" scheme="http://birdzhang.xyz/tags/migrate/"/>
+      <category term="migrate" scheme="https://birdzhang.xyz/tags/migrate/"/>
     
   </entry>
   
   <entry>
     <title>清理kubernetes中未正常退出的pod</title>
-    <link href="http://birdzhang.xyz/2018/07/03/%E6%B8%85%E7%90%86kubernetes%E4%B8%AD%E6%9C%AA%E6%AD%A3%E5%B8%B8%E9%80%80%E5%87%BA%E7%9A%84pod/"/>
-    <id>http://birdzhang.xyz/2018/07/03/清理kubernetes中未正常退出的pod/</id>
+    <link href="https://birdzhang.xyz/2018/07/03/%E6%B8%85%E7%90%86kubernetes%E4%B8%AD%E6%9C%AA%E6%AD%A3%E5%B8%B8%E9%80%80%E5%87%BA%E7%9A%84pod/"/>
+    <id>https://birdzhang.xyz/2018/07/03/清理kubernetes中未正常退出的pod/</id>
     <published>2018-07-03T03:22:44.000Z</published>
     <updated>2019-07-30T07:27:36.814Z</updated>
     
@@ -621,20 +621,20 @@ pipelines:
     </summary>
     
     
-      <category term="docker" scheme="http://birdzhang.xyz/tags/docker/"/>
+      <category term="docker" scheme="https://birdzhang.xyz/tags/docker/"/>
     
-      <category term="kubernetes" scheme="http://birdzhang.xyz/tags/kubernetes/"/>
+      <category term="kubernetes" scheme="https://birdzhang.xyz/tags/kubernetes/"/>
     
-      <category term="k8s" scheme="http://birdzhang.xyz/tags/k8s/"/>
+      <category term="k8s" scheme="https://birdzhang.xyz/tags/k8s/"/>
     
-      <category term="Terminating" scheme="http://birdzhang.xyz/tags/Terminating/"/>
+      <category term="Terminating" scheme="https://birdzhang.xyz/tags/Terminating/"/>
     
   </entry>
   
   <entry>
     <title>No subject alternative DNS name matching xxx.com found</title>
-    <link href="http://birdzhang.xyz/2018/06/26/No-subject-alternative-DNS-name-matching-xxx-com-found/"/>
-    <id>http://birdzhang.xyz/2018/06/26/No-subject-alternative-DNS-name-matching-xxx-com-found/</id>
+    <link href="https://birdzhang.xyz/2018/06/26/No-subject-alternative-DNS-name-matching-xxx-com-found/"/>
+    <id>https://birdzhang.xyz/2018/06/26/No-subject-alternative-DNS-name-matching-xxx-com-found/</id>
     <published>2018-06-26T05:56:40.000Z</published>
     <updated>2019-07-30T07:27:36.808Z</updated>
     
@@ -668,20 +668,20 @@ pipelines:
     </summary>
     
     
-      <category term="Java" scheme="http://birdzhang.xyz/tags/Java/"/>
+      <category term="Java" scheme="https://birdzhang.xyz/tags/Java/"/>
     
-      <category term="https" scheme="http://birdzhang.xyz/tags/https/"/>
+      <category term="https" scheme="https://birdzhang.xyz/tags/https/"/>
     
-      <category term="cas" scheme="http://birdzhang.xyz/tags/cas/"/>
+      <category term="cas" scheme="https://birdzhang.xyz/tags/cas/"/>
     
-      <category term="crt" scheme="http://birdzhang.xyz/tags/crt/"/>
+      <category term="crt" scheme="https://birdzhang.xyz/tags/crt/"/>
     
   </entry>
   
   <entry>
     <title>使用Openresty将pastebin内容格式化显示</title>
-    <link href="http://birdzhang.xyz/2018/06/25/%E4%BD%BF%E7%94%A8Openresty%E5%B0%86pastebin%E5%86%85%E5%AE%B9%E6%A0%BC%E5%BC%8F%E5%8C%96%E6%98%BE%E7%A4%BA/"/>
-    <id>http://birdzhang.xyz/2018/06/25/使用Openresty将pastebin内容格式化显示/</id>
+    <link href="https://birdzhang.xyz/2018/06/25/%E4%BD%BF%E7%94%A8Openresty%E5%B0%86pastebin%E5%86%85%E5%AE%B9%E6%A0%BC%E5%BC%8F%E5%8C%96%E6%98%BE%E7%A4%BA/"/>
+    <id>https://birdzhang.xyz/2018/06/25/使用Openresty将pastebin内容格式化显示/</id>
     <published>2018-06-25T07:09:18.000Z</published>
     <updated>2019-07-30T07:27:36.812Z</updated>
     
@@ -701,20 +701,20 @@ pipelines:
     </summary>
     
     
-      <category term="nginx" scheme="http://birdzhang.xyz/tags/nginx/"/>
+      <category term="nginx" scheme="https://birdzhang.xyz/tags/nginx/"/>
     
-      <category term="openresty" scheme="http://birdzhang.xyz/tags/openresty/"/>
+      <category term="openresty" scheme="https://birdzhang.xyz/tags/openresty/"/>
     
-      <category term="lua" scheme="http://birdzhang.xyz/tags/lua/"/>
+      <category term="lua" scheme="https://birdzhang.xyz/tags/lua/"/>
     
-      <category term="pastebin" scheme="http://birdzhang.xyz/tags/pastebin/"/>
+      <category term="pastebin" scheme="https://birdzhang.xyz/tags/pastebin/"/>
     
   </entry>
   
   <entry>
     <title>使用openresty搭一个类似ip.cn的接口</title>
-    <link href="http://birdzhang.xyz/2018/06/05/%E4%BD%BF%E7%94%A8openresty%E6%90%AD%E4%B8%80%E4%B8%AA%E7%B1%BB%E4%BC%BCip-cn%E7%9A%84%E6%8E%A5%E5%8F%A3/"/>
-    <id>http://birdzhang.xyz/2018/06/05/使用openresty搭一个类似ip-cn的接口/</id>
+    <link href="https://birdzhang.xyz/2018/06/05/%E4%BD%BF%E7%94%A8openresty%E6%90%AD%E4%B8%80%E4%B8%AA%E7%B1%BB%E4%BC%BCip-cn%E7%9A%84%E6%8E%A5%E5%8F%A3/"/>
+    <id>https://birdzhang.xyz/2018/06/05/使用openresty搭一个类似ip-cn的接口/</id>
     <published>2018-06-05T02:25:52.000Z</published>
     <updated>2019-07-30T07:27:36.813Z</updated>
     
@@ -733,16 +733,16 @@ pipelines:
     </summary>
     
     
-      <category term="openresty" scheme="http://birdzhang.xyz/tags/openresty/"/>
+      <category term="openresty" scheme="https://birdzhang.xyz/tags/openresty/"/>
     
-      <category term="ip" scheme="http://birdzhang.xyz/tags/ip/"/>
+      <category term="ip" scheme="https://birdzhang.xyz/tags/ip/"/>
     
   </entry>
   
   <entry>
     <title>cas根据请求参数跳过验证</title>
-    <link href="http://birdzhang.xyz/2018/05/15/cas%E6%A0%B9%E6%8D%AE%E8%AF%B7%E6%B1%82%E5%8F%82%E6%95%B0%E8%B7%B3%E8%BF%87%E9%AA%8C%E8%AF%81/"/>
-    <id>http://birdzhang.xyz/2018/05/15/cas根据请求参数跳过验证/</id>
+    <link href="https://birdzhang.xyz/2018/05/15/cas%E6%A0%B9%E6%8D%AE%E8%AF%B7%E6%B1%82%E5%8F%82%E6%95%B0%E8%B7%B3%E8%BF%87%E9%AA%8C%E8%AF%81/"/>
+    <id>https://birdzhang.xyz/2018/05/15/cas根据请求参数跳过验证/</id>
     <published>2018-05-15T02:01:41.000Z</published>
     <updated>2019-07-30T07:27:36.810Z</updated>
     
@@ -762,18 +762,18 @@ pipelines:
     </summary>
     
     
-      <category term="参数" scheme="http://birdzhang.xyz/tags/%E5%8F%82%E6%95%B0/"/>
+      <category term="参数" scheme="https://birdzhang.xyz/tags/%E5%8F%82%E6%95%B0/"/>
     
-      <category term="cas" scheme="http://birdzhang.xyz/tags/cas/"/>
+      <category term="cas" scheme="https://birdzhang.xyz/tags/cas/"/>
     
-      <category term="跳过" scheme="http://birdzhang.xyz/tags/%E8%B7%B3%E8%BF%87/"/>
+      <category term="跳过" scheme="https://birdzhang.xyz/tags/%E8%B7%B3%E8%BF%87/"/>
     
   </entry>
   
   <entry>
     <title>Java改写HttpServletRequest请求参数</title>
-    <link href="http://birdzhang.xyz/2018/05/15/Java%E6%94%B9%E5%86%99HttpServletRequest%E8%AF%B7%E6%B1%82%E5%8F%82%E6%95%B0/"/>
-    <id>http://birdzhang.xyz/2018/05/15/Java改写HttpServletRequest请求参数/</id>
+    <link href="https://birdzhang.xyz/2018/05/15/Java%E6%94%B9%E5%86%99HttpServletRequest%E8%AF%B7%E6%B1%82%E5%8F%82%E6%95%B0/"/>
+    <id>https://birdzhang.xyz/2018/05/15/Java改写HttpServletRequest请求参数/</id>
     <published>2018-05-15T01:49:53.000Z</published>
     <updated>2019-07-30T07:27:36.807Z</updated>
     
@@ -794,20 +794,20 @@ pipelines:
     </summary>
     
     
-      <category term="Java" scheme="http://birdzhang.xyz/tags/Java/"/>
+      <category term="Java" scheme="https://birdzhang.xyz/tags/Java/"/>
     
-      <category term="httpservletrequest" scheme="http://birdzhang.xyz/tags/httpservletrequest/"/>
+      <category term="httpservletrequest" scheme="https://birdzhang.xyz/tags/httpservletrequest/"/>
     
-      <category term="改写" scheme="http://birdzhang.xyz/tags/%E6%94%B9%E5%86%99/"/>
+      <category term="改写" scheme="https://birdzhang.xyz/tags/%E6%94%B9%E5%86%99/"/>
     
-      <category term="参数" scheme="http://birdzhang.xyz/tags/%E5%8F%82%E6%95%B0/"/>
+      <category term="参数" scheme="https://birdzhang.xyz/tags/%E5%8F%82%E6%95%B0/"/>
     
   </entry>
   
   <entry>
     <title>SailfishOS移植到Redmi 5 Plus的一些记录</title>
-    <link href="http://birdzhang.xyz/2018/03/30/SailfishOS%E7%A7%BB%E6%A4%8D%E5%88%B0Redmi-5-Plus%E7%9A%84%E4%B8%80%E4%BA%9B%E8%AE%B0%E5%BD%95/"/>
-    <id>http://birdzhang.xyz/2018/03/30/SailfishOS移植到Redmi-5-Plus的一些记录/</id>
+    <link href="https://birdzhang.xyz/2018/03/30/SailfishOS%E7%A7%BB%E6%A4%8D%E5%88%B0Redmi-5-Plus%E7%9A%84%E4%B8%80%E4%BA%9B%E8%AE%B0%E5%BD%95/"/>
+    <id>https://birdzhang.xyz/2018/03/30/SailfishOS移植到Redmi-5-Plus的一些记录/</id>
     <published>2018-03-30T06:28:28.000Z</published>
     <updated>2020-11-24T01:42:49.601Z</updated>
     
@@ -893,18 +893,18 @@ pipelines:
     
     </summary>
     
-      <category term="SailfishOS" scheme="http://birdzhang.xyz/categories/SailfishOS/"/>
+      <category term="SailfishOS" scheme="https://birdzhang.xyz/categories/SailfishOS/"/>
     
     
-      <category term="sailfish" scheme="http://birdzhang.xyz/tags/sailfish/"/>
+      <category term="sailfish" scheme="https://birdzhang.xyz/tags/sailfish/"/>
     
-      <category term="redmi" scheme="http://birdzhang.xyz/tags/redmi/"/>
+      <category term="redmi" scheme="https://birdzhang.xyz/tags/redmi/"/>
     
-      <category term="vince" scheme="http://birdzhang.xyz/tags/vince/"/>
+      <category term="hadk" scheme="https://birdzhang.xyz/tags/hadk/"/>
     
-      <category term="hadk" scheme="http://birdzhang.xyz/tags/hadk/"/>
+      <category term="vince" scheme="https://birdzhang.xyz/tags/vince/"/>
     
-      <category term="redmi5plus" scheme="http://birdzhang.xyz/tags/redmi5plus/"/>
+      <category term="redmi5plus" scheme="https://birdzhang.xyz/tags/redmi5plus/"/>
     
   </entry>
   
