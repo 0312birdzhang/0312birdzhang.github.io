@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://birdzhang.xyz/"/>
-  <updated>2021-04-16T08:41:12.043Z</updated>
+  <updated>2021-05-19T08:01:11.757Z</updated>
   <id>https://birdzhang.xyz/</id>
   
   <author>
@@ -14,6 +14,22 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>从日志中查询链接文件中的链接是否最近有访问</title>
+    <link href="https://birdzhang.xyz/2021/05/19/%E4%BB%8E%E6%97%A5%E5%BF%97%E4%B8%AD%E6%9F%A5%E8%AF%A2%E9%93%BE%E6%8E%A5%E6%96%87%E4%BB%B6%E4%B8%AD%E7%9A%84%E9%93%BE%E6%8E%A5%E6%98%AF%E5%90%A6%E6%9C%80%E8%BF%91%E6%9C%89%E8%AE%BF%E9%97%AE/"/>
+    <id>https://birdzhang.xyz/2021/05/19/从日志中查询链接文件中的链接是否最近有访问/</id>
+    <published>2021-05-19T08:00:50.000Z</published>
+    <updated>2021-05-19T08:01:11.757Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+      <category term="linux" scheme="https://birdzhang.xyz/tags/linux/"/>
+    
+  </entry>
   
   <entry>
     <title>Gitlab CE使用drbd实现主备方案</title>
@@ -155,9 +171,9 @@
     
       <category term="redmi" scheme="https://birdzhang.xyz/tags/redmi/"/>
     
-      <category term="davinci" scheme="https://birdzhang.xyz/tags/davinci/"/>
-    
       <category term="hadk" scheme="https://birdzhang.xyz/tags/hadk/"/>
+    
+      <category term="davinci" scheme="https://birdzhang.xyz/tags/davinci/"/>
     
       <category term="k20" scheme="https://birdzhang.xyz/tags/k20/"/>
     
@@ -222,9 +238,9 @@
     <link href="https://birdzhang.xyz/2019/06/13/SailfishOS%E7%A7%BB%E6%A4%8D%E5%88%B0Redmi-5-Plus%E7%9A%84%E4%B8%80%E4%BA%9B%E8%AE%B0%E5%BD%95-2/"/>
     <id>https://birdzhang.xyz/2019/06/13/SailfishOS移植到Redmi-5-Plus的一些记录-2/</id>
     <published>2019-06-13T02:06:52.000Z</published>
-    <updated>2020-06-12T10:02:40.070Z</updated>
+    <updated>2021-05-12T09:41:07.062Z</updated>
     
-    <content type="html"><![CDATA[<p>接上 <a href="http://birdzhang.xyz/2018/03/30/SailfishOS%E7%A7%BB%E6%A4%8D%E5%88%B0Redmi-5-Plus%E7%9A%84%E4%B8%80%E4%BA%9B%E8%AE%B0%E5%BD%95/">http://birdzhang.xyz/2018/03/30/SailfishOS%E7%A7%BB%E6%A4%8D%E5%88%B0Redmi-5-Plus%E7%9A%84%E4%B8%80%E4%BA%9B%E8%AE%B0%E5%BD%95/</a></p>
+    <content type="html"><![CDATA[<p>接上 <a href="https://birdzhang.xyz/2018/03/30/SailfishOS%E7%A7%BB%E6%A4%8D%E5%88%B0Redmi-5-Plus%E7%9A%84%E4%B8%80%E4%BA%9B%E8%AE%B0%E5%BD%95/">https://birdzhang.xyz/2018/03/30/SailfishOS%E7%A7%BB%E6%A4%8D%E5%88%B0Redmi-5-Plus%E7%9A%84%E4%B8%80%E4%BA%9B%E8%AE%B0%E5%BD%95/</a></p>
 <p>本文章主要针对 hybris 15.1的移植</p>
 <h2 id="挑选设备源码"><a href="#挑选设备源码" class="headerlink" title="挑选设备源码"></a>挑选设备源码</h2><p>mer-hybris的android hybris-15.1是基于lineageos的，所以我们在没有官方/非官方lineageos用的时候,也要找基于lineage的第三方rom，如国内的Mokee，国外的OmniROM等，只需要稍微改一点devicetree就可以用了</p>
 <h2 id="适配hybris-15-1的一些更改"><a href="#适配hybris-15-1的一些更改" class="headerlink" title="适配hybris-15.1的一些更改"></a>适配hybris-15.1的一些更改</h2><h3 id="一、Failed-to-initialize-property-area"><a href="#一、Failed-to-initialize-property-area" class="headerlink" title="一、Failed to initialize property area"></a>一、Failed to initialize property area</h3><p>目前的解决方法是注释掉这个, 还有可能是没有关闭selinux或者没有初始化sailfish所需要的android init rc文件有关</p>
@@ -263,7 +279,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;接上 &lt;a href=&quot;http://birdzhang.xyz/2018/03/30/SailfishOS%E7%A7%BB%E6%A4%8D%E5%88%B0Redmi-5-Plus%E7%9A%84%E4%B8%80%E4%BA%9B%E8%AE%B0%E5%BD%9
+      &lt;p&gt;接上 &lt;a href=&quot;https://birdzhang.xyz/2018/03/30/SailfishOS%E7%A7%BB%E6%A4%8D%E5%88%B0Redmi-5-Plus%E7%9A%84%E4%B8%80%E4%BA%9B%E8%AE%B0%E5%BD%
     
     </summary>
     
@@ -274,9 +290,9 @@
     
       <category term="redmi" scheme="https://birdzhang.xyz/tags/redmi/"/>
     
-      <category term="hadk" scheme="https://birdzhang.xyz/tags/hadk/"/>
-    
       <category term="vince" scheme="https://birdzhang.xyz/tags/vince/"/>
+    
+      <category term="hadk" scheme="https://birdzhang.xyz/tags/hadk/"/>
     
       <category term="redmi5plus" scheme="https://birdzhang.xyz/tags/redmi5plus/"/>
     
@@ -801,110 +817,6 @@ pipelines:
       <category term="改写" scheme="https://birdzhang.xyz/tags/%E6%94%B9%E5%86%99/"/>
     
       <category term="参数" scheme="https://birdzhang.xyz/tags/%E5%8F%82%E6%95%B0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>SailfishOS移植到Redmi 5 Plus的一些记录</title>
-    <link href="https://birdzhang.xyz/2018/03/30/SailfishOS%E7%A7%BB%E6%A4%8D%E5%88%B0Redmi-5-Plus%E7%9A%84%E4%B8%80%E4%BA%9B%E8%AE%B0%E5%BD%95/"/>
-    <id>https://birdzhang.xyz/2018/03/30/SailfishOS移植到Redmi-5-Plus的一些记录/</id>
-    <published>2018-03-30T06:28:28.000Z</published>
-    <updated>2020-11-24T01:42:49.601Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="移植旗鱼系统到红米5p的过程记录"><a href="#移植旗鱼系统到红米5p的过程记录" class="headerlink" title="移植旗鱼系统到红米5p的过程记录"></a>移植旗鱼系统到红米5p的过程记录</h1><h2 id="可以去ホロ-🐺的博客看看更详细的"><a href="#可以去ホロ-🐺的博客看看更详细的" class="headerlink" title="!!!可以去ホロ 🐺的博客看看更详细的!!!"></a>!!!可以去ホロ 🐺的博客看看更详细的!!!</h2><p>  <a href="https://blog.yoitsu.moe/category/sailfish.html">https://blog.yoitsu.moe/category/sailfish.html</a></p>
-<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><ul>
-<li>一台红米5p手机，解锁过并且刷了lineageos</li>
-<li>有梯子</li>
-<li>一台内存起码8G的电脑(4G也可以)，Ubuntu 系统，硬盘起码40GB大小，或者更高。</li>
-<li><a href="https://sailfishos.org/develop/hadk/">SailfishOS-HardwareAdaptationDevelopmentKit</a> 1 READ部分pdf文档</li>
-<li><del><a href="https://wiki.merproject.org/wiki/Adaptations/faq-hadk">https://wiki.merproject.org/wiki/Adaptations/faq-hadk</a></del> <a href="https://github.com/mer-hybris/hadk-faq">https://github.com/mer-hybris/hadk-faq</a> （2019-10-28更新）</li>
-<li>最关键的，一颗善于折腾的心和善于搜索的你</li>
-<li>irc日志 <a href="https://irclogs.sailfishos.org/logs/%23sailfishos-porters/">https://irclogs.sailfishos.org/logs/%23sailfishos-porters/</a> </li>
-</ul>
-<h2 id="搭建环境"><a href="#搭建环境" class="headerlink" title="搭建环境"></a>搭建环境</h2><h3 id="Android编译环境-HADK-第4章"><a href="#Android编译环境-HADK-第4章" class="headerlink" title="Android编译环境(HADK 第4章)"></a>Android编译环境(HADK 第4章)</h3><blockquote>
-<p>需要先配置一下hadk的环境变量，一共三个文件，可以参考这里： <a href="https://github.com/CancroSailors/sailfish-build-environment">https://github.com/CancroSailors/sailfish-build-environment</a></p>
-</blockquote>
-<p>然后<code>source ~/.hadk.env</code>一下</p>
-<h4 id="1-安装git等"><a href="#1-安装git等" class="headerlink" title="1. 安装git等"></a>1. 安装git等</h4><p><code>sudo apt-get install git</code></p>
-<h4 id="2-同步CM的代码"><a href="#2-同步CM的代码" class="headerlink" title="2. 同步CM的代码"></a>2. 同步CM的代码</h4><h5 id="配置git的用户名跟邮箱，填自己的就行，随便填也行"><a href="#配置git的用户名跟邮箱，填自己的就行，随便填也行" class="headerlink" title="配置git的用户名跟邮箱，填自己的就行，随便填也行"></a>配置git的用户名跟邮箱，填自己的就行，随便填也行</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name &quot;Your Name&quot;</span><br><span class="line">git config --global user.email &quot;you@example.com&quot;</span><br></pre></td></tr></table></figure>
-<h5 id="创建检出代码的目录，所在的盘空间要足够"><a href="#创建检出代码的目录，所在的盘空间要足够" class="headerlink" title="创建检出代码的目录，所在的盘空间要足够"></a>创建检出代码的目录，所在的盘空间要足够</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo mkdir -p $ANDROID_ROOT</span><br><span class="line">sudo chown -R $USER $ANDROID_ROOT</span><br><span class="line">cd $ANDROID_ROOT</span><br><span class="line">repo init -u git:&#x2F;&#x2F;github.com&#x2F;mer-hybris&#x2F;android.git -b hybris-14.1</span><br></pre></td></tr></table></figure>
-<h5 id="配置你的设备的仓库，这里是vince"><a href="#配置你的设备的仓库，这里是vince" class="headerlink" title="配置你的设备的仓库，这里是vince"></a>配置你的设备的仓库，这里是vince</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">mkdir $ANDROID_ROOT&#x2F;.repo&#x2F;local_manifests</span><br><span class="line">cat &lt;&lt;&#39;EOF&#39; &gt;&gt; $ANDROID_ROOT&#x2F;.repo&#x2F;local_manifests&#x2F;vince.xml</span><br><span class="line">&lt;?xml version&#x3D;&quot;1.0&quot; encoding&#x3D;&quot;UTF-8&quot;?&gt;</span><br><span class="line">&lt;manifest&gt;</span><br><span class="line">  &lt;project path&#x3D;&quot;device&#x2F;xiaomi&#x2F;vince&quot; name&#x3D;&quot;Sailfish-On-Vince&#x2F;device_xiaomi_vince&quot; revision&#x3D;&quot;cm-14.1&quot; &#x2F;&gt;</span><br><span class="line">  &lt;project path&#x3D;&quot;vendor&#x2F;xiaomi&#x2F;vince&quot; name&#x3D;&quot;Sailfish-On-Vince&#x2F;vendor_xiaomi_vince&quot; revision&#x3D;&quot;cm-14.1&quot; &#x2F;&gt;</span><br><span class="line">  &lt;project path&#x3D;&quot;kernel&#x2F;xiaomi&#x2F;vince&quot; name&#x3D;&quot;Sailfish-On-Vince&#x2F;kernel_xiaomi_msm8953&quot; revision&#x3D;&quot;cm-14.1&quot; &#x2F;&gt;</span><br><span class="line">  &lt;project path&#x3D;&quot;hybris&#x2F;droid-hal-version-vince&quot; name&#x3D;&quot;Sailfish-On-Vince&#x2F;droid-hal-version-vince&quot; revision&#x3D;&quot;master&quot; &#x2F;&gt;</span><br><span class="line">  &lt;project path&#x3D;&quot;hybris&#x2F;droid-config-vince&quot; name&#x3D;&quot;Sailfish-On-Vince&#x2F;droid-config-vince&quot; revision&#x3D;&quot;master&quot; &#x2F;&gt;</span><br><span class="line">  &lt;project path&#x3D;&quot;rpm&quot; name&#x3D;&quot;Sailfish-On-Vince&#x2F;droid-hal-vince&quot; revision&#x3D;&quot;master&quot; &#x2F;&gt;</span><br><span class="line">&lt;&#x2F;manifest&gt;</span><br><span class="line">EOF</span><br></pre></td></tr></table></figure>
-<h5 id="同步代码"><a href="#同步代码" class="headerlink" title="同步代码"></a>同步代码</h5><p><code>repo sync --fetch-submodules</code></p>
-<p>如果你要求快，可以用 <code>repo sync --fetch-submodules -c --no-tags --no-clone-bundle</code>，这样只会拉取当前要用的代码，但是不方便后面的修改提交</p>
-<p>出错就多同步几次</p>
-<h3 id="Mer编译环境"><a href="#Mer编译环境" class="headerlink" title="Mer编译环境"></a>Mer编译环境</h3><blockquote>
-<p>参见官方教程： <a href="https://sailfishos.org/wiki/Platform_SDK_Installation">https://sailfishos.org/wiki/Platform_SDK_Installation</a></p>
-</blockquote>
-<p>安装Platform SDK</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">export PLATFORM_SDK_ROOT&#x3D;&#x2F;srv&#x2F;mer</span><br><span class="line">curl -k -O http:&#x2F;&#x2F;releases.sailfishos.org&#x2F;sdk&#x2F;installers&#x2F;latest&#x2F;Jolla-latest-SailfishOS_Platform_SDK_Chroot-i486.tar.bz2 ;</span><br><span class="line">sudo mkdir -p $PLATFORM_SDK_ROOT&#x2F;sdks&#x2F;sfossdk ;</span><br><span class="line">sudo tar --numeric-owner -p -xjf Jolla-latest-SailfishOS_Platform_SDK_Chroot-i486.tar.bz2 -C $PLATFORM_SDK_ROOT&#x2F;sdks&#x2F;sfossdk  ;</span><br><span class="line">echo &quot;export PLATFORM_SDK_ROOT&#x3D;$PLATFORM_SDK_ROOT&quot; &gt;&gt; ~&#x2F;.bashrc</span><br><span class="line">echo &#39;alias sfossdk&#x3D;$PLATFORM_SDK_ROOT&#x2F;sdks&#x2F;sfossdk&#x2F;mer-sdk-chroot&#39; &gt;&gt; ~&#x2F;.bashrc ; exec bash ;</span><br><span class="line">echo &#39;PS1&#x3D;&quot;PlatformSDK $PS1&quot;&#39; &gt; ~&#x2F;.mersdk.profile ;</span><br><span class="line">echo &#39;[ -d &#x2F;etc&#x2F;bash_completion.d ] &amp;&amp; for i in &#x2F;etc&#x2F;bash_completion.d&#x2F;*;do . $i;done&#39;  &gt;&gt; ~&#x2F;.mersdk.profile ;</span><br><span class="line">sfossdk</span><br></pre></td></tr></table></figure>
-<p>另开一个终端，输入<code>sfossdk</code>，进入mer下</p>
-<blockquote>
-<p>安装targets，官方教程：<a href="https://sailfishos.org/wiki/Platform_SDK_Target_Installation">https://sailfishos.org/wiki/Platform_SDK_Target_Installation</a></p>
-</blockquote>
-<p>其实就是执行下面的命令，要下载这两个包，过程有些慢</p>
-<p>（2019-06-13更新，修复链接地址为最新的） </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sdk-assistant create xiaomi-vince-latest http:&#x2F;&#x2F;releases.sailfishos.org&#x2F;sdk&#x2F;targets&#x2F;Sailfish_OS-latest-Sailfish_SDK_Tooling-i486.tar.7z</span><br><span class="line">sdk-assistant create xiaomi-vince-armv7hl http:&#x2F;&#x2F;releases.sailfishos.org&#x2F;sdk&#x2F;targets&#x2F;Sailfish_OS-latest-Sailfish_SDK_Target-armv7hl.tar.7z</span><br></pre></td></tr></table></figure>
-<p>更新到最新（Update to latest）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo ssu re x.y.z.ab</span><br><span class="line">sudo zypper ref</span><br><span class="line">sudo zypper dup</span><br></pre></td></tr></table></figure></p>
-<p>安装打包的工具</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo zypper in android-tools createrepo_c</span><br></pre></td></tr></table></figure>
-<h2 id="修改fixup-mountpoints"><a href="#修改fixup-mountpoints" class="headerlink" title="修改fixup-mountpoints"></a>修改fixup-mountpoints</h2><p>文件在<code>hybris/hybris-boot/fixup-mountpoints</code>，添加你的设备的，这里是vince。<br>adb到手机上，输入<code>ls -l /dev/block/platform/*/by-name/</code>, 获取分区信息，或者其他路径的，HADK里面有写</p>
-<h2 id="Camera支持"><a href="#Camera支持" class="headerlink" title="Camera支持"></a>Camera支持</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">cd $ANDROID_ROOT&#x2F;external&#x2F;droidmedia</span><br><span class="line">echo &#39;DROIDMEDIA_32 :&#x3D; true&#39; &gt;&gt; env.mk</span><br><span class="line">echo &#39;FORCE_HAL:&#x3D;1&#39; &gt;&gt; env.mk</span><br><span class="line"></span><br><span class="line"># For video recorder</span><br><span class="line"># https:&#x2F;&#x2F;github.com&#x2F;sailfishos&#x2F;droidmedia&#x2F;pull&#x2F;11</span><br><span class="line">echo &#39;MINIMEDIA_AUDIOPOLICYSERVICE_ENABLE:&#x3D;1&#39; &gt;&gt; env.mk</span><br><span class="line">echo &#39;AUDIOPOLICYSERVICE_ENABLE:&#x3D;1&#39; &gt;&gt; env.mk</span><br></pre></td></tr></table></figure>
-<h2 id="编译hybris-hal"><a href="#编译hybris-hal" class="headerlink" title="编译hybris-hal"></a>编译hybris-hal</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">cd $ANDROID_ROOT</span><br><span class="line">source build&#x2F;envsetup.sh</span><br><span class="line">export USE_CCACHE&#x3D;1</span><br><span class="line">breakfast $DEVICE</span><br><span class="line">make -j8 hybris-hal</span><br></pre></td></tr></table></figure>
-<p>期间可能会报错，谷歌搜一下</p>
-<h2 id="验证Kernel"><a href="#验证Kernel" class="headerlink" title="验证Kernel"></a>验证Kernel</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd $ANDROID_ROOT</span><br><span class="line">hybris&#x2F;mer-kernel-check&#x2F;mer_verify_kernel_config .&#x2F;out&#x2F;target&#x2F;product&#x2F;$DEVICE&#x2F;obj&#x2F;KERNEL_OBJ&#x2F;.config</span><br></pre></td></tr></table></figure>
-<p>出现WARNING或者ERROR，将提示的加入到你的defconfig中，我的在<code>kernel/xiaomi/vince/arch/arm64/configs/vince_defconfig</code>中<br>然后执行<code>make hybris-root</code>后重新验证。没有出现<code>ERROR</code>后可以执行<code>make hybris-recovery</code></p>
-<h2 id="打包dhd（HADK-第7章）"><a href="#打包dhd（HADK-第7章）" class="headerlink" title="打包dhd（HADK 第7章）"></a>打包dhd（HADK 第7章）</h2><p>再开一个终端(我们这里称终端2)，输入<code>sfossdk</code>，进入mer打包环境下</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd $ANDROID_ROOT</span><br><span class="line">rpm&#x2F;dhd&#x2F;helpers&#x2F;build_packages.sh -d</span><br></pre></td></tr></table></figure>
-<h2 id="打包droidmedia与audioflingerglue"><a href="#打包droidmedia与audioflingerglue" class="headerlink" title="打包droidmedia与audioflingerglue"></a>打包droidmedia与audioflingerglue</h2><p><del>&gt; 如果你的机器是32位的话那么下面的命令去掉<code>_32</code>,下面的也一样</del></p>
-<p>在终端1中<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">make -j$(nproc --all) $(external&#x2F;droidmedia&#x2F;detect_build_targets.sh $PORT_ARCH $(gettargetarch))</span><br></pre></td></tr></table></figure><br>在终端2中</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">DROIDMEDIA_VERSION&#x3D;$(git --git-dir external&#x2F;droidmedia&#x2F;.git describe --tags | sed \</span><br><span class="line">-r &quot;s&#x2F;\-&#x2F;\+&#x2F;g&quot;)</span><br><span class="line">rpm&#x2F;dhd&#x2F;helpers&#x2F;pack_source_droidmedia-localbuild.sh $DROIDMEDIA_VERSION</span><br><span class="line">mkdir -p hybris&#x2F;mw&#x2F;droidmedia-localbuild&#x2F;rpm</span><br><span class="line">cp rpm&#x2F;dhd&#x2F;helpers&#x2F;droidmedia-localbuild.spec \</span><br><span class="line">hybris&#x2F;mw&#x2F;droidmedia-localbuild&#x2F;rpm&#x2F;droidmedia.spec</span><br><span class="line">sed -ie &quot;s&#x2F;0.0.0&#x2F;$DROIDMEDIA_VERSION&#x2F;&quot; \</span><br><span class="line">hybris&#x2F;mw&#x2F;droidmedia-localbuild&#x2F;rpm&#x2F;droidmedia.spec</span><br><span class="line">mv hybris&#x2F;mw&#x2F;droidmedia-$DROIDMEDIA_VERSION.tgz hybris&#x2F;mw&#x2F;droidmedia-localbuild</span><br><span class="line">rpm&#x2F;dhd&#x2F;helpers&#x2F;build_packages.sh --build&#x3D;hybris&#x2F;mw&#x2F;droidmedia-localbuild</span><br></pre></td></tr></table></figure>
-<p>在终端1中</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">make -j$(nproc --all) $(external&#x2F;audioflingerglue&#x2F;detect_build_targets.sh $PORT_ARCH $(gettargetarch))</span><br></pre></td></tr></table></figure>
-<p>在终端2中<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">AUDIOFLINGERGLUE_VERSION&#x3D;$(git --git-dir external&#x2F;audioflingerglue&#x2F;.git describe --tags | sed \</span><br><span class="line">-r &quot;s&#x2F;\-&#x2F;\+&#x2F;g&quot;)</span><br><span class="line">rpm&#x2F;dhd&#x2F;helpers&#x2F;pack_source_audioflingerglue-localbuild.sh $AUDIOFLINGERGLUE_VERSION</span><br><span class="line">mkdir -p hybris&#x2F;mw&#x2F;audioflingerglue-localbuild&#x2F;rpm</span><br><span class="line">cp rpm&#x2F;dhd&#x2F;helpers&#x2F;audioflingerglue-localbuild.spec \</span><br><span class="line">hybris&#x2F;mw&#x2F;audioflingerglue-localbuild&#x2F;rpm&#x2F;audioflingerglue.spec</span><br><span class="line">sed -ie &quot;s&#x2F;0.0.0&#x2F;$AUDIOFLINGERGLUE_VERSION&#x2F;&quot; \</span><br><span class="line">hybris&#x2F;mw&#x2F;audioflingerglue-localbuild&#x2F;rpm&#x2F;audioflingerglue.spec</span><br><span class="line">mv hybris&#x2F;mw&#x2F;audioflingerglue-$AUDIOFLINGERGLUE_VERSION.tgz hybris&#x2F;mw&#x2F;audioflingerglue-localbuild</span><br><span class="line">rpm&#x2F;dhd&#x2F;helpers&#x2F;build_packages.sh --build&#x3D;hybris&#x2F;mw&#x2F;audioflingerglue-localbuild</span><br></pre></td></tr></table></figure></p>
-<p>然后重新打包dhd<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rpm&#x2F;dhd&#x2F;helpers&#x2F;build_packages.sh --droid-hal</span><br></pre></td></tr></table></figure></p>
-<h2 id="打包其他中间件包-mw"><a href="#打包其他中间件包-mw" class="headerlink" title="打包其他中间件包(mw)"></a>打包其他中间件包(mw)</h2><p>注意到 <a href="https://wiki.merproject.org/wiki/Adaptations/faq-hadk">https://wiki.merproject.org/wiki/Adaptations/faq-hadk</a> 搜索当前版本需要对应的mw版本号，不一定用最新的</p>
-<p>执行 <code>rpm/dhd/helpers/build_packages.sh --mw</code> ,然后选择 <code>all</code> 即可</p>
-<h3 id="【进阶】上传到obs打包"><a href="#【进阶】上传到obs打包" class="headerlink" title="【进阶】上传到obs打包"></a>【进阶】上传到obs打包</h3><p>将droid-local-repo/vince下 droid-hal-vince/<em>.rpm 跟audioflingerglue</em>.rpm 、 droidmedia*.rpm 上传到obs的droid-hal-vince下</p>
-<p>例如这些包：<a href="https://build.merproject.org/package/show/nemo:devel:hw:xiaomi:vince/droid-hal-vince">https://build.merproject.org/package/show/nemo:devel:hw:xiaomi:vince/droid-hal-vince</a></p>
-<p>obs打包还需要dhc,dhv等等几个包，此处不详细说明了，可以到 <a href="https://github.com/mer-hybris">https://github.com/mer-hybris</a> 看其他机型的</p>
-<h2 id="打包dhv"><a href="#打包dhv" class="headerlink" title="打包dhv"></a>打包dhv</h2><p>也就是 droid-hal-$DEVICE-version</p>
-<p><code>rpm/dhd/helpers/build_packages.sh -v</code></p>
-<p>如果提示 droid-configs 之类的找不到，需要手动安装</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sb2 -t $VENDOR-$DEVICE-$PORT_ARCH -R -msdk-install zypper -n install droid-config-$DEVICE</span><br></pre></td></tr></table></figure>
-<h2 id="Jolla-RELEASE-DEVICE-ARCH-ks"><a href="#Jolla-RELEASE-DEVICE-ARCH-ks" class="headerlink" title="Jolla-@RELEASE@-$DEVICE-@ARCH@.ks"></a>Jolla-@RELEASE@-$DEVICE-@ARCH@.ks</h2><p><del>~obs打包完之后，将droid-config-vince-kickstart-configuration-0.2.4*.armv7hl.rpm 下载下来，解压获得Jolla-@RELEASE@-$DEVICE-@ARCH@.ks放到$ANDROID_ROOT下面</del>~</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">cd $ANDROID_ROOT</span><br><span class="line">HA_REPO&#x3D;&quot;repo --name&#x3D;adaptation-community-common-$DEVICE-@RELEASE@&quot;</span><br><span class="line">HA_DEV&#x3D;&quot;repo --name&#x3D;adaptation-community-$DEVICE-@RELEASE@&quot;</span><br><span class="line">KS&#x3D;&quot;Jolla-@RELEASE@-$DEVICE-@ARCH@.ks&quot;</span><br><span class="line">sed \</span><br><span class="line">&quot;&#x2F;$HA_REPO&#x2F;i$HA_DEV --baseurl&#x3D;file:\&#x2F;\&#x2F;$ANDROID_ROOT\&#x2F;droid-local-repo\&#x2F;$DEVICE&quot; \</span><br><span class="line">$ANDROID_ROOT&#x2F;hybris&#x2F;droid-configs&#x2F;installroot&#x2F;usr&#x2F;share&#x2F;kickstarts&#x2F;$KS \</span><br><span class="line">&gt; $KS</span><br></pre></td></tr></table></figure>
-<h2 id="镜像制作"><a href="#镜像制作" class="headerlink" title="镜像制作"></a>镜像制作</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">cd $ANDROID_ROOT</span><br><span class="line">RELEASE&#x3D;2.1.4.14</span><br><span class="line">EXTRA_NAME&#x3D;-alpha1</span><br><span class="line">hybris&#x2F;droid-configs&#x2F;droid-configs-device&#x2F;helpers&#x2F;process_patterns.sh</span><br><span class="line">sudo mic create fs --arch&#x3D;$PORT_ARCH \</span><br><span class="line">--tokenmap&#x3D;ARCH:$PORT_ARCH,RELEASE:$RELEASE,EXTRA_NAME:$EXTRA_NAME \</span><br><span class="line">--record-pkgs&#x3D;name,url \</span><br><span class="line">--outdir&#x3D;sfe-$DEVICE-$RELEASE$EXTRA_NAME \</span><br><span class="line">--pack-to&#x3D;sfe-$DEVICE-$RELEASE$EXTRA_NAME.tar.bz2 \</span><br><span class="line">$ANDROID_ROOT&#x2F;Jolla-@RELEASE@-$DEVICE-@ARCH@.ks</span><br></pre></td></tr></table></figure>
-<p>在当前目录下会有一个 <code>sfe-$DEVICE-$RELEASE$EXTRA_NAME</code>目录，下面的 <code>sailfishos-$DEVICE-$RELEASE$EXTRA_NAME.zip</code>就是要使用的刷机包</p>
-<h2 id="刷机"><a href="#刷机" class="headerlink" title="刷机"></a>刷机</h2><p>刷入 lineageos-14.1的包，刷入上面的<code>sailfishos-$DEVICE-$RELEASE$EXTRA_NAME.zip</code>的包，重启</p>
-<p>可以参考 <a href="https://wiki.merproject.org/wiki/Adaptations/libhybris/Install_SailfishOS_for_Vince">https://wiki.merproject.org/wiki/Adaptations/libhybris/Install_SailfishOS_for_Vince</a></p>
-<h2 id="调试"><a href="#调试" class="headerlink" title="调试"></a>调试</h2><p>欢迎加入 IRC #jolla-cn #sailfishos-porters (只限英文交流) 或 <a href="https://t.me/joinchat/GTqoL1HLIYXWNf-JeijTAg">https://t.me/joinchat/GTqoL1HLIYXWNf-JeijTAg</a> 讨论</p>
-<p>相关文档 </p>
-<ul>
-<li><a href="https://sailfishos.org/hadk">https://sailfishos.org/hadk</a> </li>
-<li><a href="http://bit.ly/faq-hadk">http://bit.ly/faq-hadk</a> </li>
-<li><a href="http://bit.ly/port-channel-log">http://bit.ly/port-channel-log</a> </li>
-<li><a href="http://bit.ly/always-grep-irc-logs">http://bit.ly/always-grep-irc-logs</a></li>
-</ul>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;移植旗鱼系统到红米5p的过程记录&quot;&gt;&lt;a href=&quot;#移植旗鱼系统到红米5p的过程记录&quot; class=&quot;headerlink&quot; title=&quot;移植旗鱼系统到红米5p的过程记录&quot;&gt;&lt;/a&gt;移植旗鱼系统到红米5p的过程记录&lt;/h1&gt;&lt;h2 id=&quot;可以去ホロ-🐺的
-    
-    </summary>
-    
-      <category term="SailfishOS" scheme="https://birdzhang.xyz/categories/SailfishOS/"/>
-    
-    
-      <category term="sailfish" scheme="https://birdzhang.xyz/tags/sailfish/"/>
-    
-      <category term="redmi" scheme="https://birdzhang.xyz/tags/redmi/"/>
-    
-      <category term="hadk" scheme="https://birdzhang.xyz/tags/hadk/"/>
-    
-      <category term="vince" scheme="https://birdzhang.xyz/tags/vince/"/>
-    
-      <category term="redmi5plus" scheme="https://birdzhang.xyz/tags/redmi5plus/"/>
     
   </entry>
   
