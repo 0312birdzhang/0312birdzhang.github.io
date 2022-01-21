@@ -1,0 +1,191 @@
+version: 4.0.0
+variant: default
+logo: /images/avatar.jpg
+head:
+    favicon: /img/favicon.png
+    open_graph:
+        title: 
+        type: blog
+        url: 
+        image: 
+        site_name: 
+        author: 
+        description: 
+        twitter_card: 
+        twitter_id: 
+        twitter_site: 
+        google_plus: 
+        fb_admins: 
+        fb_app_id: 
+    structured_data:
+        title: 
+        description: 
+        url: 
+        author: 
+        image: 
+    meta:
+        - ''
+    rss: /atom.xml
+navbar:
+    menu:
+        Home: /
+        Archives: /archives
+        Tags: /tags
+        About: /about
+        Friends: /friends
+    links:
+        Download on GitHub:
+            icon: fab fa-github
+            url: 'https://github.com/ppoffice/hexo-theme-icarus'
+footer:
+    links:
+        Creative Commons:
+            icon: fab fa-creative-commons
+            url: 'https://creativecommons.org/'
+        Attribution 4.0 International:
+            icon: fab fa-creative-commons-by
+            url: 'https://creativecommons.org/licenses/by/4.0/'
+        Download on GitHub:
+            icon: fab fa-github
+            url: 'https://github.com/ppoffice/hexo-theme-icarus'
+article:
+    highlight:
+        theme: atom-one-light
+        clipboard: true
+        fold: unfolded
+    readtime: true
+search:
+    type: insight
+comment:
+    type: disqus
+    shortname: 0312birdzhang-github-io
+donates:
+    -
+        type: alipay
+        qrcode: 'https://donate.qiyuos.cn/images/AliPayQR.png'
+    -
+        type: patreon
+        url: 'https://www.patreon.com/birdzhang?fan_landing=true'
+    -
+        type: paypal
+        business: 991881011@qq.com
+        currency_code: USD
+    -
+        type: wechat
+        qrcode: 'https://donate.qiyuos.cn/images/WeChanQR.png'
+share:
+    type: sharethis
+    install_url: 'https://platform-api.sharethis.com/js/sharethis.js#property=5ed61a20eb4d9a0012e2cafc&product=inline-share-buttons'
+sidebar:
+    left:
+        sticky: false
+    right:
+        sticky: false
+widgets:
+    -
+        position: left
+        type: profile
+        author: BirdZhang
+        author_title: 一只早起的懒鸟
+        location: Earth
+        avatar: /images/avatar.jpg
+        avatar_rounded: false
+        gravatar: 0312birdzhang@gmail.com
+        follow_link: 'https://github.com/0312birdzhang'
+        social_links:
+            Github:
+                icon: fab fa-github
+                url: 'https://github.com/0312birdzhang'
+            Twitter:
+                icon: fab fa-twitter
+                url: 'https://twitter.com/0312birdzhang'
+            RSS:
+                icon: fas fa-rss
+                url: /atom.xml
+    -
+        position: left
+        type: toc
+            
+    -
+        position: left
+        type: categories
+    -
+        position: left
+        type: recent_posts
+    -
+        position: right
+        type: archives
+    -
+        position: right
+        type: tags
+    -
+        position: right
+        type: subscribe_email
+        description: 
+        feedburner_id: ''
+    -
+        type: adsense
+        position: left
+        client_id: ca-pub-8361678566464255
+        slot_id: 7814234312
+plugins:
+    animejs: true
+    back_to_top: true
+    baidu_analytics:
+        tracking_id: 
+    busuanzi: false
+    gallery: true
+    hotjar:
+        site_id: 
+    katex: false
+    mathjax: false
+    outdated_browser: false
+    progressbar: true
+providers:
+    cdn: jsdelivr
+    fontcdn: google
+    iconcdn: fontawesome
+
+friends:
+    href: "friends"
+    page:
+        title: "友链"
+        comments: false
+        description: "扩列~"
+        updated: "2021-12-06"
+    list:
+    -   name: "Perqin的博客"
+        bio: ""
+        link: 'https://perqin.github.io/'
+        avatar: 'https://perqin.github.io/img/favicon.png'
+
+    -   name: "旗鱼俱乐部"
+        link: 'https://sailfishos.club'
+        avatar: 'https://sailfishos.club/assets/uploads/system/site-logo.png'
+        bio: "一个非官方的交流社区，致力于SailfishOS中文社区的发展"
+
+    -   name: "约伊兹的萌狼乡手札"
+        bio: "ホロ的博客"
+        link: 'https://blog.yoitsu.moe/'
+        avatar: 'https://blog.yoitsu.moe/theme/images/wiki.png'
+
+    -   name: "Untitled"
+        bio: "Welcome to Way to be vegetable~ ( \ Chinglish /"
+        link: 'https://v2bv.net/'
+        avatar: 'https://v2bv.net/favicon.ico'
+
+    -   name: "瓠樽"
+        bio: "瓠樽的博客"
+        link: 'https://blog.dylanwu.space/'
+        avatar: 'https://blog.dylanwu.space/assets/icon/apple-touch-icon-152x152.png'
+
+    -   name: "Q君"
+        bio: "浮游大陆"
+        link: 'https://blog.qshen.cc/'
+        avatar: 'https://storage.live.com/items/441D3FDA5A491ADA!466067:/avatar.png'
+
+    -   name: "葛炳仑"
+        bio: "葛炳仑的博客"
+        link: "http://dongtaizuzi.top/"
+        #avatar: "https://dongtaizuzi.top/favicon.ico"
+    verify: true
