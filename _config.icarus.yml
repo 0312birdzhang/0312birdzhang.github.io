@@ -188,4 +188,8 @@ friends:
         bio: "葛炳仑的博客"
         link: "http://dongtaizuzi.top/"
         #avatar: "https://dongtaizuzi.top/favicon.ico"
+    -   name: "Vultr推广"
+        link: 'https://www.vultr.com/?ref=7060013'
+        avatar: https://my.vultr.com/_images/favicon/favicon-60.png
+        bio: "Vultr限时优惠推广链接"
     verify: true
