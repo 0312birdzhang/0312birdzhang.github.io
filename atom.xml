@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://birdzhang.xyz/"/>
-  <updated>2023-10-18T02:23:46.417Z</updated>
+  <updated>2023-10-18T02:44:54.363Z</updated>
   <id>https://birdzhang.xyz/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="https://birdzhang.xyz/2023/10/18/%E5%85%B3%E4%BA%8E%E9%A6%99%E6%A9%99%E6%B4%BE5%E8%BF%90%E8%A1%8Cflowpilot/"/>
     <id>https://birdzhang.xyz/2023/10/18/关于香橙派5运行flowpilot/</id>
     <published>2023-10-18T02:04:37.000Z</published>
-    <updated>2023-10-18T02:23:46.417Z</updated>
+    <updated>2023-10-18T02:44:54.363Z</updated>
     
     <content type="html"><![CDATA[<blockquote>
 <p>香橙派5是一款使用瑞芯微rk3588的开发板，有3个usb接口（1个type-c和type-a公用，虽然4个其实3个），一个hdmi接口，一个千兆网口，等等</p>
@@ -28,16 +28,16 @@
 <p>废话不多说，下面是如何安装flowpilot</p>
 <h2 id="前置条件"><a href="#前置条件" class="headerlink" title="前置条件"></a>前置条件</h2><ul>
 <li>起码一个usb摄像头</li>
-<li>一块屏幕，HDMI的或者mipi dsu的都行</li>
+<li>一块屏幕，HDMI的或者mipi dsi的都行</li>
 <li>其他的就是能让Ubuntu系统启动所必须的硬件了，如硬盘或emmc或sd卡，散热装置等</li>
 </ul>
 <h2 id="安装系统"><a href="#安装系统" class="headerlink" title="安装系统"></a>安装系统</h2><p>这里我使用的是 <a href="https://github.com/Joshua-Riek/ubuntu-rockchip">https://github.com/Joshua-Riek/ubuntu-rockchip</a></p>
 <p>如果你是用sd卡，那么只需要把系统dd进去即可<br>其他的参考官方的烧录方法，此处不赘述</p>
 <h2 id="安装flowpilot"><a href="#安装flowpilot" class="headerlink" title="安装flowpilot"></a>安装flowpilot</h2><p>这里基本是按照 <a href="https://github.com/flowdriveai/flowpilot/wiki/Installation">https://github.com/flowdriveai/flowpilot/wiki/Installation</a> 方法进行的，除此之外还要安装一些额外的包</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install ffmpeg libavformat-dev libavcodec-dev libswscale-dev \</span><br><span class="line">libssl-dev libcurl4-openssl-dev ocl-icd-opencl-dev libgflags-dev \</span><br><span class="line">libstdc++-12-dev libprotobuf-dev protobuf-compiler </span><br></pre></td></tr></table></figure>
-<p>源码可以参考我更改的fork <a href="https://github.com/0312birdzhang/flowpilot">https://github.com/0312birdzhang/flowpilot</a> ，主要修改了一些兼容性，以及替换了opencl为系统自带的</p>
-<p>配置摄像头和车型，更改 <code>launch_flowpilot_new.sh</code></p>
-<h2 id="体验"><a href="#体验" class="headerlink" title="体验"></a>体验</h2><p>总体来说只能说跑起来了，离日常使用还比较遥远，例如设备发热严重（没有用到rknpu，使用tnn跑性能差点）、还没有驾驶员监控、上游进度缓慢等等，所以我也转向原生openpilot上了。</p>
+<p>源码可以参考我更改的fork <a href="https://github.com/0312birdzhang/flowpilot">https://github.com/0312birdzhang/flowpilot</a> ，主要修改了一些兼容性，以及替换了opencl为系统自带的,还有就是编译了aarch64上面的几个libraries</p>
+<p>配置摄像头和车型，更改 <code>launch_flowpilot_new.sh</code>，进入flowpilot的目录下，运行<code>pipenv shell</code>，然后执行<code>launch_flowpilot_new.sh</code>即可</p>
+<h2 id="体验"><a href="#体验" class="headerlink" title="体验"></a>体验</h2><p>总体来说只能说跑起来了，离日常使用还比较遥远，例如设备发热严重（没有用到rknpu，使用tnn跑性能差点，需要写JNI来调用rknpu跑，暂时没精力研究这部分了）、还没有驾驶员监控、上游进度缓慢等等，所以我也转向原生openpilot上了。</p>
 ]]></content>
     
     <summary type="html">
