@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://birdzhang.xyz/"/>
-  <updated>2023-10-18T02:44:54.363Z</updated>
+  <updated>2023-10-18T03:08:29.764Z</updated>
   <id>https://birdzhang.xyz/</id>
   
   <author>
@@ -14,6 +14,37 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>okcaros移植到红米note8及体验</title>
+    <link href="https://birdzhang.xyz/2023/10/18/okcaros%E7%A7%BB%E6%A4%8D%E5%88%B0%E7%BA%A2%E7%B1%B3note8%E5%8F%8A%E4%BD%93%E9%AA%8C/"/>
+    <id>https://birdzhang.xyz/2023/10/18/okcaros移植到红米note8及体验/</id>
+    <published>2023-10-18T02:56:52.000Z</published>
+    <updated>2023-10-18T03:08:29.764Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote>
+<p>最近okcaros开放第三方移植了，我就简单试了一下，有点惊喜</p>
+</blockquote>
+<p>okcaros官网 <a href="https://www.okcaros.com/zh">https://www.okcaros.com/zh</a> ，实现原理是通过更改usb协议，欺骗carplay来映射安卓手机的内容，思路还是挺好的</p>
+<p>适配过程比较简单，给kernel“打个补丁”，引入一下okcar代码，编译就完事了（实际是在AMD r7-5800上面，16G内存的虚拟机上，要跑12+小时😂</p>
+<p>上两张图</p>
+<p><img src="/images/okcar-1.jpg" alt=""></p>
+<p><img src="/images/okcar-2.jpg" alt=""></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;最近okcaros开放第三方移植了，我就简单试了一下，有点惊喜&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;okcaros官网 &lt;a href=&quot;https://www.okcaros.com/zh&quot;&gt;https://www.okcaros.com/
+    
+    </summary>
+    
+    
+      <category term="okcaros" scheme="https://birdzhang.xyz/tags/okcaros/"/>
+    
+  </entry>
   
   <entry>
     <title>关于香橙派5运行flowpilot</title>
@@ -795,53 +826,6 @@ pipelines:
       <category term="k8s" scheme="https://birdzhang.xyz/tags/k8s/"/>
     
       <category term="Terminating" scheme="https://birdzhang.xyz/tags/Terminating/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>No subject alternative DNS name matching xxx.com found</title>
-    <link href="https://birdzhang.xyz/2018/06/26/No-subject-alternative-DNS-name-matching-xxx-com-found/"/>
-    <id>https://birdzhang.xyz/2018/06/26/No-subject-alternative-DNS-name-matching-xxx-com-found/</id>
-    <published>2018-06-26T05:56:40.000Z</published>
-    <updated>2023-10-18T02:02:12.255Z</updated>
-    
-    <content type="html"><![CDATA[<p>[TOC]</p>
-<h4 id="故事经过-TLDR"><a href="#故事经过-TLDR" class="headerlink" title="故事经过 TLDR;"></a>故事经过 TLDR;</h4><p>故事太长，可以直接看<a href="#解决方法">这里</a> 解决</p>
-<p>昨天下午，突然有同事说OA打不开了，打开页面一看出现如下错误：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">500 Servlet Exception</span><br><span class="line">[show] java.security.cert.CertificateException: No subject alternative DNS name</span><br><span class="line">matching xxx.com found.</span><br><span class="line"></span><br><span class="line">java.lang.RuntimeException: javax.net.ssl.SSLHandshakeException: java.security.cert.CertificateException:</span><br><span class="line">No subject alternative DNS name matching xxx.com found.</span><br><span class="line">	at org.jasig.cas.client.util.CommonUtils.getResponseFromServer(CommonUtils.java:328)</span><br><span class="line">	at org.jasig.cas.client.util.CommonUtils.getResponseFromServer(CommonUtils.java:291)</span><br><span class="line">	at org.jasig.cas.client.validation.AbstractCasProtocolUrlBasedTicketValidator.retrieveResponseFromServer(AbstractCasProtocolUrlBasedTicketValidator.java:32)</span><br><span class="line">	at org.jasig.cas.client.validation.AbstractUrlBasedTicketValidator.validate(AbstractUrlBasedTicketValidator.java:187)</span><br><span class="line">	at org.jasig.cas.client.validation.AbstractTicketValidationFilter.doFilter(AbstractTicketValidationFilter.java:164)</span><br><span class="line">	at com.caucho.server.dispatch.FilterFilterChain.doFilter(FilterFilterChain.java:87)</span><br><span class="line">	at com.xxx.plugin.AuthenticationFilter.doFilter(AuthenticationFilter.java:163)</span><br><span class="line">	at com.caucho.server.dispatch.FilterFilterChain.doFilter(FilterFilterChain.java:87)</span><br><span class="line">	at org.jasig.cas.client.session.SingleSignOutFilter.doFilter(SingleSignOutFilter.java:65)</span><br><span class="line">	at com.caucho.server.dispatch.FilterFilterChain.doFilter(FilterFilterChain.java:87)</span><br><span class="line">	at com.caucho.server.webapp.WebAppFilterChain.doFilter(WebAppFilterChain.java:187)</span><br><span class="line">	at com.caucho.server.dispatch.ServletInvocation.service(ServletInvocation.java:265)</span><br><span class="line">	at com.caucho.server.http.HttpRequest.handleRequest(HttpRequest.java:273)</span><br><span class="line">	at com.caucho.server.port.TcpConnection.run(TcpConnection.java:682)</span><br><span class="line">	at com.caucho.util.ThreadPool$Item.runTasks(ThreadPool.java:730)</span><br><span class="line">	at com.caucho.util.ThreadPool$Item.run(ThreadPool.java:649)</span><br><span class="line">	at java.lang.Thread.run(Thread.java:662)</span><br><span class="line">Caused by: javax.net.ssl.SSLHandshakeException: java.security.cert.CertificateException:</span><br><span class="line">No subject alternative DNS name matching xxx.com found.</span><br><span class="line">	at com.sun.net.ssl.internal.ssl.Alerts.getSSLException(Alerts.java:174)</span><br><span class="line">	at com.sun.net.ssl.internal.ssl.SSLSocketImpl.fatal(SSLSocketImpl.java:1699)</span><br><span class="line">	at com.sun.net.ssl.internal.ssl.Handshaker.fatalSE(Handshaker.java:241)</span><br><span class="line">	at com.sun.net.ssl.internal.ssl.Handshaker.fatalSE(Handshaker.java:235)</span><br></pre></td></tr></table></figure>
-<p>内心中第一反应是证书的问题，于是赶紧上cas服务器查看日志，一切正常😵<br>然后上OA的服务器，将证书导入，重启服务，该是什么错还是什么错。。。</p>
-<p>上谷歌一查，应该是匹配不到证书里的DNS名，但是确实是有的呀。</p>
-<p>由于还有其他java系统接入了CAS登录，都是正常的，于是开始怀疑是OA那台的有问题，开始查看是不是有人最近改动过什么</p>
-<p>然鹅并没有。。。</p>
-<p>然后查看OA的日志（用的Resin中间件。。。<br>发现如下错误：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">[17:00:15.288] &#123;http--8080-6$1533061820&#125; java.lang.RuntimeException: javax.net.ssl.SSLHandshakeException: java.security.cert.CertificateException: No subject alternative DNS name matching auth.corp.flamingo-inc.com found.</span><br><span class="line">[17:00:15.288] &#123;http--8080-6$1533061820&#125; 	at org.jasig.cas.client.util.CommonUtils.getResponseFromServer(CommonUtils.java:295)</span><br><span class="line">[17:00:15.288] &#123;http--8080-6$1533061820&#125; 	at org.jasig.cas.client.validation.AbstractCasProtocolUrlBasedTicketValidator.retrieveResponseFromServer(AbstractCasProtocolUrlBasedTicketValidator.java:33)</span><br><span class="line">[17:00:15.288] &#123;http--8080-6$1533061820&#125; 	at org.jasig.cas.client.validation.AbstractUrlBasedTicketValidator.validate(AbstractUrlBasedTicketValidator.java:178)</span><br><span class="line">[17:00:15.288] &#123;http--8080-6$1533061820&#125; 	at org.jasig.cas.client.validation.AbstractTicketValidationFilter.doFilter(AbstractTicketValidationFilter.java:132)</span><br><span class="line">[17:00:15.288] &#123;http--8080-6$1533061820&#125; 	at com.caucho.server.dispatch.FilterFilterChain.doFilter(FilterFilterChain.java:87)</span><br><span class="line">[17:00:15.288] &#123;http--8080-6$1533061820&#125; 	at com.xxx.plugin.AuthenticationFilter.doFilter(AuthenticationFilter.java:163)</span><br><span class="line">[17:00:15.288] &#123;http--8080-6$1533061820&#125; 	at com.caucho.server.dispatch.FilterFilterChain.doFilter(FilterFilterChain.java:87)</span><br><span class="line">[17:00:15.288] &#123;http--8080-6$1533061820&#125; 	at org.jasig.cas.client.session.SingleSignOutFilter.doFilter(SingleSignOutFilter.java:110)</span><br><span class="line">[17:00:15.288] &#123;http--8080-6$1533061820&#125; 	at com.caucho.server.dispatch.FilterFilterChain.doFilter(FilterFilterChain.java:87)</span><br><span class="line">[17:00:15.288] &#123;http--8080-6$1533061820&#125; 	at com.caucho.server.webapp.WebAppFilterChain.doFilter(WebAppFilterChain.java:187)</span><br><span class="line">[17:00:15.288] &#123;http--8080-6$1533061820&#125; 	at com.caucho.server.dispatch.ServletInvocation.service(ServletInvocation.java:265)</span><br><span class="line">[17:00:15.288] &#123;http--8080-6$1533061820&#125; 	at com.caucho.server.http.HttpRequest.handleRequest(HttpRequest.java:273)</span><br><span class="line">[17:00:15.288] &#123;http--8080-6$1533061820&#125; 	at com.caucho.server.port.TcpConnection.run(TcpConnection.java:682)</span><br><span class="line">[17:00:15.288] &#123;http--8080-6$1533061820&#125; 	at com.caucho.util.ThreadPool$Item.runTasks(ThreadPool.java:730)</span><br><span class="line">[17:00:15.288] &#123;http--8080-6$1533061820&#125; 	at com.caucho.util.ThreadPool$Item.run(ThreadPool.java:649)</span><br><span class="line">[17:00:15.288] &#123;http--8080-6$1533061820&#125; 	at java.lang.Thread.run(Thread.java:662)</span><br><span class="line">[17:00:15.288] &#123;http--8080-6$1533061820&#125; Caused by: javax.net.ssl.SSLHandshakeException: java.security.cert.CertificateException: No subject alternative DNS name matching auth.corp.flamingo-inc.com found.</span><br><span class="line">[17:00:15.288] &#123;http--8080-6$1533061820&#125; 	at com.sun.net.ssl.internal.ssl.Alerts.getSSLException(Alerts.java:174)</span><br><span class="line">[17:00:15.288] &#123;http--8080-6$1533061820&#125; 	at com.sun.net.ssl.internal.ssl.SSLSocketImpl.fatal(SSLSocketImpl.java:1699)</span><br><span class="line">[17:00:15.288] &#123;http--8080-6$1533061820&#125; 	at com.sun.net.ssl.internal.ssl.Handshaker.fatalSE(Handshaker.java:241)</span><br><span class="line">[17:00:15.288] &#123;http--8080-6$1533061820&#125; 	at com.sun.net.ssl.internal.ssl.Handshaker.fatalSE(Handshaker.java:235)</span><br><span class="line">[17:00:15.288] &#123;http--8080-6$1533061820&#125; 	at com.sun.net.ssl.internal.ssl.ClientHandshaker.serverCertificate(ClientHandshaker.java:1206)</span><br><span class="line">[17:00:15.288] &#123;http--8080-6$1533061820&#125; 	at com.sun.net.ssl.internal.ssl.ClientHandshaker.processMessage(ClientHandshaker.java:136)</span><br><span class="line">[17:00:15.288] &#123;http--8080-6$1533061820&#125; 	at com.sun.net.ssl.internal.ssl.Handshaker.processLoop(Handshaker.java:593)</span><br><span class="line">[17:00:15.288] &#123;http--8080-6$1533061820&#125; 	at com.sun.net.ssl.internal.ssl.Handshaker.process_record(Handshaker.java:529)</span><br><span class="line">[17:00:15.288] &#123;http--8080-6$1533061820&#125; 	at com.sun.net.ssl.internal.ssl.SSLSocketImpl.readRecord(SSLSocketImpl.java:893)</span><br><span class="line">[17:00:15.288] &#123;http--8080-6$1533061820&#125; 	at com.sun.net.ssl.internal.ssl.SSLSocketImpl.performInitialHandshake(SSLSocketImpl.java:1138)</span><br><span class="line">[17:00:15.288] &#123;http--8080-6$1533061820&#125; 	at com.sun.net.ssl.internal.ssl.SSLSocketImpl.startHandshake(SSLSocketImpl.java:1165)</span><br><span class="line">[17:00:15.288] &#123;http--8080-6$1533061820&#125; 	at com.sun.net.ssl.internal.ssl.SSLSocketImpl.startHandshake(SSLSocketImpl.java:1149)</span><br><span class="line">[17:00:15.288] &#123;http--8080-6$1533061820&#125; 	at sun.net.www.protocol.https.HttpsClient.afterConnect(HttpsClient.java:434)</span><br><span class="line">[17:00:15.288] &#123;http--8080-6$1533061820&#125; 	at sun.net.www.protocol.https.AbstractDelegateHttpsURLConnection.connect(AbstractDelegateHttpsURLConnection.java:166)</span><br><span class="line">[17:00:15.288] &#123;http--8080-6$1533061820&#125; 	at sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1172)</span><br><span class="line">[17:00:15.288] &#123;http--8080-6$1533061820&#125; 	at sun.net.www.protocol.https.HttpsURLConnectionImpl.getInputStream(HttpsURLConnectionImpl.java:234)</span><br><span class="line">[17:00:15.288] &#123;http--8080-6$1533061820&#125; 	at org.jasig.cas.client.util.CommonUtils.getResponseFromServer(CommonUtils.java:281)</span><br><span class="line">[17:00:15.288] &#123;http--8080-6$1533061820&#125; 	... 15 more</span><br><span class="line">[17:00:15.288] &#123;http--8080-6$1533061820&#125; Caused by: java.security.cert.CertificateException: No subject alternative DNS name matching auth.corp.flamingo-inc.com found.</span><br><span class="line">[17:00:15.288] &#123;http--8080-6$1533061820&#125; 	at sun.security.util.HostnameChecker.matchDNS(HostnameChecker.java:193)</span><br><span class="line">[17:00:15.288] &#123;http--8080-6$1533061820&#125; 	at sun.security.util.HostnameChecker.match(HostnameChecker.java:77)</span><br><span class="line">[17:00:15.288] &#123;http--8080-6$1533061820&#125; 	at com.sun.net.ssl.internal.ssl.X509TrustManagerImpl.checkIdentity(X509TrustManagerImpl.java:264)</span><br><span class="line">[17:00:15.288] &#123;http--8080-6$1533061820&#125; 	at com.sun.net.ssl.internal.ssl.X509TrustManagerImpl.checkServerTrusted(X509TrustManagerImpl.java:250)</span><br><span class="line">[17:00:15.288] &#123;http--8080-6$1533061820&#125; 	at com.sun.net.ssl.internal.ssl.ClientHandshaker.serverCertificate(ClientHandshaker.java:1185)</span><br></pre></td></tr></table></figure>
-<p>开始怀疑是我写的AuthenticationFilter的锅，于是用了个新版本的cas-client-core，依然不行</p>
-<p>开始升级jdk，由于是windows，直接安装的exe，然后改了启动脚本里面的JAVA_HOME，重启依然发现不行。。。 (((φ(◎ロ◎;)φ)))</p>
-<p>于是暂时回退到了没有用CAS接入的版本，下班了。。。</p>
-<p>今天回来不甘心啊，继续尝试解决</p>
-<p>既然证书找不到xxx.com，那我换台nginx直接写host试试？</p>
-<p>更新了一下测服nginx的证书，OA主机指定测服nginx ip</p>
-<p>然后！！！！ 可以了！！！！ 😭</p>
-<p>然后跟同事调试了一会，发现他昨天下午添加了一个域名abc.com，然后导致了default_server不是adc.com了。。。</p>
-<h4 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h4><p>更新一下jdk就可以了（摊手），OA用的是jdk1.6，jdk1.6旧版本不支持SNI，至于什么是SNI等，看这里 <a href="https://github.com/ditunes/blog/issues/13">https://github.com/ditunes/blog/issues/13</a></p>
-<p>之前没成功是因为windows的服务里面写死了jdk的路径。。。</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;[TOC]&lt;/p&gt;
-&lt;h4 id=&quot;故事经过-TLDR&quot;&gt;&lt;a href=&quot;#故事经过-TLDR&quot; class=&quot;headerlink&quot; title=&quot;故事经过 TLDR;&quot;&gt;&lt;/a&gt;故事经过 TLDR;&lt;/h4&gt;&lt;p&gt;故事太长，可以直接看&lt;a href=&quot;#解决方法&quot;&gt;这
-    
-    </summary>
-    
-    
-      <category term="Java" scheme="https://birdzhang.xyz/tags/Java/"/>
-    
-      <category term="cas" scheme="https://birdzhang.xyz/tags/cas/"/>
-    
-      <category term="https" scheme="https://birdzhang.xyz/tags/https/"/>
-    
-      <category term="crt" scheme="https://birdzhang.xyz/tags/crt/"/>
     
   </entry>
   
