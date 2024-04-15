@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://birdzhang.xyz/"/>
-  <updated>2024-04-15T02:44:59.539Z</updated>
+  <updated>2024-04-15T02:53:43.124Z</updated>
   <id>https://birdzhang.xyz/</id>
   
   <author>
@@ -20,10 +20,11 @@
     <link href="https://birdzhang.xyz/2024/04/14/%E5%A6%82%E4%BD%95%E5%9C%A8rk3588%E4%B8%8A%E8%BF%90%E8%A1%8Copenpilot-1/"/>
     <id>https://birdzhang.xyz/2024/04/14/如何在rk3588上运行openpilot-1/</id>
     <published>2024-04-14T08:31:55.000Z</published>
-    <updated>2024-04-15T02:44:59.539Z</updated>
+    <updated>2024-04-15T02:53:43.124Z</updated>
     
-    <content type="html"><![CDATA[<blockquote>
-<p>本文来自 <a href="https://birdzhang.xyz/2024/04/14/如何在rk3588上运行openpilot-1/">https://birdzhang.xyz/2024/04/14/如何在rk3588上运行openpilot-1/</a></p>
+    <content type="html"><![CDATA[<p><img src="/images/openpilot.png" alt=""></p>
+<blockquote>
+<p>本文来自 <a href="https://birdzhang.xyz/2024/04/14/如何在rk3588上运行openpilot-1/">https://birdzhang.xyz/2024/04/14/如何在rk3588上运行openpilot-1/</a> 转载请注明出处</p>
 </blockquote>
 <h2 id="1-前言"><a href="#1-前言" class="headerlink" title="1. 前言"></a>1. 前言</h2><p>使用rk3588跑openpilot的难点，主要在模型的适配上（相机部分已经很好的解决了，之前没有visionipc的时候是比较复杂的），以及兼容aarch64系统的打包等等</p>
 <h2 id="2-系统适配"><a href="#2-系统适配" class="headerlink" title="2. 系统适配"></a>2. 系统适配</h2><p>笔者使用的是 <a href="https://github.com/Joshua-Riek/ubuntu-rockchip">https://github.com/Joshua-Riek/ubuntu-rockchip</a> 修改过的，可以兼容各个厂商出的rk3588板子，方面好用。安装好git等常用工具后，把openpilot的代码clone下来，然后执行<code>tools/ubuntu_setup.sh</code>即可安装上绝大多数的依赖。</p>
@@ -46,8 +47,9 @@
     
     <summary type="html">
     
-      &lt;blockquote&gt;
-&lt;p&gt;本文来自 &lt;a href=&quot;https://birdzhang.xyz/2024/04/14/如何在rk3588上运行openpilot-1/&quot;&gt;https://birdzhang.xyz/2024/04/14/如何在rk3588上运行openpi
+      &lt;p&gt;&lt;img src=&quot;/images/openpilot.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;本文来自 &lt;a href=&quot;https://birdzhang.xyz/2024/04/14/如何在rk3588上运行openpilot-1/&quot;&gt;htt
     
     </summary>
     
@@ -98,7 +100,7 @@
     <link href="https://birdzhang.xyz/2023/10/18/%E5%85%B3%E4%BA%8E%E9%A6%99%E6%A9%99%E6%B4%BE5%E8%BF%90%E8%A1%8Cflowpilot/"/>
     <id>https://birdzhang.xyz/2023/10/18/关于香橙派5运行flowpilot/</id>
     <published>2023-10-18T02:04:37.000Z</published>
-    <updated>2023-10-18T02:44:54.363Z</updated>
+    <updated>2024-04-15T02:52:28.807Z</updated>
     
     <content type="html"><![CDATA[<blockquote>
 <p>香橙派5是一款使用瑞芯微rk3588的开发板，有3个usb接口（1个type-c和type-a公用，虽然4个其实3个），一个hdmi接口，一个千兆网口，等等</p>
@@ -115,7 +117,7 @@
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install ffmpeg libavformat-dev libavcodec-dev libswscale-dev \</span><br><span class="line">libssl-dev libcurl4-openssl-dev ocl-icd-opencl-dev libgflags-dev \</span><br><span class="line">libstdc++-12-dev libprotobuf-dev protobuf-compiler </span><br></pre></td></tr></table></figure>
 <p>源码可以参考我更改的fork <a href="https://github.com/0312birdzhang/flowpilot">https://github.com/0312birdzhang/flowpilot</a> ，主要修改了一些兼容性，以及替换了opencl为系统自带的,还有就是编译了aarch64上面的几个libraries</p>
 <p>配置摄像头和车型，更改 <code>launch_flowpilot_new.sh</code>，进入flowpilot的目录下，运行<code>pipenv shell</code>，然后执行<code>launch_flowpilot_new.sh</code>即可</p>
-<h2 id="体验"><a href="#体验" class="headerlink" title="体验"></a>体验</h2><p>总体来说只能说跑起来了，离日常使用还比较遥远，例如设备发热严重（没有用到rknpu，使用tnn跑性能差点，需要写JNI来调用rknpu跑，暂时没精力研究这部分了）、还没有驾驶员监控、上游进度缓慢等等，所以我也转向原生openpilot上了。</p>
+<h2 id="体验"><a href="#体验" class="headerlink" title="体验"></a>体验</h2><p>总体来说只能说跑起来了，离日常使用还比较遥远，例如设备发热严重（没有用到rknpu，使用tnn跑只能调用GPU性能要比调用NPU差点，需要写JNI来调用rknpu跑，暂时没精力研究这部分了）、还没有驾驶员监控、上游进度缓慢等等，所以我也转向原生openpilot上了。</p>
 ]]></content>
     
     <summary type="html">
