@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://birdzhang.xyz/"/>
-  <updated>2024-04-15T02:53:43.124Z</updated>
+  <updated>2024-07-03T07:53:49.539Z</updated>
   <id>https://birdzhang.xyz/</id>
   
   <author>
@@ -20,13 +20,14 @@
     <link href="https://birdzhang.xyz/2024/04/14/%E5%A6%82%E4%BD%95%E5%9C%A8rk3588%E4%B8%8A%E8%BF%90%E8%A1%8Copenpilot-1/"/>
     <id>https://birdzhang.xyz/2024/04/14/如何在rk3588上运行openpilot-1/</id>
     <published>2024-04-14T08:31:55.000Z</published>
-    <updated>2024-04-15T02:53:43.124Z</updated>
+    <updated>2024-07-03T07:53:49.539Z</updated>
     
     <content type="html"><![CDATA[<p><img src="/images/openpilot.png" alt=""></p>
 <blockquote>
 <p>本文来自 <a href="https://birdzhang.xyz/2024/04/14/如何在rk3588上运行openpilot-1/">https://birdzhang.xyz/2024/04/14/如何在rk3588上运行openpilot-1/</a> 转载请注明出处</p>
 </blockquote>
-<h2 id="1-前言"><a href="#1-前言" class="headerlink" title="1. 前言"></a>1. 前言</h2><p>使用rk3588跑openpilot的难点，主要在模型的适配上（相机部分已经很好的解决了，之前没有visionipc的时候是比较复杂的），以及兼容aarch64系统的打包等等</p>
+<h2 id="1-前言"><a href="#1-前言" class="headerlink" title="1. 前言"></a>1. 前言</h2><p>2024-07-03 更新，现在的openpilot已经对aarch64设备有良好的支持，不用再去改很多SConstruct进行修改了，👍</p>
+<p>使用rk3588跑openpilot的难点，主要在模型的适配上（相机部分已经很好的解决了，之前没有visionipc的时候是比较复杂的），以及兼容aarch64系统的打包等等</p>
 <h2 id="2-系统适配"><a href="#2-系统适配" class="headerlink" title="2. 系统适配"></a>2. 系统适配</h2><p>笔者使用的是 <a href="https://github.com/Joshua-Riek/ubuntu-rockchip">https://github.com/Joshua-Riek/ubuntu-rockchip</a> 修改过的，可以兼容各个厂商出的rk3588板子，方面好用。安装好git等常用工具后，把openpilot的代码clone下来，然后执行<code>tools/ubuntu_setup.sh</code>即可安装上绝大多数的依赖。</p>
 <p>对于rk3588，还有一些特殊的依赖需要安装，比如mpp、gstreamer部分，以及opencv需要重新编译添加gstreamer支持。笔者使用的是opencv_headless，参考 <a href="https://github.com/opencv/opencv/issues/21804">https://github.com/opencv/opencv/issues/21804</a></p>
 <p>使用的gstreamer依赖：</p>
