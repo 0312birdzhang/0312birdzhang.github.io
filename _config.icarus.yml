@@ -154,15 +154,21 @@ friends:
         description: "扩列~"
         updated: "2021-12-06"
     list:
+    -   name: "旗鱼俱乐部"
+        link: 'https://sailfishos.club'
+        avatar: 'https://sailfishos.club/assets/uploads/system/site-logo.png'
+        bio: "一个非官方的交流社区，致力于SailfishOS中文社区的发展"
+
+    -   name: "AceAdmin"
+        link: 'https://aceadmin.birdzhang.xyz'
+        # avatar: ''
+        bio: "aceadmin后台框架"
+        
     -   name: "Perqin的博客"
         bio: ""
         link: 'https://perqin.github.io/'
         avatar: 'https://perqin.github.io/img/favicon.png'
 
-    -   name: "旗鱼俱乐部"
-        link: 'https://sailfishos.club'
-        avatar: 'https://sailfishos.club/assets/uploads/system/site-logo.png'
-        bio: "一个非官方的交流社区，致力于SailfishOS中文社区的发展"
 
     -   name: "约伊兹的萌狼乡手札"
         bio: "ホロ的博客"
