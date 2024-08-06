@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://birdzhang.xyz/"/>
-  <updated>2024-08-06T02:45:18.542Z</updated>
+  <updated>2024-08-06T02:54:03.629Z</updated>
   <id>https://birdzhang.xyz/</id>
   
   <author>
@@ -20,16 +20,18 @@
     <link href="https://birdzhang.xyz/2024/08/06/%E5%9C%A8SailfishOS%E4%B8%8A%E5%AE%89%E8%A3%85waydroid/"/>
     <id>https://birdzhang.xyz/2024/08/06/在SailfishOS上安装waydroid/</id>
     <published>2024-08-06T01:56:57.000Z</published>
-    <updated>2024-08-06T02:45:18.542Z</updated>
+    <updated>2024-08-06T02:54:03.629Z</updated>
     
-    <content type="html"><![CDATA[<blockquote>
+    <content type="html"><![CDATA[<p><img src="/images/waydroid.jpg" alt=""></p>
+<blockquote>
 <p>鉴于有的小伙伴还不知道怎么安装waydroid，所以就水一篇吧😛</p>
 </blockquote>
 <p>运行效果可以查看我B站 <a href="https://www.bilibili.com/video/BV1kD421g7LL">https://www.bilibili.com/video/BV1kD421g7LL</a></p>
 <p>安装起来比较简单的，主要是安装完能不能运行 :(  </p>
 <h3 id="1-检查能否运行"><a href="#1-检查能否运行" class="headerlink" title="1. 检查能否运行"></a>1. 检查能否运行</h3><p>首先我们需要检查使用的机型内核支持是否已经开启，否则就没有必要继续下去了</p>
 <p>waydroid依赖 <code>CONFIG_VETH</code> <code>CONFIG_NETFILTER_XT_TARGET_CHECKSUM</code> <code>puddlejumper,hwpuddlejumper,vndpuddlejumper</code> 等，你可以使用</p>
-<p><code>zcat /proc/config.gz | grep -E &#39;CONFIG_VETH|CONFIG_NETFILTER_XT_TARGET_CHECKSUM|CONFIG_ANDROID_BINDER_DEVICES&#39;</code> 来检查是否支持, 在我的机型上输出如下内容：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">zcat /proc/config.gz | grep -E &#x27;CONFIG_VETH|CONFIG_NETFILTER_XT_TARGET_CHECKSUM|CONFIG_ANDROID_BINDER_DEVICES&#x27;</span><br></pre></td></tr></table></figure>
+<p>来检查是否支持, 在我的机型上输出如下内容：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[root@RedmiNote8 defaultuser]# zcat /proc/config.gz | grep -E &#x27;CONFIG_VETH|CONFIG_NETFILTER_XT_TARGET_CHECKSUM|CONFIG_ANDROID_BINDER_DEVICES&#x27;</span><br><span class="line">CONFIG_NETFILTER_XT_TARGET_CHECKSUM=y</span><br><span class="line">CONFIG_VETH=y</span><br><span class="line">CONFIG_ANDROID_BINDER_DEVICES=&quot;binder,hwbinder,vndbinder,anbox-binder,anbox-hwbinder,anbox-vndbinder,puddlejumper,hwpuddlejumper,vndpuddlejumper&quot;</span><br></pre></td></tr></table></figure>
 <p>注意：上述命令需要你启用<strong>开发者模式</strong>, 在里面启用远程连接，设置密码。不建议使用手机自带的终端，很容易打错字。</p>
 <h3 id="2-安装"><a href="#2-安装" class="headerlink" title="2. 安装"></a>2. 安装</h3><p>安装就比较简单了，已经有大佬做好了源。以下命令都是在root下进行，使用devel-su切换root</p>
@@ -59,10 +61,11 @@
     
     <summary type="html">
     
-      &lt;blockquote&gt;
+      &lt;p&gt;&lt;img src=&quot;/images/waydroid.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;blockquote&gt;
 &lt;p&gt;鉴于有的小伙伴还不知道怎么安装waydroid，所以就水一篇吧😛&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;运行效果可以查看我B站 &lt;a href=&quot;https://www.bilibili.com/video/BV1kD421g7LL&quot;&gt;htt
+&lt;p&gt;运行效果可以查看我B站 &lt;a href=&quot;h
     
     </summary>
     
