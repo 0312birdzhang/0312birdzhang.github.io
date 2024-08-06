@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://birdzhang.xyz/"/>
-  <updated>2024-08-06T02:38:21.596Z</updated>
+  <updated>2024-08-06T02:43:38.543Z</updated>
   <id>https://birdzhang.xyz/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="https://birdzhang.xyz/2024/08/06/%E5%9C%A8SailfishOS%E4%B8%8A%E5%AE%89%E8%A3%85waydroid/"/>
     <id>https://birdzhang.xyz/2024/08/06/在SailfishOS上安装waydroid/</id>
     <published>2024-08-06T01:56:57.000Z</published>
-    <updated>2024-08-06T02:38:21.596Z</updated>
+    <updated>2024-08-06T02:43:38.543Z</updated>
     
     <content type="html"><![CDATA[<blockquote>
 <p>鉴于有的小伙伴还不知道怎么安装waydroid，所以就水一篇吧😛</p>
@@ -51,7 +51,9 @@
 <h3 id="3-调试运行"><a href="#3-调试运行" class="headerlink" title="3. 调试运行"></a>3. 调试运行</h3><p>在红米note8上，还需要禁用dnsmasq才行 <code>systemctl disable --now dnsmasq</code></p>
 <p>并且还要替换<code>/etc/gbinder.d/anbox-hybris.conf</code>里面的aidl2为aidl3才行</p>
 <p>并并且还要删掉 <code>/var/lib/waydroid/lxc/waydroid/config</code> 里面的<code>lxc.apparmor.profile = unconfined</code>才行</p>
+<p>并并并且需要重启一下，或者运行 <code>systemctl restart waydroid-container</code></p>
 <p>现在，打开手机点击桌面的Waydroid图标，等待一会应该就能看到熟悉的Android桌面了。</p>
+<p>要是还是不行，可以打开Waydroid桌面图标的时候 <code>tail -f /var/lib/waydroid/waydroid.log</code> 看看日志</p>
 ]]></content>
     
     <summary type="html">
