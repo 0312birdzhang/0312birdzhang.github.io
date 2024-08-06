@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://birdzhang.xyz/"/>
-  <updated>2024-08-06T02:54:03.629Z</updated>
+  <updated>2024-08-06T08:43:19.237Z</updated>
   <id>https://birdzhang.xyz/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="https://birdzhang.xyz/2024/08/06/%E5%9C%A8SailfishOS%E4%B8%8A%E5%AE%89%E8%A3%85waydroid/"/>
     <id>https://birdzhang.xyz/2024/08/06/在SailfishOS上安装waydroid/</id>
     <published>2024-08-06T01:56:57.000Z</published>
-    <updated>2024-08-06T02:54:03.629Z</updated>
+    <updated>2024-08-06T08:43:19.237Z</updated>
     
     <content type="html"><![CDATA[<p><img src="/images/waydroid.jpg" alt=""></p>
 <blockquote>
@@ -57,6 +57,7 @@
 <p>并并并且需要重启一下，或者运行 <code>systemctl restart waydroid-container</code></p>
 <p>现在，打开手机点击桌面的Waydroid图标，等待一会应该就能看到熟悉的Android桌面了。</p>
 <p>要是还是不行，可以打开Waydroid桌面图标的时候 <code>tail -f /var/lib/waydroid/waydroid.log</code> 看看日志</p>
+<p>在旗鱼上安装应用可以使用命令 <code>waydroid app install antutu-benchmark-v10.apk</code></p>
 ]]></content>
     
     <summary type="html">
