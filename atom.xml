@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://birdzhang.xyz/"/>
-  <updated>2024-07-03T07:53:49.539Z</updated>
+  <updated>2024-08-06T02:38:21.596Z</updated>
   <id>https://birdzhang.xyz/</id>
   
   <author>
@@ -14,6 +14,60 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>在SailfishOS上安装waydroid</title>
+    <link href="https://birdzhang.xyz/2024/08/06/%E5%9C%A8SailfishOS%E4%B8%8A%E5%AE%89%E8%A3%85waydroid/"/>
+    <id>https://birdzhang.xyz/2024/08/06/在SailfishOS上安装waydroid/</id>
+    <published>2024-08-06T01:56:57.000Z</published>
+    <updated>2024-08-06T02:38:21.596Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote>
+<p>鉴于有的小伙伴还不知道怎么安装waydroid，所以就水一篇吧😛</p>
+</blockquote>
+<p>安装起来比较简单的，主要是安装完能不能运行 :(  </p>
+<h3 id="1-检查能否运行"><a href="#1-检查能否运行" class="headerlink" title="1. 检查能否运行"></a>1. 检查能否运行</h3><p>首先我们需要检查使用的机型内核支持是否已经开启，否则就没有必要继续下去了</p>
+<p>waydroid依赖 <code>CONFIG_VETH</code> <code>CONFIG_NETFILTER_XT_TARGET_CHECKSUM</code> <code>puddlejumper,hwpuddlejumper,vndpuddlejumper</code> 等，你可以使用</p>
+<p><code>zcat /proc/config.gz | grep -E &#39;CONFIG_VETH|CONFIG_NETFILTER_XT_TARGET_CHECKSUM|CONFIG_ANDROID_BINDER_DEVICES&#39;</code> 来检查是否支持, 在我的机型上输出如下内容：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[root@RedmiNote8 defaultuser]# zcat /proc/config.gz | grep -E &#x27;CONFIG_VETH|CONFIG_NETFILTER_XT_TARGET_CHECKSUM|CONFIG_ANDROID_BINDER_DEVICES&#x27;</span><br><span class="line">CONFIG_NETFILTER_XT_TARGET_CHECKSUM=y</span><br><span class="line">CONFIG_VETH=y</span><br><span class="line">CONFIG_ANDROID_BINDER_DEVICES=&quot;binder,hwbinder,vndbinder,anbox-binder,anbox-hwbinder,anbox-vndbinder,puddlejumper,hwpuddlejumper,vndpuddlejumper&quot;</span><br></pre></td></tr></table></figure>
+<p>注意：上述命令需要你启用<strong>开发者模式</strong>, 在里面启用远程连接，设置密码。不建议使用手机自带的终端，很容易打错字。</p>
+<h3 id="2-安装"><a href="#2-安装" class="headerlink" title="2. 安装"></a>2. 安装</h3><p>安装就比较简单了，已经有大佬做好了源。以下命令都是在root下进行，使用devel-su切换root</p>
+<ol>
+<li>添加chum源</li>
+</ol>
+<p><code>ssu ar sailfishos-chum https://repo.sailfishos.org/obs/sailfishos:/chum/4.6_aarch64/</code><br>注意版本号，我这里是4.6版本，根据你的版本号来，可以打开这个网址来确保是不是真的存在</p>
+<ol start="2">
+<li>安装waydroid</li>
+</ol>
+<p><code>zypper ref &amp;&amp; zypper in waydroid-runner waydroid-gbinder-config-hybris</code></p>
+<ol start="3">
+<li>下载镜像并初始化（大的要来了！！！</li>
+</ol>
+<p>如果你的网络好（指自带梯子），可以直接运行<code>waydroid init</code>，但是在国内的朋友大概率还是不要尝试了。。。</p>
+<p>我上传了20240413的镜像 <a href="https://share.weiyun.com/kbPHYmch">https://share.weiyun.com/kbPHYmch</a> ，你也可以自行下载 <a href="https://sourceforge.net/projects/waydroid/files/images/">https://sourceforge.net/projects/waydroid/files/images/</a> </p>
+<p>vendor下载 <code>HALIUM_11-waydroid_arm64-vendor.zip</code>结尾的，system下载 <code>VANILLA-waydroid_arm64-system.zip</code>结尾的</p>
+<p>下载后，然后把两个压缩文件上传到手机上，然后执行下面的命令<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">mkdir -p /etc/waydroid-extra/images/</span><br><span class="line">cd /home/defaultuser</span><br><span class="line">unzip lineage-*-system.zip -d /etc/waydroid-extra/images</span><br><span class="line">unzip lineage-*-vendor.zip -d /etc/waydroid-extra/images</span><br></pre></td></tr></table></figure></p>
+<p>之后再运行<code>waydroid init -f</code> 即可</p>
+<h3 id="3-调试运行"><a href="#3-调试运行" class="headerlink" title="3. 调试运行"></a>3. 调试运行</h3><p>在红米note8上，还需要禁用dnsmasq才行 <code>systemctl disable --now dnsmasq</code></p>
+<p>并且还要替换<code>/etc/gbinder.d/anbox-hybris.conf</code>里面的aidl2为aidl3才行</p>
+<p>并并且还要删掉 <code>/var/lib/waydroid/lxc/waydroid/config</code> 里面的<code>lxc.apparmor.profile = unconfined</code>才行</p>
+<p>现在，打开手机点击桌面的Waydroid图标，等待一会应该就能看到熟悉的Android桌面了。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;鉴于有的小伙伴还不知道怎么安装waydroid，所以就水一篇吧😛&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;安装起来比较简单的，主要是安装完能不能运行 :(  &lt;/p&gt;
+&lt;h3 id=&quot;1-检查能否运行&quot;&gt;&lt;a href=&quot;#1-检查能否运行&quot; 
+    
+    </summary>
+    
+    
+      <category term="waydroid" scheme="https://birdzhang.xyz/tags/waydroid/"/>
+    
+  </entry>
   
   <entry>
     <title>如何在rk3588上运行openpilot[1]</title>
@@ -807,35 +861,6 @@ pipelines:
       <category term="迁移" scheme="https://birdzhang.xyz/tags/%E8%BF%81%E7%A7%BB/"/>
     
       <category term="migrate" scheme="https://birdzhang.xyz/tags/migrate/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>清理kubernetes中未正常退出的pod</title>
-    <link href="https://birdzhang.xyz/2018/07/03/%E6%B8%85%E7%90%86kubernetes%E4%B8%AD%E6%9C%AA%E6%AD%A3%E5%B8%B8%E9%80%80%E5%87%BA%E7%9A%84pod/"/>
-    <id>https://birdzhang.xyz/2018/07/03/清理kubernetes中未正常退出的pod/</id>
-    <published>2018-07-03T03:22:44.000Z</published>
-    <updated>2023-10-18T02:02:12.272Z</updated>
-    
-    <content type="html"><![CDATA[<p>长时间运行的k8s节点可能会存在某些pod不自动退出，一直处于<code>Terminating</code>的状态<br>于是我们可以用这个脚本定时进行清理</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">#!/bin/bash</span><br><span class="line">#############################</span><br><span class="line">### clean terminated pods ###</span><br><span class="line">### run at you own risk ! ###</span><br><span class="line">#############################</span><br><span class="line">export PATH=/usr/local/cfssl/bin:/usr/local/docker/:/usr/local/kubernetes/:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/root/bin</span><br><span class="line">getns()&#123;</span><br><span class="line">  namespaces=`kubectl get namespaces|grep -v &quot;NAME&quot;|awk &#x27;&#123;print $1&#125;&#x27;`</span><br><span class="line">  for n in $&#123;namespaces&#125;;</span><br><span class="line">  do</span><br><span class="line">    pods_str=`kubectl get pods -n $&#123;n&#125;|grep &quot;Terminating&quot;`</span><br><span class="line">    IFS=$&#x27;\n&#x27; read -rd &#x27;&#x27; -a pods  &lt;&lt;&lt;&quot;$pods_str&quot;</span><br><span class="line">    if [ -n &quot;$pods&quot; ]; then</span><br><span class="line">      getpod $&#123;n&#125; $pods;</span><br><span class="line">    fi</span><br><span class="line">  done</span><br><span class="line">&#125;</span><br><span class="line">getpod()&#123;</span><br><span class="line"> ns=$1;</span><br><span class="line"> for podinfo in $2;</span><br><span class="line"> do</span><br><span class="line">  pod=`echo $podinfo|awk &#x27;&#123;print $1&#125;&#x27;`</span><br><span class="line">  delpod $pod $ns;</span><br><span class="line"> done</span><br><span class="line">&#125;</span><br><span class="line">delpod()&#123;</span><br><span class="line">   echo &quot;kubectl delete pods $1 -n $2 --grace-period=0 --force&quot;</span><br><span class="line">   kubectl delete pods $1 -n $2 --grace-period=0 --force</span><br><span class="line">&#125;</span><br><span class="line">main()&#123;</span><br><span class="line">  getns</span><br><span class="line">&#125;</span><br><span class="line">main</span><br></pre></td></tr></table></figure>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;长时间运行的k8s节点可能会存在某些pod不自动退出，一直处于&lt;code&gt;Terminating&lt;/code&gt;的状态&lt;br&gt;于是我们可以用这个脚本定时进行清理&lt;/p&gt;
-&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td cl
-    
-    </summary>
-    
-    
-      <category term="docker" scheme="https://birdzhang.xyz/tags/docker/"/>
-    
-      <category term="kubernetes" scheme="https://birdzhang.xyz/tags/kubernetes/"/>
-    
-      <category term="k8s" scheme="https://birdzhang.xyz/tags/k8s/"/>
-    
-      <category term="Terminating" scheme="https://birdzhang.xyz/tags/Terminating/"/>
     
   </entry>
   
