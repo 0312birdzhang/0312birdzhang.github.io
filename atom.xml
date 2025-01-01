@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://birdzhang.xyz/"/>
-  <updated>2024-08-29T06:09:11.469Z</updated>
+  <updated>2025-01-01T07:21:52.268Z</updated>
   <id>https://birdzhang.xyz/</id>
   
   <author>
@@ -14,6 +14,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>2024年总结</title>
+    <link href="https://birdzhang.xyz/2025/01/01/2024%E5%B9%B4%E6%80%BB%E7%BB%93/"/>
+    <id>https://birdzhang.xyz/2025/01/01/2024年总结/</id>
+    <published>2025-01-01T07:03:00.000Z</published>
+    <updated>2025-01-01T07:21:52.268Z</updated>
+    
+    <content type="html"><![CDATA[<p>2024年总共就做了3件事，生娃、去负债、换赛道。</p>
+<h2 id="1-生娃"><a href="#1-生娃" class="headerlink" title="1. 生娃"></a>1. 生娃</h2><p>一个孩子还是太孤单了，纯粹是为了给娃增加一个亲人。另外就是顺便应付家里人几年来的苦口婆心吧。</p>
+<p>挺可爱的，跟老大一个模子刻出来的，坏毛病也一样，基因这个东西真神奇。</p>
+<h2 id="2-去负债"><a href="#2-去负债" class="headerlink" title="2. 去负债"></a>2. 去负债</h2><p>也不知道几年前为什么会有这么大的勇气（现在是真的羡慕那时候），杠杆上的太多了，去掉了一部分回血。消费降级一年来，感觉也挺好的，已经适应了，未来消费最大的可能是换一辆MPV，不管是乘坐体验还是多人出行、回老家，都满足了。其他消费都持谨慎态度，尽量减少负债。</p>
+<h2 id="3-换赛道"><a href="#3-换赛道" class="headerlink" title="3. 换赛道"></a>3. 换赛道</h2><p>具体啥赛道就不说了，总之是更容易变现的，体力活。以前一两百看不上，现在多少都不嫌弃了，哈哈哈</p>
+<p>就简单写这么多吧，就写给自己看，也没什么感想、营养，很羡慕那些up主可以在镜头前侃侃而谈，思路清晰。一直想出点移植sailfish、openpilot的视频，止步于想法了。</p>
+<p>就写这么多吧，祝看到这里的朋友新年快乐。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;2024年总共就做了3件事，生娃、去负债、换赛道。&lt;/p&gt;
+&lt;h2 id=&quot;1-生娃&quot;&gt;&lt;a href=&quot;#1-生娃&quot; class=&quot;headerlink&quot; title=&quot;1. 生娃&quot;&gt;&lt;/a&gt;1. 生娃&lt;/h2&gt;&lt;p&gt;一个孩子还是太孤单了，纯粹是为了给娃增加一个亲人。另外
+    
+    </summary>
+    
+    
+      <category term="总结" scheme="https://birdzhang.xyz/tags/%E6%80%BB%E7%BB%93/"/>
+    
+  </entry>
   
   <entry>
     <title>如何在rk3588上运行openpilot[1]</title>
@@ -807,35 +835,6 @@ pipelines:
       <category term="迁移" scheme="https://birdzhang.xyz/tags/%E8%BF%81%E7%A7%BB/"/>
     
       <category term="migrate" scheme="https://birdzhang.xyz/tags/migrate/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>清理kubernetes中未正常退出的pod</title>
-    <link href="https://birdzhang.xyz/2018/07/03/%E6%B8%85%E7%90%86kubernetes%E4%B8%AD%E6%9C%AA%E6%AD%A3%E5%B8%B8%E9%80%80%E5%87%BA%E7%9A%84pod/"/>
-    <id>https://birdzhang.xyz/2018/07/03/清理kubernetes中未正常退出的pod/</id>
-    <published>2018-07-03T03:22:44.000Z</published>
-    <updated>2024-08-29T06:09:11.470Z</updated>
-    
-    <content type="html"><![CDATA[<p>长时间运行的k8s节点可能会存在某些pod不自动退出，一直处于<code>Terminating</code>的状态<br>于是我们可以用这个脚本定时进行清理</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">#!/bin/bash</span><br><span class="line">#############################</span><br><span class="line">### clean terminated pods ###</span><br><span class="line">### run at you own risk ! ###</span><br><span class="line">#############################</span><br><span class="line">export PATH=/usr/local/cfssl/bin:/usr/local/docker/:/usr/local/kubernetes/:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/root/bin</span><br><span class="line">getns()&#123;</span><br><span class="line">  namespaces=`kubectl get namespaces|grep -v &quot;NAME&quot;|awk &#x27;&#123;print $1&#125;&#x27;`</span><br><span class="line">  for n in $&#123;namespaces&#125;;</span><br><span class="line">  do</span><br><span class="line">    pods_str=`kubectl get pods -n $&#123;n&#125;|grep &quot;Terminating&quot;`</span><br><span class="line">    IFS=$&#x27;\n&#x27; read -rd &#x27;&#x27; -a pods  &lt;&lt;&lt;&quot;$pods_str&quot;</span><br><span class="line">    if [ -n &quot;$pods&quot; ]; then</span><br><span class="line">      getpod $&#123;n&#125; $pods;</span><br><span class="line">    fi</span><br><span class="line">  done</span><br><span class="line">&#125;</span><br><span class="line">getpod()&#123;</span><br><span class="line"> ns=$1;</span><br><span class="line"> for podinfo in $2;</span><br><span class="line"> do</span><br><span class="line">  pod=`echo $podinfo|awk &#x27;&#123;print $1&#125;&#x27;`</span><br><span class="line">  delpod $pod $ns;</span><br><span class="line"> done</span><br><span class="line">&#125;</span><br><span class="line">delpod()&#123;</span><br><span class="line">   echo &quot;kubectl delete pods $1 -n $2 --grace-period=0 --force&quot;</span><br><span class="line">   kubectl delete pods $1 -n $2 --grace-period=0 --force</span><br><span class="line">&#125;</span><br><span class="line">main()&#123;</span><br><span class="line">  getns</span><br><span class="line">&#125;</span><br><span class="line">main</span><br></pre></td></tr></table></figure>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;长时间运行的k8s节点可能会存在某些pod不自动退出，一直处于&lt;code&gt;Terminating&lt;/code&gt;的状态&lt;br&gt;于是我们可以用这个脚本定时进行清理&lt;/p&gt;
-&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td cl
-    
-    </summary>
-    
-    
-      <category term="docker" scheme="https://birdzhang.xyz/tags/docker/"/>
-    
-      <category term="kubernetes" scheme="https://birdzhang.xyz/tags/kubernetes/"/>
-    
-      <category term="k8s" scheme="https://birdzhang.xyz/tags/k8s/"/>
-    
-      <category term="Terminating" scheme="https://birdzhang.xyz/tags/Terminating/"/>
     
   </entry>
   
