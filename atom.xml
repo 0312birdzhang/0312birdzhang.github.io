@@ -1,0 +1,859 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>BirdZhang&#39;s Blog</title>
+  <subtitle>一只早起的懒鸟</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="https://birdzhang.xyz/"/>
+  <updated>2025-07-29T02:30:48.861Z</updated>
+  <id>https://birdzhang.xyz/</id>
+  
+  <author>
+    <name>BirdZhang</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>在小米平板5上运行openpilot</title>
+    <link href="https://birdzhang.xyz/2025/07/27/%E5%9C%A8%E5%B0%8F%E7%B1%B3%E5%B9%B3%E6%9D%BF5%E4%B8%8A%E8%BF%90%E8%A1%8Copenpilot/"/>
+    <id>https://birdzhang.xyz/2025/07/27/在小米平板5上运行openpilot/</id>
+    <published>2025-07-27T03:19:48.000Z</published>
+    <updated>2025-07-29T02:30:48.861Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>之前我出过一期关于如何在小米平板5上运行openpilot的视频，各位可以先去围观一下 <a href="https://www.bilibili.com/video/BV1HqKPedEkC/">https://www.bilibili.com/video/BV1HqKPedEkC/</a></p>
+<p>这个版本没有用到GPU进行加速，导致推理起来很慢，达不到运行openpilot要求的一秒20帧的要求，所以后面不了了之了。</p>
+<p>那么为什么还有这篇文章呢？全靠魔方派官方所赐 🤯 （买了个rubikpi 3板子，结果Debian系统没有OpenCL驱动，高通Linux又不是一般人能玩的了的…</p>
+<p>在我苦苦寻找用什么方式才可以<a href="https://github.com/tinygrad/tinygrad/issues?q=author%3A0312birdzhang">用GPU驱动tinygrad运行</a>的时候,事情出现了转机…</p>
+<p>那就是我发现了高通的opencl驱动，经过一番折腾，无敌了！参见视频 <a href="https://www.bilibili.com/video/BV1Pkg3zSEG2/">https://www.bilibili.com/video/BV1Pkg3zSEG2/</a></p>
+<p>然鹅，魔方派自己魔改了mesa驱动，导致你安装别的，或者upgrade一下系统，那么显示就挂了。</p>
+<p>这让我在调试openpilot运行时报错带来了巨大困难，后面一想，我不是还有一台小米平板5嘛</p>
+<p>拿出吃灰的平板，刷回ubuntu 24.04，装上高通驱动，跑分，启动！10ms多一点，够用了, 开始折腾。</p>
+<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p>这里还是去看我的视频，需要强调的几点：</p>
+<ol>
+<li>下载好文件断网安装</li>
+<li>这个版本的内核存在有时候点不亮屏幕的情况，强制重启即可。但是这个版本的内核可以充电，权衡之下还是用的这个旧内核。</li>
+<li>刷坏或者刷回原厂系统又上锁了，用完额度了，可以用免授权工具，具体可以去小米平板5电报群里找</li>
+<li>免责声明，一定是要有动手能力，不然还是看看算了。</li>
+</ol>
+<h3 id="上车测试"><a href="#上车测试" class="headerlink" title="上车测试"></a>上车测试</h3><ol>
+<li>需要一个otg usb hub</li>
+<li>需要黑熊，不要一根线的版本，烧坏不负责</li>
+<li>需要usb摄像头</li>
+<li>需要usb A to A线，用来连黑熊到usb hub</li>
+<li>现在是跑的carrotpilot版本，后续看看搞个dp、sp跑。</li>
+</ol>
+<h3 id="下载链接"><a href="#下载链接" class="headerlink" title="下载链接"></a>下载链接</h3><p><strong>免责声明：对平板以及车辆造成的损坏，本人不负责。本项目仅作为辅助驾驶研究使用，切勿在公共道路使用，在使用过程中造成的车辆及人员事故，本人不负责。本项目免费开源，禁止用于商业生产。遵守交规，合法研究。</strong></p>
+<p>链接：<a href="https://pan.quark.cn/s/76409190f443">https://pan.quark.cn/s/76409190f443</a><br>提取码：AfEB</p>
+<p>有使用上的问题可以在b站私信我，有时间看到了我都会回复的。</p>
+<p>本来还想做一期视频的，但是懒了不想做了，而且还有很多“圣母” 提到资质、安全等等脑抽问题，懒得对线了。而且有小米平板5和玩openpilot的用户也不多，就写这么多吧，看到的是缘分。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h3&gt;&lt;p&gt;之前我出过一期关于如何在小米平板5上运行openpilot的视频，各位可以先去围观一下 &lt;a href=&quot;https://www.bilib
+    
+    </summary>
+    
+    
+      <category term="openpilot" scheme="https://birdzhang.xyz/tags/openpilot/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>如何在rk3588上运行openpilot[1]</title>
+    <link href="https://birdzhang.xyz/2024/04/14/%E5%A6%82%E4%BD%95%E5%9C%A8rk3588%E4%B8%8A%E8%BF%90%E8%A1%8Copenpilot-1/"/>
+    <id>https://birdzhang.xyz/2024/04/14/如何在rk3588上运行openpilot-1/</id>
+    <published>2024-04-14T08:31:55.000Z</published>
+    <updated>2025-07-29T01:33:42.453Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="/images/openpilot.png" alt=""></p>
+<blockquote>
+<p>本文来自 <a href="https://birdzhang.xyz/2024/04/14/如何在rk3588上运行openpilot-1/">https://birdzhang.xyz/2024/04/14/如何在rk3588上运行openpilot-1/</a> 转载请注明出处</p>
+</blockquote>
+<h2 id="1-前言"><a href="#1-前言" class="headerlink" title="1. 前言"></a>1. 前言</h2><p>2024-07-03 更新，现在的openpilot已经对aarch64设备有良好的支持，不用再去改很多SConstruct进行修改了，👍</p>
+<p>使用rk3588跑openpilot的难点，主要在模型的适配上（相机部分已经很好的解决了，之前没有visionipc的时候是比较复杂的），以及兼容aarch64系统的打包等等</p>
+<h2 id="2-系统适配"><a href="#2-系统适配" class="headerlink" title="2. 系统适配"></a>2. 系统适配</h2><p>笔者使用的是 <a href="https://github.com/Joshua-Riek/ubuntu-rockchip">https://github.com/Joshua-Riek/ubuntu-rockchip</a> 修改过的，可以兼容各个厂商出的rk3588板子，方面好用。安装好git等常用工具后，把openpilot的代码clone下来，然后执行<code>tools/ubuntu_setup.sh</code>即可安装上绝大多数的依赖。</p>
+<p>对于rk3588，还有一些特殊的依赖需要安装，比如mpp、gstreamer部分，以及opencv需要重新编译添加gstreamer支持。笔者使用的是opencv_headless，参考 <a href="https://github.com/opencv/opencv/issues/21804">https://github.com/opencv/opencv/issues/21804</a></p>
+<p>使用的gstreamer依赖：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install --no-install-recommends \</span><br><span class="line">  gstreamer1.0-gl \</span><br><span class="line">  gstreamer1.0-opencv \</span><br><span class="line">  gstreamer1.0-plugins-bad \</span><br><span class="line">  gstreamer1.0-plugins-good \</span><br><span class="line">  gstreamer1.0-plugins-ugly \</span><br><span class="line">  gstreamer1.0-tools \</span><br><span class="line">  libgstreamer-plugins-base1.0-dev \</span><br><span class="line">  libgstreamer1.0-0 \</span><br><span class="line">  libgstreamer1.0-dev</span><br></pre></td></tr></table></figure>
+<p>对于rknn的运行环境，参考瑞芯微的文档即可</p>
+<h2 id="3-模型适配"><a href="#3-模型适配" class="headerlink" title="3. 模型适配"></a>3. 模型适配</h2><p>模型适配主要分为两个部分，一个是模型本身，一个是模型加载的代码。这里我们只讲模型执行的部分（因为我对模型量化不了解🤦‍♂️</p>
+<p>现在comma公司刻意简化模型的runner，我们可以根据onnxmodel.py很方便的改出rknnmodel.py。</p>
+<p>首先我们定义一个字典，把模型的参数都放在里面，如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line">model_inputs = &#123;</span><br><span class="line">  &quot;road&quot;: &#123;</span><br><span class="line">    &quot;input_names&quot;: [&#x27;input_imgs&#x27;, &#x27;big_input_imgs&#x27;, &#x27;desire&#x27;, &#x27;traffic_convention&#x27;, &#x27;nav_features&#x27;, &#x27;nav_instructions&#x27;, &#x27;features_buffer&#x27;],</span><br><span class="line">    &quot;input_shapes&quot;:  &#123;</span><br><span class="line">      &#x27;input_imgs&#x27;: [1, 12, 128, 256], </span><br><span class="line">      &#x27;big_input_imgs&#x27;: [1, 12, 128, 256], </span><br><span class="line">      &#x27;desire&#x27;: [1, 100, 8], </span><br><span class="line">      &#x27;traffic_convention&#x27;: [1, 2], </span><br><span class="line">      &#x27;nav_features&#x27;: [1, 256], </span><br><span class="line">      &#x27;nav_instructions&#x27;: [1,150],</span><br><span class="line">      &#x27;features_buffer&#x27;: [1, 99, 128]</span><br><span class="line">    &#125;,</span><br><span class="line">    &quot;input_dtypes&quot;: &#123;</span><br><span class="line">      &#x27;input_imgs&#x27;: np.float32, </span><br><span class="line">      &#x27;big_input_imgs&#x27;: np.float32,</span><br><span class="line">      &#x27;desire&#x27;: np.float32, </span><br><span class="line">      &#x27;traffic_convention&#x27;: np.float32, </span><br><span class="line">      &#x27;nav_features&#x27;: np.float32,</span><br><span class="line">      &#x27;nav_instructions&#x27;: np.float32,</span><br><span class="line">      &#x27;features_buffer&#x27;: np.float32</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  &quot;nav&quot;:&#123;</span><br><span class="line">    &quot;input_names&quot;: [&#x27;input_img&#x27;],</span><br><span class="line">    &quot;input_shapes&quot;: &#123;</span><br><span class="line">      &quot;input_img&quot;:[1,1,256,256]</span><br><span class="line">    &#125;,</span><br><span class="line">    &quot;input_dtypes&quot;: &#123;</span><br><span class="line">      &quot;input_img&quot;:np.float32 </span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  &quot;dmonitor&quot;:&#123;</span><br><span class="line">    &quot;input_names&quot;: [&#x27;input_img&#x27;, &#x27;calib&#x27;],</span><br><span class="line">    &quot;input_shapes&quot;: &#123;</span><br><span class="line">      &quot;input_img&quot;:[1,1382400],</span><br><span class="line">      &quot;calib&quot;: [1,3]</span><br><span class="line">    &#125;,</span><br><span class="line">    &quot;input_dtypes&quot;: &#123;</span><br><span class="line">      &quot;input_img&quot;:np.float32,</span><br><span class="line">      &quot;calib&quot;: np.float32</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>再定义一个key，根据模型来区分，例如：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">self.search_key = &quot;&quot;</span><br><span class="line"># self.input_names = [x.name for x in self.session.get_inputs()]</span><br><span class="line"># self.input_shapes = &#123;x.name: [1, *x.shape[1:]] for x in self.session.get_inputs()&#125;</span><br><span class="line"># self.input_dtypes = &#123;x.name: ORT_TYPES_TO_NP_TYPES[x.type] for x in self.session.get_inputs()&#125;</span><br><span class="line">if &quot;nav&quot; in path:</span><br><span class="line">    self.search_key = &quot;nav&quot;</span><br><span class="line">elif &quot;dmonitor&quot; in path:</span><br><span class="line">    self.search_key = &quot;dmonitor&quot;</span><br><span class="line">elif &quot;supercombo&quot; in path:</span><br><span class="line">    self.search_key = &quot;road&quot;</span><br><span class="line">self.input_names = model_inputs.get(self.search_key).get(&quot;input_names&quot;)</span><br><span class="line">self.input_shapes = model_inputs.get(self.search_key).get(&quot;input_shapes&quot;)</span><br><span class="line">self.input_dtypes = model_inputs.get(self.search_key).get(&quot;input_dtypes&quot;)</span><br></pre></td></tr></table></figure>
+<p>剩下的应该你都懂了怎么使用了😛。</p>
+<h2 id="4-SConscript修改"><a href="#4-SConscript修改" class="headerlink" title="4. SConscript修改"></a>4. SConscript修改</h2><p>rk3588明显是aarch64架构的，和C3一样的架构，但不是高通的，用不到SNPE，所以我们既要兼容一部分larch64的，也有一部分linux aarch64的。</p>
+<p>例如添加<code>/usr/lib/aarch64-linux-gnu</code>的path，注释掉<code>&#39;system/camerad/SConscript&#39;</code>，重新编译<code>third_party/acados</code>等等，需要一些尝试</p>
+<h2 id="5-运行"><a href="#5-运行" class="headerlink" title="5. 运行"></a>5. 运行</h2><p>假如都改好了后，运行<code>./launch_openpilot.sh</code>应该就会看到界面了</p>
+<p>如果遇到其他问题，欢迎在评论区留言。如果有比较多人关注，会出第二期详细的内容。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;/images/openpilot.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;本文来自 &lt;a href=&quot;https://birdzhang.xyz/2024/04/14/如何在rk3588上运行openpilot-1/&quot;&gt;htt
+    
+    </summary>
+    
+    
+      <category term="rk3588" scheme="https://birdzhang.xyz/tags/rk3588/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>okcaros移植到红米note8及体验</title>
+    <link href="https://birdzhang.xyz/2023/10/18/okcaros%E7%A7%BB%E6%A4%8D%E5%88%B0%E7%BA%A2%E7%B1%B3note8%E5%8F%8A%E4%BD%93%E9%AA%8C/"/>
+    <id>https://birdzhang.xyz/2023/10/18/okcaros移植到红米note8及体验/</id>
+    <published>2023-10-18T02:56:52.000Z</published>
+    <updated>2025-07-29T01:33:42.447Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote>
+<p>最近okcaros开放第三方移植了，我就简单试了一下，有点惊喜</p>
+</blockquote>
+<p>okcaros官网 <a href="https://www.okcaros.com/zh">https://www.okcaros.com/zh</a> ，实现原理是通过更改usb协议，欺骗carplay来映射安卓手机的内容，思路还是挺好的</p>
+<p>适配过程比较简单，给kernel“打个补丁”，引入一下okcar代码，编译就完事了（实际是在AMD r7-5800上面，16G内存的虚拟机上，要跑12+小时😂</p>
+<p>上两张图</p>
+<p><img src="/images/okcar-1.jpg" alt=""></p>
+<p><img src="/images/okcar-2.jpg" alt=""></p>
+<blockquote>
+<p>—————2024年04月14日 16点32分—————</p>
+</blockquote>
+<p>继续上次没写完的内容。代码已经合并到okcaros的仓库了，可以clone下来直接编译了，代码参见 <a href="https://github.com/okcar-os?q=ginkgo&amp;type=all&amp;language=&amp;sort=">https://github.com/okcar-os?q=ginkgo&amp;type=all&amp;language=&amp;sort=</a></p>
+<p>当然，既然合并到上游仓库了，自然是提供直接下载的 <a href="https://download.okcaros.com/devices/ginkgo/builds">https://download.okcaros.com/devices/ginkgo/builds</a></p>
+<p>另外，发现有windows下的安装工具了，<a href="https://okcar-cdn.okcarbox.com/app/okcaros_installer_1.0.0.exe">https://okcar-cdn.okcarbox.com/app/okcaros_installer_1.0.0.exe</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;最近okcaros开放第三方移植了，我就简单试了一下，有点惊喜&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;okcaros官网 &lt;a href=&quot;https://www.okcaros.com/zh&quot;&gt;https://www.okcaros.com/
+    
+    </summary>
+    
+    
+      <category term="okcaros" scheme="https://birdzhang.xyz/tags/okcaros/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>关于香橙派5运行flowpilot</title>
+    <link href="https://birdzhang.xyz/2023/10/18/%E5%85%B3%E4%BA%8E%E9%A6%99%E6%A9%99%E6%B4%BE5%E8%BF%90%E8%A1%8Cflowpilot/"/>
+    <id>https://birdzhang.xyz/2023/10/18/关于香橙派5运行flowpilot/</id>
+    <published>2023-10-18T02:04:37.000Z</published>
+    <updated>2025-07-29T01:33:42.453Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote>
+<p>香橙派5是一款使用瑞芯微rk3588的开发板，有3个usb接口（1个type-c和type-a公用，虽然4个其实3个），一个hdmi接口，一个千兆网口，等等</p>
+</blockquote>
+<p>废话不多说，下面是如何安装flowpilot</p>
+<h2 id="前置条件"><a href="#前置条件" class="headerlink" title="前置条件"></a>前置条件</h2><ul>
+<li>起码一个usb摄像头</li>
+<li>一块屏幕，HDMI的或者mipi dsi的都行</li>
+<li>其他的就是能让Ubuntu系统启动所必须的硬件了，如硬盘或emmc或sd卡，散热装置等</li>
+</ul>
+<h2 id="安装系统"><a href="#安装系统" class="headerlink" title="安装系统"></a>安装系统</h2><p>这里我使用的是 <a href="https://github.com/Joshua-Riek/ubuntu-rockchip">https://github.com/Joshua-Riek/ubuntu-rockchip</a></p>
+<p>如果你是用sd卡，那么只需要把系统dd进去即可<br>其他的参考官方的烧录方法，此处不赘述</p>
+<h2 id="安装flowpilot"><a href="#安装flowpilot" class="headerlink" title="安装flowpilot"></a>安装flowpilot</h2><p>这里基本是按照 <a href="https://github.com/flowdriveai/flowpilot/wiki/Installation">https://github.com/flowdriveai/flowpilot/wiki/Installation</a> 方法进行的，除此之外还要安装一些额外的包</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install ffmpeg libavformat-dev libavcodec-dev libswscale-dev \</span><br><span class="line">libssl-dev libcurl4-openssl-dev ocl-icd-opencl-dev libgflags-dev \</span><br><span class="line">libstdc++-12-dev libprotobuf-dev protobuf-compiler </span><br></pre></td></tr></table></figure>
+<p>源码可以参考我更改的fork <a href="https://github.com/0312birdzhang/flowpilot">https://github.com/0312birdzhang/flowpilot</a> ，主要修改了一些兼容性，以及替换了opencl为系统自带的,还有就是编译了aarch64上面的几个libraries</p>
+<p>配置摄像头和车型，更改 <code>launch_flowpilot_new.sh</code>，进入flowpilot的目录下，运行<code>pipenv shell</code>，然后执行<code>launch_flowpilot_new.sh</code>即可</p>
+<h2 id="体验"><a href="#体验" class="headerlink" title="体验"></a>体验</h2><p>总体来说只能说跑起来了，离日常使用还比较遥远，例如设备发热严重（没有用到rknpu，使用tnn跑只能调用GPU性能要比调用NPU差点，需要写JNI来调用rknpu跑，暂时没精力研究这部分了）、还没有驾驶员监控、上游进度缓慢等等，所以我也转向原生openpilot上了。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;香橙派5是一款使用瑞芯微rk3588的开发板，有3个usb接口（1个type-c和type-a公用，虽然4个其实3个），一个hdmi接口，一个千兆网口，等等&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;废话不多说，下面是如何安装flowpilot&lt;/
+    
+    </summary>
+    
+    
+      <category term="rk3588" scheme="https://birdzhang.xyz/tags/rk3588/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>记录一次Signal使用代理的过程</title>
+    <link href="https://birdzhang.xyz/2022/12/08/%E8%AE%B0%E5%BD%95%E4%B8%80%E6%AC%A1Signal%E4%BD%BF%E7%94%A8%E4%BB%A3%E7%90%86%E7%9A%84%E8%BF%87%E7%A8%8B/"/>
+    <id>https://birdzhang.xyz/2022/12/08/记录一次Signal使用代理的过程/</id>
+    <published>2022-12-08T02:14:46.000Z</published>
+    <updated>2025-07-29T01:33:42.456Z</updated>
+    
+    <content type="html"><![CDATA[<p>在网上找了很多方法，按照传统的思路，在cmd里面设置如下命令然后启动</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">set HTTP_PROXY=http://127.0.0.1:1081</span><br><span class="line">set HTTPS_PROXY=http://127.0.0.1:1081</span><br></pre></td></tr></table></figure>
+<p>结果并不行，然后我发现了这个 <a href="https://github.com/signalapp/Signal-Desktop/pull/1855">https://github.com/signalapp/Signal-Desktop/pull/1855</a></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">set HTTPS_PROXY=http://127.0.0.1:1081</span><br><span class="line">set WSS_PROXY=http://127.0.0.1:1081</span><br><span class="line">set ALL_PROXY=http://127.0.0.1:1081</span><br></pre></td></tr></table></figure>
+<p>然后将Signal.exe拖进cmd，enter后就可以正常了。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;在网上找了很多方法，按照传统的思路，在cmd里面设置如下命令然后启动&lt;/p&gt;
+&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;
+    
+    </summary>
+    
+    
+      <category term="signal" scheme="https://birdzhang.xyz/tags/signal/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Tomcat多实例session共享方案</title>
+    <link href="https://birdzhang.xyz/2022/03/09/Tomcat%E5%A4%9A%E5%AE%9E%E4%BE%8Bsession%E5%85%B1%E4%BA%AB%E6%96%B9%E6%A1%88/"/>
+    <id>https://birdzhang.xyz/2022/03/09/Tomcat多实例session共享方案/</id>
+    <published>2022-03-09T06:21:39.000Z</published>
+    <updated>2025-07-29T01:33:42.445Z</updated>
+    
+    <content type="html"><![CDATA[<p>Tomcat实现多实例session共享的方案还挺多的，up主使用了三种，最终选择了tomcat自带的Cluster集群方案。下面来说一下这三种方案的优缺点。</p>
+<blockquote>
+<p>up主用的tomcat7，至于为什么还是7这么老的版本，因为高版本的对get请求有一些字符校验<br>另外，这些都是不用改java代码的，其他的没做研究</p>
+</blockquote>
+<h2 id="tomcat-redis-session-manager"><a href="#tomcat-redis-session-manager" class="headerlink" title="tomcat-redis-session-manager"></a>tomcat-redis-session-manager</h2><p>这个应该是最常见的方案了，我们随便一搜就是这个，但是代码有些坑。。。</p>
+<p>如: <a href="https://github.com/janrain/tomcat-redis-session-manager">这个</a> <a href="https://github.com/jcoleman/tomcat-redis-session-manager/issues">还有这个</a> 等等，还有两个致命的bug，一是session保留时间过长，里面有一段<a href="https://github.com/jcoleman/tomcat-redis-session-manager/blob/5ed5859f887e0ca24704f7f69573c69b4dd61cf0/src/main/java/com/radiadesign/catalina/session/RedisSessionManager.java#L402">代码</a> <code>session.setMaxInactiveInterval(getMaxInactiveInterval() * 1000);</code> ，这里多保留了1000倍的时间。二是每次访问都会有一条session记录保留，非常的耗费redis内存。</p>
+<p>虽然上述俩bug本up主已经修复了，但是发现还会丢session，估计是redis的驱逐问题，也懒得去调试了。</p>
+<h2 id="redisson"><a href="#redisson" class="headerlink" title="redisson"></a>redisson</h2><p>本up主发现这个的时候以为终于得救了，看一下人家的官网 <a href="https://redisson.pro/">https://redisson.pro/</a> ，还有商业版，就觉得很靠谱。事实证明还是too young too naive啊</p>
+<p>因为突然有一天，同事说你这个接口好慢，然后我发现整个机器负载都很高了，访问网站直接卡成狗，看了一下日志，jvm崩溃了 java.lang.OutOfMemoryError: GC overhead limit exceeded</p>
+<p>上面那个不管是丢session还是保留时间太长，但是不至于把tomcat搞死。好家伙，这个直接把jvm干崩溃了，<a href="https://github.com/redisson/redisson/issues?q=OutOfMemoryError">OOM可还行</a></p>
+<h2 id="Tomcat-Cluster"><a href="#Tomcat-Cluster" class="headerlink" title="Tomcat Cluster"></a>Tomcat Cluster</h2><p>这里有一个很详细的教程 <a href="http://xstarcd.github.io/wiki/Java/tomcat_cluster.html">http://xstarcd.github.io/wiki/Java/tomcat_cluster.html</a> ，我就不赘述了。</p>
+<p>注意，我直接贴他的tomcat配置发现有看不见的空行还是啥的，可以去<a href="https://tomcat.apache.org/tomcat-7.0-doc/cluster-howto.html">tomcat网站</a>复制。</p>
+<p>注意2，一定要在web.xml中添加<code>&lt;distributable /&gt;</code></p>
+<p>使用两天了，暂时没发现问题，有待后续观察。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Tomcat实现多实例session共享的方案还挺多的，up主使用了三种，最终选择了tomcat自带的Cluster集群方案。下面来说一下这三种方案的优缺点。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;up主用的tomcat7，至于为什么还是7这么老的版本，因为高版本的对ge
+    
+    </summary>
+    
+    
+      <category term="tomcat" scheme="https://birdzhang.xyz/tags/tomcat/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>从日志中查询链接文件中的链接是否最近有访问</title>
+    <link href="https://birdzhang.xyz/2021/05/19/%E4%BB%8E%E6%97%A5%E5%BF%97%E4%B8%AD%E6%9F%A5%E8%AF%A2%E9%93%BE%E6%8E%A5%E6%96%87%E4%BB%B6%E4%B8%AD%E7%9A%84%E9%93%BE%E6%8E%A5%E6%98%AF%E5%90%A6%E6%9C%80%E8%BF%91%E6%9C%89%E8%AE%BF%E9%97%AE/"/>
+    <id>https://birdzhang.xyz/2021/05/19/从日志中查询链接文件中的链接是否最近有访问/</id>
+    <published>2021-05-19T08:00:50.000Z</published>
+    <updated>2025-07-29T01:33:42.449Z</updated>
+    
+    <content type="html"><![CDATA[<p>链接文件a.txt内容如下</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">http://example.com/123.txt</span><br><span class="line">http://example.com/456.txt</span><br></pre></td></tr></table></figure>
+<p>日志文件为从cdn下载的或者nginx的压缩日志，gz格式</p>
+<p>思路：循环zcat压缩文件，然后两个文件都做一个处理，去掉重复的部分，然后对这俩文件进行重复统计，有的话说明链接有访问</p>
+<p>简单的示例</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">#!/bin/bash</span><br><span class="line">gzs=$(ls |grep gz)</span><br><span class="line">for gz in $gzs;</span><br><span class="line">do</span><br><span class="line">  echo &quot;start $gz&quot;</span><br><span class="line">  zcat $gz|awk &#x27;&#123;print $7&#125;&#x27;|sort -n|uniq -c|sort -n &gt; tmp.txt</span><br><span class="line">  cat tmp.txt a.txt| sort -n| uniq -c|sort -n |awk &#x27;&#123;if($1&gt;1) print $2&#125;&#x27; &gt;&gt; exist.txt</span><br><span class="line">done</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;链接文件a.txt内容如下&lt;/p&gt;
+&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line
+    
+    </summary>
+    
+    
+      <category term="linux" scheme="https://birdzhang.xyz/tags/linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Gitlab CE使用drbd实现主备方案</title>
+    <link href="https://birdzhang.xyz/2021/04/16/Gitlab-CE%E4%BD%BF%E7%94%A8drbd%E5%AE%9E%E7%8E%B0%E4%B8%BB%E5%A4%87%E6%96%B9%E6%A1%88/"/>
+    <id>https://birdzhang.xyz/2021/04/16/Gitlab-CE使用drbd实现主备方案/</id>
+    <published>2021-04-16T08:19:56.000Z</published>
+    <updated>2025-07-29T01:33:42.440Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="痛点"><a href="#痛点" class="headerlink" title="痛点"></a>痛点</h3><p>由于Gitlab社区版是不提供高可用等方案的，只能定时备份出来然后出问题了再导入，有时候会丢失数据，而且耗时随着备份文件大小增加，后期维护成本高。</p>
+<h2 id="解决思路"><a href="#解决思路" class="headerlink" title="解决思路"></a>解决思路</h2><p>在搜索了大量的方案之后，只有使用drbd的才是靠谱的，而且比较容易跟现有的结合，值得尝试。</p>
+<h3 id="安装drbd"><a href="#安装drbd" class="headerlink" title="安装drbd"></a>安装drbd</h3><p>这里都是参考了 csdn博主的 <a href="https://blog.csdn.net/allway2/article/details/102478719">https://blog.csdn.net/allway2/article/details/102478719</a></p>
+<details><br><summary>DRBD使用LVM逻辑卷作为后端设备创建XFS文件系统在线添加磁盘扩容操作过程</summary><br><br><br>#### 0.服务器环境信息<br><br>drbd1    192.168.111.132    CentOS 7<br>drbd2    192.168.111.190    CentOS 7<br><br><br>#### 1、禁用SELinux<br>在两个节点执行： <code># setenforce 0</code><br><br>##### 永久关闭<br>可以修改配置文件/etc/selinux/config,将其中SELINUX设置为disabled。<br><br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# cat /etc/selinux/config   </span><br><span class="line">   </span><br><span class="line"># This file controls the state of SELinux on the system.  </span><br><span class="line"># SELINUX= can take one of these three values:  </span><br><span class="line">#     enforcing - SELinux security policy is enforced.  </span><br><span class="line">#     permissive - SELinux prints warnings instead of enforcing.  </span><br><span class="line">#     disabled - No SELinux policy is loaded.  </span><br><span class="line">#SELINUX=enforcing  </span><br><span class="line">SELINUX=disabled  </span><br><span class="line"># SELINUXTYPE= can take one of three two values:  </span><br><span class="line">#     targeted - Targeted processes are protected,  </span><br><span class="line">#     minimum - Modification of targeted policy. Only selected processes are protected.   </span><br><span class="line">#     mls - Multi Level Security protection.  </span><br><span class="line">SELINUXTYPE=targeted</span><br><span class="line"></span><br><span class="line"># sestatus  </span><br><span class="line">SELinux status:                 disabled</span><br></pre></td></tr></table></figure><br><br>关闭firewall：<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">systemctl stop firewalld.service #停止firewall</span><br><span class="line">systemctl disable firewalld.service #禁止firewall开机启动</span><br></pre></td></tr></table></figure><br><br>设置主机名：<br><br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hostnamectl set-hostname drbd1</span><br><span class="line">hostnamectl set-hostname drbd2</span><br></pre></td></tr></table></figure><br><br>#### 2、安装DRBD<br><br>在两个节点执行：<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># rpm --import https://www.elrepo.org/RPM-GPG-KEY-elrepo.org</span><br><span class="line"># rpm -Uvh http://www.elrepo.org/elrepo-release-7.0-3.el7.elrepo.noarch.rpm</span><br><span class="line"># yum install drbd90-utils kmod-drbd90</span><br><span class="line"># lsmod | grep -i drbd</span><br><span class="line"># modprobe drbd</span><br><span class="line"># echo drbd &gt; /etc/modules-load.d/drbd.conf</span><br></pre></td></tr></table></figure><br><br>#### 3、配置DRBD<br><br>在两个节点执行：<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"># mv /etc/drbd.d/global_common.conf /etc/drbd.d/global_common.conf.orig</span><br><span class="line"># vi /etc/drbd.d/global_common.conf</span><br><span class="line"></span><br><span class="line">global &#123;</span><br><span class="line"> usage-count no;</span><br><span class="line">&#125;</span><br><span class="line">common &#123;</span><br><span class="line"> net &#123;</span><br><span class="line">  protocol C;</span><br><span class="line"> &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># vi /etc/drbd.d/drbd0.res</span><br><span class="line"></span><br><span class="line">resource drbd0 &#123;</span><br><span class="line">        disk /dev/drbdvg/drbdlv;</span><br><span class="line">        device /dev/drbd0;</span><br><span class="line">        meta-disk internal;</span><br><span class="line">        on hostname1 &#123;</span><br><span class="line">                address 192.168.111.132:7789;</span><br><span class="line">        &#125;</span><br><span class="line">        on hostname2 &#123;</span><br><span class="line">                address 192.168.111.190:7789;</span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br><br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"># pvcreate /dev/sdb</span><br><span class="line"># vgcreate drbdvg /dev/sdb</span><br><span class="line"># lvcreate -l 100%VG -n drbdlv drbdvg</span><br><span class="line"># lvscan</span><br><span class="line"># drbdadm create-md drbd0</span><br><span class="line"></span><br><span class="line"># systemctl start drbd</span><br><span class="line"># drbdadm status</span><br><span class="line"># cat /proc/drbd</span><br></pre></td></tr></table></figure><br><br>在主节点执行：<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"># drbdadm primary drbd0 --force</span><br><span class="line"></span><br><span class="line"># mkfs.xfs /dev/drbd0</span><br><span class="line"># mount /dev/drbd0 /mnt</span><br><span class="line"># touch /mnt/file&#123;1..5&#125;</span><br><span class="line"># ls -l /mnt/</span><br><span class="line"># df -hT</span><br><span class="line"># vgdisplay</span><br><span class="line"># pvdisplay</span><br><span class="line"># lvdisplay</span><br></pre></td></tr></table></figure><br>#### 4、在线扩容<br>在两个节点执行：<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"># lsblk</span><br><span class="line"># pvcreate /dev/sdc</span><br><span class="line"># pvdisplay</span><br><span class="line"># vgdisplay</span><br><span class="line"># vgextend drbdvg /dev/sdc</span><br><span class="line"># lvs</span><br><span class="line"># lvdisplay</span><br><span class="line"># lvextend -l+100%FREE /dev/drbdvg/drbdlv</span><br><span class="line"># lvs</span><br></pre></td></tr></table></figure><br>等待数据同步完成<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"># watch drbdadm status</span><br></pre></td></tr></table></figure><br>在主节点执行：<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># drbdadm resize drbd0</span><br><span class="line"></span><br><span class="line"># xfs_growfs /mnt</span><br><span class="line"># df -hT</span><br></pre></td></tr></table></figure><br>扩容完成，等待扩容数据同步完成<br><code># watch drbdadm status</code><br><br>同步完成后可以进行切换测试<br><br>在主节点执行：<br><code># umount /mnt/</code><br><br>在从节点执行：<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># mount /dev/drbd0 /mnt</span><br><span class="line"># ls -l /mnt/</span><br><span class="line"># df -hT</span><br><span class="line"># touch /mnt/file&#123;11..15&#125;</span><br><span class="line"># ls -l /mnt/</span><br><span class="line"># umount /mnt</span><br></pre></td></tr></table></figure><br><br>在主节点执行：<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># mount /dev/drbd0 /mnt</span><br><span class="line"># ls -l  /mnt</span><br></pre></td></tr></table></figure><br></details>
+
+<h3 id="应用到Gitlab"><a href="#应用到Gitlab" class="headerlink" title="应用到Gitlab"></a>应用到Gitlab</h3><p>如果已经在运行了，那可以在运行的机器上挂载另外一块硬盘，新开一台机器，这俩作为drbd的主备，将运行的gitlab data数据rsync到drbd管理的那块盘上即可</p>
+<p>然后改一下gitlab的data位置，重启一下或者reconfigure一下即可。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;痛点&quot;&gt;&lt;a href=&quot;#痛点&quot; class=&quot;headerlink&quot; title=&quot;痛点&quot;&gt;&lt;/a&gt;痛点&lt;/h3&gt;&lt;p&gt;由于Gitlab社区版是不提供高可用等方案的，只能定时备份出来然后出问题了再导入，有时候会丢失数据，而且耗时随着备份文件大小增加，后期维护成
+    
+    </summary>
+    
+    
+      <category term="gitlab" scheme="https://birdzhang.xyz/tags/gitlab/"/>
+    
+      <category term="drbd" scheme="https://birdzhang.xyz/tags/drbd/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>python使用subprocess查看进程并过滤</title>
+    <link href="https://birdzhang.xyz/2020/11/23/python%E4%BD%BF%E7%94%A8subprocess%E6%9F%A5%E7%9C%8B%E8%BF%9B%E7%A8%8B%E5%B9%B6%E8%BF%87%E6%BB%A4/"/>
+    <id>https://birdzhang.xyz/2020/11/23/python使用subprocess查看进程并过滤/</id>
+    <published>2020-11-23T08:22:17.000Z</published>
+    <updated>2025-07-29T01:33:42.448Z</updated>
+    
+    <content type="html"><![CDATA[<p>来源： <a href="https://stackoverflow.com/questions/6780035/how-to-run-ps-cax-grep-something-in-python">https://stackoverflow.com/questions/6780035/how-to-run-ps-cax-grep-something-in-python</a></p>
+<p>将proc1的输出当作proc2的输入来实现</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">import subprocess</span><br><span class="line"></span><br><span class="line">proc1 = subprocess.Popen([&quot;ps&quot;,&quot;-ef&quot;],stdout=subprocess.PIPE)</span><br><span class="line">proc2 = subprocess.Popen([&#x27;grep&#x27;, &#x27;mysql&#x27;], stdin=proc1.stdout,</span><br><span class="line">     stdout=subprocess.PIPE, stderr=subprocess.PIPE)</span><br><span class="line">proc1.stdout.close() # Allow proc1 to receive a SIGPIPE if proc2 exits.</span><br><span class="line">out, err = proc2.communicate()</span><br><span class="line">outline = &#x27;&#123;0&#125;&#x27;.format(out)</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;来源： &lt;a href=&quot;https://stackoverflow.com/questions/6780035/how-to-run-ps-cax-grep-something-in-python&quot;&gt;https://stackoverflow.com/questions/
+    
+    </summary>
+    
+    
+      <category term="python" scheme="https://birdzhang.xyz/tags/python/"/>
+    
+      <category term="subprocess" scheme="https://birdzhang.xyz/tags/subprocess/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>使用yavijava创建兼容低版本的虚拟机</title>
+    <link href="https://birdzhang.xyz/2020/08/21/%E4%BD%BF%E7%94%A8yavijava%E5%88%9B%E5%BB%BA%E5%85%BC%E5%AE%B9%E4%BD%8E%E7%89%88%E6%9C%AC%E7%9A%84%E8%99%9A%E6%8B%9F%E6%9C%BA/"/>
+    <id>https://birdzhang.xyz/2020/08/21/使用yavijava创建兼容低版本的虚拟机/</id>
+    <published>2020-08-21T05:43:54.000Z</published>
+    <updated>2025-07-29T01:33:42.452Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="痛点"><a href="#痛点" class="headerlink" title="痛点"></a>痛点</h3><p>在使用 <a href="https://github.com/yavijava/yavijava">https://github.com/yavijava/yavijava</a> 创建虚拟机的过程中，默认会将虚拟机的兼容性自动设置为ESXI的版本，如在ESXI 6.5上创建的虚拟机，其兼容性则为 <strong>ESXi 6.5 及更高版本 (虚拟机版本 13)</strong>, 这样导致迁移的时候不能将这个虚拟机迁移到小于ESXI 6.5版本的主机上。</p>
+<h3 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h3><p>在查询很多资料之后，确认可以通过 <a href="https://www.altaro.com/vmware/4-ways-to-downgrade-the-vm-hardware-version/">https://www.altaro.com/vmware/4-ways-to-downgrade-the-vm-hardware-version/</a> 文中的方法，将虚拟机先从清单中删掉，更改虚拟机的vmx文件，将<code>virtualHW.version</code>改为需要的版本，重新注册虚拟机即可。</p>
+<p>在已知了这些方法之后，进行尝试, 发现在初始化虚拟机之后是无法再进行更改的，只有创建的时候设置好才行，如下即可。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">vmSpec.setVersion(&quot;vmx-10&quot;); # 10 表示 esxi 5.5</span><br><span class="line">// call the createVM_Task method on the vm folder</span><br><span class="line">Task task = vmFolder.createVM_Task(vmSpec, rp, null);</span><br><span class="line">String result = task.waitForTask();</span><br><span class="line"></span><br><span class="line">if(result == Task.SUCCESS)&#123;</span><br><span class="line">	System.out.println(&quot;VM Created Sucessfully&quot;);</span><br><span class="line">&#125;else&#123;</span><br><span class="line">	System.out.println(&quot;VM could not be created. &quot;);</span><br><span class="line">	return;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;痛点&quot;&gt;&lt;a href=&quot;#痛点&quot; class=&quot;headerlink&quot; title=&quot;痛点&quot;&gt;&lt;/a&gt;痛点&lt;/h3&gt;&lt;p&gt;在使用 &lt;a href=&quot;https://github.com/yavijava/yavijava&quot;&gt;https://github.com/
+    
+    </summary>
+    
+    
+      <category term="yavijava" scheme="https://birdzhang.xyz/tags/yavijava/"/>
+    
+      <category term="java" scheme="https://birdzhang.xyz/tags/java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>debian,ubuntu无法使用apt下载源数据的解决方法</title>
+    <link href="https://birdzhang.xyz/2020/06/05/debian-ubuntu%E6%97%A0%E6%B3%95%E4%BD%BF%E7%94%A8apt%E4%B8%8B%E8%BD%BD%E6%BA%90%E6%95%B0%E6%8D%AE%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/"/>
+    <id>https://birdzhang.xyz/2020/06/05/debian-ubuntu无法使用apt下载源数据的解决方法/</id>
+    <published>2020-06-05T08:59:57.000Z</published>
+    <updated>2025-07-29T01:33:42.446Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="现象："><a href="#现象：" class="headerlink" title="现象："></a>现象：</h3><p>不管是默认的源还是ustc的都直接提示 Connection failed，但可以ping通。<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">root@77ec78c7b3b7:/# printf &quot;deb http://mirrors.ustc.edu.cn/debian/ buster main contrib non-free\n#deb-src http://mirrors.ustc.edu.cn/debian/ buster main contrib non-free\ndeb http://mirrors.ustc.edu.cn/debian/ buster-updates main contrib non-free\n#deb-src http://mirrors.ustc.edu.cn/debian/ buster-updates main contrib non-free\n#deb http://mirrors.ustc.edu.cn/debian-security/ buster/updates main contrib non-free\n#deb-src http://mirrors.ustc.edu.cn/debian-security/ buster/updates main contrib non-free&quot; &gt; /etc/apt/sources.list</span><br><span class="line">root@77ec78c7b3b7:/# apt update</span><br><span class="line">Err:1 http://mirrors.ustc.edu.cn/debian buster InRelease</span><br><span class="line">  Connection failed [IP: 202.141.176.110 80]</span><br><span class="line">Err:2 http://mirrors.ustc.edu.cn/debian buster-updates InRelease</span><br><span class="line">  Connection failed [IP: 202.141.176.110 80]</span><br><span class="line">Reading package lists... Done                                </span><br><span class="line">Building dependency tree      </span><br><span class="line">Reading state information... Done</span><br><span class="line">All packages are up to date.</span><br><span class="line">W: Failed to fetch http://mirrors.ustc.edu.cn/debian/dists/buster/InRelease  Connection failed [IP: 202.141.176.110 80]</span><br><span class="line">W: Failed to fetch http://mirrors.ustc.edu.cn/debian/dists/buster-updates/InRelease  Connection failed [IP: 202.141.176.110 80]</span><br><span class="line">W: Some index files failed to download. They have been ignored, or old ones used instead.</span><br></pre></td></tr></table></figure></p>
+<h3 id="解决方法："><a href="#解决方法：" class="headerlink" title="解决方法："></a>解决方法：</h3><p>更改apt的默认UA</p>
+<p><code>printf &#39;Acquire\n&#123;\n  http::User-Agent &quot;Mozilla/5.0 (Windows NT 5.1; rv:25.0) \nGecko/20100101 Firefox/25.0&quot;;\n&#125;;&#39; &gt; /etc/apt/apt.conf</code></p>
+<h3 id="参考："><a href="#参考：" class="headerlink" title="参考："></a>参考：</h3><ul>
+<li><a href="https://samhassell.com/apt-cant-see-sources-try-changing-the-user-agent/">https://samhassell.com/apt-cant-see-sources-try-changing-the-user-agent/</a></li>
+</ul>
+<h3 id="原因"><a href="#原因" class="headerlink" title="原因:"></a>原因:</h3><p>未知。。。，在另一个网络环境下就可以，也是神奇。</p>
+<p>P.S. 感谢公司大数据部门的同学，让我又可以水一篇了 xD (<del>划掉划掉</del>)</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;现象：&quot;&gt;&lt;a href=&quot;#现象：&quot; class=&quot;headerlink&quot; title=&quot;现象：&quot;&gt;&lt;/a&gt;现象：&lt;/h3&gt;&lt;p&gt;不管是默认的源还是ustc的都直接提示 Connection failed，但可以ping通。&lt;br&gt;&lt;figure class=&quot;
+    
+    </summary>
+    
+    
+      <category term="apt" scheme="https://birdzhang.xyz/tags/apt/"/>
+    
+      <category term="debian" scheme="https://birdzhang.xyz/tags/debian/"/>
+    
+      <category term="ubuntu" scheme="https://birdzhang.xyz/tags/ubuntu/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>SailfishOS移植到Redmi_K20的一些记录</title>
+    <link href="https://birdzhang.xyz/2019/12/30/SailfishOS%E7%A7%BB%E6%A4%8D%E5%88%B0Redmi-K20%E7%9A%84%E4%B8%80%E4%BA%9B%E8%AE%B0%E5%BD%95/"/>
+    <id>https://birdzhang.xyz/2019/12/30/SailfishOS移植到Redmi-K20的一些记录/</id>
+    <published>2019-12-30T03:33:17.000Z</published>
+    <updated>2025-07-29T01:33:42.444Z</updated>
+    
+    <content type="html"><![CDATA[<p>源码地址：<a href="https://github.com/sailfish-on-davinci">https://github.com/sailfish-on-davinci</a></p>
+<p>真机演示：<a href="https://www.youtube.com/watch?v=J_3RLota6pY">https://www.youtube.com/watch?v=J_3RLota6pY</a></p>
+<p>K20出厂即是Android Pie系统，与其他升级上去的不一样，需要做一些处理</p>
+<p>禁用boot校验 avb，然后才可以刷<br><code>fastboot --disable-verity --disable-verification flash vbmeta vbmeta.img</code></p>
+<p>vbmeta.img 从底包里面提取</p>
+<p>… 未完待续</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;源码地址：&lt;a href=&quot;https://github.com/sailfish-on-davinci&quot;&gt;https://github.com/sailfish-on-davinci&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;真机演示：&lt;a href=&quot;https://www.youtube
+    
+    </summary>
+    
+      <category term="SailfishOS" scheme="https://birdzhang.xyz/categories/SailfishOS/"/>
+    
+    
+      <category term="sailfish" scheme="https://birdzhang.xyz/tags/sailfish/"/>
+    
+      <category term="redmi" scheme="https://birdzhang.xyz/tags/redmi/"/>
+    
+      <category term="hadk" scheme="https://birdzhang.xyz/tags/hadk/"/>
+    
+      <category term="davinci" scheme="https://birdzhang.xyz/tags/davinci/"/>
+    
+      <category term="k20" scheme="https://birdzhang.xyz/tags/k20/"/>
+    
+      <category term="lineage-16.0" scheme="https://birdzhang.xyz/tags/lineage-16-0/"/>
+    
+      <category term="hybris-16.0" scheme="https://birdzhang.xyz/tags/hybris-16-0/"/>
+    
+      <category term="xiaomi" scheme="https://birdzhang.xyz/tags/xiaomi/"/>
+    
+      <category term="9t" scheme="https://birdzhang.xyz/tags/9t/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Windows使用frp进行远程连接</title>
+    <link href="https://birdzhang.xyz/2019/10/12/Windows%E4%BD%BF%E7%94%A8frp%E8%BF%9B%E8%A1%8C%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5/"/>
+    <id>https://birdzhang.xyz/2019/10/12/Windows使用frp进行远程连接/</id>
+    <published>2019-10-12T01:58:53.000Z</published>
+    <updated>2025-07-29T01:33:42.445Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote>
+<p>frp 是一个可用于内网穿透的高性能的反向代理应用，支持 tcp, udp, http, https 协议。</p>
+</blockquote>
+<p>Github介绍： <a href="https://github.com/fatedier/frp/blob/master/README_zh.md">https://github.com/fatedier/frp/blob/master/README_zh.md</a></p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>从这里<a href="https://github.com/fatedier/frp/releases">https://github.com/fatedier/frp/releases</a> 下载最新的二进制安装包，服务端跟客户端都在一个压缩包里。</p>
+<h3 id="服务端"><a href="#服务端" class="headerlink" title="服务端"></a>服务端</h3><p>服务端跟客户端都需要一个配置文件，对于服务端配置文件如下</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">frps.ini (完整配置文件 https://github.com/fatedier/frp/blob/master/conf/frps_full.ini)</span><br><span class="line">[common]</span><br><span class="line">bind_port = 7000</span><br><span class="line">vhost_http_port = 8888</span><br><span class="line">token = your_token</span><br></pre></td></tr></table></figure>
+<p>然后启动只需要一条命令<br><code>/usr/bin/frps -c /etc/frps/frps.ini</code></p>
+<p>最好做一下守护，如使用systemd托管<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">$ cat /etc/systemd/system/frps.service</span><br><span class="line">[Unit]</span><br><span class="line">Description=frpc daemon</span><br><span class="line">After=syslog.target network.target</span><br><span class="line">Wants=network.target</span><br><span class="line">[Service]</span><br><span class="line">Type=simple</span><br><span class="line">ExecStart=/usr/bin/frps -c /etc/frps/frps.ini</span><br><span class="line">Restart=always</span><br><span class="line">RestartSec=1min</span><br><span class="line">ExecStop=/usr/bin/killall frps</span><br><span class="line">[Install]</span><br><span class="line">WantedBy=multi-user.target</span><br></pre></td></tr></table></figure></p>
+<h3 id="客户端"><a href="#客户端" class="headerlink" title="客户端"></a>客户端</h3><p>客户端同服务端也需要一份配置(frpc.ini)，如这里我们做windows的远程桌面映射<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">[common]</span><br><span class="line">server_addr = 47.98.28.15</span><br><span class="line">server_port = 7000</span><br><span class="line">token = your_token</span><br><span class="line">[rdp]</span><br><span class="line">type = tcp</span><br><span class="line">local_port = 3389</span><br><span class="line">remote_port = 3389</span><br></pre></td></tr></table></figure></p>
+<p>上面的server_addr填写服务端的ip，token同服务端的token。</p>
+<p>同样一条命令启动<br><code>./frpc.exe -c frpc.ini</code></p>
+<h4 id="做成自启动服务"><a href="#做成自启动服务" class="headerlink" title="做成自启动服务"></a>做成自启动服务</h4><p>下载一个<a href="https://nssm.cc">nssm.exe</a>放到frp的目录下，然后执行下面的命令(注意下对32、64版本)<br><code>nssm.exe install frpc</code></p>
+<p>接下来会弹出一个框，在path处选择启动frpc的frpc.bat</p>
+<p>点击Install service即可</p>
+<p>启动 nssm.exe start frpc</p>
+<h2 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h2><p>首先确保你的windows可以被远程连接。</p>
+<p>在外网机器输入 47.98.28.15，然后输入你的用户名密码即可连接。</p>
+<p>注意开通服务器跟客户端的3389端口，以及服务端的7000，8888端口。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;frp 是一个可用于内网穿透的高性能的反向代理应用，支持 tcp, udp, http, https 协议。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Github介绍： &lt;a href=&quot;https://github.com/fatedier/f
+    
+    </summary>
+    
+    
+      <category term="windows" scheme="https://birdzhang.xyz/tags/windows/"/>
+    
+      <category term="frp" scheme="https://birdzhang.xyz/tags/frp/"/>
+    
+      <category term="rdp" scheme="https://birdzhang.xyz/tags/rdp/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>SailfishOS移植到Redmi-5-Plus的一些记录(2)</title>
+    <link href="https://birdzhang.xyz/2019/06/13/SailfishOS%E7%A7%BB%E6%A4%8D%E5%88%B0Redmi-5-Plus%E7%9A%84%E4%B8%80%E4%BA%9B%E8%AE%B0%E5%BD%95-2/"/>
+    <id>https://birdzhang.xyz/2019/06/13/SailfishOS移植到Redmi-5-Plus的一些记录-2/</id>
+    <published>2019-06-13T02:06:52.000Z</published>
+    <updated>2025-07-29T01:33:42.443Z</updated>
+    
+    <content type="html"><![CDATA[<p>接上 <a href="https://birdzhang.xyz/2018/03/30/SailfishOS%E7%A7%BB%E6%A4%8D%E5%88%B0Redmi-5-Plus%E7%9A%84%E4%B8%80%E4%BA%9B%E8%AE%B0%E5%BD%95/">https://birdzhang.xyz/2018/03/30/SailfishOS%E7%A7%BB%E6%A4%8D%E5%88%B0Redmi-5-Plus%E7%9A%84%E4%B8%80%E4%BA%9B%E8%AE%B0%E5%BD%95/</a></p>
+<p>本文章主要针对 hybris 15.1的移植</p>
+<h2 id="挑选设备源码"><a href="#挑选设备源码" class="headerlink" title="挑选设备源码"></a>挑选设备源码</h2><p>mer-hybris的android hybris-15.1是基于lineageos的，所以我们在没有官方/非官方lineageos用的时候,也要找基于lineage的第三方rom，如国内的Mokee，国外的OmniROM等，只需要稍微改一点devicetree就可以用了</p>
+<h2 id="适配hybris-15-1的一些更改"><a href="#适配hybris-15-1的一些更改" class="headerlink" title="适配hybris-15.1的一些更改"></a>适配hybris-15.1的一些更改</h2><h3 id="一、Failed-to-initialize-property-area"><a href="#一、Failed-to-initialize-property-area" class="headerlink" title="一、Failed to initialize property area"></a>一、Failed to initialize property area</h3><p>目前的解决方法是注释掉这个, 还有可能是没有关闭selinux或者没有初始化sailfish所需要的android init rc文件有关</p>
+<p><code>system/core/init/property_service.cpp</code>, 将72行的<code>exit(1);</code>注释掉</p>
+<h3 id="二、kernel-device部分"><a href="#二、kernel-device部分" class="headerlink" title="二、kernel,device部分"></a>二、kernel,device部分</h3><ol>
+<li><p>内核部分主要需要注意的是你的设备是否是有 <code>/vendor</code>分区的，project treble的都会有一个单独的<code>/vendor</code>分区，这个需要注意。</p>
+<p> 可以通过这个里查看 <code>arch/arm/boot/dts/qcom/msm8953.dtsi</code> (根据你自己cpu来区分，找不到的话就用grep找一下)</p>
+<p> 如下，可以看到有vendor跟system分区单独挂载,这个地方可以看<a href="https://source.android.com/devices/bootloader/system-as-root">谷歌对system-as-root的说明</a>便于理解</p>
+ <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">firmware: firmware &#123;</span><br><span class="line">        android &#123;</span><br><span class="line">                compatible = &quot;android,firmware&quot;;</span><br><span class="line">                fstab &#123;</span><br><span class="line">                        compatible = &quot;android,fstab&quot;;</span><br><span class="line">                        vendor &#123;</span><br><span class="line">                                compatible = &quot;android,vendor&quot;;</span><br><span class="line">                                dev = &quot;/dev/block/platform/soc/7824900.sdhci/by-name/cust&quot;;</span><br><span class="line">                                type = &quot;ext4&quot;;</span><br><span class="line">                                mnt_flags = &quot;ro,barrier=1,discard&quot;;</span><br><span class="line">                                fsmgr_flags = &quot;wait&quot;;</span><br><span class="line">                                status = &quot;ok&quot;;</span><br><span class="line">                        &#125;;</span><br><span class="line">                        system &#123;</span><br><span class="line">                                compatible = &quot;android,system&quot;;</span><br><span class="line">                                dev = &quot;/dev/block/platform/soc/7824900.sdhci/by-name/system&quot;;</span><br><span class="line">                                type = &quot;ext4&quot;;</span><br><span class="line">                                mnt_flags = &quot;ro,barrier=1,discard&quot;;</span><br><span class="line">                                fsmgr_flags = &quot;wait&quot;;</span><br><span class="line">                                status = &quot;ok&quot;;</span><br><span class="line">                        &#125;;</span><br></pre></td></tr></table></figure>
+<p> 也可以通过device tree的 <code>fstab.qcom</code> 查看，如果没有，需要加上去（至少在vince上面是这样，因为后面的dhd要靠这个来判断）,如我的需要加这两行</p>
+ <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">/dev/block/bootdevice/by-name/system            /system                 ext4    ro,barrier=1                                                    wait,recoveryonly</span><br><span class="line">/dev/block/bootdevice/by-name/cust              /vendor                 ext4    ro,barrier=1                                                    wait,recoveryonly</span><br></pre></td></tr></table></figure>
+<p> 有的设备<code>/dev/block/bootdevice/by-name/system</code>挂载到<code>/</code>下面(对应下面的dhd部分的makefstab_skip_entries)，而我的设备<code>/vendor</code>是来自<code>/cust</code>（也是迷 @_@</p>
+</li>
+</ol>
+<ol start="2">
+<li><p>device tree部分注释掉启用full treble的部分</p>
+<p> 如我的设备需要把下面这些注释掉，否则selinux的政策文件会安装到<code>/vendor</code>下面，不会在根目录下产生，sfos需要在根下面有。</p>
+<blockquote>
+<p>扩展阅读： <a href="https://source.android.com/security/selinux?hl=zh_cn">https://source.android.com/security/selinux?hl=zh_cn</a></p>
+</blockquote>
+ <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># Treble</span><br><span class="line">#BOARD_PROPERTY_OVERRIDES_SPLIT_ENABLED := true</span><br><span class="line">#PRODUCT_FULL_TREBLE_OVERRIDE := true</span><br><span class="line">#PRODUCT_COMPATIBILITY_MATRIX_LEVEL_OVERRIDE := 27</span><br><span class="line">#BOARD_VNDK_VERSION := current</span><br><span class="line">#BOARD_VNDK_RUNTIME_DISABLE := true</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="三、dhd，dhc部分"><a href="#三、dhd，dhc部分" class="headerlink" title="三、dhd，dhc部分"></a>三、dhd，dhc部分</h3><p><a href="https://wiki.merproject.org/wiki/Adaptations/faq-hadk">https://wiki.merproject.org/wiki/Adaptations/faq-hadk</a> 搜索 <code>15.1</code>也会找到一些需要注意的地方</p>
+<p>修改dhd的spec文件，添加</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># On Android 8 the system partition is (intended to be) mounted on /.</span><br><span class="line">%define makefstab_skip_entries / /vendor /dev/stune /dev/cpuset /sys/fs/pstore /dev/cpuctl</span><br></pre></td></tr></table></figure>
+<p><em>也不一定全部要加上，我的设备/system，/vendor就不自动挂载，需要改成这样, 可以先不加然后telnet上去看看这里目录下有没有文件吧</em></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">%define makefstab_skip_entries /dev/stune /dev/cpuset /sys/fs/pstore /dev/cpuctl</span><br></pre></td></tr></table></figure>
+<p>这样会生成<code>system.mount</code>和<code>vendor.mount</code>，启动systemd的时候会挂载上</p>
+<p>对于有些设备可能提示<code>kgsl kgsl-3d0: |_load_firmware| request_firmware(a530_pm4.fw) failed: -2</code>，需要做一个软链到 <code>/lib/firmware</code></p>
+<p><a href="https://github.com/mer-hybris/droid-config-sony-nile/blob/91c15efb576c29a9d41cc4cd1d40c62ddcce9824/sparse/lib/firmware">https://github.com/mer-hybris/droid-config-sony-nile/blob/91c15efb576c29a9d41cc4cd1d40c62ddcce9824/sparse/lib/firmware</a></p>
+<h2 id="调试"><a href="#调试" class="headerlink" title="调试"></a>调试</h2><p><del>暂无很详细的，主要是看dmesg，journalctl等看看把出错的都修了。</del></p>
+<h3 id="通话声音"><a href="#通话声音" class="headerlink" title="通话声音"></a>通话声音</h3><p>如果可以打通电话但是没有声音，则需要 <code>pulseaudio-modules-droid-hidl</code> 1.0版本（截止2019-09-24），然后配合新的ril配置文件 <a href="https://github.com/mer-hybris/droid-config-sony-nile/tree/master/sparse/etc/ofono">https://github.com/mer-hybris/droid-config-sony-nile/tree/master/sparse/etc/ofono</a></p>
+<h3 id="界面crash"><a href="#界面crash" class="headerlink" title="界面crash"></a>界面crash</h3><p>看dmesg/logcat/journactl里面是不是有binder的信息，打补丁吧，至于打哪些只能靠猜（大雾</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;接上 &lt;a href=&quot;https://birdzhang.xyz/2018/03/30/SailfishOS%E7%A7%BB%E6%A4%8D%E5%88%B0Redmi-5-Plus%E7%9A%84%E4%B8%80%E4%BA%9B%E8%AE%B0%E5%BD%
+    
+    </summary>
+    
+      <category term="SailfishOS" scheme="https://birdzhang.xyz/categories/SailfishOS/"/>
+    
+    
+      <category term="sailfish" scheme="https://birdzhang.xyz/tags/sailfish/"/>
+    
+      <category term="redmi" scheme="https://birdzhang.xyz/tags/redmi/"/>
+    
+      <category term="vince" scheme="https://birdzhang.xyz/tags/vince/"/>
+    
+      <category term="hadk" scheme="https://birdzhang.xyz/tags/hadk/"/>
+    
+      <category term="redmi5plus" scheme="https://birdzhang.xyz/tags/redmi5plus/"/>
+    
+      <category term="lineage-15.1" scheme="https://birdzhang.xyz/tags/lineage-15-1/"/>
+    
+      <category term="hybris-15.1" scheme="https://birdzhang.xyz/tags/hybris-15-1/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>使用docker编译打包sailfishos</title>
+    <link href="https://birdzhang.xyz/2019/05/27/%E4%BD%BF%E7%94%A8docker%E7%BC%96%E8%AF%91%E6%89%93%E5%8C%85sailfishos/"/>
+    <id>https://birdzhang.xyz/2019/05/27/使用docker编译打包sailfishos/</id>
+    <published>2019-05-27T06:18:52.000Z</published>
+    <updated>2025-07-29T01:33:42.451Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote>
+<p>开坑</p>
+</blockquote>
+<ol>
+<li>ubuntu HA_BUILD</li>
+</ol>
+<p>用官方的ubuntu镜像即可，16.04或18.04都可以，不要用最新的20.04。一般来说启动之后的镜像除了手动指定的目录是持久化的，其他的会重启后失效，所以最好自己做一个镜像，把安卓编译环境安装上。</p>
+<p>启动时映射本地目录，当作ANDROID_ROOT目录。</p>
+<ol start="2">
+<li><p>mer MER_BUILD</p>
+</li>
+<li><p>OBS</p>
+</li>
+<li><p>gitlab ci</p>
+</li>
+</ol>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;开坑&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ol&gt;
+&lt;li&gt;ubuntu HA_BUILD&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;用官方的ubuntu镜像即可，16.04或18.04都可以，不要用最新的20.04。一般来说启动之后的镜像除了手动指定的目录是持
+    
+    </summary>
+    
+    
+      <category term="docker" scheme="https://birdzhang.xyz/tags/docker/"/>
+    
+      <category term="sailfishos" scheme="https://birdzhang.xyz/tags/sailfishos/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>harbor跨大版本升级</title>
+    <link href="https://birdzhang.xyz/2019/04/15/harbor%E8%B7%A8%E5%A4%A7%E7%89%88%E6%9C%AC%E5%8D%87%E7%BA%A7/"/>
+    <id>https://birdzhang.xyz/2019/04/15/harbor跨大版本升级/</id>
+    <published>2019-04-15T02:22:18.000Z</published>
+    <updated>2025-07-29T01:33:42.447Z</updated>
+    
+    <content type="html"><![CDATA[<p><strong>注意：必须是用域名的方式(也就是有内网的dns)，如果以前用ip，则本方法无效！</strong></p>
+<p>Harbor1.2之前的版本不能直接升级到新版本，想要升级到最新版并且业务不中断，可以采用如下方式。</p>
+<p>大体流程如下：</p>
+<p>B机器搭一个新harbor -&gt;  手动将旧harbor的镜像push到新harbor -&gt; 更改A域名指向到B主机ip -&gt;</p>
+<p>   测试B的harbor服务是否正常 -&gt; 铲掉A上的旧harbor  -&gt;  在A上重新搭建harbor  -&gt;  B机器上的harbor同步到A上的harbor </p>
+<p>   测试A的harbor服务是否正常 -&gt;  改回A域名指向A主机 -&gt; 删掉B上的同步。</p>
+<p>手动push旧harbor镜像到新harbor所用到的脚本：<br>pip install python_harborclient<br>get_all.py:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">#!/usr/bin/python</span><br><span class="line">from registry import RegistryApi</span><br><span class="line">api = RegistryApi(&#x27;admin&#x27;, &#x27;password&#x27;, &#x27;http://pk8stemp02.rmz.flamingo-inc.com:8888&#x27;)</span><br><span class="line">maxsize = 65536</span><br><span class="line">repos = api.getRepositoryList(maxsize)</span><br><span class="line">repositories = repos.get(&#x27;repositories&#x27;)</span><br><span class="line">for repo in repositories:</span><br><span class="line">    tags = api.getTagList(repo).get(&#x27;tags&#x27;)</span><br><span class="line">    if tags:</span><br><span class="line">        for tag in tags:</span><br><span class="line">            print(repo + &quot;:&quot; +tag)</span><br><span class="line">```            </span><br></pre></td></tr></table></figure>
+<p>python get_all.py &gt; all_repos.txt<br>allimages=$(cat all_repos.txt)<br>ORIGIN_HOST=”pk8snode01.rmz.flamingo-inc.com:8888” #旧harbor<br>BACK_HOST=”pk8stemp02.rmz.flamingo-inc.com:8888” #新harbor</p>
+<p>#提前登录一下</p>
+<p>#docker login $BACK_HOST<br>for image in ${allimages}; do<br>  docker pull ${ORIGIN_HOST}/$image<br>  docker tag ${ORIGIN_HOST}/$image ${BACK_HOST}/$image<br>  docker push ${BACK_HOST}/$image<br>  sleep 1<br>  echo $image “done”<br>done<br><code>`</code></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;strong&gt;注意：必须是用域名的方式(也就是有内网的dns)，如果以前用ip，则本方法无效！&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Harbor1.2之前的版本不能直接升级到新版本，想要升级到最新版并且业务不中断，可以采用如下方式。&lt;/p&gt;
+&lt;p&gt;大体流程如下：&lt;/p&gt;
+&lt;p
+    
+    </summary>
+    
+    
+      <category term="docker" scheme="https://birdzhang.xyz/tags/docker/"/>
+    
+      <category term="kubernetes" scheme="https://birdzhang.xyz/tags/kubernetes/"/>
+    
+      <category term="vmvare" scheme="https://birdzhang.xyz/tags/vmvare/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>使用Gitlab/Bitbucket等CI搭建自己的临时代理</title>
+    <link href="https://birdzhang.xyz/2018/12/06/%E4%BD%BF%E7%94%A8Gitlab-Bitbucket%E7%AD%89CI%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%B4%E6%97%B6%E4%BB%A3%E7%90%86/"/>
+    <id>https://birdzhang.xyz/2018/12/06/使用Gitlab-Bitbucket等CI搭建自己的临时代理/</id>
+    <published>2018-12-06T05:44:20.000Z</published>
+    <updated>2025-07-29T01:33:42.450Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote>
+<p>这篇文章只是从技术层面探讨可行性，不接受一切反驳！</p>
+</blockquote>
+<h3 id="使用条件"><a href="#使用条件" class="headerlink" title="使用条件"></a>使用条件</h3><ul>
+<li>一个有外网的主机(frp需要)</li>
+<li>gitlab或bitbucket账号</li>
+</ul>
+<h3 id="frp服务端搭建"><a href="#frp服务端搭建" class="headerlink" title="frp服务端搭建"></a>frp服务端搭建</h3><p>具体可以查看<a href="https://github.com/fatedier/frp/blob/master/README_zh.md#%E4%BD%BF%E7%94%A8%E7%A4%BA%E4%BE%8B">frp github主页</a></p>
+<p>下载对应你操作系统版本的包（我的docker打包的客户端是0.17.0版本，想使用新版的可以自行打包）</p>
+<p>服务端配置如下(frps.ini)：<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[common]</span><br><span class="line">bind_port = 7000</span><br><span class="line">token = 123456</span><br></pre></td></tr></table></figure></p>
+<p>解压下载的压缩包，启动服务端： <code>./frps -c frps.ini</code></p>
+<p>注意开通7000及需要frp客户端映射端口(这里用到了6200)</p>
+<h3 id="frp客户端"><a href="#frp客户端" class="headerlink" title="frp客户端"></a>frp客户端</h3><p>Gitlab参见 <a href="https://gitlab.com/0312birdzhang/frp_proxy">https://gitlab.com/0312birdzhang/frp_proxy</a></p>
+<p>客户端配置如下(frpc.ini)：<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">[common]</span><br><span class="line">server_addr = 12.13.14.15</span><br><span class="line">server_port = 7000</span><br><span class="line">token = 123456</span><br><span class="line"></span><br><span class="line">[socks_proxy_6200]</span><br><span class="line">type = tcp</span><br><span class="line">plugin = socks5</span><br><span class="line">remote_port = 6200</span><br></pre></td></tr></table></figure></p>
+<p>fork代码后，需要修改<strong>server_addr</strong>、<strong>server_port</strong>、<strong>token</strong>、<strong>remote_port</strong> 为你服务器相关的，然后保存即可。</p>
+<p>Bitbucket的参考：</p>
+<p>bitbucket-pipelines.yml</p>
+<pre><code>image: 0312birdzhang/frpc_proxy:v2
+
+pipelines:
+  default:
+    - step:
+        caches:
+          - pip
+        script:
+          - cp frpc.ini /app/my_frpc.ini
+          - /app/frpc -c /app/my_frpc.ini
+</code></pre><h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><p>12.13.14.15:6200 即是你的socks5代理地址</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;这篇文章只是从技术层面探讨可行性，不接受一切反驳！&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;使用条件&quot;&gt;&lt;a href=&quot;#使用条件&quot; class=&quot;headerlink&quot; title=&quot;使用条件&quot;&gt;&lt;/a&gt;使用条件&lt;/h3&gt;&lt;ul&gt;
+
+    
+    </summary>
+    
+    
+      <category term="frp" scheme="https://birdzhang.xyz/tags/frp/"/>
+    
+      <category term="socks5" scheme="https://birdzhang.xyz/tags/socks5/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Nginx获取用户真实IP</title>
+    <link href="https://birdzhang.xyz/2018/09/12/Nginx%E8%8E%B7%E5%8F%96%E7%94%A8%E6%88%B7%E7%9C%9F%E5%AE%9EIP/"/>
+    <id>https://birdzhang.xyz/2018/09/12/Nginx获取用户真实IP/</id>
+    <published>2018-09-12T03:10:54.000Z</published>
+    <updated>2025-07-29T01:33:42.441Z</updated>
+    
+    <content type="html"><![CDATA[<p>首先强调的是，这里需要两层nginx，用户访问nginx1，转发到nginx2(192.168.1.111)，nginx2到真实后端。</p>
+<h3 id="nginx1-配置"><a href="#nginx1-配置" class="headerlink" title="nginx1 配置"></a>nginx1 配置</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">server&#123;</span><br><span class="line">    ...</span><br><span class="line">    listen 8888;</span><br><span class="line">    location /test &#123;</span><br><span class="line">        proxy_set_header Host $http_host;</span><br><span class="line">        proxy_set_header X-Real-IP $remote_addr;</span><br><span class="line">        proxy_set_header X-Forward-For $remote_addr;</span><br><span class="line">        proxy_pass http://nginx2:8888/test2;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="nginx2-配置"><a href="#nginx2-配置" class="headerlink" title="nginx2 配置"></a>nginx2 配置</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">server&#123;</span><br><span class="line">    ...</span><br><span class="line">    listen 8888;</span><br><span class="line">    location /test2 &#123;</span><br><span class="line">        proxy_set_header  X-Forwarded-For $proxy_add_x_forwarded_for;</span><br><span class="line">        proxy_set_header  X-real-ip $remote_addr;</span><br><span class="line">        default_type text/html;</span><br><span class="line">        return 200 &#x27;This is text!&#x27;;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h3><p>用户访问<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -i -H &quot;X-Forwarded-For: 110.110.110.110&quot; -H &quot;X-real-ip: 110.110.110.110&quot; -s nginx1:8888/test -v</span><br></pre></td></tr></table></figure></p>
+<p>nginx1 日志：<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">192.168.1.110 0.000 - [12/Sep/2018:11:01:51 +0800] &quot;GET /test HTTP/1.1&quot; 200 13 - &quot;-&quot; &quot;curl/7.19.7 (x86_64-redhat-linux-gnu) libcurl/7.19.7 NSS/3.19.1 Basic ECC zlib/1.2.3 libidn/1.18 libssh2/1.4.2&quot; 110.110.110.110 110.110.110.110</span><br></pre></td></tr></table></figure></p>
+<p>nginx2 日志：<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">192.168.1.111 0.000 - [12/Sep/2018:11:01:51 +0800] &quot;GET /test2 HTTP/1.1&quot; 200 13 - &quot;-&quot; &quot;curl/7.19.7 (x86_64-redhat-linux-gnu) libcurl/7.19.7 NSS/3.19.1 Basic ECC zlib/1.2.3 libidn/1.18 libssh2/1.4.2&quot; 192.168.1.110 110.110.110.110</span><br></pre></td></tr></table></figure><br>其中192.168.1.111为nginx1的ip</p>
+<p>可以看到，在nginx2中可以拿<code>X-real-ip</code>获取用户的真实ip，在后端中可以拿这个头信息。</p>
+<p><strong>注意！必须要规定好nginx是在架构的哪一层级，根据所处的层级配置，否则该方法无效。</strong></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;首先强调的是，这里需要两层nginx，用户访问nginx1，转发到nginx2(192.168.1.111)，nginx2到真实后端。&lt;/p&gt;
+&lt;h3 id=&quot;nginx1-配置&quot;&gt;&lt;a href=&quot;#nginx1-配置&quot; class=&quot;headerlink&quot; title=
+    
+    </summary>
+    
+      <category term="Nginx" scheme="https://birdzhang.xyz/categories/Nginx/"/>
+    
+    
+      <category term="nginx" scheme="https://birdzhang.xyz/tags/nginx/"/>
+    
+      <category term="openresty" scheme="https://birdzhang.xyz/tags/openresty/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Docker on SailfishOS</title>
+    <link href="https://birdzhang.xyz/2018/09/05/Docker-on-SailfishOS/"/>
+    <id>https://birdzhang.xyz/2018/09/05/Docker-on-SailfishOS/</id>
+    <published>2018-09-05T09:00:03.000Z</published>
+    <updated>2025-07-29T01:33:42.439Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="How-to-install-Docker-on-SailfishOS-如何将Docker安装到SailfishOS"><a href="#How-to-install-Docker-on-SailfishOS-如何将Docker安装到SailfishOS" class="headerlink" title="How to install Docker on SailfishOS/如何将Docker安装到SailfishOS"></a>How to install Docker on SailfishOS/如何将Docker安装到SailfishOS</h1><p>This post will show you how to install Docker on SailfishOS, and some hacks need to do.</p>
+<p>这篇文章将介绍如何将Docker安装到SailfishOS上，和需要做的一些hack。</p>
+<h2 id="Prerequisites-先决条件"><a href="#Prerequisites-先决条件" class="headerlink" title="Prerequisites/先决条件"></a>Prerequisites/先决条件</h2><p><a href="https://docs.docker.com/install/linux/docker-ce/binaries/#install-daemon-and-client-binaries-on-linux">https://docs.docker.com/install/linux/docker-ce/binaries/#install-daemon-and-client-binaries-on-linux</a></p>
+<ul>
+<li>A 64-bit installation</li>
+<li>Version 3.10 or higher of the Linux kernel. The latest version of the kernel available for you platform is recommended.</li>
+<li>iptables version 1.4 or higher</li>
+<li>git version 1.7 or higher</li>
+<li>A <code>ps</code> executable, usually provided by <code>procps</code> or a similar package.</li>
+<li><a href="http://tukaani.org/xz/">XZ Utils</a> 4.9 or higher</li>
+<li><p>A <a href="https://github.com/tianon/cgroupfs-mount/blob/master/cgroupfs-mount">properly mounted</a> cgroupfs hierarchy; a single, all-encompassing cgroup mount point is not sufficient. See Github issues #2683, #3485, #4568).</p>
+</li>
+<li><p>64位系统</p>
+</li>
+<li>3.10内核或更高</li>
+<li>iptable版本至少是1.4</li>
+<li>git版本至少1.7</li>
+<li>可以执行<code>ps</code></li>
+<li>xz工具版本至少4.9</li>
+<li>正确安装的cgroupfs层次结构; 一个单一的，无所不包的cgroup挂载点是不够的。</li>
+</ul>
+<h2 id="Check-Kernel-support-检查内核支持"><a href="#Check-Kernel-support-检查内核支持" class="headerlink" title="Check Kernel support/检查内核支持"></a>Check Kernel support/检查内核支持</h2><p>Use this script <a href="https://github.com/moby/moby/raw/master/contrib/check-config.sh">check-config.sh</a><br>使用这个脚本 <a href="https://github.com/moby/moby/raw/master/contrib/check-config.sh">check-config.sh</a></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br></pre></td><td class="code"><pre><span class="line">[nemo@Sailfish ~]$ ./check-config.sh </span><br><span class="line">info: reading kernel config from /proc/config.gz ...</span><br><span class="line"></span><br><span class="line">Generally Necessary:</span><br><span class="line">- cgroup hierarchy: properly mounted [/sys/fs/cgroup]</span><br><span class="line">- CONFIG_NAMESPACES: enabled</span><br><span class="line">- CONFIG_NET_NS: enabled</span><br><span class="line">- CONFIG_PID_NS: enabled</span><br><span class="line">- CONFIG_IPC_NS: enabled</span><br><span class="line">- CONFIG_UTS_NS: enabled</span><br><span class="line">- CONFIG_CGROUPS: enabled</span><br><span class="line">- CONFIG_CGROUP_CPUACCT: enabled</span><br><span class="line">- CONFIG_CGROUP_DEVICE: enabled</span><br><span class="line">- CONFIG_CGROUP_FREEZER: enabled</span><br><span class="line">- CONFIG_CGROUP_SCHED: enabled</span><br><span class="line">- CONFIG_CPUSETS: enabled</span><br><span class="line">- CONFIG_MEMCG: enabled</span><br><span class="line">- CONFIG_KEYS: enabled</span><br><span class="line">- CONFIG_VETH: enabled</span><br><span class="line">- CONFIG_BRIDGE: enabled</span><br><span class="line">- CONFIG_BRIDGE_NETFILTER: enabled (as module)</span><br><span class="line">- CONFIG_NF_NAT_IPV4: enabled</span><br><span class="line">- CONFIG_IP_NF_FILTER: enabled</span><br><span class="line">- CONFIG_IP_NF_TARGET_MASQUERADE: enabled</span><br><span class="line">- CONFIG_NETFILTER_XT_MATCH_ADDRTYPE: enabled</span><br><span class="line">- CONFIG_NETFILTER_XT_MATCH_CONNTRACK: enabled</span><br><span class="line">- CONFIG_NETFILTER_XT_MATCH_IPVS: enabled</span><br><span class="line">- CONFIG_IP_NF_NAT: enabled</span><br><span class="line">- CONFIG_NF_NAT: enabled</span><br><span class="line">- CONFIG_NF_NAT_NEEDED: enabled</span><br><span class="line">- CONFIG_POSIX_MQUEUE: enabled</span><br><span class="line">- CONFIG_DEVPTS_MULTIPLE_INSTANCES: enabled</span><br><span class="line"></span><br><span class="line">Optional Features:</span><br><span class="line">- CONFIG_USER_NS: enabled</span><br><span class="line">- CONFIG_SECCOMP: enabled</span><br><span class="line">- CONFIG_CGROUP_PIDS: missing</span><br><span class="line">- CONFIG_MEMCG_SWAP: enabled</span><br><span class="line">- CONFIG_MEMCG_SWAP_ENABLED: enabled</span><br><span class="line">    (cgroup swap accounting is currently enabled)</span><br><span class="line">- CONFIG_MEMCG_KMEM: enabled</span><br><span class="line">- CONFIG_RESOURCE_COUNTERS: enabled</span><br><span class="line">- CONFIG_BLK_CGROUP: enabled</span><br><span class="line">- CONFIG_BLK_DEV_THROTTLING: missing</span><br><span class="line">- CONFIG_IOSCHED_CFQ: enabled</span><br><span class="line">- CONFIG_CFQ_GROUP_IOSCHED: missing</span><br><span class="line">- CONFIG_CGROUP_PERF: enabled</span><br><span class="line">- CONFIG_CGROUP_HUGETLB: missing</span><br><span class="line">- CONFIG_NET_CLS_CGROUP: enabled</span><br><span class="line">- CONFIG_CGROUP_NET_PRIO: enabled</span><br><span class="line">- CONFIG_CFS_BANDWIDTH: missing</span><br><span class="line">- CONFIG_FAIR_GROUP_SCHED: enabled</span><br><span class="line">- CONFIG_RT_GROUP_SCHED: enabled</span><br><span class="line">- CONFIG_IP_VS: enabled</span><br><span class="line">- CONFIG_IP_VS_NFCT: enabled</span><br><span class="line">- CONFIG_IP_VS_RR: enabled</span><br><span class="line">- CONFIG_EXT3_FS: enabled</span><br><span class="line">- CONFIG_EXT3_FS_XATTR: enabled</span><br><span class="line">- CONFIG_EXT3_FS_POSIX_ACL: enabled</span><br><span class="line">- CONFIG_EXT3_FS_SECURITY: enabled</span><br><span class="line">- CONFIG_EXT4_FS: enabled</span><br><span class="line">- CONFIG_EXT4_FS_POSIX_ACL: missing</span><br><span class="line">- CONFIG_EXT4_FS_SECURITY: enabled</span><br><span class="line">    enable these ext4 configs if you are using ext4 as backing filesystem</span><br><span class="line">- Network Drivers:</span><br><span class="line">  - &quot;overlay&quot;:</span><br><span class="line">    - CONFIG_VXLAN: enabled</span><br><span class="line">      Optional (for encrypted networks):</span><br><span class="line">      - CONFIG_CRYPTO: enabled</span><br><span class="line">      - CONFIG_CRYPTO_AEAD: enabled</span><br><span class="line">      - CONFIG_CRYPTO_GCM: enabled</span><br><span class="line">      - CONFIG_CRYPTO_SEQIV: enabled</span><br><span class="line">      - CONFIG_CRYPTO_GHASH: enabled</span><br><span class="line">      - CONFIG_XFRM: enabled</span><br><span class="line">      - CONFIG_XFRM_USER: enabled</span><br><span class="line">      - CONFIG_XFRM_ALGO: enabled</span><br><span class="line">      - CONFIG_INET_ESP: enabled</span><br><span class="line">      - CONFIG_INET_XFRM_MODE_TRANSPORT: enabled</span><br><span class="line">  - &quot;ipvlan&quot;:</span><br><span class="line">    - CONFIG_IPVLAN: missing</span><br><span class="line">  - &quot;macvlan&quot;:</span><br><span class="line">    - CONFIG_MACVLAN: enabled</span><br><span class="line">    - CONFIG_DUMMY: missing</span><br><span class="line">  - &quot;ftp,tftp client in container&quot;:</span><br><span class="line">    - CONFIG_NF_NAT_FTP: enabled</span><br><span class="line">    - CONFIG_NF_CONNTRACK_FTP: enabled</span><br><span class="line">    - CONFIG_NF_NAT_TFTP: enabled</span><br><span class="line">    - CONFIG_NF_CONNTRACK_TFTP: enabled</span><br><span class="line">- Storage Drivers:</span><br><span class="line">  - &quot;aufs&quot;:</span><br><span class="line">    - CONFIG_AUFS_FS: missing</span><br><span class="line">  - &quot;btrfs&quot;:</span><br><span class="line">    - CONFIG_BTRFS_FS: enabled</span><br><span class="line">    - CONFIG_BTRFS_FS_POSIX_ACL: enabled</span><br><span class="line">  - &quot;devicemapper&quot;:</span><br><span class="line">    - CONFIG_BLK_DEV_DM: enabled</span><br><span class="line">    - CONFIG_DM_THIN_PROVISIONING: missing</span><br><span class="line">  - &quot;overlay&quot;:</span><br><span class="line">    - CONFIG_OVERLAY_FS: enabled</span><br><span class="line">  - &quot;zfs&quot;:</span><br><span class="line">    - /dev/zfs: missing</span><br><span class="line">    - zfs command: missing</span><br><span class="line">    - zpool command: missing</span><br><span class="line"></span><br><span class="line">Limits:</span><br><span class="line">- /proc/sys/kernel/keys/root_maxkeys: 1000000</span><br><span class="line"></span><br><span class="line">[nemo@Sailfish ~]$ </span><br></pre></td></tr></table></figure>
+<p>Generally Necessary must be all <code>enabled</code>, if not enabled, you must enable it in your kernel defconfig, and rebuild kernel.<br>Generally Necessary 部分必须全部是<code>enabled</code>, 如果没有启用，必须启用然后重启编译内核。</p>
+<h2 id="Download-the-static-binary-archive-下载静态二进制文件"><a href="#Download-the-static-binary-archive-下载静态二进制文件" class="headerlink" title="Download the static binary archive/下载静态二进制文件"></a>Download the static binary archive/下载静态二进制文件</h2><p><a href="https://download.docker.com/linux/static/stable/aarch64/">https://download.docker.com/linux/static/stable/aarch64/</a></p>
+<p>Extract the archive and put them to <code>/usr/bin/</code>, <code>18.06</code> is a working version.</p>
+<h2 id="Add-nemo-to-docker-group-将nemo用户添加到docker组"><a href="#Add-nemo-to-docker-group-将nemo用户添加到docker组" class="headerlink" title="Add nemo to docker group/将nemo用户添加到docker组"></a>Add nemo to docker group/将nemo用户添加到docker组</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">groupadd docker</span><br><span class="line">usermod -a -G docker nemo</span><br></pre></td></tr></table></figure>
+<h2 id="Run-Docker-启动Docker"><a href="#Run-Docker-启动Docker" class="headerlink" title="Run Docker/启动Docker"></a>Run Docker/启动Docker</h2><p>Start docker daemon/ 启动docker守护进程<br><code>devel-su /usr/bin/dockerd</code></p>
+<p>Or use systemd/ 或者使用systemd</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">[Unit]</span><br><span class="line">Description=Docker Application Container Engine</span><br><span class="line">Documentation=https://docs.docker.com</span><br><span class="line">After=network-online.target firewalld.service</span><br><span class="line">Wants=network-online.target</span><br><span class="line"></span><br><span class="line">[Service]</span><br><span class="line">Type=notify</span><br><span class="line">ExecStart=/usr/bin/dockerd</span><br><span class="line">ExecReload=/bin/kill -s HUP $MAINPID</span><br><span class="line">LimitNOFILE=infinity</span><br><span class="line">LimitNPROC=infinity</span><br><span class="line">LimitCORE=infinity</span><br><span class="line">TimeoutStartSec=0</span><br><span class="line">KillMode=process</span><br><span class="line">Restart=on-failure</span><br><span class="line">StartLimitBurst=3</span><br><span class="line">StartLimitInterval=60s</span><br><span class="line"></span><br><span class="line">[Install]</span><br><span class="line">WantedBy=multi-user.target</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>Check version/检查版本<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">[root@Sailfish nemo]# docker version</span><br><span class="line"></span><br><span class="line">Client:</span><br><span class="line"> Version:           18.06.1-ce</span><br><span class="line"> API version:       1.38</span><br><span class="line"> Go version:        go1.10.3</span><br><span class="line"> Git commit:        e68fc7a</span><br><span class="line"> Built:             Tue Aug 21 17:20:38 2018</span><br><span class="line"> OS/Arch:           linux/arm64</span><br><span class="line"> Experimental:      false</span><br><span class="line"></span><br><span class="line">Server:</span><br><span class="line"> Engine:</span><br><span class="line">  Version:          18.06.1-ce</span><br><span class="line">  API version:      1.38 (minimum version 1.12)</span><br><span class="line">  Go version:       go1.10.3</span><br><span class="line">  Git commit:       e68fc7a</span><br><span class="line">  Built:            Tue Aug 21 17:27:20 2018</span><br><span class="line">  OS/Arch:          linux/arm64</span><br><span class="line">  Experimental:     false</span><br></pre></td></tr></table></figure></p>
+<p>Test/测试<br><code>devel-su docker run hello-world</code> </p>
+<p>This command downloads a test image and runs it in a container. When the container runs, it prints an informational message and exits. / 这个命令会下载一个测试镜像，如果执行成功会打印如下信息</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">[root@Sailfish nemo]# docker run hello-world</span><br><span class="line">Unable to find image &#x27;hello-world:latest&#x27; locally</span><br><span class="line">latest: Pulling from library/hello-world</span><br><span class="line">255483503861: Pull complete </span><br><span class="line">Digest: sha256:4b8ff392a12ed9ea17784bd3c9a8b1fa3299cac44aca35a85c90c5e3c7afacdc</span><br><span class="line">Status: Downloaded newer image for hello-world:latest</span><br><span class="line"></span><br><span class="line">Hello from Docker!</span><br><span class="line">This message shows that your installation appears to be working correctly.</span><br><span class="line"></span><br><span class="line">To generate this message, Docker took the following steps:</span><br><span class="line"> 1. The Docker client contacted the Docker daemon.</span><br><span class="line"> 2. The Docker daemon pulled the &quot;hello-world&quot; image from the Docker Hub.</span><br><span class="line">    (arm64v8)</span><br><span class="line"> 3. The Docker daemon created a new container from that image which runs the</span><br><span class="line">    executable that produces the output you are currently reading.</span><br><span class="line"> 4. The Docker daemon streamed that output to the Docker client, which sent it</span><br><span class="line">    to your terminal.</span><br><span class="line"></span><br><span class="line">To try something more ambitious, you can run an Ubuntu container with:</span><br><span class="line"> $ docker run -it ubuntu bash</span><br><span class="line"></span><br><span class="line">Share images, automate workflows, and more with a free Docker ID:</span><br><span class="line"> https://hub.docker.com/</span><br><span class="line"></span><br><span class="line">For more examples and ideas, visit:</span><br><span class="line"> https://docs.docker.com/engine/userguide/</span><br></pre></td></tr></table></figure>
+<h2 id="Test-network-mapping-测试网络映射"><a href="#Test-network-mapping-测试网络映射" class="headerlink" title="Test network mapping /测试网络映射"></a>Test network mapping /测试网络映射</h2><p>On one terminal/在一个终端中执行<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[root@Sailfish nemo]# docker run -it --rm -p 6080:80 nginx:latest        </span><br><span class="line">172.17.0.1 - - [05/Sep/2018:08:54:52 +0000] &quot;GET / HTTP/1.1&quot; 200 612 &quot;-&quot; &quot;curl/7.58.0-DEV&quot; &quot;-&quot;</span><br><span class="line">172.17.0.1 - - [05/Sep/2018:08:55:51 +0000] &quot;GET / HTTP/1.1&quot; 200 612 &quot;-&quot; &quot;curl/7.58.0-DEV&quot; &quot;-&quot;</span><br></pre></td></tr></table></figure></p>
+<p>Vist on another terminal/在另一个终端中访问<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">[nemo@Sailfish ~]$ curl -s 127.0.0.1:6080</span><br><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;title&gt;Welcome to nginx!&lt;/title&gt;</span><br><span class="line">&lt;style&gt;</span><br><span class="line">    body &#123;</span><br><span class="line">        width: 35em;</span><br><span class="line">        margin: 0 auto;</span><br><span class="line">        font-family: Tahoma, Verdana, Arial, sans-serif;</span><br><span class="line">    &#125;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;h1&gt;Welcome to nginx!&lt;/h1&gt;</span><br><span class="line">&lt;p&gt;If you see this page, the nginx web server is successfully installed and</span><br><span class="line">working. Further configuration is required.&lt;/p&gt;</span><br><span class="line"></span><br><span class="line">&lt;p&gt;For online documentation and support please refer to</span><br><span class="line">&lt;a href=&quot;http://nginx.org/&quot;&gt;nginx.org&lt;/a&gt;.&lt;br/&gt;</span><br><span class="line">Commercial support is available at</span><br><span class="line">&lt;a href=&quot;http://nginx.com/&quot;&gt;nginx.com&lt;/a&gt;.&lt;/p&gt;</span><br><span class="line"></span><br><span class="line">&lt;p&gt;&lt;em&gt;Thank you for using nginx.&lt;/em&gt;&lt;/p&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br><span class="line">[nemo@Sailfish ~]$ </span><br></pre></td></tr></table></figure></p>
+<h2 id="TODO"><a href="#TODO" class="headerlink" title="TODO"></a>TODO</h2><p>Wayland forward /wayland转发</p>
+<p>Reference/参考:</p>
+<ul>
+<li><a href="https://unix.stackexchange.com/questions/330366/how-can-i-run-a-graphical-application-in-a-container-under-wayland">https://unix.stackexchange.com/questions/330366/how-can-i-run-a-graphical-application-in-a-container-under-wayland</a></li>
+<li><a href="http://fabiorehm.com/blog/2014/09/11/running-gui-apps-with-docker/">http://fabiorehm.com/blog/2014/09/11/running-gui-apps-with-docker/</a></li>
+</ul>
+<p>Have fun ;)</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;How-to-install-Docker-on-SailfishOS-如何将Docker安装到SailfishOS&quot;&gt;&lt;a href=&quot;#How-to-install-Docker-on-SailfishOS-如何将Docker安装到SailfishOS&quot; cl
+    
+    </summary>
+    
+      <category term="SailfishOS" scheme="https://birdzhang.xyz/categories/SailfishOS/"/>
+    
+      <category term="Docker" scheme="https://birdzhang.xyz/categories/SailfishOS/Docker/"/>
+    
+    
+      <category term="docker" scheme="https://birdzhang.xyz/tags/docker/"/>
+    
+      <category term="sailfishos" scheme="https://birdzhang.xyz/tags/sailfishos/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>从iOS迁移到SailfishOS计划</title>
+    <link href="https://birdzhang.xyz/2018/08/09/%E4%BB%8EiOS%E8%BF%81%E7%A7%BB%E5%88%B0SailfishOS%E8%AE%A1%E5%88%92/"/>
+    <id>https://birdzhang.xyz/2018/08/09/从iOS迁移到SailfishOS计划/</id>
+    <published>2018-08-09T02:34:36.000Z</published>
+    <updated>2025-07-29T01:33:42.449Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="本文作为一个实验性计划，从iOS迁移到SailfishOS"><a href="#本文作为一个实验性计划，从iOS迁移到SailfishOS" class="headerlink" title="本文作为一个实验性计划，从iOS迁移到SailfishOS"></a>本文作为一个实验性计划，从iOS迁移到SailfishOS</h1><h2 id="首先我们来整理一下软件替代品"><a href="#首先我们来整理一下软件替代品" class="headerlink" title="首先我们来整理一下软件替代品"></a>首先我们来整理一下软件替代品</h2><ul>
+<li>即时通讯类</li>
+<li>拍照类</li>
+<li>金融类</li>
+<li>新闻类 </li>
+<li>文本阅读类</li>
+<li>浏览器</li>
+<li>地图导航类</li>
+<li>智能穿戴设备手机端</li>
+<li>SNS类</li>
+<li>一些工具类</li>
+</ul>
+<h2 id="下面展开以上几种类型有哪些及替代品"><a href="#下面展开以上几种类型有哪些及替代品" class="headerlink" title="下面展开以上几种类型有哪些及替代品"></a>下面展开以上几种类型有哪些及替代品</h2><h3 id="即时通讯类"><a href="#即时通讯类" class="headerlink" title="即时通讯类"></a>即时通讯类</h3><ul>
+<li>QQ</li>
+<li>微信</li>
+<li>Telegram</li>
+<li>IRC</li>
+</ul>
+<h3 id="拍照类"><a href="#拍照类" class="headerlink" title="拍照类"></a>拍照类</h3><ul>
+<li>暂无需求</li>
+</ul>
+<h3 id="新闻类"><a href="#新闻类" class="headerlink" title="新闻类"></a>新闻类</h3><ul>
+<li>IT之家等</li>
+<li>网易新闻等</li>
+</ul>
+<h3 id="文本阅读类"><a href="#文本阅读类" class="headerlink" title="文本阅读类"></a>文本阅读类</h3><ul>
+<li>暂无需求</li>
+</ul>
+<h3 id="浏览器"><a href="#浏览器" class="headerlink" title="浏览器"></a>浏览器</h3><ul>
+<li>Chrome</li>
+</ul>
+<h3 id="地图导航类"><a href="#地图导航类" class="headerlink" title="地图导航类"></a>地图导航类</h3><ul>
+<li>高德地图</li>
+</ul>
+<h3 id="智能穿戴设备手机端"><a href="#智能穿戴设备手机端" class="headerlink" title="智能穿戴设备手机端"></a>智能穿戴设备手机端</h3><ul>
+<li>暂无</li>
+</ul>
+<h3 id="SNS类"><a href="#SNS类" class="headerlink" title="SNS类"></a>SNS类</h3><ul>
+<li>微博</li>
+</ul>
+<h3 id="一些工具类"><a href="#一些工具类" class="headerlink" title="一些工具类"></a>一些工具类</h3><ul>
+<li>翻译/查询快递/等等</li>
+</ul>
+<p><del>#### 未完待续…</del></p>
+<h4 id="本文准备弃坑"><a href="#本文准备弃坑" class="headerlink" title="本文准备弃坑"></a>本文准备弃坑</h4><p>参考如下：</p>
+<blockquote>
+<p><a href="https://raimue.blog/2018/01/09/goodbye-sailfish-os-and-jolla/">https://raimue.blog/2018/01/09/goodbye-sailfish-os-and-jolla/</a></p>
+</blockquote>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;本文作为一个实验性计划，从iOS迁移到SailfishOS&quot;&gt;&lt;a href=&quot;#本文作为一个实验性计划，从iOS迁移到SailfishOS&quot; class=&quot;headerlink&quot; title=&quot;本文作为一个实验性计划，从iOS迁移到SailfishOS&quot;&gt;&lt;/a
+    
+    </summary>
+    
+    
+      <category term="sailfishos" scheme="https://birdzhang.xyz/tags/sailfishos/"/>
+    
+      <category term="iphone" scheme="https://birdzhang.xyz/tags/iphone/"/>
+    
+      <category term="ios" scheme="https://birdzhang.xyz/tags/ios/"/>
+    
+      <category term="jolla" scheme="https://birdzhang.xyz/tags/jolla/"/>
+    
+      <category term="迁移" scheme="https://birdzhang.xyz/tags/%E8%BF%81%E7%A7%BB/"/>
+    
+      <category term="migrate" scheme="https://birdzhang.xyz/tags/migrate/"/>
+    
+  </entry>
+  
+</feed>
