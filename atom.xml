@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://birdzhang.xyz/"/>
-  <updated>2025-07-29T02:30:48.861Z</updated>
+  <updated>2025-07-31T07:58:29.420Z</updated>
   <id>https://birdzhang.xyz/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="https://birdzhang.xyz/2025/07/27/%E5%9C%A8%E5%B0%8F%E7%B1%B3%E5%B9%B3%E6%9D%BF5%E4%B8%8A%E8%BF%90%E8%A1%8Copenpilot/"/>
     <id>https://birdzhang.xyz/2025/07/27/在小米平板5上运行openpilot/</id>
     <published>2025-07-27T03:19:48.000Z</published>
-    <updated>2025-07-29T02:30:48.861Z</updated>
+    <updated>2025-07-31T07:58:29.420Z</updated>
     
     <content type="html"><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>之前我出过一期关于如何在小米平板5上运行openpilot的视频，各位可以先去围观一下 <a href="https://www.bilibili.com/video/BV1HqKPedEkC/">https://www.bilibili.com/video/BV1HqKPedEkC/</a></p>
 <p>这个版本没有用到GPU进行加速，导致推理起来很慢，达不到运行openpilot要求的一秒20帧的要求，所以后面不了了之了。</p>
@@ -46,6 +46,9 @@
 </ol>
 <h3 id="下载链接"><a href="#下载链接" class="headerlink" title="下载链接"></a>下载链接</h3><p><strong>免责声明：对平板以及车辆造成的损坏，本人不负责。本项目仅作为辅助驾驶研究使用，切勿在公共道路使用，在使用过程中造成的车辆及人员事故，本人不负责。本项目免费开源，禁止用于商业生产。遵守交规，合法研究。</strong></p>
 <p>链接：<a href="https://pan.quark.cn/s/76409190f443">https://pan.quark.cn/s/76409190f443</a><br>提取码：AfEB</p>
+<blockquote>
+<p>安装完成的代码不是最新的，去这里更新 <a href="https://github.com/0312birdzhang/openpilot/commits/letr14h-pc-noble">https://github.com/0312birdzhang/openpilot/commits/letr14h-pc-noble</a></p>
+</blockquote>
 <p>有使用上的问题可以在b站私信我，有时间看到了我都会回复的。</p>
 <p>本来还想做一期视频的，但是懒了不想做了，而且还有很多“圣母” 提到资质、安全等等脑抽问题，懒得对线了。而且有小米平板5和玩openpilot的用户也不多，就写这么多吧，看到的是缘分。</p>
 ]]></content>
