@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://birdzhang.xyz/"/>
-  <updated>2025-07-31T07:58:29.420Z</updated>
+  <updated>2025-08-29T01:53:41.465Z</updated>
   <id>https://birdzhang.xyz/</id>
   
   <author>
@@ -14,6 +14,50 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>丰田航盛车机折腾记录</title>
+    <link href="https://birdzhang.xyz/2025/08/29/%E4%B8%B0%E7%94%B0%E8%88%AA%E7%9B%9B%E8%BD%A6%E6%9C%BA%E6%8A%98%E8%85%BE%E8%AE%B0%E5%BD%95/"/>
+    <id>https://birdzhang.xyz/2025/08/29/丰田航盛车机折腾记录/</id>
+    <published>2025-08-29T01:32:10.000Z</published>
+    <updated>2025-08-29T01:53:41.465Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote>
+<p>最近换了一个车机，买的低配版2023款锋兰达的车机，也就是广东航盛生产的，车机本身没有导航系统、个人中心等，仅包含收音机功能以及3大互联，车模是锋兰达</p>
+</blockquote>
+<p>车机买回来发现是2025年生产的，系统默认就是<code>T4_5610</code>，省去找系统升级了。</p>
+<p>但是，这里要说但是了，这个车机系统和以前的有点不兼容的地方，比如会在车辆启动40分钟的时候弹“请检查DCM是否已正常连接!”, 以及前面说的车模是锋兰达的，不是我的车型。</p>
+<p>于是在网上找了一下升级的系统文件，一同操作发现，航盛的系统是ext4封装的，直接mount一下就可以修改了，这不能闲着啊，马上开始魔改。</p>
+<ol>
+<li>改车模图片</li>
+</ol>
+<p>升级包里面有产品差异表，可以看到锋兰达的代号是<code>908B</code>, 我的车(实际上是拉长版)的代码是 <code>208D/935B</code>，这样我们在系统里面找找对应的路径，替换一下就可以了。通过grep或其他命令，发现在 <code>vendor/etc/vehiclePic</code> ，把三个目录下的图片替换一下就可以了。</p>
+<ol start="2">
+<li>屏蔽DCM</li>
+</ol>
+<p>一开始我的想法是找到对应的配置，或者对二进制文件反编译注释掉那部分代码。</p>
+<p>查找<code>请检查DCM是否已正常连接!</code>，找了好久只找到一个qt的翻译文件，而且已经找不到其他关联关系了。以为没法改了，结果发现这个系统用systemd启动的，而dcm有一个单独的服务，那就简单了，直接取消dcm.service启动就可以了。</p>
+<ol start="3">
+<li>重新计算system.img 和vendor.img的md5值，更改heads.txt即可</li>
+</ol>
+<ol start="4">
+<li>最重要的，上面的更改没真正刷入系统测试，因为下载到的镜像是5500版本，而我的出厂就是5610了，降级可能会有风险，等有5610版本的镜像后，再测试。</li>
+</ol>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;最近换了一个车机，买的低配版2023款锋兰达的车机，也就是广东航盛生产的，车机本身没有导航系统、个人中心等，仅包含收音机功能以及3大互联，车模是锋兰达&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;车机买回来发现是2025年生产的，系统默认就是&lt;cod
+    
+    </summary>
+    
+    
+      <category term="车机" scheme="https://birdzhang.xyz/tags/%E8%BD%A6%E6%9C%BA/"/>
+    
+  </entry>
   
   <entry>
     <title>在小米平板5上运行openpilot</title>
@@ -778,84 +822,6 @@ pipelines:
       <category term="docker" scheme="https://birdzhang.xyz/tags/docker/"/>
     
       <category term="sailfishos" scheme="https://birdzhang.xyz/tags/sailfishos/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>从iOS迁移到SailfishOS计划</title>
-    <link href="https://birdzhang.xyz/2018/08/09/%E4%BB%8EiOS%E8%BF%81%E7%A7%BB%E5%88%B0SailfishOS%E8%AE%A1%E5%88%92/"/>
-    <id>https://birdzhang.xyz/2018/08/09/从iOS迁移到SailfishOS计划/</id>
-    <published>2018-08-09T02:34:36.000Z</published>
-    <updated>2025-07-29T01:33:42.449Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="本文作为一个实验性计划，从iOS迁移到SailfishOS"><a href="#本文作为一个实验性计划，从iOS迁移到SailfishOS" class="headerlink" title="本文作为一个实验性计划，从iOS迁移到SailfishOS"></a>本文作为一个实验性计划，从iOS迁移到SailfishOS</h1><h2 id="首先我们来整理一下软件替代品"><a href="#首先我们来整理一下软件替代品" class="headerlink" title="首先我们来整理一下软件替代品"></a>首先我们来整理一下软件替代品</h2><ul>
-<li>即时通讯类</li>
-<li>拍照类</li>
-<li>金融类</li>
-<li>新闻类 </li>
-<li>文本阅读类</li>
-<li>浏览器</li>
-<li>地图导航类</li>
-<li>智能穿戴设备手机端</li>
-<li>SNS类</li>
-<li>一些工具类</li>
-</ul>
-<h2 id="下面展开以上几种类型有哪些及替代品"><a href="#下面展开以上几种类型有哪些及替代品" class="headerlink" title="下面展开以上几种类型有哪些及替代品"></a>下面展开以上几种类型有哪些及替代品</h2><h3 id="即时通讯类"><a href="#即时通讯类" class="headerlink" title="即时通讯类"></a>即时通讯类</h3><ul>
-<li>QQ</li>
-<li>微信</li>
-<li>Telegram</li>
-<li>IRC</li>
-</ul>
-<h3 id="拍照类"><a href="#拍照类" class="headerlink" title="拍照类"></a>拍照类</h3><ul>
-<li>暂无需求</li>
-</ul>
-<h3 id="新闻类"><a href="#新闻类" class="headerlink" title="新闻类"></a>新闻类</h3><ul>
-<li>IT之家等</li>
-<li>网易新闻等</li>
-</ul>
-<h3 id="文本阅读类"><a href="#文本阅读类" class="headerlink" title="文本阅读类"></a>文本阅读类</h3><ul>
-<li>暂无需求</li>
-</ul>
-<h3 id="浏览器"><a href="#浏览器" class="headerlink" title="浏览器"></a>浏览器</h3><ul>
-<li>Chrome</li>
-</ul>
-<h3 id="地图导航类"><a href="#地图导航类" class="headerlink" title="地图导航类"></a>地图导航类</h3><ul>
-<li>高德地图</li>
-</ul>
-<h3 id="智能穿戴设备手机端"><a href="#智能穿戴设备手机端" class="headerlink" title="智能穿戴设备手机端"></a>智能穿戴设备手机端</h3><ul>
-<li>暂无</li>
-</ul>
-<h3 id="SNS类"><a href="#SNS类" class="headerlink" title="SNS类"></a>SNS类</h3><ul>
-<li>微博</li>
-</ul>
-<h3 id="一些工具类"><a href="#一些工具类" class="headerlink" title="一些工具类"></a>一些工具类</h3><ul>
-<li>翻译/查询快递/等等</li>
-</ul>
-<p><del>#### 未完待续…</del></p>
-<h4 id="本文准备弃坑"><a href="#本文准备弃坑" class="headerlink" title="本文准备弃坑"></a>本文准备弃坑</h4><p>参考如下：</p>
-<blockquote>
-<p><a href="https://raimue.blog/2018/01/09/goodbye-sailfish-os-and-jolla/">https://raimue.blog/2018/01/09/goodbye-sailfish-os-and-jolla/</a></p>
-</blockquote>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;本文作为一个实验性计划，从iOS迁移到SailfishOS&quot;&gt;&lt;a href=&quot;#本文作为一个实验性计划，从iOS迁移到SailfishOS&quot; class=&quot;headerlink&quot; title=&quot;本文作为一个实验性计划，从iOS迁移到SailfishOS&quot;&gt;&lt;/a
-    
-    </summary>
-    
-    
-      <category term="sailfishos" scheme="https://birdzhang.xyz/tags/sailfishos/"/>
-    
-      <category term="iphone" scheme="https://birdzhang.xyz/tags/iphone/"/>
-    
-      <category term="ios" scheme="https://birdzhang.xyz/tags/ios/"/>
-    
-      <category term="jolla" scheme="https://birdzhang.xyz/tags/jolla/"/>
-    
-      <category term="迁移" scheme="https://birdzhang.xyz/tags/%E8%BF%81%E7%A7%BB/"/>
-    
-      <category term="migrate" scheme="https://birdzhang.xyz/tags/migrate/"/>
     
   </entry>
   
