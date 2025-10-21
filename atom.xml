@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://birdzhang.xyz/"/>
-  <updated>2025-08-29T01:53:41.465Z</updated>
+  <updated>2025-10-20T02:03:42.639Z</updated>
   <id>https://birdzhang.xyz/</id>
   
   <author>
@@ -20,12 +20,13 @@
     <link href="https://birdzhang.xyz/2025/08/29/%E4%B8%B0%E7%94%B0%E8%88%AA%E7%9B%9B%E8%BD%A6%E6%9C%BA%E6%8A%98%E8%85%BE%E8%AE%B0%E5%BD%95/"/>
     <id>https://birdzhang.xyz/2025/08/29/丰田航盛车机折腾记录/</id>
     <published>2025-08-29T01:32:10.000Z</published>
-    <updated>2025-08-29T01:53:41.465Z</updated>
+    <updated>2025-10-20T02:03:42.639Z</updated>
     
     <content type="html"><![CDATA[<blockquote>
-<p>最近换了一个车机，买的低配版2023款锋兰达的车机，也就是广东航盛生产的，车机本身没有导航系统、个人中心等，仅包含收音机功能以及3大互联，车模是锋兰达</p>
+<p>最近换了一个车机，买的低配版2023款锋兰达的车机，也就是广东航盛生产的，车机本身没有导航系统、个人中心等，仅包含收音机功能以及3大互联，车模是锋兰达，改成自己车的图片，这样才能完美。</p>
 </blockquote>
-<p>车机买回来发现是2025年生产的，系统默认就是<code>T4_5610</code>，省去找系统升级了。</p>
+<p>2025-10-20 更新：<br>已刷入，已真香。</p>
+<p>车机买回来发现是2025年生产的，系统默认就是<code>T3_5610</code>，省去找系统升级了。</p>
 <p>但是，这里要说但是了，这个车机系统和以前的有点不兼容的地方，比如会在车辆启动40分钟的时候弹“请检查DCM是否已正常连接!”, 以及前面说的车模是锋兰达的，不是我的车型。</p>
 <p>于是在网上找了一下升级的系统文件，一同操作发现，航盛的系统是ext4封装的，直接mount一下就可以修改了，这不能闲着啊，马上开始魔改。</p>
 <ol>
@@ -48,9 +49,9 @@
     <summary type="html">
     
       &lt;blockquote&gt;
-&lt;p&gt;最近换了一个车机，买的低配版2023款锋兰达的车机，也就是广东航盛生产的，车机本身没有导航系统、个人中心等，仅包含收音机功能以及3大互联，车模是锋兰达&lt;/p&gt;
+&lt;p&gt;最近换了一个车机，买的低配版2023款锋兰达的车机，也就是广东航盛生产的，车机本身没有导航系统、个人中心等，仅包含收音机功能以及3大互联，车模是锋兰达，改成自己车的图片，这样才能完美。&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;p&gt;车机买回来发现是2025年生产的，系统默认就是&lt;cod
+&lt;p&gt;2025-10-20
     
     </summary>
     
@@ -456,9 +457,9 @@
     
       <category term="redmi" scheme="https://birdzhang.xyz/tags/redmi/"/>
     
-      <category term="hadk" scheme="https://birdzhang.xyz/tags/hadk/"/>
-    
       <category term="davinci" scheme="https://birdzhang.xyz/tags/davinci/"/>
+    
+      <category term="hadk" scheme="https://birdzhang.xyz/tags/hadk/"/>
     
       <category term="k20" scheme="https://birdzhang.xyz/tags/k20/"/>
     
@@ -575,9 +576,9 @@
     
       <category term="redmi" scheme="https://birdzhang.xyz/tags/redmi/"/>
     
-      <category term="vince" scheme="https://birdzhang.xyz/tags/vince/"/>
-    
       <category term="hadk" scheme="https://birdzhang.xyz/tags/hadk/"/>
+    
+      <category term="vince" scheme="https://birdzhang.xyz/tags/vince/"/>
     
       <category term="redmi5plus" scheme="https://birdzhang.xyz/tags/redmi5plus/"/>
     
