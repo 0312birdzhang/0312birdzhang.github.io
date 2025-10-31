@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://birdzhang.xyz/"/>
-  <updated>2025-10-23T09:27:25.652Z</updated>
+  <updated>2025-10-31T03:03:44.399Z</updated>
   <id>https://birdzhang.xyz/</id>
   
   <author>
@@ -14,6 +14,53 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>给魔方派3等Ubuntu设备添加高通GPU加速</title>
+    <link href="https://birdzhang.xyz/2025/10/31/%E7%BB%99%E9%AD%94%E6%96%B9%E6%B4%BE3%E7%AD%89Ubuntu%E8%AE%BE%E5%A4%87%E6%B7%BB%E5%8A%A0%E9%AB%98%E9%80%9AGPU%E5%8A%A0%E9%80%9F/"/>
+    <id>https://birdzhang.xyz/2025/10/31/给魔方派3等Ubuntu设备添加高通GPU加速/</id>
+    <published>2025-10-31T02:43:00.000Z</published>
+    <updated>2025-10-31T03:03:44.399Z</updated>
+    
+    <content type="html"><![CDATA[<p>之前发过给<a href="https://birdzhang.xyz/2025/07/27/%E5%9C%A8%E5%B0%8F%E7%B1%B3%E5%B9%B3%E6%9D%BF5%E4%B8%8A%E8%BF%90%E8%A1%8Copenpilot/">小米平板5运行openpilot</a>的文章，里面用到了qcom的gpu驱动，效果还不错, 现在有用魔方派3的小伙伴也需要，所以分享出来。Happy Hacking!</p>
+<p>跑起来有几个条件要满足：</p>
+<ol>
+<li>系统是ubuntu 24.04 （Debian 13也可以）</li>
+<li>设备是高通CPU</li>
+<li>不要安装开源驱动，例如mesa的</li>
+</ol>
+<h2 id="安装高通驱动"><a href="#安装高通驱动" class="headerlink" title="安装高通驱动"></a>安装高通驱动</h2><p>我们用到高通的官方ppa源，安装方法如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo add-apt-repository ppa:ubuntu-qcom-iot/qcom-noble-ppa</span><br><span class="line">sudo apt update</span><br><span class="line">sudo apt install qcom-adreno-cl-dev qcom-adreno-cl1 clinfo </span><br></pre></td></tr></table></figure>
+<p>如果报错了，说明你之前安装了opencl的，那么需要卸载<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt remove opencl-headers opencl-c-headers</span><br></pre></td></tr></table></figure></p>
+<p>然后再装一次<code>qcom-adreno-cl-dev qcom-adreno-cl1</code>，执行clinfo出来很多东西，有<code>Platform Name                                   QUALCOMM Snapdragon(TM)</code>就说明识别到了。如果没有的话切root执行一下clinfo，可以出来的话需要改一下/dev/dri/renderD128的权限为660， <code>sudo chmod 660 /dev/dri/renderD128</code>，再用普通用户执行clinfo看看是不是好了。</p>
+<h2 id="修改op代码"><a href="#修改op代码" class="headerlink" title="修改op代码"></a>修改op代码</h2><ol>
+<li>注意：使用了高通cl驱动后，会导致openpilot的<code>encoderd</code>无法使用，注释掉即可。</li>
+</ol>
+<ul>
+<li>SConstruct 里面的<code>system/loggerd/SConscript</code> 注释掉</li>
+<li>system/manager/process_config.py  把encoderd那一行注释掉</li>
+</ul>
+<ol start="2">
+<li>启用GPU加速</li>
+</ol>
+<ul>
+<li>selfdrive/modeld/SConscript 把<code>for model_name in [&#39;driving_vision&#39;, &#39;driving_policy&#39;, &#39;dmonitoring_model&#39;]:</code>里面的默认执行设备改为<code>GPU=1 IMAGE=0</code>，可以参考<a href="https://github.com/0312birdzhang/openpilot/blob/0.9.9-pre-build/selfdrive/modeld/SConscript#L51-L56">我的</a>。0.10后面的版本改为了<code>DEV=GPU IMAGE=0</code></li>
+<li>selfdrive/modeld/modeld.py 里面把<code>os.environ[&#39;LLVM&#39;] = &#39;1&#39;</code>和下面一行JIT删掉，改为<code>os.environ[&#39;GPU&#39;] = &#39;1&#39;</code>，可以参考<a href="https://github.com/0312birdzhang/openpilot/blob/pre-build/selfdrive/modeld/modeld.py#L11-L14">我的</a>. 新版本的把<code>os.environ[&#39;DEV&#39;] = &#39;QCOM&#39; if TICI else &#39;CPU&#39;</code>改为<code>os.environ[&#39;DEV&#39;] = &#39;QCOM&#39; if TICI else &#39;GPU&#39;</code> 即可</li>
+<li>selfdrive/modeld/dmonitoringmodeld.py 一样的改法</li>
+</ul>
+<p>至此使用高通gpu跑openpilot完成。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;之前发过给&lt;a href=&quot;https://birdzhang.xyz/2025/07/27/%E5%9C%A8%E5%B0%8F%E7%B1%B3%E5%B9%B3%E6%9D%BF5%E4%B8%8A%E8%BF%90%E8%A1%8Copenpilot/&quot;&gt;小米平板5
+    
+    </summary>
+    
+    
+      <category term="rubikpi" scheme="https://birdzhang.xyz/tags/rubikpi/"/>
+    
+  </entry>
   
   <entry>
     <title>人生的意义是什么</title>
@@ -716,60 +763,6 @@
       <category term="kubernetes" scheme="https://birdzhang.xyz/tags/kubernetes/"/>
     
       <category term="vmvare" scheme="https://birdzhang.xyz/tags/vmvare/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>使用Gitlab/Bitbucket等CI搭建自己的临时代理</title>
-    <link href="https://birdzhang.xyz/2018/12/06/%E4%BD%BF%E7%94%A8Gitlab-Bitbucket%E7%AD%89CI%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E4%B8%B4%E6%97%B6%E4%BB%A3%E7%90%86/"/>
-    <id>https://birdzhang.xyz/2018/12/06/使用Gitlab-Bitbucket等CI搭建自己的临时代理/</id>
-    <published>2018-12-06T05:44:20.000Z</published>
-    <updated>2025-07-29T01:33:42.450Z</updated>
-    
-    <content type="html"><![CDATA[<blockquote>
-<p>这篇文章只是从技术层面探讨可行性，不接受一切反驳！</p>
-</blockquote>
-<h3 id="使用条件"><a href="#使用条件" class="headerlink" title="使用条件"></a>使用条件</h3><ul>
-<li>一个有外网的主机(frp需要)</li>
-<li>gitlab或bitbucket账号</li>
-</ul>
-<h3 id="frp服务端搭建"><a href="#frp服务端搭建" class="headerlink" title="frp服务端搭建"></a>frp服务端搭建</h3><p>具体可以查看<a href="https://github.com/fatedier/frp/blob/master/README_zh.md#%E4%BD%BF%E7%94%A8%E7%A4%BA%E4%BE%8B">frp github主页</a></p>
-<p>下载对应你操作系统版本的包（我的docker打包的客户端是0.17.0版本，想使用新版的可以自行打包）</p>
-<p>服务端配置如下(frps.ini)：<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[common]</span><br><span class="line">bind_port = 7000</span><br><span class="line">token = 123456</span><br></pre></td></tr></table></figure></p>
-<p>解压下载的压缩包，启动服务端： <code>./frps -c frps.ini</code></p>
-<p>注意开通7000及需要frp客户端映射端口(这里用到了6200)</p>
-<h3 id="frp客户端"><a href="#frp客户端" class="headerlink" title="frp客户端"></a>frp客户端</h3><p>Gitlab参见 <a href="https://gitlab.com/0312birdzhang/frp_proxy">https://gitlab.com/0312birdzhang/frp_proxy</a></p>
-<p>客户端配置如下(frpc.ini)：<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">[common]</span><br><span class="line">server_addr = 12.13.14.15</span><br><span class="line">server_port = 7000</span><br><span class="line">token = 123456</span><br><span class="line"></span><br><span class="line">[socks_proxy_6200]</span><br><span class="line">type = tcp</span><br><span class="line">plugin = socks5</span><br><span class="line">remote_port = 6200</span><br></pre></td></tr></table></figure></p>
-<p>fork代码后，需要修改<strong>server_addr</strong>、<strong>server_port</strong>、<strong>token</strong>、<strong>remote_port</strong> 为你服务器相关的，然后保存即可。</p>
-<p>Bitbucket的参考：</p>
-<p>bitbucket-pipelines.yml</p>
-<pre><code>image: 0312birdzhang/frpc_proxy:v2
-
-pipelines:
-  default:
-    - step:
-        caches:
-          - pip
-        script:
-          - cp frpc.ini /app/my_frpc.ini
-          - /app/frpc -c /app/my_frpc.ini
-</code></pre><h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><p>12.13.14.15:6200 即是你的socks5代理地址</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;blockquote&gt;
-&lt;p&gt;这篇文章只是从技术层面探讨可行性，不接受一切反驳！&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h3 id=&quot;使用条件&quot;&gt;&lt;a href=&quot;#使用条件&quot; class=&quot;headerlink&quot; title=&quot;使用条件&quot;&gt;&lt;/a&gt;使用条件&lt;/h3&gt;&lt;ul&gt;
-
-    
-    </summary>
-    
-    
-      <category term="frp" scheme="https://birdzhang.xyz/tags/frp/"/>
-    
-      <category term="socks5" scheme="https://birdzhang.xyz/tags/socks5/"/>
     
   </entry>
   
